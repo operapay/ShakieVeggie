@@ -3,16 +3,23 @@ html
     head
         title ShakieVeggie
         link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
-        link(rel='stylesheet' href='/css/style.css')
+        link(rel='stylesheet', type='text/css', href='/css/style.css')
     body
-        .d-flex.flex-column.flex-md-row.align-items-center.p-3.px-md-4.mb-3.bg-white.border-bottom.shadow-sm
-            h5.my-0.mr-md-auto.font-weight-normal ShakieVeggie
-            nav.my-2.my-md-0.mr-md-3
-                a.p-2.text-dark(href='#') Features
-                a.p-2.text-dark(href='#') Enterprise
-                a.p-2.text-dark(href='#') Support
-                a.p-2.text-dark(href='#') Pricing
-            a.btn.btn-outline-primary(href='#') Sign up
+        // ----------------Navbar-------------------
+        nav#myTopnav.topnav
+            div
+                button.btn
+                    a(href='/home')
+                        img(src='/img/home.png') 
+            div
+                button.login
+                    a(href='/login') login
+                button.login
+                    a(href='/cart')
+                        img(src='/img/cart.png')
+            a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
+        // ------------------------------------------
+
         .container
             != messages('message',locals)
             if errors
@@ -23,7 +30,7 @@ html
             br
             hr
             footer
-                p Copyright © 2018    
+                p Copyright © 2018  
         script(src='./.js')
         script(src='https://code.jquery.com/jquery-3.3.1.min.js')
         script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
