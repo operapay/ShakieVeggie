@@ -13,7 +13,10 @@ html
                         img(src='/img/home.png') 
             div
                 button.login
-                    a(href='/users/login') login
+                    if user
+                        a(href='/users/logout') #{user.username}
+                    else
+                        a(href='/users/login') login
                 button.login
                     a(href='/cart')
                         img(src='/img/cart.png')
