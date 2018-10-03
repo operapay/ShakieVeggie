@@ -2,105 +2,106 @@ extends layout1
 
 block content
 .container
-	// Modal allergic
-	#myModal.modal.fade(role='dialog', data-backdrop='static', data-keyboard='false')
-		.modal-dialog
-			// Modal content
-			.modal-content
-				.modal-header
-					h4.modal-title Allergic component
-				.modal-body
-					.row
-						.col-md-4
-							.form-check
-								h3 Vitamin C
-								input#orange.form-check-input(type='checkbox', value='x')
-								label.form-check-label(for='defaultCheck1')
-									| Orange
-								br
-								input#lime.form-check-input(type='checkbox', value='x')
-								label.form-check-label(for='defaultCheck1')
-									| Lime
-								br
-								input#guava.form-check-input(type='checkbox', value='x')
-								label.form-check-label(for='defaultCheck1')
-									| Guava
-						.col-md-4
-							.form-check
-								h3 Vitamin C
-								input#orange.form-check-input(type='checkbox', value='x')
-								label.form-check-label(for='defaultCheck1')
-									| Orange
-								br
-								input#lime.form-check-input(type='checkbox', value='x')
-								label.form-check-label(for='defaultCheck1')
-									| Lime
-								br
-								input#guava.form-check-input(type='checkbox', value='x')
-								label.form-check-label(for='defaultCheck1')
-									| Guava
-						.col-md-4
-							.form-check
-								h3 Vitamin C
-								input#orange.form-check-input(type='checkbox', value='x')
-								label.form-check-label(for='defaultCheck1')
-									| Orange
-								br
-								input#lime.form-check-input(type='checkbox', value='x')
-								label.form-check-label(for='defaultCheck1')
-									| Lime
-								br
-								input#guava.form-check-input(type='checkbox', value='x')
-								label.form-check-label(for='defaultCheck1')
-									| Guava
-					button#myBtn.btn.btn-info.btn-md(type='button', value='Submit') submit
-	h1.text-center Detox Formula
-	.col-sm-9.col-md-7.col-lg-4.mx-auto
-		.card.card-signin.my-5
-			.card-body
-				h5.card-title.text-center Vit1
-				.form-check
-					input#exampleRadios1.form-check-input(type='radio', name='exampleRadios', value='option1', checked='')
-					label.form-check-label(for='exampleRadios1')
-						| Default radio
-				.form-check
-					input#exampleRadios2.form-check-input(type='radio', name='exampleRadios', value='option2')
-					label.form-check-label(for='exampleRadios2')
-						| Second default radio
-				.form-check.disabled
-					input#exampleRadios3.form-check-input(type='radio', name='exampleRadios', value='option3', disabled='')
-					label.form-check-label(for='exampleRadios3')
-						| Disabled radio
-	.col-sm-9.col-md-7.col-lg-4.mx-auto
-		.card.card-signin.my-5
-			.card-body
-				h5.card-title.text-center Vit2
-				.form-check
-					input#exampleRadios1.form-check-input(type='radio', name='exampleRadios', value='option1', checked='')
-					label.form-check-label(for='exampleRadios1')
-						| Default radio
-				.form-check
-					input#exampleRadios2.form-check-input(type='radio', name='exampleRadios', value='option2')
-					label.form-check-label(for='exampleRadios2')
-						| Second default radio
-				.form-check.disabled
-					input#exampleRadios3.form-check-input(type='radio', name='exampleRadios', value='option3', disabled='')
-					label.form-check-label(for='exampleRadios3')
-						| Disabled radio
-	.col-sm-9.col-md-7.col-lg-4.mx-auto
-		.card.card-signin.my-5
-			.card-body
-				h5.card-title.text-center Vit3
-				.form-check
-					input#exampleRadios1.form-check-input(type='radio', name='exampleRadios', value='option1', checked='')
-					label.form-check-label(for='exampleRadios1')
-						| Default radio
-				.form-check
-					input#exampleRadios2.form-check-input(type='radio', name='exampleRadios', value='option2')
-					label.form-check-label(for='exampleRadios2')
-						| Second default radio
-				.form-check.disabled
-					input#exampleRadios3.form-check-input(type='radio', name='exampleRadios', value='option3', disabled='')
-					label.form-check-label(for='exampleRadios3')
-						| Disabled radio
-	br
+    form(method='POST',action='/users/custom')
+	    // Modal allergic
+        #myModal.modal.fade(role='dialog', data-backdrop='static', data-keyboard='false')
+            .modal-dialog
+                // Modal content
+                .modal-content
+                    .modal-header
+                        h4.modal-title Allergic component
+                    .modal-body
+                        .row
+                            .col-md-4
+                                .form-check
+                                    h3 Vitamin C
+                                    input#orange.form-check-input(type='checkbox', value='x')
+                                    label.form-check-label(for='defaultCheck1')
+                                        | Orange
+                                    br
+                                    input#lime.form-check-input(type='checkbox', value='x')
+                                    label.form-check-label(for='defaultCheck1')
+                                        | Lime
+                                    br
+                                    input#guava.form-check-input(type='checkbox', value='x')
+                                    label.form-check-label(for='defaultCheck1')
+                                        | Guava
+                            .col-md-4
+                                .form-check
+                                    h3 Vitamin C
+                                    input#orange.form-check-input(type='checkbox', value='x')
+                                    label.form-check-label(for='defaultCheck1')
+                                        | Orange
+                                    br
+                                    input#lime.form-check-input(type='checkbox', value='x')
+                                    label.form-check-label(for='defaultCheck1')
+                                        | Lime
+                                    br
+                                    input#guava.form-check-input(type='checkbox', value='x')
+                                    label.form-check-label(for='defaultCheck1')
+                                        | Guava
+                            .col-md-4
+                                .form-check
+                                    h3 Vitamin C
+                                    input#orange.form-check-input(type='checkbox', value='x')
+                                    label.form-check-label(for='defaultCheck1')
+                                        | Orange
+                                    br
+                                    input#lime.form-check-input(type='checkbox', value='x')
+                                    label.form-check-label(for='defaultCheck1')
+                                        | Lime
+                                    br
+                                    input#guava.form-check-input(type='checkbox', value='x')
+                                    label.form-check-label(for='defaultCheck1')
+                                        | Guava
+                        button#myBtn.btn.btn-info.btn-md(type='button', value='Submit') submit
+        h1.text-center Detox Formula
+        .col-sm-9.col-md-7.col-lg-4.mx-auto
+            .card.card-signin.my-5
+                .card-body
+                    h5.card-title.text-center Vit1
+                    .form-check
+                        input#exampleRadios1.form-check-input(type='radio', name='exampleRadios', value='option1', checked='')
+                        label.form-check-label(for='exampleRadios1')
+                            | Default radio
+                    .form-check
+                        input#exampleRadios2.form-check-input(type='radio', name='exampleRadios', value='option2')
+                        label.form-check-label(for='exampleRadios2')
+                            | Second default radio
+                    .form-check.disabled
+                        input#exampleRadios3.form-check-input(type='radio', name='exampleRadios', value='option3', disabled='')
+                        label.form-check-label(for='exampleRadios3')
+                            | Disabled radio
+        .col-sm-9.col-md-7.col-lg-4.mx-auto
+            .card.card-signin.my-5
+                .card-body
+                    h5.card-title.text-center Vit2
+                    .form-check
+                        input#exampleRadios1.form-check-input(type='radio', name='exampleRadios', value='option1', checked='')
+                        label.form-check-label(for='exampleRadios1')
+                            | Default radio
+                    .form-check
+                        input#exampleRadios2.form-check-input(type='radio', name='exampleRadios', value='option2')
+                        label.form-check-label(for='exampleRadios2')
+                            | Second default radio
+                    .form-check.disabled
+                        input#exampleRadios3.form-check-input(type='radio', name='exampleRadios', value='option3', disabled='')
+                        label.form-check-label(for='exampleRadios3')
+                            | Disabled radio
+        .col-sm-9.col-md-7.col-lg-4.mx-auto
+            .card.card-signin.my-5
+                .card-body
+                    h5.card-title.text-center Vit3
+                    .form-check
+                        input#exampleRadios1.form-check-input(type='radio', name='exampleRadios', value='option1', checked='')
+                        label.form-check-label(for='exampleRadios1')
+                            | Default radio
+                    .form-check
+                        input#exampleRadios2.form-check-input(type='radio', name='exampleRadios', value='option2')
+                        label.form-check-label(for='exampleRadios2')
+                            | Second default radio
+                    .form-check.disabled
+                        input#exampleRadios3.form-check-input(type='radio', name='exampleRadios', value='option3', disabled='')
+                        label.form-check-label(for='exampleRadios3')
+                            | Disabled radio
+        br
