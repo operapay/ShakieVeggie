@@ -14,7 +14,9 @@ html
             div
                 button.login
                     if user
-                        a(href='/users/logout') #{user.username}
+                        a(href='/users/logout') Logout
+                        button.login
+                            h9 #{user.username}
                     else
                         a(href='/users/login') login
                 button.login
