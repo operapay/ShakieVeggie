@@ -1,0 +1,67 @@
+- mango
+W: 1281
+H: 1920
+X: 0
+Y: -77
+
+
+- font : Yu Gothic UI
+color: #FFB85F
+-MEMBER
+size: 39/BOLD
+W: 160
+H: 52
+X: 877.88
+Y: 263.55
+
+- username
+size : 22
+W: 104
+H: 29
+X: 781.33
+Y: 439.36
+
+-Password
+size : 22
+W: 99
+H: 29
+x: 781.33
+Y: 534.24
+
+-LOGIN BOX
+W: 359
+H: 73.43
+X: 781.33
+Y: 648.35
+
+
+-register
+size: 15/BOLD
+W: 65
+H: 20
+x: 924.41
+y: 753.38
+
+
+
+color: white
+
+-LOGIN
+size: 19 /BOLD
+W: 57
+H: 26
+X: 927.92
+Y: 669.73
+
+- OVER ALL BOX
+W: 562.98
+H: 745.68
+X: 678.11
+Y: 166.91
+
+//®–‡ªÈπ Ë«πÀπ÷Ëß¢Õßnavbar or ªÿË¡?
+- logo
+W: 267
+H: 178
+X: 99
+Y: 0
