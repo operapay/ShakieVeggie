@@ -1,111 +1,38 @@
 extends layout1
 
 block content
-.container
-	// Modal allergic
-	#myModal.modal.fade(role='dialog', data-backdrop='static', data-keyboard='false')
-		.modal-dialog
-			// Modal content
-			.modal-content
-				.modal-header
-					h4.modal-title Allergic component
-				form
-					.modal-body
-						.row
-							.col-md-4
-								.form-check
-									h3 Vitamin C
-									input#orange.form-check-input(type='checkbox', value='x')
-									label.form-check-label(for='defaultCheck1')
-										| Orange
-									br
-									input#lime.form-check-input(type='checkbox', value='x')
-									label.form-check-label(for='defaultCheck1')
-										| Lime
-									br
-									input#guava.form-check-input(type='checkbox', value='x')
-									label.form-check-label(for='defaultCheck1')
-										| Guava
-							.col-md-4
-								.form-check
-									h3 Vitamin C
-									input#orange.form-check-input(type='checkbox', value='x')
-									label.form-check-label(for='defaultCheck1')
-										| Orange
-									br
-									input#lime.form-check-input(type='checkbox', value='x')
-									label.form-check-label(for='defaultCheck1')
-										| Lime
-									br
-									input#guava.form-check-input(type='checkbox', value='x')
-									label.form-check-label(for='defaultCheck1')
-										| Guava
-							.col-md-4
-								.form-check
-									h3 Vitamin C
-									input#orange.form-check-input(type='checkbox', value='x')
-									label.form-check-label(for='defaultCheck1')
-										| Orange
-									br
-									input#lime.form-check-input(type='checkbox', value='x')
-									label.form-check-label(for='defaultCheck1')
-										| Lime
-									br
-									input#guava.form-check-input(type='checkbox', value='x')
-									label.form-check-label(for='defaultCheck1')
-										| Guava
-						button#myBtn.btn.btn-info.btn-md(type='button', value='Submit') submit
-	h1.text-center Detox Formula
-	br
-	img.img-responsive.center-block(src='https://www.img.live/images/2018/10/05/bottle.png')
-	br
-	.col-sm-9.col-md-7.col-lg-4.mx-auto
-		.card.card-signin.my-5
-			.card-body
-				h5.card-title.text-center Vit1
-				.form-check
-					input#exampleRadios1.form-check-input(type='radio', name='exampleRadios', value='vit1.1', checked='')
-					label.form-check-label(for='exampleRadios1')
-						| component
-				.form-check
-					input#exampleRadios2.form-check-input(type='radio', name='exampleRadios', value='vit1.2')
-					label.form-check-label(for='exampleRadios2')
-						| component
-				.form-check.disabled
-					input#exampleRadios3.form-check-input(type='radio', name='exampleRadios', value='vit1.3', disabled='')
-					label.form-check-label(for='exampleRadios3')
-						| component
-	.col-sm-9.col-md-7.col-lg-4.mx-auto
-		.card.card-signin.my-5
-			.card-body
-				h5.card-title.text-center Vit2
-				.form-check
-					input#exampleRadios1.form-check-input(type='radio', name='exampleRadios', value='vit2.1', checked='')
-					label.form-check-label(for='exampleRadios1')
-						| component
-				.form-check
-					input#exampleRadios2.form-check-input(type='radio', name='exampleRadios', value='vit2.2')
-					label.form-check-label(for='exampleRadios2')
-						| component
-				.form-check.disabled
-					input#exampleRadios3.form-check-input(type='radio', name='exampleRadios', value='vit2.3', disabled='')
-					label.form-check-label(for='exampleRadios3')
-						| component
-	.col-sm-9.col-md-7.col-lg-4.mx-auto
-		.card.card-signin.my-5
-			.card-body
-				h5.card-title.text-center Vit3
-				.form-check
-					input#exampleRadios1.form-check-input(type='radio', name='exampleRadios', value='vit3.1', checked='')
-					label.form-check-label(for='exampleRadios1')
-						| component
-				.form-check
-					input#exampleRadios2.form-check-input(type='radio', name='exampleRadios', value='vit3.2')
-					label.form-check-label(for='exampleRadios2')
-						| component
-				.form-check.disabled
-					input#exampleRadios3.form-check-input(type='radio', name='exampleRadios', value='vit3.3', disabled='')
-					label.form-check-label(for='exampleRadios3')
-						| component
-	br
-
+    h1.text-center Detox Formula
+    form(method='POST',action='/custom')
+    br
+    img.img-responsive.center-block(src='https://www.img.live/images/2018/10/05/bottle.png')
+    br
+    .col-sm-9.col-md-7.col-lg-4.mx-auto
+        .card.card-signin.my-5
+            .card-body
+                h5.card-title.text-center Vit1
+                .form-check
+                    input#kidney.form-check-input(type='checkbox', value='kidney')
+                    label.form-check-label(for='kidney')
+                        | kidney
+                .form-check
+                    input#liver.form-check-input(type='checkbox', value='liver')
+                    label.form-check-label(for='liver')
+                        | liver
+                .form-check
+                    input#hyper.form-check-input(type='checkbox', value='hypertension')
+                    label.form-check-label(for='hypertension')
+                        | hypertension
+                .form-check
+                    input#diabete.form-check-input(type='checkbox', value='diabetes')
+                    label.form-check-label(for='diabete')
+                        | diabete
+                .form-check
+                    input#pregnant.form-check-input(type='checkbox', value='pregnant')
+                    label.form-check-label(for='pregnant')
+                        | pregnant
+                .form-check
+                    input#surgery.form-check-input(type='checkbox', value='surgery')
+                    label.form-check-label(for='surgery')
+                        | surgery
+    br
+    button.btn.btn-lg.btn-defult.btn-block.text-uppercase(type='submit',value='Submit') Submit				
