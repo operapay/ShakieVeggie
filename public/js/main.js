@@ -6,7 +6,7 @@ $(document).ready(function(){
             type:'DELETE',
             url: '/articles/'+id,
             success: function(response){
-                alert('Deleting Article');
+                alert('Deleting bottle');
                 window.location.href='/';
             },
             error: function(err){
