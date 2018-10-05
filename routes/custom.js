@@ -8,37 +8,24 @@ const db = require('../config/database');
 let Disease = require('../models/disease');
 
 //disease filter process
-router.get('/',function(req,res){
-    res.render('custom');
+router.get('/disease',function(req,res){
+    res.render('testdisease');
 });
 
-router.post('/',function(req,res,done){
-        const kidney = req.body.kidney ? true : false;
-        const liver = req.body.liver ? true : false;
-        const hypertension = req.body.hypertension ? true : false;
-        const diabetes= req.body.diabetes ? true : false;
-        const pregnant = req.body.pregnant ? true : false;
-        const surgery = req.body.surgery ? true : false;
-
-        let disease = new Disease({
-            kidney:kidney,
-            liver:liver,
-            hypertension:hypertension,
-            diabetes:diabetes,
-            pregnant:pregnant,
-            surgery:surgery
-        });
-
-        disease.save(function(err){
-            if(err){
-                console.log(err);
-                return;
-            }
-            else{
-                req.flash('success','disease filter ok');
-                res.redirect('/');
-            }
-        });
+router.post('/disease', function (req, res) {
+    //res.json(req.body);
+    if(req.body.kidney){
+        req.flash('success','you choose kidney');
+        res.redirect('/custom/disease');
+    }
+    if(req.body.liver){
+        req.flash('success','you choose liver');
+        res.redirect('/custom/disease');
+    }
+    if(req.body.hypertension){
+        req.flash('success','you choose hypertension');
+        res.redirect('/custom/disease');
+    }
 });
 
 module.exports = router;

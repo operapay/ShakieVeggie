@@ -1,0 +1,19 @@
+extends layout1
+
+block content
+    h1 disease
+    form(method='POST',action='/custom/disease')
+        .form-check
+            input#kidney.form-check-input(type='checkbox', name='kidney',value='0')
+            label.form-check-label(for='kidney')
+                | kidney
+        .form-check
+            input#liver.form-check-input(type='checkbox', name='liver',value='0')
+            label.form-check-label(for='liver')
+                | liver
+        .form-check
+            input#hyper.form-check-input(type='checkbox', name='hypertension',value='0')
+            label.form-check-label(for='hypertension')
+                | hypertension
+        br
+        input.btn.btn-primary(type='submit',value='Submit')
