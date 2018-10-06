@@ -27,3 +27,34 @@ btn.onclick = function() {
 //        modal.style.display = "none";
 //    }
 //}
+
+//-------------------------------------------------------------modal^^^
+//-------------------------------------------------------------count amount
+
+$("#vote").val('0');
+// Create a click handler for your increment button
+$("#increaseButton").click(function () {
+    var newValue = 1 + parseInt($("#vote").val());
+    $("#vote").val(newValue);
+});
+// .. and your decrement button
+$("#decreaseButton").click(function () {
+    var newValue = parseInt($("#vote").val()) - 1;
+    $("#vote").val(newValue);
+});
+
+
+var counter = 0;
+
+$("#plus").click(function(){
+  counter++;
+  $("#count").text(counter);
+});
+
+$("#minus").click(function(){
+    if(counter>=1){
+        counter--; 
+    }   
+  $("#count").text(counter);
+});
+

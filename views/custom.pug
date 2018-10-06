@@ -37,6 +37,13 @@ block content
     h1.text-center Detox Formula
     br
     img.bottle(src='/img/bottle.png')
+    .row#vote-pos
+        button.btn.btn-default#minus.button -
+        .mr-4.ml-4.mt-3#count 0
+        button.btn.btn-default#plus.button +
+        script(src='//code.jquery.com/jquery-1.11.0.min.js')
+
+
     br
     .row
         .col-sm-9.col-md-7.col-lg-4.mx-auto
@@ -78,6 +85,5 @@ block content
                     .form-check.disabled
                         input#exampleRadios3.form-check-input(type='radio', name='exampleRadios3', value='vit3.3', disabled='')
                         label.form-check-label(for='exampleRadios3') component
-        br
     br
     button.btn.btn-lg.btn-defult.btn-block.text-uppercase(type='submit',value='Submit') Submit				

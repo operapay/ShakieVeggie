@@ -1,0 +1,123 @@
+doctype html
+html(lang='en', dir='ltr')
+  head
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css', integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO', crossorigin='anonymous')
+    link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', rel='stylesheet')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='vendor/bootstrap/css/bootstrap.min.css')
+    script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q', crossorigin='anonymous')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl', crossorigin='anonymous')
+    script(src='https://code.jquery.com/jquery-2.1.3.min.js')
+    // SweetAlert
+    script(src='bower_components/sweetalert/lib/sweet-alert.min.js')
+    link(rel='stylesheet', href='bower_components/sweetalert/lib/sweet-alert.css')
+    title Cart
+  body
+    .row.pt-5.text-center
+      .col
+        h1.text-info Shopping cart
+        p.text-muted You currently have 4 item(s) in your cart.
+    .container
+      .row
+        #basket.col-lg-9
+          hr
+          .box
+            form(method='post', action='#')
+              .table-responsive
+                #myModal.modal.fade(role='dialog')
+                  .modal-dialog
+                    // Modal content
+                    .modal-content
+                      .modal-header
+                        h4.modal-title Are you sure?
+                        button.close(type='button', data-dismiss='modal') ×
+                      .modal-body
+                        p Are you sure that you want to delete this product?
+                      .modal-footer
+                        button.btn.btn-default(type='button', data-dismiss='modal') Sure
+                #myModal.modal.fade(role='dialog')
+                  .modal-dialog
+                    // Modal content
+                    .modal-content
+                      .modal-header
+                        h4.modal-title Are you sure?
+                        button.close(type='button', data-dismiss='modal') ×
+                      .modal-body
+                        p Are you sure that you want to delete this product?
+                      .modal-footer
+                        button.btn.btn-default(type='button', data-dismiss='modal') Sure
+                #myModal.modal.fade(role='dialog')
+                  .modal-dialog
+                    // Modal content
+                    .modal-content
+                      .modal-header
+                        h4.modal-title Are you sure?
+                        button.close(type='button', data-dismiss='modal') ×
+                      .modal-body
+                        p Are you sure that you want to delete this product?
+                      .modal-footer
+                        button.btn.btn-default(type='button', data-dismiss='modal') Sure
+                table.table
+                  thead
+                    tr
+                      th Formula
+                      th(colspan='2') Component
+                      th Quantity
+                      th Unit price
+                      th(colspan='2') Total
+                  tbody
+                    tr
+                      td Fat Burn
+                      td(colspan='2') Apple,Banana,Orage
+                      td 2
+                      td ฿75.00
+                      td ฿150.00
+                      td
+                        button.fa.fa-trash-o(type='button', data-toggle='modal', data-target='#myModal')
+                    tr
+                      td Eye sight
+                      td(colspan='2') Carrot,Beetroot,Grape
+                      td 1
+                      td ฿75.00
+                      td ฿75.00
+                      td
+                        button.fa.fa-trash-o(type='button', data-toggle='modal', data-target='#myModal')
+                    tr
+                      td Detox
+                      td(colspan='2') Banana,Carrot,Brocoli
+                      td 1
+                      td ฿75.00
+                      td ฿75.00
+                      td
+                        button.fa.fa-trash-o(type='button', data-toggle='modal', data-target='#myModal')
+              .py-3.px-3.box-footer.d-flex.justify-content-between.flex-column.flex-lg-row.bg-light.border-bottom.border-top
+                .left
+                  a.btn.btn-outline-secondary(href='#')
+                    i.fa.fa-chevron-left
+                    strong Continue shopping
+                .right
+                  button.btn.btn-outline-primary(type='submit')
+                    strong Checkout 
+                    i.fa.fa-chevron-right
+        .col-lg-3
+          hr
+          #order-summary.box.border-top.border-bottom
+            .py-4.pb-2.text-center.box-header.bg-light
+              h3 Order summary
+            .px-3.table-responsive
+              table.table
+                tbody
+                  tr
+                    td.text-muted Order subtotal
+                    th ฿300.00
+                  tr
+                    td.text-muted Shipping and handling
+                    th ฿30.00
+                  tr
+                    td.text-muted Tax
+                    th ฿0.00
+                  tr.total
+                    td
+                      strong  Total
+                    th ฿330.00
