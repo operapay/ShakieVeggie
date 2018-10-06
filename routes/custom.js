@@ -38,9 +38,12 @@ router.get('/cart',function(req,res){
     res.render('cart');
 });
 
+router.get('/component',function(req,res){
+    res.render('testdisease');
+});
+
 router.post('/component',function(req,res){
-    req.flash('add to cart');
-    res.redirect('/');
+    console.log('submit');
 });
 
 
