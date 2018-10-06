@@ -38,4 +38,10 @@ router.get('/cart',function(req,res){
     res.render('cart');
 });
 
+router.post('/component',function(req,res){
+    req.flash('add to cart');
+    res.redirect('/');
+});
+
+
 module.exports = router;
