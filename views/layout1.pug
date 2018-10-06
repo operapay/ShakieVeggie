@@ -2,15 +2,24 @@ doctype html
 html
     head
         title ShakieVeggie
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css')
+        link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', rel='stylesheet')
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+        link(rel='stylesheet', href='/vendor/bootstrap/css/bootstrap.min.css')
         link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/bower_components/sweetalert/lib/sweet-alert.css')
         link(rel='stylesheet', type='text/css', href='/css/style.css')
-    body
+    body(onload="load()")
         // ----------------Navbar-------------------
         nav#myTopnav.topnav
             div
                 button.btn
                     a(href='/')
                         img(src='/img/home.png') 
+            div
+                button.btn
+                    if user
+                        a(href='/custom/tracking') tracking
             div
                 button.login
                     if user
@@ -20,7 +29,7 @@ html
                     else
                         a(href='/users/login') login
                 button.login
-                    a(href='/cart')
+                    a(href='/custom/cart')
                         img(src='/img/cart.png')
             a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
         // ------------------------------------------
@@ -37,6 +46,10 @@ html
             footer
                 p Copyright © 2018  
 
-        script(src='./.js')
+        script(src='/js/main.js')
         script(src='https://code.jquery.com/jquery-3.3.1.min.js')
         script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
+        script(src='/bower_components/sweetalert/lib/sweet-alert.min.js')
+        script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js')

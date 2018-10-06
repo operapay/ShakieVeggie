@@ -9,48 +9,23 @@ block content
                     form(method='POST',action='/users/register').form-signin
                         .form-label-group
                             input#inputFirstName.form-control(name='firstname',type='text', placeholder='Firstname', required='', autofocus='')
-                            label(for='inputFirstName') 
+                            label(for='inputFirstName') Firstname 
                         .form-label-group
                             input#inputLastName.form-control(name='lastname',type='text', placeholder='Lastname', required='')
-                            label(for='inputLastName') 
+                            label(for='inputLastName') Lastname
                         .form-label-group
                             input#inputEmail.form-control(name='email',type='text', placeholder='Email', required='')
-                            label(for='inputEmail') 
+                            label(for='inputEmail') Email
                         .form-label-group
                             input#inputPhone.form-control(name='phone',type='text', placeholder='Phone', required='')
-                            label(for='inputPhone') 
+                            label(for='inputPhone') Phone
                         .form-label-group
                             input#inputUsername.form-control(name='username',type='text', placeholder='Username', required='', autofocus='')
-                            label(for='inputUsername') 
+                            label(for='inputUsername') Username
                         .form-label-group
                             input#inputPassword.form-control(name='password',type='password', placeholder='Password', required='')
-                            label(for='inputPassword') 
+                            label(for='inputPassword') Password
                         .form-label-group
                             input#inputPassword2.form-control(name='password2',type='password', placeholder='Confirm Password', required='')
-                            label(for='inputPassword2') 
+                            label(for='inputPassword2') Confirm Password
                         button.btn.btn-lg.btn-defult.btn-block.text-uppercase(type='submit',value='Submit') Register
-    //h1 Register
-    //form(method='POST',action='/users/register')
-        #form-group
-            label Firstname:
-            input.form-control(name='firstname',type='text')
-        #form-group
-            label Lastname:
-            input.form-control(name='lastname',type='text')
-        #form-group
-            label Email:
-            input.form-control(name='email',type='text')
-        #form-group
-            label Phone:
-            input.form-control(name='phone',type='text')
-        #form-group
-            label Username:
-            input.form-control(name='username',type='text')
-        #form-group
-            label Password:
-            input.form-control(name='password',type='password')
-        #form-group
-            label Confirm Password:
-            input.form-control(name='password2',type='password')
-        br
-        input.btn.btn-primary(type='submit',value='Register')
