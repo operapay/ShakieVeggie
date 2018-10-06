@@ -7,24 +7,23 @@ const db = require('../config/database');
 //Bring in disease model
 let Disease = require('../models/disease');
 
-//disease filter process
+//disease filter form
 router.get('/disease',function(req,res){
     res.render('testdisease');
 });
 
 router.post('/disease', function (req, res) {
-    //res.json(req.body);
     if(req.body.kidney){
-        req.flash('success','you choose kidney');
-        res.redirect('/custom/disease');
+        console.log('kidney');
     }
     if(req.body.liver){
-        req.flash('success','you choose liver');
-        res.redirect('/custom/disease');
+        console.log('liver');
     }
     if(req.body.hypertension){
-        req.flash('success','you choose hypertension');
-        res.redirect('/custom/disease');
+        console.log('hypertension');
+    }
+    else{
+        console.log('healthy');
     }
 });
 
