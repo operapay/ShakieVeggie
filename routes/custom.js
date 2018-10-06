@@ -9,10 +9,11 @@ let Disease = require('../models/disease');
 
 //disease filter form
 router.get('/disease',function(req,res){
-    res.render('testdisease');
+    res.render('custom');
 });
 
 router.post('/disease', function (req, res) {
+    //res.json(req.body);
     if(req.body.kidney){
         console.log('kidney');
     }
@@ -22,8 +23,14 @@ router.post('/disease', function (req, res) {
     if(req.body.hypertension){
         console.log('hypertension');
     }
-    else{
-        console.log('healthy');
+    if(req.body.diabetes){
+        console.log('diabetes');
+    }
+    if(req.body.pregnant){
+        console.log('liver');
+    }
+    if(req.body.surgery){
+        console.log('surgery');
     }
 });
 
