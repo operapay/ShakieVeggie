@@ -8,11 +8,11 @@ const db = require('../config/database');
 let Disease = require('../models/disease');
 
 //disease filter form
-router.get('/disease',function(req,res){
+router.get('/',function(req,res){
     res.render('custom');
 });
 
-router.post('/disease', function (req, res) {
+router.post('/', function (req, res) {
     //res.json(req.body);
     if(req.body.kidney){
         console.log('kidney');
@@ -27,7 +27,7 @@ router.post('/disease', function (req, res) {
         console.log('diabetes');
     }
     if(req.body.pregnant){
-        console.log('liver');
+        console.log('pregnant');
     }
     if(req.body.surgery){
         console.log('surgery');
