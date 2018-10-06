@@ -9,10 +9,10 @@ block content
                     form(method='POST',action='/users/login').form-signin
                         .form-label-group
                             input#inputUsername.form-control(name='username',type='text', placeholder='Username', required='', autofocus='')
-                            label(for='inputUsername') 
+                            label(for='inputUsername') Username
                         .form-label-group
                             input#inputPassword.form-control(name='password',type='password', placeholder='Password', required='')
-                            label(for='inputPassword') 
+                            label(for='inputPassword') Password
                         button.btn.btn-lg.btn-defult.btn-block.text-uppercase(type='submit',value='Submit') Login
                         button.btn.btn-lg.btn-defult.btn-block.text-uppercase(type='button')
                             a(href='/users/register') Register
