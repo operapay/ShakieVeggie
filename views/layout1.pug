@@ -4,7 +4,7 @@ html
         title ShakieVeggie
         link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
         link(rel='stylesheet', type='text/css', href='/css/style.css')
-    body
+    body(onload="load()")
         // ----------------Navbar-------------------
         nav#myTopnav.topnav
             div
@@ -37,7 +37,7 @@ html
             footer
                 p Copyright © 2018  
 
-        script(src='./.js')
+        script(src='/js/main.js')
         script(src='https://code.jquery.com/jquery-3.3.1.min.js')
         script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
         script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')
