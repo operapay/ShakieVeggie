@@ -5,12 +5,12 @@ block content
       h2.payment-title PAYMENT
     .container
       .row
+      form(method='post', action='/payment/tracking')
         .col-sm-9.col-md-7.col-lg-5.mx-auto
           h4.mb-3 Billing address
-          form
-            .mb-3
+            h6.mb-3
               label(for='address') Address
-              input#address.form-control(type='text', placeholder='Address1', name='address')
+              input#address.form-control(type='text', placeholder='Address1', name='address', required='')
               .invalid-feedback
                 | Please enter your shipping address.
             .mb-3
@@ -21,7 +21,7 @@ block content
             .row
               .col.mb-3
                 label(for='country') Country
-                select#country.custom-select.d-block.w-100(name='country')
+                select#country.custom-select.d-block.w-100(name='country', required='')
                   option(value='') Choose...
                   option Thailand
                 .invalid-feedback
@@ -29,12 +29,12 @@ block content
             .row
               .col.mb-3
                 label(for='state') State/Province
-                input#address.form-control(type='text', placeholder='State/Province', name='state')
+                input#address.form-control(type='text', placeholder='State/Province', name='state', required='')
                 .invalid-feedback
                   | Please provide a valid state.
               .col.mb-3
                 label(for='zip') Zip
-                input#zip.form-control(type='text', placeholder='zip code', name='zip')
+                input#zip.form-control(type='text', placeholder='zip code', name='zip', required='')
                 .invalid-feedback
                   | Zip code required.
         .col-sm-9.col-md-7.col-lg-5.mx-auto
@@ -54,7 +54,6 @@ block content
                         |  ATM
                   .tab-content
                     #nav-tab-card.tab-pane.fade.show.active
-                      form(role='form')
                         .form-group
                           label(for='cardname') Card Name
                           input.form-control(type='text', name='cardname', placeholder='', required='')
