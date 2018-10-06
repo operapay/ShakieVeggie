@@ -10,18 +10,18 @@ block content
           form
             .mb-3
               label(for='address') Address
-              input#address.form-control(type='text', placeholder='Address1', required='')
+              input#address.form-control(type='text', placeholder='Address1', name='address')
               .invalid-feedback
                 | Please enter your shipping address.
             .mb-3
               label(for='address2')
                 | Address 2 
                 span.text-muted (Optional)
-              input#address2.form-control(type='text', placeholder='Apartment or suite')
+              input#address2.form-control(type='text', placeholder='Apartment or suite', name='address2')
             .row
               .col.mb-3
                 label(for='country') Country
-                select#country.custom-select.d-block.w-100(required='')
+                select#country.custom-select.d-block.w-100(name='country')
                   option(value='') Choose...
                   option Thailand
                 .invalid-feedback
@@ -29,14 +29,12 @@ block content
             .row
               .col.mb-3
                 label(for='state') State/Province
-                select#state.custom-select.d-block.w-100(required='')
-                  option(value='') Choose...
-                  option Rayong
+                input#address.form-control(type='text', placeholder='State/Province', name='state')
                 .invalid-feedback
                   | Please provide a valid state.
               .col.mb-3
                 label(for='zip') Zip
-                input#zip.form-control(type='text', placeholder='', required='')
+                input#zip.form-control(type='text', placeholder='zip code', name='zip')
                 .invalid-feedback
                   | Zip code required.
         .col-sm-9.col-md-7.col-lg-5.mx-auto
@@ -58,14 +56,14 @@ block content
                     #nav-tab-card.tab-pane.fade.show.active
                       form(role='form')
                         .form-group
-                          label(for='username') Card Name
-                          input.form-control(type='text', name='username', placeholder='', required='')
+                          label(for='cardname') Card Name
+                          input.form-control(type='text', name='cardname', placeholder='', required='')
                           .invalid-feedback
                             | Please enter your card name.
                         .form-group
                           label(for='cardNumber') Card Number
                           .input-group
-                            input.form-control(type='text', name='cardNumber', placeholder='', required='')
+                            input.form-control(type='text', name='cardnumber', placeholder='', required='')
                             .invalid-feedback
                               | Please enter your card number.
                             .input-group-append
@@ -79,16 +77,16 @@ block content
                               label
                                 span.hidden-xs Expiration
                               .input-group
-                                input.form-control(type='number', placeholder='MM', name='', required='')
-                                input.form-control(type='number', placeholder='YY', name='', required='')
+                                input.form-control(type='number', placeholder='MM', name='mm', required='')
+                                input.form-control(type='number', placeholder='YY', name='yy', required='')
                                 .invalid-feedback
                                   | Please enter your card expiration.
                           .col-sm-4
                             .form-group
                               label(data-toggle='tooltip', title='', data-original-title='3 digits code on back side of the card')
-                                | CVV 
+                                | CCV 
                                 i.fa.fa-question-circle
-                              input.form-control(type='number', required='')
+                              input.form-control(type='number',name='ccv')
                               .invalid-feedback
                                 | Please enter your card CCV.
                     #nav-tab-bank.tab-pane.fade
