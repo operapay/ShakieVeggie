@@ -11,9 +11,11 @@
 }
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /*background: #041603;*/
-    
+    background-image: url("../public/img/mango_bg.png");
+    background-size: 100%;
 }
+
+
 a:link{
     text-decoration:none;
     color: #213037;
@@ -253,7 +255,14 @@ a:visited{
   .bottle:hover {
     transform: scale(1.1);
   }
+#vote-pos{
+    margin-top: 20px;
+    margin-left: 45%;
+}
+.vote{
+    border-radius: 0.5em;
 
+}
 
   :root {
     --input-padding-x: 1.5rem;
@@ -264,6 +273,7 @@ a:visited{
     border: 0;
     border-radius: 1rem;
     box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+    background-color: white;
   }
   
   .card-signin .card-title {
@@ -295,6 +305,9 @@ a:visited{
   }
   
   .form-label-group input {
+    
+    /*border-bottom: 5px;
+    border-bottom-color: #000;*/
     border-radius: 2rem;
   }
   
@@ -348,6 +361,7 @@ a:visited{
     padding-bottom: calc(var(--input-padding-y) / 3);
     font-size: 12px;
     color: #777;
+    
   }
   
   .btn-google {
@@ -358,4 +372,14 @@ a:visited{
   .btn-facebook {
     color: white;
     background-color: #3b5998;
+  }
+
+  body {
+    background: #9CECFB;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-image: url("mango_bg.png");
   }
