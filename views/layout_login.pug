@@ -1,0 +1,31 @@
+doctype html
+html
+    head
+        title ShakieVeggie
+        link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+        link(rel='stylesheet', type='text/css', href='/css/style_login.css')
+    body()
+        // ----------------Navbar-------------------
+        nav#myTopnav.topnav
+            div
+                button.btn
+                    a(href='/')
+                        img(src='/img/home.png') 
+            
+        // ------------------------------------------
+
+        .container
+            != messages('message',locals)
+            if errors
+                each error, i in errors
+                    div(class="alert alert-danger") #{error.msg}
+            block content
+            br
+            br
+            hr
+            footer
+                p Copyright © 2018  
+
+        script(src='/js/main.js')
+        script(src='https://code.jquery.com/jquery-3.3.1.min.js')
+        script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
