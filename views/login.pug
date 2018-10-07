@@ -1,19 +1,18 @@
 extends layout_login
 
 block content
-    .bg
-        .row
-            .mx-auto
-                .card.card-signin
-                    .card-body
-                        h5.card-title.text-center#member MEMBER
-                        form(method='POST',action='/users/login').form-signin
-                            .form-label-group#username
-                                input#inputUsername.form-control(name='username',type='text', placeholder='Username', required='', autofocus='')
-                                label(for='inputUsername') Username
-                            .form-label-group
-                                input#inputPassword.form-control(name='password',type='password', placeholder='Password', required='')
-                                label(for='inputPassword') Password
-                            button.btn.btn-lg.btn-defult.btn-block.text-uppercase#login(type='submit',value='Submit') Login
-                            button.btn.btn-lg.btn-defult.btn-block.text-uppercase(type='button')
-                                a(href='/users/register') Register
+    .row 
+        .mx-auto
+            .card.card-signin
+                .card-body
+                    h5.card-title.text-center#member MEMBER
+                    form(method='POST',action='/users/login').form-signin
+                        .form-label-group#username
+                            input#inputUsername.form-control(name='username',type='text', placeholder='Username', required='', autofocus='')
+                            label(for='inputUsername') Username
+                        .form-label-group
+                            input#inputPassword.form-control(name='password',type='password', placeholder='Password', required='')
+                            label(for='inputPassword') Password
+                        button.btn.btn-lg.btn-defult.btn-block.text-uppercase#login(type='submit',value='Submit') Login
+                        button.btn.btn-lg.btn-defult.btn-block.text-uppercase(type='button')
+                            a(href='/users/register') Register

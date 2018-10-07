@@ -13,13 +13,9 @@ html
         // ----------------Navbar-------------------
         nav#myTopnav.topnav
             div
-                button.btn
-                    a(href='/')
-                        img(src='/img/home.png') 
-            div
                 button.login
                     a(href='/custom/cart')
-                        img(src='/img/cart.png')
+                        img.cart_pos(src='/img/cart.png')
                 button.login
                     if user
                         a(href='/users/logout') Logout
@@ -31,6 +27,9 @@ html
                     if user
                         a(href='/custom/tracking') tracking
             a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
+        
+        a(href='/')
+            img.logo-pos(src='/img/logo_circle.png') 
         // ------------------------------------------
 
         .container
@@ -38,12 +37,9 @@ html
             if errors
                 each error, i in errors
                     div(class="alert alert-danger") #{error.msg}
-            block content                        
-            br
-            br
-            hr
+            block content
             footer
-                p Copyright © 2018  
+                p(style="color:white")  Copyright © 2018  
 
         script(src='/js/main.js')
         script(src='https://code.jquery.com/jquery-3.3.1.min.js')

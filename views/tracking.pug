@@ -1,11 +1,19 @@
-extends layout_login
+extends layout1
 
 block content
     form(method = 'POST' action="/payment/tracking")
-    #tracking.card.card-signin
-        .card-body
-            h4#card-tracking-title.text-center Tracking
-            form.form-tracking
-                .form-trackstate
-                    img#img-pos(src="/img/order.png", alt="")
-                    .text-uppercase approve order
+        #tracking.card.card-signin
+            .card-body
+                h4#card-tracking-title.text-center Tracking
+                form.form-tracking
+                    .row
+                        .col-4
+                            img#img-pos(src="/img/order.png", alt="")
+                        .col-8
+                            br
+                            .text-uppercase order in system
+                    .row
+                        img#dash-pos(src="/img/dash-gray.png", alt="")
+                        
+                        
+                    
