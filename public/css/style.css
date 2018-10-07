@@ -1,6 +1,10 @@
 @font-face {
-    font-family: YuGothB,YuGothL,YuGothM,YuGothR,LemonismDEMO;
-    src: url(font/);
+    font-family: YGTH;
+    src: url(/font/YuGothM.ttc);
+}
+@font-face {
+    font-family: Lemonism;
+    src: url(/font/LemonismDEMO.otf);
 }
 
 .alert-error{
