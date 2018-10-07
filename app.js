@@ -103,6 +103,6 @@ let formula = require('./routes/formula');
 app.use('/formula', formula);
 
 // Start Server
-app.listen(3010, function(){
+app.listen(3000, function(){
     console.log('Server started on port 3000...');
 });
