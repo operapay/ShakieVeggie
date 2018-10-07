@@ -15,7 +15,7 @@ router.post('/',function(req,res){
 
 //tracking form
 router.get('/tracking',function(req,res){
-    res.render('testdisease');
+    res.render('tracking');
 });
 
 router.post('/tracking',function(req,res){
