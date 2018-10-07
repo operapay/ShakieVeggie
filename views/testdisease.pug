@@ -1,51 +1,102 @@
 extends layout1
 
 block content
-  .row.pt-5.text-center
-    .col
-      h1.text-info Shopping cart
-      p.text-muted You currently have 3 item(s) in your cart.
-  .container
+    .py-5.text-center
+      h2.payment-title PAYMENT
+    .container
       .row
-        #basket.col-lg-9
-          hr
-          .box
-            form(method='post', action='#')
-              .table-responsive
-                #myModal.modal.fade(role='dialog')
-                  .modal-dialog
-                    // Modal content
-                    .modal-content
-                      .modal-header
-                        h4.modal-title Are you sure?
-                        button.close(type='button', data-dismiss='modal') ×
-                      .modal-body
-                        p Are you sure that you want to delete this product?
-                      .modal-footer
-                        button.btn.btn-default(type='button', data-dismiss='modal') Sure
-                table.table
-                  thead
-                    tr
-                      th Type
-                      th(colspan='2') Formula
-                      th Quantity
-                      th Unit price
-                      th(colspan='2') Total
-                  tbody
-                    tr
-                      td Vitamin A
-                      td(colspan='2') apple,banana
-                      td 2
-                      td $123.00
-                      td $246.00
-                      td
-                        button.fa.fa-trash-o(type='button', data-toggle='modal', data-target='#myModal')
-              .py-3.px-3.box-footer.d-flex.justify-content-between.flex-column.flex-lg-row.bg-light.border-bottom.border-top
-                .left
-                  a.btn.btn-outline-secondary(href='#')
-                    i.fa.fa-chevron-left
-                    strong Continue shopping
-                .right
-                  button.btn.btn-outline-primary(type='submit')
-                    strong Checkout 
-                    i.fa.fa-chevron-right
+      form(method='post', action='/payment/checkout')
+        .col-sm-9.col-md-7.col-lg-5.mx-auto
+          h4.mb-3 Billing address
+            h6.mb-3
+              label(for='address') Address
+              input#address.form-control(type='text', placeholder='Address1', name='address', required='')
+              .invalid-feedback
+                | Please enter your shipping address.
+            .mb-3
+              label(for='address2')
+                | Address 2 
+                span.text-muted (Optional)
+              input#address2.form-control(type='text', placeholder='Apartment or suite', name='address2')
+            .row
+              .col.mb-3
+                label(for='country') Country
+                select#country.custom-select.d-block.w-100(name='country', required='')
+                  option(value='') Choose...
+                  option Thailand
+                .invalid-feedback
+                  | Please select a valid country.
+            .row
+              .col.mb-3
+                label(for='state') State/Province
+                input#address.form-control(type='text', placeholder='State/Province', name='state', required='')
+                .invalid-feedback
+                  | Please provide a valid state.
+              .col.mb-3
+                label(for='zip') Zip
+                input#zip.form-control(type='text', placeholder='zip code', name='zip', required='')
+                .invalid-feedback
+                  | Zip code required.
+        .col-sm-9.col-md-7.col-lg-5.mx-auto
+          h4.mb-3 Payment method
+          .row
+            .col
+              article.card
+                .card-body.p-5
+                  ul.nav.bg-light.nav-pills.rounded.nav-fill.mb-3(role='tablist')
+                    li.nav-item
+                      a.nav-link.active(data-toggle='pill', href='#nav-tab-card')
+                        i.fa.fa-credit-card
+                        |  Credit Card
+                    li.nav-item
+                      a.nav-link(data-toggle='pill', href='#nav-tab-bank')
+                        i.fa.fa-university
+                        |  ATM
+                  .tab-content
+                    #nav-tab-card.tab-pane.fade.show.active
+                        .form-group
+                          label(for='cardname') Card Name
+                          input.form-control(type='text', name='cardname', placeholder='', required='')
+                          .invalid-feedback
+                            | Please enter your card name.
+                        .form-group
+                          label(for='cardNumber') Card Number
+                          .input-group
+                            input.form-control(type='text', name='cardnumber', placeholder='', required='')
+                            .invalid-feedback
+                              | Please enter your card number.
+                            .input-group-append
+                              span.input-group-text.text-muted
+                                i.fab.fa-cc-visa
+                                i.fab.fa-cc-amex
+                                i.fab.fa-cc-mastercard
+                        .row
+                          .col-sm-8
+                            .form-group
+                              label
+                                span.hidden-xs Expiration
+                              .input-group
+                                input.form-control(type='number', placeholder='MM', name='mm', required='')
+                                input.form-control(type='number', placeholder='YY', name='yy', required='')
+                                .invalid-feedback
+                                  | Please enter your card expiration.
+                          .col-sm-4
+                            .form-group
+                              label(data-toggle='tooltip', title='', data-original-title='3 digits code on back side of the card')
+                                | CCV 
+                                i.fa.fa-question-circle
+                              input.form-control(type='number',name='ccv')
+                              .invalid-feedback
+                                | Please enter your card CCV.
+                    #nav-tab-bank.tab-pane.fade
+                      dl.param
+                        dt Bank: 
+                        dd  THE WORLD BANK
+                      dl.param
+                        dt Accaunt Number: 
+                        dd  12345678912345
+                      dl.param
+                        dt ATM Payment Code: 
+                        dd  12345678912345
+        hr
+        button.btn.btn-primary.btn-lg.btn-block(type='submit') Continue to checkout

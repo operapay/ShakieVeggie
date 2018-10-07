@@ -39,7 +39,8 @@ router.get('/cart',function(req,res){
 });
 
 router.post('/component',function(req,res){
-    req.flash('add to cart');
+    req.flash('success','Added order to cart');
+    //redirect to formular
     res.redirect('/');
 });
 

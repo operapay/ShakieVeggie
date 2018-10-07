@@ -17,10 +17,9 @@ html
                     a(href='/')
                         img(src='/img/home.png') 
             div
-                button.btn
-                    if user
-                        a(href='/custom/tracking') tracking
-            div
+                button.login
+                    a(href='/custom/cart')
+                        img(src='/img/cart.png')
                 button.login
                     if user
                         a(href='/users/logout') Logout
@@ -29,8 +28,8 @@ html
                     else
                         a(href='/users/login') login
                 button.login
-                    a(href='/custom/cart')
-                        img(src='/img/cart.png')
+                    if user
+                        a(href='/custom/tracking') tracking
             a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
         // ------------------------------------------
 

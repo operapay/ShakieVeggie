@@ -5,12 +5,12 @@ block content
       h2.payment-title PAYMENT
     .container
       .row
+      form(method='post', action='/payment/checkout')
         .col-sm-9.col-md-7.col-lg-5.mx-auto
           h4.mb-3 Billing address
-          form
-            .mb-3
+            h6.mb-3
               label(for='address') Address
-              input#address.form-control(type='text', placeholder='Address1', name='address')
+              input#address.form-control(type='text', placeholder='Address1', name='address', required='')
               .invalid-feedback
                 | Please enter your shipping address.
             .mb-3
@@ -21,7 +21,7 @@ block content
             .row
               .col.mb-3
                 label(for='country') Country
-                select#country.custom-select.d-block.w-100(name='country')
+                select#country.custom-select.d-block.w-100(name='country', required='')
                   option(value='') Choose...
                   option Thailand
                 .invalid-feedback
@@ -29,12 +29,12 @@ block content
             .row
               .col.mb-3
                 label(for='state') State/Province
-                input#address.form-control(type='text', placeholder='State/Province', name='state')
+                input#address.form-control(type='text', placeholder='State/Province', name='state', required='')
                 .invalid-feedback
                   | Please provide a valid state.
               .col.mb-3
                 label(for='zip') Zip
-                input#zip.form-control(type='text', placeholder='zip code', name='zip')
+                input#zip.form-control(type='text', placeholder='zip code', name='zip', required='')
                 .invalid-feedback
                   | Zip code required.
         .col-sm-9.col-md-7.col-lg-5.mx-auto
@@ -54,16 +54,15 @@ block content
                         |  ATM
                   .tab-content
                     #nav-tab-card.tab-pane.fade.show.active
-                      form(role='form')
                         .form-group
                           label(for='cardname') Card Name
-                          input.form-control(type='text', name='cardname', placeholder='', required='')
+                          input.form-control(type='text', name='cardname', placeholder='')
                           .invalid-feedback
                             | Please enter your card name.
                         .form-group
                           label(for='cardNumber') Card Number
                           .input-group
-                            input.form-control(type='text', name='cardnumber', placeholder='', required='')
+                            input.form-control(type='text', name='cardnumber', placeholder='')
                             .invalid-feedback
                               | Please enter your card number.
                             .input-group-append
@@ -72,13 +71,13 @@ block content
                                 i.fab.fa-cc-amex
                                 i.fab.fa-cc-mastercard
                         .row
-                          .col-sm-8
+                          .col-sm-6
                             .form-group
                               label
                                 span.hidden-xs Expiration
                               .input-group
-                                input.form-control(type='number', placeholder='MM', name='mm', required='')
-                                input.form-control(type='number', placeholder='YY', name='yy', required='')
+                                input.form-control(type='number', placeholder='MM', name='mm')
+                                input.form-control(type='number', placeholder='YY', name='yy')
                                 .invalid-feedback
                                   | Please enter your card expiration.
                           .col-sm-4
