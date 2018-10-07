@@ -5,7 +5,7 @@ block content
       h2.payment-title PAYMENT
     .container
       .row
-      form(method='post', action='/payment/tracking')
+      form(method='post', action='/payment/checkout')
         .col-sm-9.col-md-7.col-lg-5.mx-auto
           h4.mb-3 Billing address
             h6.mb-3
@@ -56,13 +56,13 @@ block content
                     #nav-tab-card.tab-pane.fade.show.active
                         .form-group
                           label(for='cardname') Card Name
-                          input.form-control(type='text', name='cardname', placeholder='', required='')
+                          input.form-control(type='text', name='cardname', placeholder='')
                           .invalid-feedback
                             | Please enter your card name.
                         .form-group
                           label(for='cardNumber') Card Number
                           .input-group
-                            input.form-control(type='text', name='cardnumber', placeholder='', required='')
+                            input.form-control(type='text', name='cardnumber', placeholder='')
                             .invalid-feedback
                               | Please enter your card number.
                             .input-group-append
@@ -71,13 +71,13 @@ block content
                                 i.fab.fa-cc-amex
                                 i.fab.fa-cc-mastercard
                         .row
-                          .col-sm-8
+                          .col-sm-6
                             .form-group
                               label
                                 span.hidden-xs Expiration
                               .input-group
-                                input.form-control(type='number', placeholder='MM', name='mm', required='')
-                                input.form-control(type='number', placeholder='YY', name='yy', required='')
+                                input.form-control(type='number', placeholder='MM', name='mm')
+                                input.form-control(type='number', placeholder='YY', name='yy')
                                 .invalid-feedback
                                   | Please enter your card expiration.
                           .col-sm-4
