@@ -15,13 +15,13 @@ router.post('/intro',function(req,res){
     return;
 });
 
-// Get
-router.get('/cart/:id', function(req,res){
-    Recommend.findById(req.params.id, function(err,recommend){
-        res.render('cart', {
-            // article:article
-        });
-    });
-});
+// // Get
+// router.get('/cart/:id', function(req,res){
+//     Recommend.findById(req.params.id, function(err,recommend){
+//         res.render('cart', {
+//             // article:article
+//         });
+//     });
+// });
 
 module.exports = router;
