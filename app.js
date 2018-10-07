@@ -99,6 +99,9 @@ app.use('/custom', custom);
 let payment = require('./routes/payment');
 app.use('/payment', payment);
 
+let formula = require('./routes/formula');
+app.use('/formula', formula);
+
 // Start Server
 app.listen(3000, function(){
     console.log('Server started on port 3000...');
