@@ -10,13 +10,15 @@
     border-color: #d6e9c6;
 }
 body{
-    width: 100%;
+    
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-image: url("mango_bg.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    width: 100%;
 }
+
 
 
 a:link{
@@ -39,8 +41,7 @@ a:visited{
     transition: transform .2s; /* Animation */
 }
 
-#login {
-    
+#login { 
     background: #FFB85F;
     color: white;
 }
@@ -72,7 +73,6 @@ a:visited{
   
   .card-signin {
     width: 350px;
-    margin-top:30%;
     border: 0;
     border-radius: 1rem;
     box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
@@ -207,6 +207,19 @@ a:visited{
   margin-left:13%;
 }
 
-.form-trackstate{
-  text-align: 
+#dash-pos{
+  margin-top:5%;
+  margin-left:13%;
+}
+
+.logo-pos{
+  margin-left:50px;
+  margin-top: 5px;
+  width:128px;
+  height: 128px;
+}
+.cart_pos{
+  width:22px;
+  height: 22px;
+  margin-bottom:5%;
 }
