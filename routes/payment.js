@@ -9,6 +9,10 @@ router.get('/',function(req,res){
     res.render('payment');
 });
 
+router.post('/',function(req,res){
+    res.redirect('/payment');    
+});
+
 router.post('/checkout',function(req,res){
     req.flash('success','order in system');
     res.redirect('/payment/tracking');    
