@@ -1,8 +1,30 @@
 html
   head
     title Home
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.css')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css', integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO', crossorigin='anonymous')
+    title index
     link(rel='stylesheet', type='text/css', href='/css/index_style.css')
   body
+    .contrainer
+      nav#myTopnav.topnav
+        div
+          button.login
+              a(href='/custom/cart')
+                  img.cart_pos(src='/img/cart.png')
+          button.login
+              if user
+                  a(href='/users/logout') Logout
+                  button.login
+                      h9 #{user.username}
+              else
+                  a(href='/users/login') login
+          button.login
+              if user
+                  a(href='/payment/tracking') tracking
+        a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
+      a(href='/')
+        img.logo-pos(src='/img/logo_circle.png')
     .homeFont
       .top BE HEALTHY YOUR STYLE
       .middle CHOOSE YOUR TASTE
@@ -28,3 +50,11 @@ html
           h1 ANTI-AGING
           h2 Tomato - Cranberry - Almond
     .recSize R-E-C-O-M-M-E-N-D
+
+    script(src='/js/main.js')
+    script(src='https://code.jquery.com/jquery-3.3.1.min.js')
+    script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
+    script(src='/bower_components/sweetalert/lib/sweet-alert.min.js')
+    script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js')

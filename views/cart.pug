@@ -12,8 +12,28 @@ html(lang='en', dir='ltr')
     // SweetAlert
     script(src='bower_components/sweetalert/lib/sweet-alert.min.js')
     link(rel='stylesheet', href='bower_components/sweetalert/lib/sweet-alert.css')
+    link(rel='stylesheet', type='text/css', href='/css/style.css')
     title Cart
   body
+    .contrainer
+      nav#myTopnav.topnav
+        div
+          button.login
+              a(href='/custom/cart')
+                  img.cart_pos(src='/img/cart.png')
+          button.login
+              if user
+                  a(href='/users/logout') Logout
+                  button.login
+                      h9 #{user.username}
+              else
+                  a(href='/users/login') login
+          button.login
+              if user
+                  a(href='/payment/tracking') tracking
+        a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
+      a(href='/')
+        img.logo-pos(src='/img/logo_circle.png')
     .row.pt-5.text-center
       .col
         h1.text-info Shopping cart
