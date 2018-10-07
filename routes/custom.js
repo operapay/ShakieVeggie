@@ -40,7 +40,6 @@ router.get('/cart',function(req,res){
 
 router.post('/component',function(req,res){
     req.flash('success','Added order to cart');
-    //redirect to formular
     res.redirect('/formula');
 });
 
