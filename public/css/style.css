@@ -1,3 +1,8 @@
+@font-face {
+    font-family: YuGothB,YuGothL,YuGothM,YuGothR,LemonismDEMO;
+    src: url(font/);
+}
+
 .alert-error{
     color: #a94442;
     background-color: #f2dede;
