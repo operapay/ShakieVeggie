@@ -41,8 +41,44 @@ body {
     color: white;
     font-size: 45.5;
     text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
- 
 }
+.bottle:hover .bottletext {
+    visibility: visible;
+}
+.bottle .bottletext h1{
+    font-size: 80%;
+}
+.bottle .bottletext h2{
+    font-size: 70%;
+    
+}
+/* BOTTON */
+.button {
+    border-radius: 4px;
+    background-color: rgb(244,169,30);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: YGTH;
+    font-size: 100%;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+
+    margin-top: 4%;
+    margin-bottom: 2%;
+    margin-left: 43%;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+}
+
 .middle {
     color: white;
     font-size: 84px;
@@ -114,42 +150,6 @@ body {
     left: 20%;
     margin-left: -60px;
 }
-.bottle:hover .bottletext {
-    visibility: visible;
-}
-.bottle .bottletext h1{
-    font-size: 80%;
-}
-.bottle .bottletext h2{
-    font-size: 70%;
-    
-}
-/* BOTTON */
-.button {
-    border-radius: 4px;
-    background-color: rgb(244,169,30);
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-family: YGTH;
-    font-size: 100%;
-    padding: 20px;
-    width: 200px;
-    transition: all 0.5s;
-    cursor: pointer;
-
-    margin-top: 4%;
-    margin-bottom: 2%;
-    margin-left: 43%;
-  }
-  
-  .button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-  }
-  
   .button span:after {
     content: '\00bb';
     position: absolute;

@@ -13,11 +13,11 @@ html
                   img.cart_pos(src='/img/cart.png')
           button.login
               if user
-                  a(href='/users/logout') Logout
+                  a#login(href='/users/logout') Logout
                   button.login
                       h9 #{user.username}
               else
-                  a(href='/users/login') login
+                  a#login(href='/users/login') login
           button.login
               if user
                   a(href='/payment/tracking') tracking
