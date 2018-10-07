@@ -1,3 +1,12 @@
+a#login:link{
+    text-decoration:none;
+    color: #ffb85f;
+}
+a#login:visited{
+    text-decoration:none;
+    color: #ffb85f;
+}
+
 @font-face {
     font-family: YGTH;
     src: url(/font/YuGothM.ttc);
@@ -23,10 +32,10 @@ body {
     background-position: center;
     font-family: Lemonism;
     text-align: center;
+    margin-top:-3%;
     /* position: relative;
     left: 588px;
     top: 243px; */
-    margin-top: 5.5%;
 }
 .top{
     color: white;
@@ -48,18 +57,20 @@ body {
 
 .recSize {
     font-family: Lemonism;
-    /* text-align: center; */
     color: #F7C436;
-    font-size: 1550%;
+    font-size: 1400%;
     text-shadow: 2px 2px white;
     position: absolute;
-    bottom: 2%;
+    bottom: 0%;
     margin-left: 7%;
     left: 1%;
     z-index: -1;
+    position:fixed;
+    
 }
 .bottles {
     margin-left: 25%;
+    margin-bottom: 50%;
 }
 .bottle {
     display: inline-block;
@@ -77,6 +88,7 @@ body {
     margin-top: 3.5%;
     margin-right:6%; 
     z-index: 1;
+    
     
 }
 .bottle:hover, .bottle:focus, .bottle:active {
@@ -288,5 +300,9 @@ body {
 /*----------------------- end Dropdown -----------------------------*/
 
 /*---------------------------------end NAV --------------------------------*/
+
+
+
+
 
   
