@@ -59,8 +59,7 @@ H: 745.68
 X: 678.11
 Y: 166.91
 
-//จะเป้นส่วนหนึ่งของnavbar or ปุ่ม?
-- logo
+- logo // push to go home
 W: 267
 H: 178
 X: 99
