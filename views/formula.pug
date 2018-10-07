@@ -6,6 +6,24 @@ html
     title Formula
     link(rel='stylesheet', type='text/css', href='/css/formulastyle.css')
   body
+    nav#myTopnav.topnav
+      div
+          button.login
+              a(href='/custom/cart')
+                  img.cart_pos(src='/img/cart.png')
+          button.login
+              if user
+                  a(href='/users/logout') Logout
+                  button.login
+                      h9 #{user.username}
+              else
+                  a(href='/users/login') login
+          button.login
+              if user
+                  a(href='/custom/tracking') tracking
+      a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
+    a(href='/')
+        img.logo-pos(src='/img/logo_circle.png')
     .container
       .content
         .row
