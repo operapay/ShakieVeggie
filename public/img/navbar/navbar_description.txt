@@ -1,0 +1,60 @@
+- mango
+W: 1281
+H: 1920
+X: 0
+Y: -77
+
+
+- font : Yu Gothic UI
+
+color: #
+- LOGIN
+size: 31
+X: 1531.9
+Y: 27.77
+shadow>> X: 0 Y: 3 B:6
+
+-แถบม่วงยาว
+W: 1920
+H: 96
+X: 0
+Y: 0
+
+-ปุ่ม
+W: 171.39
+H: 96
+//ไปกะจุดเอาเอง
+
+color: #FFB85F
+
+-BUY
+size: 31
+X: 1207.9
+Y:27.77
+shadow>> X: 0 Y: 3 B:6
+
+-About
+size: 31
+X: 1356.9
+Y: 27.77
+shadow>> X: 0 Y: 3 B:6
+
+-circle หลัง logo
+W: 204.54
+H: 204.54
+X: 106.39
+Y: 27
+shadow>> X: 0 Y: 3 B:6
+
+- logo.png
+W: 225
+H: 150
+X: 97
+Y: 57.57
+
+- cart.png
+W: 46.08
+H: 46.08
+X: 1729.42
+Y: 25.65
+
