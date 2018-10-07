@@ -1,0 +1,11 @@
+extends layout_login
+
+block content
+    form(method = 'POST' action="/tracking")
+    #tracking.card.card-signin
+        .card-body
+            h4#card-tracking-title.text-center Tracking
+            form.form-tracking
+                .form-trackstate
+                    img#img-pos(src="/img/order.png", alt="")
+                    .text-uppercase approve order
