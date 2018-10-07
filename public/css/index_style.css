@@ -1,6 +1,10 @@
 @font-face {
-    font-family: YuGothB,YuGothL,YuGothM,YuGothR,LemonismDEMO;
-    src: url(font/);
+    font-family: YGTH;
+    src: url(/font/YuGothM.ttc);
+}
+@font-face {
+    font-family: Lemonism;
+    src: url(/font/LemonismDEMO.otf);
 }
 body {
     /* background-image: url(bg3.jpg);
@@ -17,7 +21,7 @@ body {
     background-size: 33%;
     background-repeat: no-repeat;
     background-position: center;
-    font-family: Lemonism DEMO,Arial, Helvetica, sans-serif;
+    font-family: Lemonism;
     text-align: center;
     /* position: relative;
     left: 588px;
@@ -79,7 +83,7 @@ body {
     transform: translateY(-8px);
   }
 .bottle .bottletext {
-    font-family: YU Gothic UI;
+    font-family: YGTH;
     text-shadow: 1px 1px rgba(0,0,0,0.1);
     visibility: hidden;
     width: 200px;
@@ -114,7 +118,7 @@ body {
     border: none;
     color: #FFFFFF;
     text-align: center;
-    font-family: YU Gothic UI;
+    font-family: YGTH;
     font-size: 100%;
     padding: 20px;
     width: 200px;
