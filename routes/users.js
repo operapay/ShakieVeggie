@@ -79,12 +79,13 @@ router.post('/register', function(req,res,done){
             }
         });
     }
-    
+
 });
+
 
 //login form
 router.get('/login', function(req,res){
-    res.render('login');
+    res.render('payment');
 });
 
 //login process

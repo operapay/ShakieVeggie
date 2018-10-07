@@ -1,0 +1,115 @@
+doctype html
+// Have to work with the margin
+html(lang='en', dir='ltr')
+  head
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css', integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO', crossorigin='anonymous')
+    link(rel='stylesheet', href='C:\Users\asus\Desktop\Crw\shakie\css\payment.css', --='')
+    link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', rel='stylesheet')
+    script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q', crossorigin='anonymous')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl', crossorigin='anonymous')
+    title Payment
+  body
+    .py-5.text-center
+      h2.payment-title PAYMENT
+    .container
+      .row
+        .col-6
+          h4.mb-3 Billing address
+          form.needs-validation(novalidate='')
+            .mb-3
+              label(for='address') Address
+              input#address.form-control(type='text', placeholder='Address1', required='')
+              .invalid-feedback
+                | Please enter your shipping address.
+            .mb-3
+              label(for='address2')
+                | Address 2 
+                span.text-muted (Optional)
+              input#address2.form-control(type='text', placeholder='Apartment or suite')
+            .row
+              .col.mb-3
+                label(for='country') Country
+                select#country.custom-select.d-block.w-100(required='')
+                  option(value='') Choose...
+                  option Thailand
+                .invalid-feedback
+                  | Please select a valid country.
+            .row
+              .col.mb-3
+                label(for='state') State/Province
+                select#state.custom-select.d-block.w-100(required='')
+                  option(value='') Choose...
+                  option Rayong
+                .invalid-feedback
+                  | Please provide a valid state.
+              .col.mb-3
+                label(for='zip') Zip
+                input#zip.form-control(type='text', placeholder='', required='')
+                .invalid-feedback
+                  | Zip code required.
+        .col-4
+          h4.mb-3 Payment method
+          .row
+            aside.col
+              article.card
+                .card-body.p-5
+                  ul.nav.bg-light.nav-pills.rounded.nav-fill.mb-3(role='tablist')
+                    li.nav-item
+                      a.nav-link.active(data-toggle='pill', href='#nav-tab-card')
+                        i.fa.fa-credit-card
+                        |  Credit Card
+                    li.nav-item
+                      a.nav-link(data-toggle='pill', href='#nav-tab-bank')
+                        i.fa.fa-university
+                        |  ATM
+                  .tab-content
+                    #nav-tab-card.tab-pane.fade.show.active
+                      form(role='form')
+                        .form-group
+                          label(for='username') Card Name
+                          input.form-control(type='text', name='username', placeholder='', required='')
+                          .invalid-feedback
+                            | Please enter your card name.
+                        .form-group
+                          label(for='cardNumber') Card Number
+                          .input-group
+                            input.form-control(type='text', name='cardNumber', placeholder='', required='')
+                            .invalid-feedback
+                              | Please enter your card number.
+                            .input-group-append
+                              span.input-group-text.text-muted
+                                i.fab.fa-cc-visa
+                                i.fab.fa-cc-amex
+                                i.fab.fa-cc-mastercard
+                        .row
+                          .col-sm-8
+                            .form-group
+                              label
+                                span.hidden-xs Expiration
+                              .input-group
+                                input.form-control(type='number', placeholder='MM', name='', required='')
+                                input.form-control(type='number', placeholder='YY', name='', required='')
+                                .invalid-feedback
+                                  | Please enter your card expiration.
+                          .col-sm-4
+                            .form-group
+                              label(data-toggle='tooltip', title='', data-original-title='3 digits code on back side of the card')
+                                | CVV 
+                                i.fa.fa-question-circle
+                              input.form-control(type='number', required='')
+                              .invalid-feedback
+                                | Please enter your card CVV.
+                    #nav-tab-bank.tab-pane.fade
+                      dl.param
+                        dt Bank: 
+                        dd  THE WORLD BANK
+                      dl.param
+                        dt Accaunt Number: 
+                        dd  12345678912345
+                      dl.param
+                        dt ATM Payment Code: 
+                        dd  12345678912345
+      .col-md-10
+        hr
+        button.btn.btn-primary.btn-lg.btn-block(type='submit') Continue to checkout

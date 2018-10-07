@@ -90,6 +90,11 @@ app.get('/', function(req,res){
     });
 });
 
+//login form
+app.get('/payment', function(req,res){
+    res.render('payment');
+});
+
 let users = require('./routes/users');
 app.use('/users', users);
 
