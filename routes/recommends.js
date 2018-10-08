@@ -4,24 +4,15 @@ const router = express.Router();
 //Bring in Recommend Model
 let Recommend = require('../models/recommend');
 
-// Add route
-router.get('/intro', function(req,res){
-    res.render('cart');
+router.get('/',function(req,res){
+    res.render('custom');
 });
 
-// Add Submit POST Route
-router.post('/intro',function(req,res){
-    console.log('submitted');
-    return;
-});
-
-// // Get
-// router.get('/cart/:id', function(req,res){
-//     Recommend.findById(req.params.id, function(err,recommend){
-//         res.render('cart', {
-//             // article:article
-//         });
-//     });
-// });
+router.get('/3', function(req,res){
+    // Recommend.find(req.params.no, function(err, recommend){
+    //     res.render('custom')
+    // })
+    res.render('recommendThree');
+})
 
 module.exports = router;
