@@ -1,3 +1,12 @@
+@font-face {
+    font-family: YGTH;
+    src: url(/font/YuGothM.ttc);
+}
+@font-face {
+    font-family: Lemonism;
+    src: url(/font/LemonismDEMO.otf);
+}
+
 .alert-error{
     color: #a94442;
     background-color: #f2dede;
@@ -11,26 +20,37 @@
 }
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: white;
     
 }
 
 
 a:link{
     text-decoration:none;
-    color: #213037;
+    color: #ffb85f;
 }
 a:visited{
     text-decoration:none;
-    color: #213037;
+    color: #ffb85f;
 }
 
 
 /*------------------------------NAV----------------------------------*/
 
-
+.logo-pos{
+    margin-left:50px;
+    margin-top:-35px;
+    width:128px;
+    height: 128px;
+}
+.cart_pos{
+    width:22px;
+    height: 22px;
+    margin-bottom:5%;
+}
 /* Add a black background color to the top navigation */
 .topnav {
-    background-color: transparent;
+    background-color: #462066;
     overflow: hidden;
 }
 
@@ -50,7 +70,7 @@ a:visited{
     overflow: hidden;
     border: none;
     outline: none;
-    color: #213037;
+    color: #ffb85f;
     padding: 14px 16px;
     background-color: inherit;
     transition: transform .2s; /* Animation */
@@ -60,7 +80,7 @@ a:visited{
     overflow: hidden;
     border: none;
     outline: none;
-    color: #213037;
+    color: #ffb85f;
     padding: 14px 16px;
     background-color: inherit;
     transition: transform .2s; /* Animation */
@@ -123,7 +143,7 @@ a:visited{
 /* Style the links inside the dropdown */
 .dropdown-content a {
     float: none;
-    color: #213037;
+    color: #ffb85f;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -373,4 +393,25 @@ a:visited{
     background-color: #3b5998;
   }
 
-
+  #tracking{
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8%;
+  }
+  #card-tracking-title{
+    margin-bottom: 2rem;
+    font-weight: 300;
+    font-size: 30px;
+    font-style: bold;
+  }
+  #img-pos{
+    margin-top:5%;
+    margin-left:13%;
+  }
+  
+  #dash-pos{
+    margin-top:3%;
+    margin-left:4%;
+  }
+  

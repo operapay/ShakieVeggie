@@ -99,8 +99,13 @@ app.use('/custom', custom);
 let payment = require('./routes/payment');
 app.use('/payment', payment);
 
+<<<<<<< HEAD
 let recommend = require('./routes/recommends');
 app.use('/recommend', recommend);
+=======
+let formula = require('./routes/formula');
+app.use('/formula', formula);
+>>>>>>> origin
 
 // Start Server
 app.listen(3000, function(){
