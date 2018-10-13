@@ -44,9 +44,4 @@ router.post('/component',function(req,res){
     res.redirect('/');
 });
 
-router.get('/bottle_three',function(req,res){
-    res.render('recommendThree');
-});
-
-
 module.exports = router;
