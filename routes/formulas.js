@@ -35,7 +35,7 @@ router.post('/add',function(req,res){
             return;
         }
         else{
-            req.flash('success','Formula Added');
+            //req.flash('success','Formula Added');
             res.redirect('/');
         }
     });

@@ -40,6 +40,9 @@ html
                       each formula, i in formulas
                         if(formula.formulaname == "Detox Formula")
                           li
+                            if !user
+                              a(href="/users/login")= formula.formulaname
+                            else
                               a(href="/custom/" + formula._id)= formula.formulaname
                     span
                       i.fa-4x.fa.fa-leaf
@@ -52,6 +55,9 @@ html
                       each formula, i in formulas
                         if(formula.formulaname == "Anti Aging")
                           li
+                            if !user
+                              a(href="/users/login")= formula.formulaname
+                            else
                               a(href="/custom/" + formula._id)= formula.formulaname
                     span
                       i.fa-4x.fa.fa-pagelines
@@ -65,6 +71,9 @@ html
                       each formula, i in formulas
                         if(formula.formulaname == "Eyesight")
                           li
+                            if !user
+                              a(href="/users/login")= formula.formulaname
+                            else
                               a(href="/custom/" + formula._id)= formula.formulaname
                     span
                       i.fa-4x.fa.fa-heartbeat
