@@ -7,7 +7,7 @@ block content
         .modal-content
             h2.text-center Health Condition
             .mt-3
-            form(method='POST',action='/custom')
+            form(method='POST',action='/custom/:id')
                 .form-check
                     input#kidney.form-check-input(type='checkbox', name='kidney')
                     label.form-check-label(for='kidney')
@@ -34,7 +34,7 @@ block content
                         | surgery
             
                 button.btn.btn-lg.btn-defult.btn-block.text-uppercase#myBtn(type='submit',value='Submit') Submit
-    h1.text-center Detox Formula
+    h1.text-center #{formula.formulaname}
     br
     img.bottle(src='/img/bottle.png')
 
@@ -44,7 +44,7 @@ block content
             .col-sm-9.col-md-7.col-lg-4.mx-auto
                 .card.card-signin.my-5
                     .card-body
-                        h5.card-title.text-center Vit1
+                        h5.card-title.text-center #{formula.component1}
                         .form-check
                             input#exampleRadios1.form-check-input(type='radio', name='exampleRadios1', value='vit1.1', checked='')
                             label.form-check-label(for='exampleRadios1') component
@@ -57,7 +57,7 @@ block content
             .col-sm-9.col-md-7.col-lg-4.mx-auto
                 .card.card-signin.my-5
                     .card-body
-                        h5.card-title.text-center Vit2
+                        h5.card-title.text-center #{formula.component2}
                         .form-check
                             input#exampleRadios1.form-check-input(type='radio', name='exampleRadios2', value='vit2.1', checked='')
                             label.form-check-label(for='exampleRadios1') component
@@ -70,7 +70,7 @@ block content
             .col-sm-9.col-md-7.col-lg-4.mx-auto
                 .card.card-signin.my-5
                     .card-body
-                        h5.card-title.text-center Vit3
+                        h5.card-title.text-center #{formula.component3}
                         .form-check
                             input#exampleRadios1.form-check-input(type='radio', name='exampleRadios3', value='vit3.1', checked='')
                             label.form-check-label(for='exampleRadios1') component

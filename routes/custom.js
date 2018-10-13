@@ -4,15 +4,20 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const db = require('../config/database');
 
-//Bring in disease model
-let Disease = require('../models/disease');
 
-//disease filter form
-router.get('/',function(req,res){
-    res.render('custom');
+let User = require('../models/user');
+let Formula = require('../models/formula');
+
+router.get('/:id', function(req,res){
+    Formula.findById(req.params.id, function(err,formula){
+        res.render('custom', {
+            formula:formula
+        }); 
+    });
 });
 
-router.post('/', function (req, res) {
+
+router.post('/:id', function (req, res) {
     //res.json(req.body);
     if(req.body.kidney){
         console.log('kidney');

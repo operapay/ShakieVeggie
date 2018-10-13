@@ -1,0 +1,10 @@
+extends layout1
+
+block content
+    h1 #{title}
+     ul.list-group
+        each formula, i in formulas
+            li.list-group-item
+                a(href="/custom/" + formula._id)= formula.formulaname
+
+    

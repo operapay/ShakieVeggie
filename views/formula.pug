@@ -37,10 +37,13 @@ html
               a(href='/custom')
                 .item(style="background-image:url('/img/imgs/img1.jpg');")
                   .item-alltext
-                    h1.item-title Detox
-                    span
-                      i.fa-4x.fa.fa-leaf
-                    p.item-text Some informations
+                    if (formulas.formulaname == "Detox Formula")
+                      h1.item-title test
+                      span
+                        i.fa-4x.fa.fa-leaf
+                      p.item-text Some informations
+                    else
+                      h1.item-title testfaile
           .col-6
             .item-component
               a(href='#')
