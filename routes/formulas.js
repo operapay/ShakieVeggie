@@ -5,17 +5,8 @@ const passport = require('passport');
 const db = require('../config/database');
 
 let Formula = require('../models/formula');
-//payment form
-router.get('/',function(req,res){
-    Formula.find({},function(err,formulas){
-        res.render('formulatest',{
-            title:'formulas',
-            formulas:formulas
-        });
-    });
-});
 
-router.get('/test',function(req,res){
+router.get('/',function(req,res){
     Formula.find({},function(err,formulas){
         res.render('formula',{
             title:'formulas',

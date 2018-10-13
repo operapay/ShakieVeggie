@@ -43,9 +43,9 @@ router.get('/cart',function(req,res){
     res.render('cart');
 });
 
-router.post('/component',function(req,res){
+router.post('/:id/component',function(req,res){
     req.flash('success','Added order to cart');
-    res.redirect('/formula');
+    res.redirect('/formulas');
 });
 
 router.get('/bottle_three',function(req,res){

@@ -34,38 +34,38 @@ html
         .row
           .col-6
             .item-component
-              a(href='/custom')
                 .item(style="background-image:url('/img/imgs/img1.jpg');")
                   .item-alltext
-                    if (formulas.formulaname == "Detox Formula")
-                      h1.item-title test
-                      span
-                        i.fa-4x.fa.fa-leaf
-                      p.item-text Some informations
-                    else
-                      h1.item-title testfaile
+                    h1.item-title 
+                      each formula, i in formulas
+                        if(formula.formulaname == "Detox Formula")
+                          li
+                              a(href="/custom/" + formula._id)= formula.formulaname
+                    span
+                      i.fa-4x.fa.fa-leaf
+                    p.item-text Some informations
           .col-6
             .item-component
-              a(href='#')
                 .item(style="background-image:url('/img/imgs/img2.jpg');")
                   .item-alltext
-                    h1.item-title Skin care
+                    h1.item-title 
+                      each formula, i in formulas
+                        if(formula.formulaname == "Anti Aging")
+                          li
+                              a(href="/custom/" + formula._id)= formula.formulaname
                     span
                       i.fa-4x.fa.fa-pagelines
                     p.item-text Some informations
-            a(href='#')
-          a(href='#')
-        a(href='#')
         .row
-          a(href='#')
           .col-6
-            a(href='#')
             .item-component
-              a(href='#')
-              a(href='#')
                 .item(style="background-image:url('/img/imgs/img3.jpg');")
                   .item-alltext
-                    h1.item-title Improving eyesight
+                    h1.item-title 
+                      each formula, i in formulas
+                        if(formula.formulaname == "Eyesight")
+                          li
+                              a(href="/custom/" + formula._id)= formula.formulaname
                     span
                       i.fa-4x.fa.fa-heartbeat
                     p.item-text Some informations

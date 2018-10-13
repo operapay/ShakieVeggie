@@ -1,87 +1,91 @@
-extends layout1
-
-block content
-    br
-    #myModal.modal
-        // Modal content
-        .modal-content
-            h2.text-center Health Condition
-            .mt-3
-            form(method='POST',action='/custom')
-                .form-check
-                    input#kidney.form-check-input(type='checkbox', name='kidney')
-                    label.form-check-label(for='kidney')
-                        | kidney
-                .form-check
-                    input#liver.form-check-input(type='checkbox', name='liver')
-                    label.form-check-label(for='liver')
-                        | liver
-                .form-check
-                    input#hyper.form-check-input(type='checkbox', name='hypertension')
-                    label.form-check-label(for='hypertension')
-                        | hypertension
-                .form-check
-                    input#diabete.form-check-input(type='checkbox', name='diabetes')
-                    label.form-check-label(for='diabete')
-                        | diabete
-                .form-check
-                    input#pregnant.form-check-input(type='checkbox', name='pregnant')
-                    label.form-check-label(for='pregnant')
-                        | pregnant
-                .form-check
-                    input#surgery.form-check-input(type='checkbox', name='surgery')
-                    label.form-check-label(for='surgery')
-                        | surgery
-            
-                button.btn.btn-lg.btn-defult.btn-block.text-uppercase#myBtn(type='submit',value='Submit') Submit
-    h1.text-center #{formulas.name}
-    br
-    img.bottle(src='/img/bottle.png')
-
-    br
-    form(method='POST',action='/custom/component')
+doctype html
+html
+  head
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.css')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css', integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO', crossorigin='anonymous')
+    title Formula
+    link(rel='stylesheet', type='text/css', href='/css/formulastyle.css')
+  body
+    nav#myTopnav.topnav
+      div
+          button.login
+              a(href='/custom/cart')
+                  img.cart_pos(src='/img/cart.png')
+          button.login
+              if user
+                  a#login(href='/users/logout') Logout
+                  button.login
+                      h9 #{user.username}
+              else
+                  a#login(href='/users/login') login
+          button.login
+              if user
+                  a(href='/payment/tracking') tracking
+      a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
+    a(href='/')
+        img.logo-pos(src='/img/logo_circle.png')
+    .container
+          != messages('message',locals)
+          if errors
+              each error, i in errors
+                  div(class="alert alert-danger") #{error.msg} 
+    .container
+      .content
         .row
-            .col-sm-9.col-md-7.col-lg-4.mx-auto
-                .card.card-signin.my-5
-                    .card-body
-                        h5.card-title.text-center Vit1
-                        .form-check
-                            input#exampleRadios1.form-check-input(type='radio', name='exampleRadios1', value='vit1.1', checked='')
-                            label.form-check-label(for='exampleRadios1') component
-                        .form-check
-                            input#exampleRadios2.form-check-input(type='radio', name='exampleRadios1', value='vit1.2')
-                            label.form-check-label(for='exampleRadios2') component
-                        .form-check
-                            input#exampleRadios3.form-check-input(type='radio', name='exampleRadios1', value='vit1.3', disabled='')
-                            label.form-check-label(for='exampleRadios3') component
-            .col-sm-9.col-md-7.col-lg-4.mx-auto
-                .card.card-signin.my-5
-                    .card-body
-                        h5.card-title.text-center Vit2
-                        .form-check
-                            input#exampleRadios1.form-check-input(type='radio', name='exampleRadios2', value='vit2.1', checked='')
-                            label.form-check-label(for='exampleRadios1') component
-                        .form-check
-                            input#exampleRadios2.form-check-input(type='radio', name='exampleRadios2', value='vit2.2')
-                            label.form-check-label(for='exampleRadios2') component
-                        .form-check.disabled
-                            input#exampleRadios3.form-check-input(type='radio', name='exampleRadios2', value='vit2.3', disabled='')
-                            label.form-check-label(for='exampleRadios3') component
-            .col-sm-9.col-md-7.col-lg-4.mx-auto
-                .card.card-signin.my-5
-                    .card-body
-                        h5.card-title.text-center Vit3
-                        .form-check
-                            input#exampleRadios1.form-check-input(type='radio', name='exampleRadios3', value='vit3.1', checked='')
-                            label.form-check-label(for='exampleRadios1') component
-                        .form-check
-                            input#exampleRadios2.form-check-input(type='radio', name='exampleRadios3', value='vit3.2')
-                            label.form-check-label(for='exampleRadios2') component
-                        .form-check.disabled
-                            input#exampleRadios3.form-check-input(type='radio', name='exampleRadios3', value='vit3.3', disabled='')
-                            label.form-check-label(for='exampleRadios3') component
-        .col-sm-3.col-md-7.col-lg-2.mx-auto
-            .input-group
-                input.form-control(type='number', placeholder='amount', name='amont', required='')
-            br
-            button.btn.btn-lg.btn-defult.btn-block.text-uppercase(type='submit',value='Submit') Submit			
+          .col-6
+            .item-component
+              a(href="/custom/")
+                .item(style="background-image:url('/img/imgs/img1.jpg');")
+                  .item-alltext
+                    h1.item-title test
+                    span
+                      i.fa-4x.fa.fa-leaf
+                    p.item-text Some informations
+          .col-6
+            .item-component
+              a(href='#')
+                .item(style="background-image:url('/img/imgs/img2.jpg');")
+                  .item-alltext
+                    h1.item-title Skin care
+                    span
+                      i.fa-4x.fa.fa-pagelines
+                    p.item-text Some informations
+        .row
+          .col-6
+            .item-component
+              a(href='#')
+                .item(style="background-image:url('/img/imgs/img3.jpg');")
+                  .item-alltext
+                    h1.item-title Improving eyesight
+                    span
+                      i.fa-4x.fa.fa-heartbeat
+                    p.item-text Some informations
+          .col-6
+            .item-component
+              a(href='#')
+                .item(style="background-image:url('/img/imgs/img4.jpg');")
+                  .item-alltext
+                    h1.item-title Something
+                    span
+                      i.fa-4x.fa.fa-heart
+                    p.item-text Some informations
+        .row
+          .col-6
+            .item-component
+              a(href='#')
+                .item(style="background-image:url('/img/imgs/img5.jpg');")
+                  .item-alltext
+                    h1.item-title Something
+                    p.item-text Some informations
+        block content
+            footer
+                br
+                p(style="color:black")  Copyright © 2018  
+
+      script(src='/js/main.js')
+      script(src='https://code.jquery.com/jquery-3.3.1.min.js')
+      script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')
+      script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
+      script(src='/bower_components/sweetalert/lib/sweet-alert.min.js')
+      script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js')
