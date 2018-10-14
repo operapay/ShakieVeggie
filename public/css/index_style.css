@@ -33,14 +33,11 @@ body {
     font-family: Lemonism;
     text-align: center;
     margin-top:-3%;
-    /* position: relative;
-    left: 588px;
-    top: 243px; */
-}
-.top{
     color: white;
-    font-size: 45.5;
     text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+}
+#top{
+    font-size: 45.5;
 }
 .bottle:hover .bottletext {
     visibility: visible;
@@ -76,19 +73,11 @@ body {
     display: inline-block;
     position: relative;
     transition: 0.5s;
-  }
+  
 }
 
-.middle {
-    color: white;
+#midd {
     font-size: 84px;
-    text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
-}
-.down {
-    color: white; 
-    font-size: 52.5px;
-    text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
-    /* margin-top: %; */
 }
 
 .recSize {
