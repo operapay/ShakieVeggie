@@ -48,8 +48,8 @@ a:visited{
 #regis { 
   background: #FFB85F;
   color: white;
-  margin-left: 35%;
-  width:30%;
+  margin-left: 30%;
+  width:40%;
 }
 
 .btn:hover , .login:hover {
@@ -89,7 +89,7 @@ a:visited{
   }
   
   .card-signin .card-title {
-    margin-top:40px;
+    /*margin-top:40px;*/
     margin-bottom: 2rem;
     font-weight: 300;
     font-size: 1.5rem;
