@@ -7,10 +7,12 @@ html
     style.
         body{
             background-image: url("/img/reg.jpg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            width: 100%;
+        }
+        .card-signin {
+            width: 700px;
+        }
+        .card-signin .card-title {
+            margin-top:40px;
         }
     body()
         a(href='/')
@@ -26,28 +28,43 @@ html
                         .card-body
                             h5.card-title.text-center#member REGISTER
                             form(method='POST',action='/users/register').form-signin
-                                .form-label-group
-                                    input#inputFirstName.form-control(name='firstname',type='text', placeholder='Firstname', required='', autofocus='')
-                                    label(for='inputFirstName') Firstname 
-                                .form-label-group
-                                    input#inputLastName.form-control(name='lastname',type='text', placeholder='Lastname', required='')
-                                    label(for='inputLastName') Lastname
-                                .form-label-group
-                                    input#inputEmail.form-control(name='email',type='text', placeholder='Email', required='')
-                                    label(for='inputEmail') Email
-                                .form-label-group
-                                    input#inputPhone.form-control(name='phone',type='text', placeholder='Phone', required='')
-                                    label(for='inputPhone') Phone
-                                .form-label-group
-                                    input#inputUsername.form-control(name='username',type='text', placeholder='Username', required='', autofocus='')
-                                    label(for='inputUsername') Username
-                                .form-label-group
-                                    input#inputPassword.form-control(name='password',type='password', placeholder='Password', required='')
-                                    label(for='inputPassword') Password
-                                .form-label-group
-                                    input#inputPassword2.form-control(name='password2',type='password', placeholder='Confirm Password', required='')
-                                    label(for='inputPassword2') Confirm Password
-                                button.btn.btn-lg.btn-defult.btn-block.text-uppercase#login(type='submit',value='Submit') Register
+                                .row
+                                    .ml-4
+                                    .col-5.form-label-group
+                                        input#inputFirstName.form-control(name='firstname',type='text', placeholder='Firstname', required='', autofocus='')
+                                        label(for='inputFirstName') Firstname 
+                                    .col-1
+                                    .col-5.form-label-group
+                                        input#inputLastName.form-control(name='lastname',type='text', placeholder='Lastname', required='')
+                                        label(for='inputLastName') Lastname
+                                .mt-2  
+                                .row    
+                                    .ml-4
+                                    .col-5.form-label-group
+                                        input#inputUsername.form-control(name='username',type='text', placeholder='Username', required='', autofocus='')
+                                        label(for='inputUsername') Username
+                                    .col-1
+                                    .col-5.form-label-group
+                                        input#inputEmail.form-control(name='email',type='text', placeholder='Email', required='')
+                                        label(for='inputEmail') Email
+                                .mt-2     
+                                .row    
+                                    .ml-4
+                                    .col-5.form-label-group
+                                        input#inputPassword.form-control(name='password',type='password', placeholder='Password', required='')
+                                        label(for='inputPassword') Password
+                                    .col-1
+                                    .col-5.form-label-group
+                                        input#inputPassword2.form-control(name='password2',type='password', placeholder='Confirm Password', required='')
+                                        label(for='inputPassword2') Confirm Password
+                                .mt-2
+                                .row    
+                                    .ml-4
+                                    .col-5.form-label-group
+                                        input#inputPhone.form-control(name='phone',type='text', placeholder='Phone', required='')
+                                        label(for='inputPhone') Phone
+                                br
+                                button.btn.btn-lg.btn-defult.text-uppercase#regis(type='submit',value='Submit') Register
         footer
                 p(style="color:white") Copyright © 2018  
 
