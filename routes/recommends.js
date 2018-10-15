@@ -6,12 +6,9 @@ const db = require('../config/database');
 let Recommend = require('../models/recommend'); 
 
 router.get('/3', function(req,res){
-    // Recommend.findOne({no: no}, function(err, recommend){
-    //     console.log(recommend);
-    //     return;
-    // })
-
-    res.render('recommendThree');
+    Recommend.findOne({bottle:3}, function(err, bottle){
+        res.render('bottle_3', {bottle: bottle});
+    })
 })
 
 module.exports = router;
