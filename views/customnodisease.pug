@@ -22,13 +22,21 @@ block content
                             input#exampleRadios2.form-check-input(type='radio', name='component1', value='vit1.3')
                             label.form-check-label(for='exampleRadios3') #{component1.fruit3}
                         .form-check
-                            input#exampleRadios2.form-check-input(type='radio', name='component1', value='vit1.4')
-                            label.form-check-label(for='exampleRadios4') #{component1.fruit4}
+                            if checkkidney==1 && (component1.fruit4 == 'Tomato' || component1.fruit4 == 'Ripe Mango' || component1.fruit4 == 'Pumpkin' || component1.fruit4 == 'Banana')
+                                input#exampleRadios2.form-check-input(type='radio', name='component1', value='vit1.4',disabled='')
+                                label.form-check-label(for='exampleRadios4') #{component1.fruit4}
+                            else
+                                input#exampleRadios2.form-check-input(type='radio', name='component1', value='vit1.4')
+                                label.form-check-label(for='exampleRadios4') #{component1.fruit4}
                         .form-check
-                            input#exampleRadios3.form-check-input(type='radio', name='component1', value='vit1.5')
-                            label.form-check-label(for='exampleRadios5') #{component1.fruit5}
+                            if checkkidney==1 && (component1.fruit5 == 'Tomato' || component1.fruit5 == 'Ripe Mango' || component1.fruit5 == 'Pumpkin' || component1.fruit5 == 'Banana')
+                                input#exampleRadios3.form-check-input(type='radio', name='component1', value='vit1.5',disabled='')
+                                label.form-check-label(for='exampleRadios5') #{component1.fruit5}
+                            else
+                                input#exampleRadios3.form-check-input(type='radio', name='component1', value='vit1.5')
+                                label.form-check-label(for='exampleRadios5') #{component1.fruit5}
                         .form-check 
-                            if checkkidney == 1
+                            if checkkidney==1 && (component1.fruit6 == 'Tomato' || component1.fruit6 == 'Ripe Mango' || component1.fruit6 == 'Pumpkin' || component1.fruit6 == 'Banana')
                                 input#exampleRadios3.form-check-input(type='radio', name='component1', value='vit1.6',disabled='')
                                 label.form-check-label(for='exampleRadios5') #{component1.fruit6}
                             else    
@@ -48,14 +56,26 @@ block content
                             input#exampleRadios2.form-check-input(type='radio', name='component2', value='vit2.3')
                             label.form-check-label(for='exampleRadios3') #{component2.fruit3}
                         .form-check
-                            input#exampleRadios2.form-check-input(type='radio', name='component2', value='vit2.4')
-                            label.form-check-label(for='exampleRadios4') #{component2.fruit4}
+                            if checkkidney==1 && (component2.fruit4 == 'Tomato' || component2.fruit4 == 'Ripe Mango' || component2.fruit4 == 'Pumpkin' || component2.fruit4 == 'Banana')
+                                input#exampleRadios2.form-check-input(type='radio', name='component2', value='vit2.4',disabled='')
+                                label.form-check-label(for='exampleRadios4') #{component2.fruit4}
+                            else
+                                input#exampleRadios2.form-check-input(type='radio', name='component2', value='vit2.4')
+                                label.form-check-label(for='exampleRadios4') #{component2.fruit4}
                         .form-check
-                            input#exampleRadios3.form-check-input(type='radio', name='component2', value='vit2.5')
-                            label.form-check-label(for='exampleRadios5') #{component2.fruit5}
+                            if checkkidney==1 && (component2.fruit5 == 'Tomato' || component2.fruit5 == 'Ripe Mango' || component2.fruit5 == 'Pumpkin' || component2.fruit5 == 'Banana')
+                                input#exampleRadios3.form-check-input(type='radio', name='component2', value='vit2.5',disabled='')
+                                label.form-check-label(for='exampleRadios5') #{component2.fruit5}
+                            else
+                                input#exampleRadios3.form-check-input(type='radio', name='component2', value='vit2.5')
+                                label.form-check-label(for='exampleRadios5') #{component2.fruit5}
                         .form-check
-                            input#exampleRadios3.form-check-input(type='radio', name='component2', value='vit2.6')
-                            label.form-check-label(for='exampleRadios5') #{component2.fruit6}
+                            if checkkidney==1 && (component2.fruit6 == 'Tomato' || component2.fruit6 == 'Ripe Mango' || component2.fruit6 == 'Pumpkin' || component2.fruit6 == 'Banana')
+                                input#exampleRadios3.form-check-input(type='radio', name='component2', value='vit2.6',disabled='')
+                                label.form-check-label(for='exampleRadios5') #{component2.fruit6}
+                            else
+                                input#exampleRadios3.form-check-input(type='radio', name='component2', value='vit2.6')
+                                label.form-check-label(for='exampleRadios5') #{component2.fruit6}
             .col-sm-9.col-md-7.col-lg-4.mx-auto
                 .card.card-signin.my-5
                     .card-body
@@ -70,14 +90,26 @@ block content
                             input#exampleRadios2.form-check-input(type='radio', name='component3', value='vit3.3')
                             label.form-check-label(for='exampleRadios3') #{component3.fruit3}
                         .form-check
-                            input#exampleRadios2.form-check-input(type='radio', name='component3', value='vit3.4')
-                            label.form-check-label(for='exampleRadios4') #{component3.fruit4}
+                            if checkkidney==1 && (component3.fruit4 == 'Tomato' || component3.fruit4 == 'Ripe Mango' || component3.fruit4 == 'Pumpkin' || component3.fruit4 == 'Banana')
+                                input#exampleRadios2.form-check-input(type='radio', name='component3', value='vit3.4',disabled='')
+                                label.form-check-label(for='exampleRadios4') #{component3.fruit4}
+                            else
+                                input#exampleRadios2.form-check-input(type='radio', name='component3', value='vit3.4')
+                                label.form-check-label(for='exampleRadios4') #{component3.fruit4}
                         .form-check
-                            input#exampleRadios3.form-check-input(type='radio', name='component3', value='vit3.5')
-                            label.form-check-label(for='exampleRadios5') #{component3.fruit5}
+                            if checkkidney==1 && (component3.fruit5 == 'Tomato' || component3.fruit5 == 'Ripe Mango' || component3.fruit5 == 'Pumpkin' || component3.fruit5 == 'Banana')
+                                input#exampleRadios3.form-check-input(type='radio', name='component3', value='vit3.5',disabled='')
+                                label.form-check-label(for='exampleRadios5') #{component3.fruit5}
+                            else
+                                input#exampleRadios3.form-check-input(type='radio', name='component3', value='vit3.5')
+                                label.form-check-label(for='exampleRadios5') #{component3.fruit5}
                         .form-check
-                            input#exampleRadios3.form-check-input(type='radio', name='component3', value='vit3.6')
-                            label.form-check-label(for='exampleRadios5') #{component3.fruit6}
+                            if checkkidney==1 && (component3.fruit6 == 'Tomato' || component3.fruit6 == 'Ripe Mango' || component3.fruit6 == 'Pumpkin' || component3.fruit6 == 'Banana')
+                                input#exampleRadios3.form-check-input(type='radio', name='component3', value='vit3.6',disabled='')
+                                label.form-check-label(for='exampleRadios5') #{component3.fruit6}
+                            else
+                                input#exampleRadios3.form-check-input(type='radio', name='component3', value='vit3.6')
+                                label.form-check-label(for='exampleRadios5') #{component3.fruit6}
         .col-sm-3.col-md-7.col-lg-2.mx-auto
             .input-group
                 input.form-control(type='number', placeholder='amount', name='amont', required='')
