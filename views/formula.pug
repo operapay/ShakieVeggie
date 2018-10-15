@@ -13,11 +13,11 @@ html
                   img.cart_pos(src='/img/cart.png')
           button.login
               if user
-                  a(href='/users/logout') Logout
+                  a#login(href='/users/logout') Logout
                   button.login
                       h9 #{user.username}
               else
-                  a(href='/users/login') login
+                  a#login(href='/users/login') login
           button.login
               if user
                   a(href='/payment/tracking') tracking
@@ -34,35 +34,47 @@ html
         .row
           .col-6
             .item-component
-              a(href='/custom')
                 .item(style="background-image:url('/img/imgs/img1.jpg');")
                   .item-alltext
-                    h1.item-title Detox
+                    h1.item-title 
+                      each formula, i in formulas
+                        if(formula.formulaname == "Detox")
+                          li
+                            if !user
+                              a(href="/users/login")= formula.formulaname
+                            else
+                              a(href="/custom/" + formula._id)= formula.formulaname
                     span
                       i.fa-4x.fa.fa-leaf
                     p.item-text Some informations
           .col-6
             .item-component
-              a(href='#')
                 .item(style="background-image:url('/img/imgs/img2.jpg');")
                   .item-alltext
-                    h1.item-title Skin care
+                    h1.item-title 
+                      each formula, i in formulas
+                        if(formula.formulaname == "Anti Aging")
+                          li
+                            if !user
+                              a(href="/users/login")= formula.formulaname
+                            else
+                              a(href="/custom/" + formula._id)= formula.formulaname
                     span
                       i.fa-4x.fa.fa-pagelines
                     p.item-text Some informations
-            a(href='#')
-          a(href='#')
-        a(href='#')
         .row
-          a(href='#')
           .col-6
-            a(href='#')
             .item-component
-              a(href='#')
-              a(href='#')
                 .item(style="background-image:url('/img/imgs/img3.jpg');")
                   .item-alltext
-                    h1.item-title Improving eyesight
+                    h1.item-title 
+                      each formula, i in formulas
+                        if(formula.formulaname == "Improve Eyesight")
+                          li
+                            if !user
+                              a(href="/users/login")= formula.formulaname
+                            else
+                              a(href="/custom/" + formula._id)= formula.formulaname
                     span
                       i.fa-4x.fa.fa-heartbeat
                     p.item-text Some informations

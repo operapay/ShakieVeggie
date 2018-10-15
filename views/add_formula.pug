@@ -1,0 +1,19 @@
+extends layout1
+
+block content
+    h1 #{title}
+    form(method='POST',action='/formulas/add')
+        #form-group
+            label name:
+            input.form-control(name='formulaname',type='text')
+        #form-group
+            label component1:
+            input.form-control(name='component1',type='text')
+        #form-group
+            label component2:
+            input.form-control(name='component2',type='text')
+        #form-group
+            label component3:
+            input.form-control(name='component3',type='text')
+        br
+        input.btn.btn-primary(type='submit',value='Submit')

@@ -1,0 +1,10 @@
+extends layout1
+
+block content
+    h1 #{title}
+     ul.list-group
+        each nutrient, i in nutrients
+            li.list-group-item
+                a(href="/custom/" + nutrient._id)= nutrient.name
+
+    

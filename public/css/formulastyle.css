@@ -1,8 +1,8 @@
-a:link{
+a#login:link{
     text-decoration:none;
     color: #ffb85f;
 }
-a:visited{
+a#login:visited{
     text-decoration:none;
     color: #ffb85f;
 }
