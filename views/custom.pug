@@ -7,7 +7,7 @@ block content
         .modal-content
             h2.text-center Health Condition
             .mt-3
-            form(method='POST',action='/custom')
+            form(method='POST',action='/custom/' + formula._id)
                 .form-check
                     input#kidney.form-check-input(type='checkbox', name='kidney')
                     label.form-check-label(for='kidney')
@@ -32,54 +32,80 @@ block content
                     input#surgery.form-check-input(type='checkbox', name='surgery')
                     label.form-check-label(for='surgery')
                         | surgery
-            
                 button.btn.btn-lg.btn-defult.btn-block.text-uppercase#myBtn(type='submit',value='Submit') Submit
-    h1.text-center Detox Formula
+    h1.text-center #{formula.formulaname}
     br
     img.bottle(src='/img/bottle.png')
 
     br
-    form(method='POST',action='/custom/component')
+    form(method='POST',action='/custom/' + formula._id + '/component')
         .row
             .col-sm-9.col-md-7.col-lg-4.mx-auto
                 .card.card-signin.my-5
                     .card-body
-                        h5.card-title.text-center Vit1
+                        h5.card-title.text-center #{component1.name}
                         .form-check
-                            input#exampleRadios1.form-check-input(type='radio', name='exampleRadios1', value='vit1.1', checked='')
-                            label.form-check-label(for='exampleRadios1') component
+                            input#exampleRadios1.form-check-input(type='radio', name='component1', value='vit1.1', checked='')
+                            label.form-check-label(for='exampleRadios1') #{component1.fruit1}
                         .form-check
-                            input#exampleRadios2.form-check-input(type='radio', name='exampleRadios1', value='vit1.2')
-                            label.form-check-label(for='exampleRadios2') component
+                            input#exampleRadios2.form-check-input(type='radio', name='component1', value='vit1.2')
+                            label.form-check-label(for='exampleRadios2') #{component1.fruit2}
                         .form-check
-                            input#exampleRadios3.form-check-input(type='radio', name='exampleRadios1', value='vit1.3', disabled='')
-                            label.form-check-label(for='exampleRadios3') component
+                            input#exampleRadios2.form-check-input(type='radio', name='component1', value='vit1.3')
+                            label.form-check-label(for='exampleRadios3') #{component1.fruit3}
+                        .form-check
+                            input#exampleRadios2.form-check-input(type='radio', name='component1', value='vit1.4')
+                            label.form-check-label(for='exampleRadios4') #{component1.fruit4}
+                        .form-check
+                            input#exampleRadios3.form-check-input(type='radio', name='component1', value='vit1.5')
+                            label.form-check-label(for='exampleRadios5') #{component1.fruit5}
+                        .form-check
+                            input#exampleRadios3.form-check-input(type='radio', name='component1', value='vit1.6')
+                            label.form-check-label(for='exampleRadios5') #{component1.fruit6}
             .col-sm-9.col-md-7.col-lg-4.mx-auto
                 .card.card-signin.my-5
                     .card-body
-                        h5.card-title.text-center Vit2
+                        h5.card-title.text-center #{component2.name}
                         .form-check
-                            input#exampleRadios1.form-check-input(type='radio', name='exampleRadios2', value='vit2.1', checked='')
-                            label.form-check-label(for='exampleRadios1') component
+                            input#exampleRadios1.form-check-input(type='radio', name='component2', value='vit2.1', checked='')
+                            label.form-check-label(for='exampleRadios1') #{component2.fruit1}
                         .form-check
-                            input#exampleRadios2.form-check-input(type='radio', name='exampleRadios2', value='vit2.2')
-                            label.form-check-label(for='exampleRadios2') component
-                        .form-check.disabled
-                            input#exampleRadios3.form-check-input(type='radio', name='exampleRadios2', value='vit2.3', disabled='')
-                            label.form-check-label(for='exampleRadios3') component
+                            input#exampleRadios2.form-check-input(type='radio', name='component2', value='vit2.2')
+                            label.form-check-label(for='exampleRadios2') #{component2.fruit2}
+                        .form-check
+                            input#exampleRadios2.form-check-input(type='radio', name='component2', value='vit2.3')
+                            label.form-check-label(for='exampleRadios3') #{component2.fruit3}
+                        .form-check
+                            input#exampleRadios2.form-check-input(type='radio', name='component2', value='vit2.4')
+                            label.form-check-label(for='exampleRadios4') #{component2.fruit4}
+                        .form-check
+                            input#exampleRadios3.form-check-input(type='radio', name='component2', value='vit2.5')
+                            label.form-check-label(for='exampleRadios5') #{component2.fruit5}
+                        .form-check
+                            input#exampleRadios3.form-check-input(type='radio', name='component2', value='vit2.6')
+                            label.form-check-label(for='exampleRadios5') #{component2.fruit6}
             .col-sm-9.col-md-7.col-lg-4.mx-auto
                 .card.card-signin.my-5
                     .card-body
-                        h5.card-title.text-center Vit3
+                        h5.card-title.text-center #{component3.name}
                         .form-check
-                            input#exampleRadios1.form-check-input(type='radio', name='exampleRadios3', value='vit3.1', checked='')
-                            label.form-check-label(for='exampleRadios1') component
+                            input#exampleRadios1.form-check-input(type='radio', name='component3', value='vit3.1', checked='')
+                            label.form-check-label(for='exampleRadios1') #{component3.fruit1}
                         .form-check
-                            input#exampleRadios2.form-check-input(type='radio', name='exampleRadios3', value='vit3.2')
-                            label.form-check-label(for='exampleRadios2') component
-                        .form-check.disabled
-                            input#exampleRadios3.form-check-input(type='radio', name='exampleRadios3', value='vit3.3', disabled='')
-                            label.form-check-label(for='exampleRadios3') component
+                            input#exampleRadios2.form-check-input(type='radio', name='component3', value='vit3.2')
+                            label.form-check-label(for='exampleRadios2') #{component3.fruit2}
+                        .form-check
+                            input#exampleRadios2.form-check-input(type='radio', name='component3', value='vit3.3')
+                            label.form-check-label(for='exampleRadios3') #{component3.fruit3}
+                        .form-check
+                            input#exampleRadios2.form-check-input(type='radio', name='component3', value='vit3.4')
+                            label.form-check-label(for='exampleRadios4') #{component3.fruit4}
+                        .form-check
+                            input#exampleRadios3.form-check-input(type='radio', name='component3', value='vit3.5')
+                            label.form-check-label(for='exampleRadios5') #{component3.fruit5}
+                        .form-check
+                            input#exampleRadios3.form-check-input(type='radio', name='component3', value='vit3.6')
+                            label.form-check-label(for='exampleRadios5') #{component3.fruit6}
         .col-sm-3.col-md-7.col-lg-2.mx-auto
             .input-group
                 input.form-control(type='number', placeholder='amount', name='amont', required='')

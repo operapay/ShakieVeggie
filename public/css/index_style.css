@@ -73,8 +73,13 @@ body {
     display: inline-block;
     position: relative;
     transition: 0.5s;
+<<<<<<< HEAD
   
 }
+=======
+  }
+
+>>>>>>> origin/master
 
 #midd {
     font-size: 84px;
