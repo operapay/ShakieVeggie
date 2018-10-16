@@ -18,14 +18,14 @@ html
                         img.cart_pos(src='/img/cart.png')
                 button.login
                     if user
-                        a(href='/users/logout') Logout
+                        a(href='/users/logout')#white Logout
                         button.login
                             h9 #{user.username}
                     else
                         a(href='/users/login') login
                 button.login
                     if user
-                        a(href='/payment/tracking') tracking
+                        a(href='/payment/tracking')#white tracking
             a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
         
         a(href='/')
