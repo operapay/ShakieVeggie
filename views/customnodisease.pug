@@ -80,7 +80,7 @@ html
                 text-shadow: 4px 4px #452065;
             }
             .margin-top-set{
-                margin-top:0px;
+                margin-top:5%;
             }
             .set-img{
                 margin-top:30px;
@@ -111,6 +111,15 @@ html
                 color: gray;
                 border-color:gray;
             }
+            .img-bottle {
+                position: absolute;
+            }
+            .bottle-bg{
+                width:25%;
+                height:90%;
+                margin-top:-2.25%;
+                margin-left:  5%;
+            }
 
 
     body(onload="load()")
@@ -133,8 +142,8 @@ html
             a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
         
         a(href='/')
-            img.logo-pos(src='/img/logo_circle.png') 
-            //img(src='/img/bottle_bg.png')
+            img.logo-pos.img-bottle(src='/img/logo_circle.png') 
+            img.img-bottle(src='/img/bottle_bg.png').bottle-bg
         // ------------------------------------------
 
         .container
