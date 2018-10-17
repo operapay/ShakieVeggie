@@ -8,6 +8,8 @@ const session = require('express-session');
 const passport = require('passport');
 const config = require('./config/database');
 
+let Formula = require('./models/formula');
+
 mongoose.connect(config.database);
 let db = mongoose.connection;
 
@@ -84,9 +86,10 @@ app.get('*',function(req,res,next){
 
 // Home Route
 app.get('/', function(req,res){
-    res.render('index', {
-        //title:'Medals Table' ,
-        //articles: articles
+    Formula.find({},function(err,formulas){
+        res.render('index',{
+            formulas:formulas
+        });
     });
 });
 

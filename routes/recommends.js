@@ -12,7 +12,7 @@ router.get('/:id', function(req,res){
         Nutrient.findById(formula.component1,function(err,nutrient1){
             Nutrient.findById(formula.component2,function(err,nutrient2){
                 Nutrient.findById(formula.component3,function(err,nutrient3){
-                    res.render('custom', {
+                    res.render('recommend', {
                         formula:formula,
                         component1:nutrient1,
                         component2:nutrient2,
