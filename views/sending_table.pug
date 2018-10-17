@@ -1,0 +1,42 @@
+extend layout1
+
+block content
+    center
+    h1 SENDING TABLE
+    table(style='width:100%')
+        thead
+            tr
+                th SENDING STATUS
+                th ORDER NO.
+                th NAME
+                th LASTNAME
+                th ADDRESS
+                th TRACKING NO.
+        tbody
+            tr
+                td(align='center') 
+                    button.btn.btn-lg.btn-defult.btn-block.text-uppercase(type='button') NOT READY
+                td(align='center') ORDER NO.
+                td(align='center') NAME
+                td(align='center') LASTNAME
+                td(align='center') ADDRESS
+                td(align='center')
+                    input.form-control(type='text', placeholder='Tracking No.', name='tracking', disabled='')
+            tr
+                td(align='center') 
+                    button.btn.btn-lg.btn-defult.btn-block.text-uppercase(type='button') READY
+                td(align='center') ORDER NO.
+                td(align='center') NAME
+                td(align='center') LASTNAME
+                td(align='center') ADDRESS
+                td(align='center')
+                    input.form-control(type='text', placeholder='Tracking No.', name='tracking')
+            tr
+                td(align='center') 
+                    button.btn.btn-lg.btn-defult.btn-block.text-uppercase(type='submit') NOT READY
+                td(align='center') ORDER NO.
+                td(align='center') NAME
+                td(align='center') LASTNAME
+                td(align='center') ADDRESS
+                td(align='center')
+                    input.form-control(type='text', placeholder='Tracking No.', name='tracking', disabled='')

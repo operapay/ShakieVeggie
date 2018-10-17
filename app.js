@@ -105,6 +105,14 @@ app.use('/formulas', formula);
 let recommend = require('./routes/recommends');
 app.use('/recommend', recommend);
 
+app.get('/mixing', function(req,res){
+    res.render('mixing_table');
+});
+
+app.get('/sending', function(req,res){
+    res.render('sending_table');
+});
+
 // Start Server
 app.listen(3000, function(){
     console.log('Server started on port 3000...');
