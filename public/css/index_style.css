@@ -1,10 +1,10 @@
 a#login:link{
     text-decoration:none;
-    color: #ffb85f;
+    color: white;
 }
 a#login:visited{
     text-decoration:none;
-    color: #ffb85f;
+    color: white;
 }
 
 @font-face {
@@ -14,16 +14,6 @@ a#login:visited{
 @font-face {
     font-family: Lemonism;
     src: url(/font/LemonismDEMO.otf);
-}
-body {
-    /* background-image: url(bg3.jpg);
-    background-repeat: none;
-    width: 100%;
-    background-size: cover;
-    background-attachment: fixed; */
-    background-color: #8ED2C9;
-    overflow: hidden;
-    /* text-align: center; */
 }
 .homeFont{
     background-image: url(tag.png);
@@ -165,19 +155,19 @@ body {
 /*------------------------------NAV----------------------------------*/
 
 .logo-pos{
-    margin-left:50px;
-    margin-top:-35px;
-    width:128px;
-    height: 128px;
+    margin-left:2.75%;
+    margin-top:-3%;
+    width:60px;
+    height: 60px;
 }
 .cart_pos{
-    width:22px;
-    height: 22px;
+    width:32px;
+    height: 32px;
     margin-bottom:5%;
 }
 /* Add a black background color to the top navigation */
 .topnav {
-    background-color: #462066;
+    background-color: transparent;
     overflow: hidden;
 }
 
@@ -197,7 +187,7 @@ body {
     overflow: hidden;
     border: none;
     outline: none;
-    color: #ffb85f;
+    color: white;
     padding: 14px 16px;
     background-color: inherit;
     transition: transform .2s; /* Animation */
@@ -207,7 +197,7 @@ body {
     overflow: hidden;
     border: none;
     outline: none;
-    color: #ffb85f;
+    color: black;
     padding: 14px 16px;
     background-color: inherit;
     transition: transform .2s; /* Animation */
