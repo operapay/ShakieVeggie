@@ -22,7 +22,7 @@ html
             if errors
                 each error, i in errors
                     div(class="alert alert-danger") #{error.msg}
-            .row
+            .row.mt-5
                 .mx-auto
                     .card.card-signin
                         .card-body
@@ -66,7 +66,7 @@ html
                                 br
                                 button.btn.btn-lg.btn-defult.text-uppercase#regis(type='submit',value='Submit') Register
         footer
-                p(style="color:white") Copyright © 2018  
+                //p(style="color:white") Copyright © 2018  
 
         script(src='/js/main.js')
         script(src='https://code.jquery.com/jquery-3.3.1.min.js')
