@@ -1,23 +1,19 @@
 let mongoose = require('mongoose');
 
 let recommendSchema = mongoose.Schema({
-    no:{
-        type: Number,
-        required: true
-    },
-    formula:{
+    formulaid:{
         type: String,
         required: true
     },
-    ingreOne:{
+    ingredient1:{
         type: String,
         required: true
     },
-    ingreTwo:{
+    ingredient2:{
         type: String,
         required: true
     },
-    ingreThree:{
+    ingredient3:{
         type: String,
         required: true
     }
