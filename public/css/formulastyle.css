@@ -30,15 +30,46 @@ li{
 	width: 100%;
 	height: 250px;
 }
-.item:hover{
-	opacity: 0.9;
+.item-alltext:hover + .item{
+	filter: brightness(50%);
 	text-decoration: none;
 }
 
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(51, 51, 51);
+    overflow: hidden;
+    width: 92%;
+    height: 0;
+    transition: .5s ease;
+}
+
+.item-alltext:hover .overlay {
+    height: 30%;
+    width: 92%;
+}
+p{
+    line-height: 50%;
+}
+.text {
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /*-webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);*/
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 .row .item{
     margin-bottom: 3px;
-    margin-ri
 }
 
 .col-6{
