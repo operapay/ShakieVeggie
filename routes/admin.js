@@ -4,7 +4,10 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const db = require('../config/database');
 
-//payment form
+router.get('/payment',function(req,res){
+    res.render('payment_table');    
+});
+
 router.get('/sending',function(req,res){
     res.render('sending_table');
 });
