@@ -93,9 +93,4 @@ router.post('/:id/component',function(req,res){
     res.redirect('/formulas');
 });
 
-router.get('/bottle_three',function(req,res){
-    res.render('recommendThree');
-});
-
-
 module.exports = router;

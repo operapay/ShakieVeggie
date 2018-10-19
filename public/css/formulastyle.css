@@ -1,23 +1,34 @@
-a#login:link{
+a:link{
     text-decoration:none;
-    color: #ffb85f;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-a#login:visited{
+a:visited{
     text-decoration:none;
-    color: #ffb85f;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+li{
+    list-style-type: none;
+}
 
-.container{
-	position: center;
-	margin-top: 90px;
-	margin-bottom: 90px; 
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 35px;
+    background-color:white;
+    padding: 35px;
+  }
+
+.slide-pos{
+    margin-top:0%;
 }
 
 .item{
-	opacity: 0.8;
+	opacity: 0.65;
 	width: 100%;
-	height: 400px;
+	height: 250px;
 }
 .item:hover{
 	opacity: 0.9;
@@ -26,7 +37,8 @@ a#login:visited{
 
 
 .row .item{
-	margin-bottom: 3px;
+    margin-bottom: 3px;
+    margin-ri
 }
 
 .col-6{
@@ -37,15 +49,22 @@ a#login:visited{
 
 .item-alltext{
 	text-decoration: none;
-	padding-top: 100px;
+	padding-top: 30%;
 	color: white;
 	text-align: center;
 	font-weight: bolder;
-	font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    margin-top:0%;
 }
 
 .item-component{
-	background-color: black;
+    background-color: black;
+}
+
+.contain{
+    margin-top:3%;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 .logo-pos{

@@ -1,0 +1,19 @@
+extends layout1
+
+block content
+    h1 #{title}
+    form(method='POST',action='/recommend/add')
+        #form-group
+            label formulaid:
+            input.form-control(name='formulaid',type='text')
+        #form-group
+            label ingredient1:
+            input.form-control(name='ingredient1',type='text')
+        #form-group
+            label ingredient2:
+            input.form-control(name='ingredient2',type='text')
+        #form-group
+            label ingredient3:
+            input.form-control(name='ingredient3',type='text')
+        br
+        input.btn.btn-primary(type='submit',value='Submit')

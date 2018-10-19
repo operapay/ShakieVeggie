@@ -50,9 +50,7 @@ router.post('/register', function(req,res,done){
             password:password
         });
 
-        User.findOne({
-            username: username
-        }, function(err,user) {
+        User.findOne({username: username}, function(err,user) {
             if (user) {
                 req.flash('danger','Username Already Exists');
                 res.redirect('/users/register');
