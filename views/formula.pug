@@ -60,20 +60,50 @@ html
 		#carouselExampleControls.carousel.slide(data-ride='carousel')
 			.carousel-inner
 				.carousel-item.active
-					img#pos(src='/img/button_ordernow.png')
-					img.d-block.w-100(src='/img/Detox_bg.png', alt='Detox')
-					h5.title-pos DETOX
-					p.comp-pos KALE-APPLE-CUCUMBER
+					each formula, i in formulas
+						if(formula.formulaname == "Detox")
+							if !user
+								a(href="/users/login")
+									img#pos(src='/img/button_ordernow.png')
+									img.d-block.w-100(src='/img/Detox_bg.png', alt='Detox')
+									h5.title-pos DETOX
+									p.comp-pos GUAVA - KIWI - JOB'S TEARS
+							else
+								a(href="/recommend/" + formula._id)
+									img#pos(src='/img/button_ordernow.png')
+									img.d-block.w-100(src='/img/Detox_bg.png', alt='Detox')
+									h5.title-pos DETOX
+									p.comp-pos GUAVA - KIWI - JOB'S TEARS
 				.carousel-item
-					img#pos(src='/img/button_ordernow.png')
-					img.d-block.w-100(src='/img/Detox_bg.png', alt='')
-					h5.title-pos DETOX
-					p.comp-pos KALE-APPLE-CUCUMBER
+					each formula, i in formulas
+						if(formula.formulaname == " Cholesterol Reducing")
+							if !user
+								a(href="/users/login")
+									img#pos(src='/img/button_ordernow.png')
+									img.d-block.w-100(src='/img/Detox_bg.png', alt='')
+									h5.title-pos CHOLESTEROL REDUCING
+									p.comp-pos POMEGRANATE - CORN - BANANA
+							else
+								a(href="/recommend/" + formula._id)
+									img#pos(src='/img/button_ordernow.png')
+									img.d-block.w-100(src='/img/Detox_bg.png', alt='')
+									h5.title-pos CHOLESTEROL REDUCING
+									p.comp-pos POMEGRANATE - CORN - BANANA
 				.carousel-item
-					img#pos(src='/img/button_ordernow.png')
-					img.d-block.w-100(src='/img/Detox_bg.png', alt='')
-					h5.title-pos DETOX
-					p.comp-pos KALE-APPLE-CUCUMBER
+					each formula, i in formulas
+						if(formula.formulaname == "Anti Aging")
+							if !user
+								a(href="/users/login")
+									img#pos(src='/img/button_ordernow.png')
+									img.d-block.w-100(src='/img/Detox_bg.png', alt='')
+									h5.title-pos ANTI AGING
+									p.comp-pos TOMATO - CHERRY - ALMOND
+							else
+								a(href="/recommend/" + formula._id)
+									img#pos(src='/img/button_ordernow.png')
+									img.d-block.w-100(src='/img/Detox_bg.png', alt='')
+									h5.title-pos ANTI AGING
+									p.comp-pos TOMATO - CHERRY - ALMOND
 			a.carousel-control-prev(href='#carouselExampleControls', role='button', data-slide='prev')
 				span.carousel-control-prev-icon(aria-hidden='true')
 				span.sr-only Previous

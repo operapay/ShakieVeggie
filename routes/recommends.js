@@ -68,9 +68,30 @@ router.post('/:id', function (req, res) {
         checksurgery = 1;
         console.log('surgery');
     }
-    Formula.findById(req.params.id, function(err,formula){
-        res.redirect('/recommend/'+ formula._id + '/component');
-    });
+    
+    if(req.params.id=="5bc3f01165a21c60281cac7b" && checkdiabetes) {
+        req.flash('danger','Please choose the other formulas.');
+        res.redirect('/formulas');
+    } else if(req.params.id=="5bc86640f03647141457274e" && checksurgery) {
+        req.flash('danger','Please choose the other formulas.');
+        res.redirect('/formulas');
+    } else if(req.params.id=="5bc86640f03647141457274e" && checkkidney) {
+        req.flash('danger','Please choose the other formulas.');
+        res.redirect('/formulas');
+    } else if(req.params.id=="5bc8665df03647141457274f" && checksurgery) {
+        req.flash('danger','Please choose the other formulas.');
+        res.redirect('/formulas');
+    } else if(req.params.id=="5bc8665df03647141457274f" && checkdiabetes) {
+        req.flash('danger','Please choose the other formulas.');
+        res.redirect('/formulas');
+    } else if(req.params.id=="5bc8665df03647141457274f" && checkhypertension) {
+        req.flash('danger','Please choose the other formulas.');
+        res.redirect('/formulas');
+    } else {
+        Formula.findById(req.params.id, function(err,formula){
+            res.redirect('/recommend/'+ formula._id + '/component');
+        });
+    }
 });
 
 router.get('/:id/component',function(req,res){
@@ -79,7 +100,7 @@ router.get('/:id/component',function(req,res){
             Nutrient.findById(formula.component2,function(err,nutrient2){
                 Nutrient.findById(formula.component3,function(err,nutrient3){
                     Recommend.findOne({formulaid:formula._id},function(err,recommend){
-                        res.render('recommend', {
+                        res.render('recommend2', {
                             formula:formula,
                             component1:nutrient1,
                             component2:nutrient2,
