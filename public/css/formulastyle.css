@@ -99,10 +99,8 @@ p{
 }
 
 .logo-pos{
-    margin-left:50px;
-    margin-top:-35px;
-    width:128px;
-    height: 128px;
+    width:60px;
+    height: 60px;
 }
 .cart_pos{
     width:22px;
@@ -131,7 +129,7 @@ p{
     overflow: hidden;
     border: none;
     outline: none;
-    color: #ffb85f;
+    color: white;
     padding: 14px 16px;
     background-color: inherit;
     transition: transform .2s; /* Animation */
