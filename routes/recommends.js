@@ -105,7 +105,7 @@ router.post('/:id/component',function(req,res){
     
     let bottle = new Bottle();
 
-    console.log(document.querySelector('input[name="component11"]:checked').parentElement.textContent);
+    console.log(document.querySelector('input[name="component1"]:checked').parentElement.textContent);
     // bottle.orderid = req.order._id;
     // bottle.formulaid = req.formula._id;
     // bottle.fruit1 = req.body.fruit1;
