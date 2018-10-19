@@ -10,70 +10,94 @@ html
       overflow: hidden;
       }
   body
-    nav#myTopnav.topnav
-      div
-          button.login
-              a(href='/custom/cart')
-                  img.cart_pos(src='/img/cart.png')
-          button.login
-              if user
-                  a#login(href='/users/logout') logout
-                  button.login
-                      h9 #{user.username}
-              else
-                  a#login(href='/users/login') login
-          button.login
-              if user
-                  a(href='/payment/tracking')#login tracking
-      a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
-    a(href='/')
-        img.logo-pos(src='/img/logo_circle.png')
-     
-    .homeFont
-      #top BE HEALTHY YOUR STYLE
-      #midd CHOOSE YOUR TASTE
-      #top MAKE IT YOUR FLAVOR
-    button.button
-      a(href='/formulas')
-        span CLICK ME
-    .bottles
-      .bottle
-        each formula, i in formulas
-          if(formula.formulaname == "Detox")
-            if !user
-              a(href="/users/login")
-                img(src='/img/bottle/green_bottle.png')
-            else
-              a(href="/recommend/" + formula._id)
-                img(src='/img/bottle/green_bottle.png')
-        span.bottletext
-          h1 DETOX
-          h2 Guava - Kiwi - Job's Tears
-      .bottle
-        each formula, i in formulas
-          if(formula.formulaname == " Cholesterol Reducing")
-            if !user
-              a(href="/users/login")
-                img(src='/img/bottle/yellow_bottle.png')
-            else
-              a(href="/recommend/" + formula._id)
-                img(src='/img/bottle/yellow_bottle.png')
-        span.bottletext
-          h1 CHOLESTEROL REDUCING
-          h2 Pomegranate - Corn - Banana
-      .bottle
-        each formula, i in formulas
-          if(formula.formulaname == "Anti Aging")
-            if !user
-              a(href="/users/login")
-                img(src='/img/bottle/red_bottle.png')
-            else
-              a(href="/recommend/" + formula._id)
-                img(src='/img/bottle/red_bottle.png')
-        span.bottletext
-          h1 ANTI-AGING
-          h2 Tomato - Cherry - Almond
-    .recSize R-E-C-O-M-M-E-N-D
+    .contrainer
+      if (user && user.username == 'admin')
+          nav#myTopnav.topnav
+            div
+                button.login
+                    if user
+                        a#login(href='/users/logout') logout
+                        button.login
+                            h9 #{user.username}
+                    else
+                        a#login(href='/users/login') login
+          a(href='/')
+              img.logo-pos(src='/img/logo_circle.png')
+          .col
+            button.button
+              a(href='/admin/mixing')
+                span MIXING
+          .col
+            button.button
+              a(href='/admin/sending')
+                span SENDING
+
+      else
+        nav#myTopnav.topnav
+          div
+              button.login
+                  a(href='/formulas/cart')
+                      img.cart_pos(src='/img/cart.png')
+              button.login
+                  if user
+                      a#login(href='/users/logout') logout
+                      button.login
+                          h9 #{user.username}
+                  else
+                      a#login(href='/users/login') login
+              button.login
+                  if user
+                      a(href='/payment/tracking')#login tracking
+          a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
+        a(href='/')
+            img.logo-pos(src='/img/logo_circle.png')
+        
+        .homeFont
+          #top BE HEALTHY YOUR STYLE
+          #midd CHOOSE YOUR TASTE
+          #top MAKE IT YOUR FLAVOR
+        button.button
+          a(href='/formulas')
+            span CLICK ME
+        .bottles
+          .bottle
+            each formula, i in formulas
+              if(formula.formulaname == "Detox")
+                if !user
+                  a(href="/users/login")
+                    img(src='/img/bottle/green_bottle.png')
+                else
+                  a(href="/recommend/" + formula._id)
+                    img(src='/img/bottle/green_bottle.png')
+            span.bottletext
+              h1 DETOX
+              h2 Guava - Kiwi - Job's Tears
+          .bottle
+            each formula, i in formulas
+              if(formula.formulaname == " Cholesterol Reducing")
+                if !user
+                  a(href="/users/login")
+                    img(src='/img/bottle/yellow_bottle.png')
+                else
+                  a(href="/recommend/" + formula._id)
+                    img(src='/img/bottle/yellow_bottle.png')
+            span.bottletext
+              h1 CHOLESTEROL REDUCING
+              h2 Pomegranate - Corn - Banana
+          .bottle
+            each formula, i in formulas
+              if(formula.formulaname == "Anti Aging")
+                if !user
+                  a(href="/users/login")
+                    img(src='/img/bottle/red_bottle.png')
+                else
+                  a(href="/recommend/" + formula._id)
+                    img(src='/img/bottle/red_bottle.png')
+            span.bottletext
+              h1 ANTI-AGING
+              h2 Tomato - Cherry - Almond
+        .recSize R-E-C-O-M-M-E-N-D
+      
 
     script(src='/js/main.js')
     script(src='https://code.jquery.com/jquery-3.3.1.min.js')

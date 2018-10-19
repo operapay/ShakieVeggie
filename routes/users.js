@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const db = require('../config/database');
+const LocalStrategy = require('passport-local').Strategy;
 
 //Bring in User model
 let User = require('../models/user');
