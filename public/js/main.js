@@ -12,6 +12,7 @@ var btn = document.getElementById("myBtn");
   //  modal.style.display = "block";
 //}
 
+
 function load(){
     modal.style.display = "block";
 }

@@ -8,7 +8,6 @@ let Nutrient = require('../models/nutrient');
 let Bottle = require('../models/bottle');
 let Recommend = require('../models/recommend');
 
-
 router.get('/:id', function(req,res){
     Formula.findById(req.params.id, function(err,formula){
         Nutrient.findById(formula.component1,function(err,nutrient1){
@@ -114,25 +113,20 @@ router.get('/:id/component',function(req,res){
     });
 });
 
-// router.post('/:id/component',function(req,res){
-//     req.flash('success','Added order to cart');
-//     res.redirect('/formulas');
-// });
-
-router.post('/:id/component',function(req,res){
-    // req.checkBody('title','Title is required').notEmpty();
-    // req.checkBody('author','Author is required').notEmpty();
-    // req.checkBody('body','Body is required').notEmpty();
+router.post('/:id/component',function(req,res){    
     
-    let bottle = new Bottle();
+    let bottle = new Bottle();    
+    bottle.formulaid = req.params.id;
+    bottle.fruit1 = req.body.component1;
+    bottle.fruit2 = req.body.component2;
+    bottle.fruit3 = req.body.component3;
+    bottle.amount = req.body.amount;
 
-    console.log(document.querySelector('input[name="component1"]:checked').parentElement.textContent);
-    // bottle.orderid = req.order._id;
-    // bottle.formulaid = req.formula._id;
-    // bottle.fruit1 = req.body.fruit1;
-    // bottle.fruit2 = req.body.fruit2;
-    // bottle.fruit3 = req.body.fruit3;
-    // bottle.amount = req.body.amount;
+    console.log(req.params.id);    
+    console.log(req.body.component1);
+    console.log(req.body.component2);
+    console.log(req.body.component3);
+    console.log(req.body.amount);
 
     bottle.save(function(err){
         if(err){
