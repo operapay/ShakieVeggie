@@ -12,22 +12,6 @@ var btn = document.getElementById("myBtn");
   //  modal.style.display = "block";
 //}
 
-alert($("input[name='component1']:checked").parent('label').text());
-alert($("input[name='component2']:checked").parent('label').text());
-alert($("input[name='component3']:checked").parent('label').text());
-
-function compOneText() {
-    var checkbox = document.querySelector('input[name="component1"]:checked');
-    var text = checkbox.nextSibling.textContent;
-}
-function compTwoText() {
-    var checkbox = document.querySelector('input[name="component2"]:checked');
-    var text = checkbox.nextSibling.textContent;
-}
-function compThreeText() {
-    var checkbox = document.querySelector('input[name="component3"]:checked');
-    var text = checkbox.nextSibling.textContent;
-}
 
 function load(){
     modal.style.display = "block";

@@ -114,55 +114,13 @@ router.get('/:id/component',function(req,res){
 });
 
 router.post('/:id/component',function(req,res){    
+    
     let bottle = new Bottle();    
-
     bottle.formulaid = req.params.id;
+    bottle.fruit1 = req.body.component1;
+    bottle.fruit2 = req.body.component2;
+    bottle.fruit3 = req.body.component3;
     bottle.amount = req.body.amount;
-    // bottle.ingredient1 = $("input[name='component1']:checked").parent('label').text();
-    // bottle.ingredient2 = $("input[name='component2']:checked").parent('label').text();
-    // bottle.ingredient3 = $("input[name='component3']:checked").parent('label').text();
-
-    // if(req.body.component1=="vit1.1") {
-    //     bottle.ingredient1 = req.nutrient1.fruit1;
-    // } else if(req.body.component1=="vit1.2") {
-    //     bottle.ingredient1 = req.nutrient1.fruit2;
-    // } else if(req.body.component1=="vit1.3") {
-    //     bottle.ingredient1 = req.nutrient1.fruit3;
-    // } else if(req.body.component1=="vit1.4") {
-    //     bottle.ingredient1 = req.nutrient1.fruit4;
-    // } else if(req.body.component1=="vit1.5") {
-    //     bottle.ingredient1 = req.nutrient1.fruit5;
-    // } else if(req.body.component1=="vit1.6") {
-    //     bottle.ingredient1 = req.nutrient1.fruit6;
-    // }
-
-    // if(req.body.component2=="vit2.1") {
-    //     bottle.ingredient2 = req.nutrient1.fruit1;
-    // } else if(req.body.component2=="vit2.2") {
-    //     bottle.ingredient2 = req.nutrient1.fruit2;
-    // } else if(req.body.component2=="vit2.3") {
-    //     bottle.ingredient2 = req.nutrient1.fruit3;
-    // } else if(req.body.component2=="vit2.4") {
-    //     bottle.ingredient2 = req.nutrient1.fruit4;
-    // } else if(req.body.component2=="vit2.5") {
-    //     bottle.ingredient2 = req.nutrient1.fruit5;
-    // } else if(req.body.component2=="vit2.6") {
-    //     bottle.ingredient2 = req.nutrient1.fruit6;
-    // }
-
-    // if(req.body.component3=="vit3.1") {
-    //     bottle.ingredient3 = req.nutrient1.fruit1;
-    // } else if(req.body.component3=="vit3.2") {
-    //     bottle.ingredient3 = req.nutrient1.fruit2;
-    // } else if(req.body.component3=="vit3.3") {
-    //     bottle.ingredient3 = req.nutrient1.fruit3;
-    // } else if(req.body.component3=="vit3.4") {
-    //     bottle.ingredient3 = req.nutrient1.fruit4;
-    // } else if(req.body.component3=="vit3.5") {
-    //     bottle.ingredient3 = req.nutrient1.fruit5;
-    // } else if(req.body.component3=="vit3.6") {
-    //     bottle.ingredient3 = req.nutrient1.fruit6;
-    // }
 
     console.log(req.params.id);    
     console.log(req.body.component1);
@@ -170,16 +128,16 @@ router.post('/:id/component',function(req,res){
     console.log(req.body.component3);
     console.log(req.body.amount);
 
-    // bottle.save(function(err){
-    //     if(err){
-    //         console.log(err);
-    //         return;
-    //     }
-    //     else{
+    bottle.save(function(err){
+        if(err){
+            console.log(err);
+            return;
+        }
+        else{
             req.flash('success','Added order to cart');
             res.redirect('/formulas');
-    //     }
-    // });
+        }
+    });
 });
 
 router.get('/add',function(req,res){
