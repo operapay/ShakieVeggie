@@ -108,13 +108,8 @@ app.use('/formulas', formula);
 let recommend = require('./routes/recommends');
 app.use('/recommend', recommend);
 
-app.get('/mixing', function(req,res){
-    res.render('mixing_table');
-});
-
-app.get('/sending', function(req,res){
-    res.render('sending_table');
-});
+let admin = require('./routes/admin');
+app.use('/admin', admin);
 
 // Start Server
 app.listen(3000, function(){

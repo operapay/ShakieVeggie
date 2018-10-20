@@ -1,5 +1,7 @@
 const LocalStrategy = require('passport-local').Strategy;
 const User = require('../models/user');
+const express = require('express');
+const router = express.Router();
 const config = require('../config/database');
 const bcrypt = require('bcryptjs');
 
@@ -13,7 +15,10 @@ module.exports = function(passport){
             if(!user){
                 return done(null,false, {message: 'No User Found'});
             }
-
+            // if(user && username == 'admin'){
+            //     return done(null,false, {message: 'admin'});
+            // }
+            
             //match password
             bcrypt.compare(password, user.password, function(err, isMatch){
                 if(err) throw err;
@@ -22,7 +27,7 @@ module.exports = function(passport){
                 }
                 else{
                     return done(null,false, {message: 'Wrong Password'});
-                }
+                }  
             });
         });
     }));
