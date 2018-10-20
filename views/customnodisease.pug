@@ -115,9 +115,10 @@ html
                 position: absolute;
             }
             .bottle-bg{
-                width:25%;
-                height:90%;
-                margin-top:-2.25%;
+                width:80%;
+                height:110%;
+                padding-bottom:0%;
+                margin-top:-4%;
                 margin-left:  5%;
             }
 
@@ -142,8 +143,8 @@ html
             a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
         
         a(href='/')
-            img.logo-pos.img-bottle(src='/img/logo_circle.png') 
-            img.img-bottle(src='/img/bottle_bg.png').bottle-bg
+            img.logo-pos(src='/img/logo_circle.png')
+            
         // ------------------------------------------
 
         .container
@@ -155,7 +156,9 @@ html
             .margin-top-set
                 .row
                     .col-4.set-img
-                        img.bottle(src='/img/bottle.png')
+                        //ทำรูปเดียวมาเลยดีกว่า
+                        img.bottle(style="position:absolute;z-index:2;")(src='/img/bottle.png')
+                        img.img-bottle(style="position:absolute;z-index:1;")(src='/img/bottle_bg.png').bottle-bg
                     .col-8
                         h1.text-center.text-uppercase #{formula.formulaname}
                         br
