@@ -62,7 +62,7 @@ html
 					div(class="alert alert-danger") #{error.msg}
 			div(style="position:absolute; z-index:1;right:0;")
 				button.login
-					a(href='/custom/cart')
+					a(href='/formulas/cart')
 						img.cart_pos(src='/img/cart.png')
 				button.login
 					if user
@@ -142,7 +142,7 @@ html
 										if !user
 											a(href="/users/login")= formula.formulaname
 										else
-											a(href="/custom/" + formula._id)= formula.formulaname
+											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
 							.text FIBER - FOLATE - VITAMIN B
 					.item.f_bg(style="background-image:url('/img/detox.png');")
@@ -274,7 +274,7 @@ html
 										if !user
 											a(href="/users/login")= formula.formulaname
 										else
-											a(href="/custom/" + formula._id)= formula.formulaname
+											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
 							.text COLLAGEN - VITAMIN C - VITAMIN E
 					.item.f_bg(style="background-image:url('/img/9.png');")

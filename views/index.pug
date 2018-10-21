@@ -60,10 +60,9 @@ html
           #top BE HEALTHY YOUR STYLE
           #midd CHOOSE YOUR TASTE
           #top MAKE IT YOUR FLAVOR
-        button.button
-          a(href='/formulas')
-            span CLICK ME
-        .bottles
+        form(method='POST',action='/order/addorder')
+          button.btn.btn-lg.btn-defult.btn-block.text-uppercase(type='submit',value='Submit') CLICK ME
+        //.bottles
           .bottle
             each formula, i in formulas
               if(formula.formulaname == "Detox")

@@ -9,24 +9,29 @@ let User = require('../models/user');
 let Formula = require('../models/formula');
 let Nutrient = require('../models/nutrient');
 let Bottle = require('../models/bottle')
+let Order = require('../models/order');
 
-
-router.get('/:id', function(req,res){
-    Formula.findById(req.params.id, function(err,formula){
-        Nutrient.findById(formula.component1,function(err,nutrient1){
-            Nutrient.findById(formula.component2,function(err,nutrient2){
-                Nutrient.findById(formula.component3,function(err,nutrient3){
-                    res.render('custom', {
-                        formula:formula,
-                        component1:nutrient1,
-                        component2:nutrient2,
-                        component3:nutrient3
-                    }); 
+router.get('/:id/:id', function(req,res){
+    Order.find({},function(err,orders){
+        Formula.findById(req.params.id, function(err,formula){
+            Nutrient.findById(formula.component1,function(err,nutrient1){
+                Nutrient.findById(formula.component2,function(err,nutrient2){
+                    Nutrient.findById(formula.component3,function(err,nutrient3){
+                        res.render('custom', {
+                            orders:orders.slice(-1).pop(),
+                            formula:formula,
+                            component1:nutrient1,
+                            component2:nutrient2,
+                            component3:nutrient3,
+                            //orderid = orders._id
+                        }); 
+                    });
                 });
             });
         });
     });
 
+    //console.log(orders);
     checkkidney = 0;
     checkliver = 0;
     checkhypertension = 0;
@@ -35,7 +40,7 @@ router.get('/:id', function(req,res){
     checksurgery = 0;
 });
 
-router.post('/:id', function (req, res) {
+router.post('/:id/:id', function (req, res) {
     //res.json(req.body);
     const kidney = req.body.kidney;
     const liver = req.body.liver;
@@ -67,37 +72,47 @@ router.post('/:id', function (req, res) {
         checksurgery = 1;
         console.log('surgery');
     }
-    Formula.findById(req.params.id, function(err,formula){
-        res.redirect('/custom/'+ formula._id + '/component');
+    Order.find({},function(err,orders){
+        Formula.findById(req.params.id, function(err,formula){
+            res.redirect('/custom/'+  orders.slice(-1).pop()._id + "/" + formula._id + '/component');
+        });
     });
 });
 
-router.get('/:id/component',function(req,res){
-    Formula.findById(req.params.id, function(err,formula){
-        Nutrient.findById(formula.component1,function(err,nutrient1){
-            Nutrient.findById(formula.component2,function(err,nutrient2){
-                Nutrient.findById(formula.component3,function(err,nutrient3){
-                    res.render('customnodisease', {
-                        formula:formula,
-                        component1:nutrient1,
-                        component2:nutrient2,
-                        component3:nutrient3
-                    }); 
+router.get('/:id/:id/component',function(req,res){
+    Order.find({},function(err,orders){
+        Formula.findById(req.params.id, function(err,formula){
+            Nutrient.findById(formula.component1,function(err,nutrient1){
+                Nutrient.findById(formula.component2,function(err,nutrient2){
+                    Nutrient.findById(formula.component3,function(err,nutrient3){
+                        res.render('customnodisease', {
+                            orders:orders.slice(-1).pop(),
+                            formula:formula,
+                            component1:nutrient1,
+                            component2:nutrient2,
+                            component3:nutrient3,
+                            //orderid = orders._id
+                        }); 
+                    });
                 });
             });
         });
     });
 });
 
-router.post('/:id/component',function(req,res){    
+router.post('/:id/:id/component',function(req,res){    
     
-    let bottle = new Bottle();    
+    let bottle = new Bottle(); 
+    Order.find({},function(err,orders){
+        console.log(orders.slice(-1).pop()._id);
+        bottle.orderid =  orders.slice(-1).pop()._id
+    }); 
     bottle.formulaid = req.params.id;
     bottle.fruit1 = req.body.component1;
     bottle.fruit2 = req.body.component2;
     bottle.fruit3 = req.body.component3;
     bottle.amount = req.body.amont;
-
+ 
     console.log(req.params.id);    
     console.log(req.body.component1);
     console.log(req.body.component2);
@@ -111,14 +126,12 @@ router.post('/:id/component',function(req,res){
         }
         else{
             req.flash('success','Added order to cart');
-            res.redirect('/formulas');
+            Order.find({},function(err,orders){
+                res.redirect('/formulas/' + orders.slice(-1).pop()._id);
+            });
         }
     });
 });
 
-router.post('/:id/component',function(req,res){
-    req.flash('success','Added order to cart');
-    res.redirect('/formulas');
-});
 
 module.exports = router;

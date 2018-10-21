@@ -111,6 +111,9 @@ app.use('/recommend', recommend);
 let admin = require('./routes/admin');
 app.use('/admin', admin);
 
+let order = require('./routes/order');
+app.use('/order', order);
+
 // Start Server
 app.listen(3000, function(){
     console.log('Server started on port 3000...');
