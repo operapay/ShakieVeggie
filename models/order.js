@@ -11,12 +11,10 @@ let OrderSchema = mongoose.Schema({
         required: true
     },
     totalprice:{
-        type: String,
-        required: true
+        type: Number
     },
     paymentstatus:{
-        type: String,
-        required: true
+        type: String
     }    
 });
 

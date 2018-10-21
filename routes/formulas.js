@@ -7,12 +7,15 @@ const db = require('../config/database');
 let Formula = require('../models/formula');
 let Nutrient = require('../models/nutrient');
 let Bottle = require('../models/bottle');
+let Order = require('../models/order');
 
-router.get('/',function(req,res){
+router.get('/:id',function(req,res){
     Formula.find({},function(err,formulas){
-        res.render('formula',{
-            title:'formulas',
-            formulas:formulas
+        Formula.find({},function(err,formulas){
+            res.render('formula',{
+                title:'formulas',
+                formulas:formulas
+            });
         });
     });
 });
