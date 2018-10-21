@@ -104,15 +104,17 @@ router.post('/:id/:id/component',function(req,res){
     
     let bottle = new Bottle(); 
     Order.find({},function(err,orders){
-        console.log(orders.slice(-1).pop()._id);
         bottle.orderid =  orders.slice(-1).pop()._id
+        console.log(bottle.orderid);
     }); 
+
     bottle.formulaid = req.params.id;
     bottle.fruit1 = req.body.component1;
     bottle.fruit2 = req.body.component2;
     bottle.fruit3 = req.body.component3;
     bottle.amount = req.body.amont;
  
+    //console.log(bottle.orderid);
     console.log(req.params.id);    
     console.log(req.body.component1);
     console.log(req.body.component2);
