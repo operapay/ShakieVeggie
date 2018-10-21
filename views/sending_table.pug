@@ -6,25 +6,25 @@ block content
     table(style='width:100%')
         thead
             tr
-                th SENDING STATUS
-                th ORDER NO.
-                th NAME
-                th LASTNAME
-                th ADDRESS
+                th.text-center SENDING STATUS
+                th.text-center ORDER NO.
+                th.text-center NAME
+                th.text-center LASTNAME
+                th.text-center ADDRESS
                 th TRACKING NO.
         tbody
             tr
                 td(align='center') 
-                    button.btn.btn-lg.btn-defult.btn-block.text-uppercase(type='button') NOT READY
+                    input.mixstatus(onclick="change(this);track(this)" type="button" value="NOT READY" )
                 td(align='center') ORDER NO.
                 td(align='center') NAME
                 td(align='center') LASTNAME
                 td(align='center') ADDRESS
                 td(align='center')
-                    input.form-control(type='text', placeholder='Tracking No.', name='tracking', disabled='')
+                    input.form-control#track(type='text', placeholder='Tracking No.', name='tracking')
             tr
                 td(align='center') 
-                    button.btn.btn-lg.btn-defult.btn-block.text-uppercase(type='button') READY
+                    input.mixstatus(onclick="change(this)" type="button" value="NOT READY" )
                 td(align='center') ORDER NO.
                 td(align='center') NAME
                 td(align='center') LASTNAME
@@ -33,7 +33,7 @@ block content
                     input.form-control(type='text', placeholder='Tracking No.', name='tracking')
             tr
                 td(align='center') 
-                    button.btn.btn-lg.btn-defult.btn-block.text-uppercase(type='button') NOT READY
+                    input.mixstatus(onclick="change(this)" type="button" value="NOT READY" )
                 td(align='center') ORDER NO.
                 td(align='center') NAME
                 td(align='center') LASTNAME
