@@ -2,6 +2,9 @@ let mongoose = require('mongoose');
 
 //user schema
 let BottleSchema = mongoose.Schema({
+    orderid:{
+        type: String
+    },
     formulaid:{
         type: String,
         required: true
@@ -19,7 +22,7 @@ let BottleSchema = mongoose.Schema({
         required: true
     },    
     amount:{
-        type: String,
+        type: Number,
         required: true
     }
 });

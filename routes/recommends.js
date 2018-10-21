@@ -115,18 +115,18 @@ router.get('/:id/component',function(req,res){
 
 router.post('/:id/component',function(req,res){    
     
-    let bottle = new Bottle();    
+    let bottle = new Bottle();   
     bottle.formulaid = req.params.id;
     bottle.fruit1 = req.body.component1;
     bottle.fruit2 = req.body.component2;
     bottle.fruit3 = req.body.component3;
-    bottle.amount = req.body.amount;
+    bottle.amount = req.body.amont;
 
     console.log(req.params.id);    
     console.log(req.body.component1);
     console.log(req.body.component2);
     console.log(req.body.component3);
-    console.log(req.body.amount);
+    console.log(req.body.amont);
 
     bottle.save(function(err){
         if(err){

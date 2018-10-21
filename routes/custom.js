@@ -8,6 +8,7 @@ const db = require('../config/database');
 let User = require('../models/user');
 let Formula = require('../models/formula');
 let Nutrient = require('../models/nutrient');
+let Bottle = require('../models/bottle')
 
 
 router.get('/:id', function(req,res){
@@ -85,6 +86,33 @@ router.get('/:id/component',function(req,res){
                 });
             });
         });
+    });
+});
+
+router.post('/:id/component',function(req,res){    
+    
+    let bottle = new Bottle();    
+    bottle.formulaid = req.params.id;
+    bottle.fruit1 = req.body.component1;
+    bottle.fruit2 = req.body.component2;
+    bottle.fruit3 = req.body.component3;
+    bottle.amount = req.body.amont;
+
+    console.log(req.params.id);    
+    console.log(req.body.component1);
+    console.log(req.body.component2);
+    console.log(req.body.component3);
+    console.log(req.body.amont);
+
+    bottle.save(function(err){
+        if(err){
+            console.log(err);
+            return;
+        }
+        else{
+            req.flash('success','Added order to cart');
+            res.redirect('/formulas');
+        }
     });
 });
 
