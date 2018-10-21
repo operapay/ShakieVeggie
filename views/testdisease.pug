@@ -2,9 +2,9 @@ extends layout1
 
 block content
     h1 order
-    form(action="/formulas/test", method="post")
+    form(action="/order/test", method="post")
         ul.list-group
-            each bottle, i in bottles
+            each order, i in orders
                 li.list-group-item
-                    =bottle
+                    =order
         input.btn.btn-primary(type='submit',value='Submit')

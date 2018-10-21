@@ -154,9 +154,9 @@ html
             #myModal.modal
                 // Modal content
                 .modal-content
-                    h2.text-center Health Condition
+                    h2.text-center #{orders._id}
                     .mt-3
-                    form(method='POST',action='/custom/' + formula._id)
+                    form(method='POST',action='/custom/'+  orders._id + "/" + formula._id)
                         .form-check
                             input#kidney.form-check-input(type='checkbox', name='kidney')
                             label.form-check-label(for='kidney')
@@ -183,7 +183,7 @@ html
                                 | surgery
                         button.btn.btn-lg.btn-defult.btn-block.text-uppercase#myBtn(type='submit',value='Submit') Submit
             
-            form(method='POST',action='/custom/' + formula._id + '/component')
+            form(method='POST',action='/custom/'+  orders + "/" + formula._id + '/component')
                 
                 .margin-top-set
                         .row

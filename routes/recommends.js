@@ -115,7 +115,7 @@ router.get('/:id/component',function(req,res){
 
 router.post('/:id/component',function(req,res){    
     
-    let bottle = new Bottle();   
+    let bottle = new Bottle();
     bottle.formulaid = req.params.id;
     bottle.fruit1 = req.body.component1;
     bottle.fruit2 = req.body.component2;
