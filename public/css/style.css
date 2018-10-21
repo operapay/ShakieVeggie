@@ -422,3 +422,13 @@ a:visited{
     margin-left:4%;
   }
   
+  .mixstatus{
+      width:100px;
+      height:40px;
+      font-size: 13px;
+      border:3px solid #ffcc1b;
+      border-radius: 0.1rem;
+      color:#ffcc1b;
+      font-weight: 600;
+      background: transparent; 
+  }

@@ -33,7 +33,7 @@ btn.onclick = function() {
 //-------------------------------------------------------------count amount
 
 
-var counter = 0;
+/*var counter = 0;
 
 $("#plus").click(function(){
   counter++;
@@ -45,5 +45,24 @@ $("#minus").click(function(){
         counter--; 
     }   
   $("#count").text(counter);
-});
+});*/
 
+
+
+function change(input)
+{
+    if (input.value=="NOT READY") {
+        input.value = "READY";
+    }
+    else{
+        input.value = "NOT READY";
+    }
+}
+function track(input){
+    if (input.value=="NOT READY") {
+        document.getElementById("track").disabled = true;
+    }
+    else if (input.value=="READY"){
+        document.getElementById("track").disabled = false;
+    }
+}
