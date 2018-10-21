@@ -60,9 +60,9 @@ function change(input)
 }
 function track(input){
     if (input.value=="NOT READY") {
-        document.getElementById("track").disabled = false;
+        document.getElementById("track").disabled = true;
     }
     else if (input.value=="READY"){
-        document.getElementById("track").disabled = true;
+        document.getElementById("track").disabled = false;
     }
 }
