@@ -159,7 +159,7 @@ html
                     .col-8
                         h1.text-center.text-uppercase #{formula.formulaname}
                         br
-                        form(method='POST',action='/recommend/' + formula._id + '/component')
+                        form(method='POST',action='/recommend/' + orders + "/" + formula._id + '/component')
                             .mt-4
                                 .row
                                     ul.chec-radio

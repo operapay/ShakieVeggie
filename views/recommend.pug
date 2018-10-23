@@ -156,7 +156,7 @@ html
                 .modal-content
                     h2.text-center Health Condition
                     .mt-3
-                    form(method='POST',action='/recommend/' + formula._id)
+                    form(method='POST',action='/recommend/' +  orders + '/' + formula._id)
                         .form-check
                             input#kidney.form-check-input(type='checkbox', name='kidney')
                             label.form-check-label(for='kidney')
