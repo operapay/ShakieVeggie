@@ -160,7 +160,7 @@ html
                         img.bottle(style="position:absolute;z-index:2;")(src='/img/bottle.png')
                         img.img-bottle(style="position:absolute;z-index:1;")(src='/img/bottle_bg.png').bottle-bg
                     .col-8
-                        h1.text-center.text-uppercase #{formula.formulaname}
+                        h1.text-center.text-uppercase #{orders}
                         br
                         form(method='POST',action='/custom/'+  orders + "/" + formula._id + '/component')
                             .mt-4
