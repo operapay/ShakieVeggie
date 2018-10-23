@@ -3,7 +3,8 @@ let mongoose = require('mongoose');
 //user schema
 let BottleSchema = mongoose.Schema({
     orderid:{
-        type: String
+        type: String,
+        required: true
     },
     formulaid:{
         type: String,
