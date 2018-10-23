@@ -11,11 +11,9 @@ let Order = require('../models/order');
 
 router.get('/:id',function(req,res){
     Formula.find({},function(err,formulas){
-        Order.find({},function(err,formulas){
-            res.render('formula',{
-                title:'formulas',
-                formulas:formulas
-            });
+        res.render('formula',{
+            title:'formulas',
+            formulas:formulas
         });
     });
 });
