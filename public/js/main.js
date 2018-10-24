@@ -53,11 +53,13 @@ function change(input)
 {
     if (input.value=="NOT READY") {
         input.value = "READY";
+        document.body.style.background = ffcc1b;
     }
     else{
         input.value = "NOT READY";
     }
 }
+
 function track(input){
     if (input.value=="NOT READY") {
         document.getElementById("track").disabled = true;
