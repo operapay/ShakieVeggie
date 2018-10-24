@@ -2,7 +2,7 @@ extend layout1
 
 block content
     center
-    h1 SENDING TABLE
+    h1 PAYMENTSTATUS TABLE
     table(style='width:100%').mt-5
         thead
             tr
@@ -10,16 +10,12 @@ block content
                 th.text-center PAYMENT STATUS
         tbody
             tr
-                td(align='center') ORDER NO.
                 td(align='center') 
-                    input.status(onclick="change(this);track(this)" type="submit" value="NOT READY" )
-            tr
-                td(align='center') ORDER NO.
-                td(align='center') 
-                    input.status(onclick="change(this);track(this)" type="button" value="NOT READY" )
-            tr
-                td(align='center') ORDER NO.
-                td(align='center') 
-                    input.status(onclick="change(this);track(this)" type="button" value="NOT READY" )
+                        each order, i in orders
+                            li.list-group-item
+                                =order._id
+                                form(action="/admin/payment/" + order._id, method="post")
+                                    .row
+                                    input.status(onclick="change(this);track(this)" type="submit" value="NOT READY" )
 
     

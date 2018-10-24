@@ -4,8 +4,30 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const db = require('../config/database');
 
+let Order = require('../models/order');
 router.get('/payment',function(req,res){
-    res.render('payment_table');    
+    Order.find({},function(err,orders){
+        res.render('payment_table',{
+            orders:orders
+        });
+    });
+});
+
+router.post('/payment/:id',function(req,res){
+    let order = {};
+    order.paymentstatus = 0;
+
+    let query = {_id:req.params.id}
+    Order.update(query, order, function(err){
+        if(err){
+            console.log(err);
+            return;
+        }
+        else{
+            console.log(req.params.id);
+        }
+    });
+    //console.log(req.params.id);
 });
 
 router.get('/sending',function(req,res){
