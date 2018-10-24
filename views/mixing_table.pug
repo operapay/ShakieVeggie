@@ -14,23 +14,14 @@ block content
                 th AMOUNT
         tbody
             tr
-                td(align='center') ORDER NO.
-                td(align='center') BOTTLE NO.
-                td(align='center') INGREDIENT 1
-                td(align='center') INGREDIENT 2
-                td(align='center') INGREDIENT 3
-                td(align='center') AMOUNT
-            tr
-                td(align='center') ORDER NO.
-                td(align='center') BOTTLE NO.
-                td(align='center') INGREDIENT 1
-                td(align='center') INGREDIENT 2
-                td(align='center') INGREDIENT 3
-                td(align='center') AMOUNT
-            tr
-                td(align='center') ORDER NO.
-                td(align='center') BOTTLE NO.
-                td(align='center') INGREDIENT 1
-                td(align='center') INGREDIENT 2
-                td(align='center') INGREDIENT 3
-                td(align='center') AMOUNT
+                td(align='center') 
+                        each order, i in orders
+                            if order.paymentstatus == 0
+                                br
+                                li
+                                    =order._id
+                                    each bottle, i in bottles
+                                        if order._id == bottle.orderid
+                                            .col
+                                            br
+                                            =bottle._id + " " + bottle.fruit1 + " , " + bottle.fruit2 + " , " + bottle.fruit3 + " ,amount: " + bottle.amount

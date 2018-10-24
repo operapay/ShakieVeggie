@@ -5,6 +5,8 @@ const passport = require('passport');
 const db = require('../config/database');
 
 let Order = require('../models/order');
+let Bottle = require('../models/bottle');
+
 router.get('/payment',function(req,res){
     Order.find({},function(err,orders){
         res.render('payment_table',{
@@ -16,7 +18,7 @@ router.get('/payment',function(req,res){
 router.post('/payment/:id',function(req,res){
     let order = {};
     order.paymentstatus = 0;
-    //จ่ายเงิน
+    //จ่ายแล้ว
 
     let query = {_id:req.params.id}
     Order.update(query, order, function(err){
@@ -31,12 +33,19 @@ router.post('/payment/:id',function(req,res){
     //console.log(req.params.id);
 });
 
-router.get('/sending',function(req,res){
-    res.render('sending_table');
+router.get('/mixing',function(req,res){
+    Order.find({},function(err,orders){
+        Bottle.find({},function(err,bottles){
+            res.render('mixing_table',{
+                orders:orders,
+                bottles:bottles
+            });
+        });
+    });  
 });
 
-router.get('/mixing',function(req,res){
-    res.render('mixing_table');    
+router.get('/sending',function(req,res){
+    res.render('sending_table');
 });
 
 module.exports = router;
