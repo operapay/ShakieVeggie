@@ -15,7 +15,11 @@ block content
                             li.list-group-item
                                 =order._id
                                 form(action="/admin/payment/" + order._id, method="post")
-                                    .row
-                                    input.status(onclick="change(this);track(this)" type="submit" value="NOT READY" )
+                                    if order.paymentstatus == 1
+                                        .row
+                                        input.status(onclick="change(this);track(this)" type="submit" value="NOT READY" )
+                                    else
+                                        .row
+                                        input.status(onclick="track(this)" type="submit" value="READY" )
 
     

@@ -16,6 +16,7 @@ router.get('/payment',function(req,res){
 router.post('/payment/:id',function(req,res){
     let order = {};
     order.paymentstatus = 0;
+    //จ่ายเงิน
 
     let query = {_id:req.params.id}
     Order.update(query, order, function(err){
