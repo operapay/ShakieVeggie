@@ -9,17 +9,19 @@ block content
                 th.text-center ORDER NO.
                 th.text-center PAYMENT STATUS
         tbody
-            tr
-                td(align='center') 
-                        each order, i in orders
-                            li.list-group-item
-                                =order._id
-                                form(action="/admin/payment/" + order._id, method="post")
-                                    if order.paymentstatus == 1
-                                        .row
+            each order, i in orders
+                tr
+                    td(align='center') 
+                        li.list-group-item
+                            =order._id
+                            form(action="/admin/payment/" + order._id, method="post")
+                                if order.paymentstatus == 1
+                                    .row
+                                    td(align='center') 
                                         input.status(onclick="change(this);track(this)" type="submit" value="NOT READY" )
-                                    else
-                                        .row
+                                else
+                                    .row
+                                    td(align='center') 
                                         input.status(onclick="track(this)" type="submit" value="READY" )
 
     

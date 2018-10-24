@@ -6,22 +6,22 @@ block content
     table(style='width:100%')
         thead
             tr
-                th ORDER NO.
+                th.text-center ORDER NO.
                 th BOTTLE NO.
                 th INGREDIENT 1
                 th INGREDIENT 2
                 th INGREDIENT 3
                 th AMOUNT
         tbody
-            tr
-                td(align='center') 
-                        each order, i in orders
-                            if order.paymentstatus == 0
-                                br
-                                li
-                                    =order._id
-                                    each bottle, i in bottles
-                                        if order._id == bottle.orderid
-                                            .col
-                                            br
-                                            =bottle._id + " " + bottle.fruit1 + " , " + bottle.fruit2 + " , " + bottle.fruit3 + " ,amount: " + bottle.amount
+            each order, i in orders
+                tr
+                    td(align='center') 
+                        if order.paymentstatus == 0
+                            br
+                            li
+                                =order._id
+                                each bottle, i in bottles
+                                    if order._id == bottle.orderid
+                                        .col
+                                        br
+                                        =bottle._id + " " + bottle.fruit1 + " , " + bottle.fruit2 + " , " + bottle.fruit3 + " ,amount: " + bottle.amount

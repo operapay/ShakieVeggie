@@ -45,7 +45,11 @@ router.get('/mixing',function(req,res){
 });
 
 router.get('/sending',function(req,res){
-    res.render('sending_table');
+    Order.find({},function(err,orders){
+        res.render('sending_table',{
+            orders:orders
+        });
+    });
 });
 
 module.exports = router;
