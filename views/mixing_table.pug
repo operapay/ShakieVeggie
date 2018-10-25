@@ -3,7 +3,7 @@ extend layout1
 block content
     center
     h1 MIXING TABLE
-    table(style='width:100%')
+    table(style='width:100%').mt-5
         thead
             tr
                 th.text-center ORDER NO.
@@ -23,6 +23,7 @@ block content
                                 tr
                                 td
                                 if order._id == bottle.orderid
+                                    .col
                                     td(align='center')=bottle._id
                                     td(align='center')=bottle.fruit1
                                     td(align='center')=bottle.fruit2
