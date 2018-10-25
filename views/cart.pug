@@ -19,7 +19,7 @@ html(lang='en', dir='ltr')
       nav#myTopnav.topnav
         div
           button.login
-              a(href='/cart/'+orders)
+              a(href='/cart/' + order)
                   img.cart_pos(src='/img/cart.png')
           button.login
               if user
@@ -45,39 +45,39 @@ html(lang='en', dir='ltr')
           .box
             form(method='post', action='/payment')
               .table-responsive
-                #myModal.modal.fade(role='dialog')
-                  .modal-dialog
-                    // Modal content
-                    .modal-content
-                      .modal-header
-                        h4.modal-title Are you sure?
-                        button.close(type='button', data-dismiss='modal') ×
-                      .modal-body
-                        p Are you sure that you want to delete this product?
-                      .modal-footer
-                        button.btn.btn-default(type='button', data-dismiss='modal') Sure
-                #myModal.modal.fade(role='dialog')
-                  .modal-dialog
-                    // Modal content
-                    .modal-content
-                      .modal-header
-                        h4.modal-title Are you sure?
-                        button.close(type='button', data-dismiss='modal') ×
-                      .modal-body
-                        p Are you sure that you want to delete this product?
-                      .modal-footer
-                        button.btn.btn-default(type='button', data-dismiss='modal') Sure
-                #myModal.modal.fade(role='dialog')
-                  .modal-dialog
-                    // Modal content
-                    .modal-content
-                      .modal-header
-                        h4.modal-title Are you sure?
-                        button.close(type='button', data-dismiss='modal') ×
-                      .modal-body
-                        p Are you sure that you want to delete this product?
-                      .modal-footer
-                        button.btn.btn-default(type='button', data-dismiss='modal') Sure
+                //- #myModal.modal.fade(role='dialog')
+                //-   .modal-dialog
+                //-     // Modal content
+                //-     .modal-content
+                //-       .modal-header
+                //-         h4.modal-title Are you sure?
+                //-         button.close(type='button', data-dismiss='modal') ×
+                //-       .modal-body
+                //-         p Are you sure that you want to delete this product?
+                //-       .modal-footer
+                //-         button.btn.btn-default(type='button', data-dismiss='modal') Sure
+                //- #myModal.modal.fade(role='dialog')
+                //-   .modal-dialog
+                //-     // Modal content
+                //-     .modal-content
+                //-       .modal-header
+                //-         h4.modal-title Are you sure?
+                //-         button.close(type='button', data-dismiss='modal') ×
+                //-       .modal-body
+                //-         p Are you sure that you want to delete this product?
+                //-       .modal-footer
+                //-         button.btn.btn-default(type='button', data-dismiss='modal') Sure
+                //- #myModal.modal.fade(role='dialog')
+                //-   .modal-dialog
+                //-     // Modal content
+                //-     .modal-content
+                //-       .modal-header
+                //-         h4.modal-title Are you sure?
+                //-         button.close(type='button', data-dismiss='modal') ×
+                //-       .modal-body
+                //-         p Are you sure that you want to delete this product?
+                //-       .modal-footer
+                //-         button.btn.btn-default(type='button', data-dismiss='modal') Sure
                 table.table
                   thead
                     tr
@@ -87,30 +87,16 @@ html(lang='en', dir='ltr')
                       th Unit price
                       th(colspan='2') Total
                   tbody
-                    tr
-                      td Fat Burn
-                      td(colspan='2') Apple,Banana,Orage
-                      td 2
-                      td ฿75.00
-                      td ฿150.00
-                      td
-                        button.fa.fa-trash-o(type='button', data-toggle='modal', data-target='#myModal')
-                    tr
-                      td Eye sight
-                      td(colspan='2') Carrot,Beetroot,Grape
-                      td 1
-                      td ฿75.00
-                      td ฿75.00
-                      td
-                        button.fa.fa-trash-o(type='button', data-toggle='modal', data-target='#myModal')
-                    tr
-                      td Detox
-                      td(colspan='2') Banana,Carrot,Brocoli
-                      td 1
-                      td ฿75.00
-                      td ฿75.00
-                      td
-                        button.fa.fa-trash-o(type='button', data-toggle='modal', data-target='#myModal')
+                    each bottle, i in bottle
+                      tr
+                        if bottle.orderid == order
+                          td #{formula}
+                          td(colspan='2') #{bottle.fruit1},#{bottle.fruit2},#{bottle.fruit3}
+                          td #{bottle.amount}
+                          td ฿75.00
+                          td 
+                          td
+                            button.fa.fa-trash-o(type='button', data-toggle='modal', data-target='#myModal')
               .py-3.px-3.box-footer.d-flex.justify-content-between.flex-column.flex-lg-row.bg-light.border-bottom.border-top
                 .left
                   a.btn.btn-outline-secondary(href='/formula')
