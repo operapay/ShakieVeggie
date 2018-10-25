@@ -62,7 +62,7 @@ html
 					div(class="alert alert-danger") #{error.msg}
 			div(style="position:absolute; z-index:1;right:0;")
 				button.login
-					a(href='/cart/' + order)
+					a(href='/formulas/cart')
 						img.cart_pos(src='/img/cart.png')
 				button.login
 					if user
@@ -89,7 +89,7 @@ html
 									h5.title-pos DETOX
 									p.comp-pos GUAVA - KIWI - JOB'S TEARS
 							else
-								a(href="/recommend/" + orders + "/" + formula._id)
+								a(href="/recommend/" + orders._id + "/" + formula._id)
 									img#pos(src='/img/button_ordernow.png')
 									img.d-block.w-100(src='/img/Detox_bg.png', alt='Detox')
 									h5.title-pos DETOX
@@ -104,7 +104,7 @@ html
 									h5.title-pos CHOLESTEROL REDUCING
 									p.comp-pos POMEGRANATE - CORN - BANANA
 							else
-								a(href="/recommend/" + orders + "/" + formula._id)
+								a(href="/recommend/" + orders._id + "/" + formula._id)
 									img#pos(src='/img/button_ordernow.png')
 									img.d-block.w-100(src='/img/Detox_bg.png', alt='')
 									h5.title-pos CHOLESTEROL REDUCING
@@ -119,7 +119,7 @@ html
 									h5.title-pos ANTI AGING
 									p.comp-pos TOMATO - CHERRY - ALMOND
 							else
-								a(href="/recommend/" + orders + "/" + formula._id)
+								a(href="/recommend/" + orders._id + "/" + formula._id)
 									img#pos(src='/img/button_ordernow.png')
 									img.d-block.w-100(src='/img/Detox_bg.png', alt='')
 									h5.title-pos ANTI AGING
@@ -142,7 +142,7 @@ html
 										if !user
 											a(href="/users/login")= formula.formulaname
 										else
-											a(href="/custom/" + orders + "/" + formula._id)= formula.formulaname
+											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
 							.text FIBER - FOLATE - VITAMIN B
 					.item.f_bg(style="background-image:url('/img/detox.png');")
@@ -158,7 +158,7 @@ html
 										if !user
 											a(href="/users/login")= formula.formulaname
 										else
-											a(href="/custom/" + orders + "/" + formula._id)= formula.formulaname
+											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
 							.text
 								p
@@ -177,7 +177,7 @@ html
 										if !user
 											a(href="/users/login")= formula.formulaname
 										else
-											a(href="/custom/" + orders + "/" + formula._id)= formula.formulaname
+											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
 							.text BETA CAROTENE - VITAMIN A - VITAMIN E
 					.item.f_bg(style="background-image:url('/img/eyes.png');")
@@ -194,7 +194,7 @@ html
 										if !user
 											a(href="/users/login")= formula.formulaname
 										else
-											a(href="/custom/" + orders + "/" + formula._id)= formula.formulaname
+											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
 							.text COLLAGEN - VITAMIN C - VITAMIN E
 					.item.f_bg(style="background-image:url('/img/antiage.png');")
@@ -208,7 +208,7 @@ html
 										if !user
 											a(href="/users/login")= formula.formulaname
 										else
-											a(href="/custom/" + orders + "/" + formula._id)= formula.formulaname
+											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
 							.text FIBER - VITAMIN C - VITAMIN E
 					.item.f_bg(style="background-image:url('/img/sugar.png');")
@@ -222,7 +222,7 @@ html
 										if !user
 											a(href="/users/login")= formula.formulaname
 										else
-											a(href="/custom/" + orders + "/" + formula._id)= formula.formulaname
+											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
 							.text 
 								p
@@ -241,7 +241,7 @@ html
 										if !user
 											a(href="/users/login")= formula.formulaname
 										else
-											a(href="/custom/" + orders + "/" + formula._id)= formula.formulaname
+											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
 							.text CALCIUM - FOLATE - Fe
 					.item.f_bg(style="background-image:url('/img/custom_bg.png');")
@@ -258,7 +258,7 @@ html
 										if !user
 											a(href="/users/login")= formula.formulaname
 										else
-											a(href="/custom/" + orders + "/" + formula._id)= formula.formulaname
+											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
 							.text VITAMIN K - FOLATE - Fe
 					.item.f_bg(style="background-image:url('/img/blood.png');")
@@ -274,7 +274,7 @@ html
 										if !user
 											a(href="/users/login")= formula.formulaname
 										else
-											a(href="/custom/" + orders + "/" + formula._id)= formula.formulaname
+											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
 							.text COLLAGEN - VITAMIN C - VITAMIN E
 					.item.f_bg(style="background-image:url('/img/9.png');")

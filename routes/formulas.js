@@ -10,12 +10,19 @@ let Bottle = require('../models/bottle');
 let Order = require('../models/order');
 
 router.get('/:id',function(req,res){
-    Formula.find({},function(err,formulas){
-        res.render('formula',{
-            title:'formulas',
-            formulas:formulas
+    Order.findById(req.params.id, function(err,orders){
+        Formula.find({},function(err,formulas){
+            res.render('formula',{
+                title:'formulas',
+                formulas:formulas,
+                orders:orders
+            });
         });
     });
+});
+
+router.get('/cart',function(req,res){
+    res.render('cart');
 });
 
 router.get('/add',function(req,res){

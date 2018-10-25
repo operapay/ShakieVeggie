@@ -114,9 +114,6 @@ app.use('/admin', admin);
 let order = require('./routes/order');
 app.use('/order', order);
 
-let cart = require('./routes/cart');
-app.use('/cart', cart);
-
 // Start Server
 app.listen(3000, function(){
     console.log('Server started on port 3000...');

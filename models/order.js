@@ -11,7 +11,8 @@ let OrderSchema = mongoose.Schema({
         required: true
     },
     totalprice:{
-        type: Number
+        type: String,
+        required: true
     },
     paymentstatus:{
         type: String,
