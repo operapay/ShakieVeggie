@@ -13,7 +13,9 @@ block content
                 th.text-center INGREDIENT 3
                 th.text-center AMOUNT
         tbody
+            br
             each order, i in orders
+                .col
                 tr 
                     if order.paymentstatus == 0
                         td(align='center')=order._id
@@ -21,8 +23,6 @@ block content
                                 tr
                                 td
                                 if order._id == bottle.orderid
-                                    .col
-                                    br
                                     td(align='center')=bottle._id
                                     td(align='center')=bottle.fruit1
                                     td(align='center')=bottle.fruit2
