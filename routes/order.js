@@ -32,12 +32,8 @@ router.post('/addorder',function(req,res){
     });
 });
 
-router.get('/test',function(req,res){
-    Order.find({},function(err,orders){
-        res.render('testdisease',{
-            orders:orders
-        });
-    });
+router.post('/test',function(req,res){
+    console.log('paid');
 });
 
 module.exports = router;

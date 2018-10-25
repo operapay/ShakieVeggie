@@ -6,31 +6,26 @@ block content
     table(style='width:100%')
         thead
             tr
-                th ORDER NO.
-                th BOTTLE NO.
-                th INGREDIENT 1
-                th INGREDIENT 2
-                th INGREDIENT 3
-                th AMOUNT
+                th.text-center ORDER NO.
+                th.text-center BOTTLE NO.
+                th.text-center INGREDIENT 1
+                th.text-center INGREDIENT 2
+                th.text-center INGREDIENT 3
+                th.text-center AMOUNT
         tbody
-            tr
-                td(align='center') ORDER NO.
-                td(align='center') BOTTLE NO.
-                td(align='center') INGREDIENT 1
-                td(align='center') INGREDIENT 2
-                td(align='center') INGREDIENT 3
-                td(align='center') AMOUNT
-            tr
-                td(align='center') ORDER NO.
-                td(align='center') BOTTLE NO.
-                td(align='center') INGREDIENT 1
-                td(align='center') INGREDIENT 2
-                td(align='center') INGREDIENT 3
-                td(align='center') AMOUNT
-            tr
-                td(align='center') ORDER NO.
-                td(align='center') BOTTLE NO.
-                td(align='center') INGREDIENT 1
-                td(align='center') INGREDIENT 2
-                td(align='center') INGREDIENT 3
-                td(align='center') AMOUNT
+            each order, i in orders
+                tr 
+                    if order.paymentstatus == 0
+                        td(align='center')=order._id
+                            each bottle, i in bottles
+                                tr
+                                td
+                                if order._id == bottle.orderid
+                                    .col
+                                    br
+                                    td(align='center')=bottle._id
+                                    td(align='center')=bottle.fruit1
+                                    td(align='center')=bottle.fruit2
+                                    td(align='center')=bottle.fruit3
+                                    td(align='center')=bottle.amount
+                                    

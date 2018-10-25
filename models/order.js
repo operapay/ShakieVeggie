@@ -14,8 +14,15 @@ let OrderSchema = mongoose.Schema({
         type: Number
     },
     paymentstatus:{
+        type: String,
+        required: true
+    },
+    mixingstatus:{
         type: String
-    }    
+    }, 
+    trackingnum:{
+        type: String
+    }     
 });
 
 
