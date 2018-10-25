@@ -21,10 +21,6 @@ router.get('/:id',function(req,res){
     });
 });
 
-router.get('/cart',function(req,res){
-    res.render('cart');
-});
-
 router.get('/add',function(req,res){
     res.render('add_formula', {
         title:'Add Formula'

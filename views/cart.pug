@@ -19,7 +19,7 @@ html(lang='en', dir='ltr')
       nav#myTopnav.topnav
         div
           button.login
-              a(href='/formulas/cart')
+              a(href='/cart/' + orders._id)
                   img.cart_pos(src='/img/cart.png')
           button.login
               if user
@@ -37,7 +37,7 @@ html(lang='en', dir='ltr')
     .row.pt-5.text-center
       .col
         h1.text-info Shopping cart
-        p.text-muted You currently have 4 item(s) in your cart.
+        //- p.text-muted= 'You currently have ' + + ' item(s) in your cart.'
     .container
       .row
         #basket.col-lg-9
@@ -87,33 +87,22 @@ html(lang='en', dir='ltr')
                       th Unit price
                       th(colspan='2') Total
                   tbody
-                    tr
-                      td Fat Burn
-                      td(colspan='2') Apple,Banana,Orage
-                      td 2
-                      td ฿75.00
-                      td ฿150.00
-                      td
-                        button.fa.fa-trash-o(type='button', data-toggle='modal', data-target='#myModal')
-                    tr
-                      td Eye sight
-                      td(colspan='2') Carrot,Beetroot,Grape
-                      td 1
-                      td ฿75.00
-                      td ฿75.00
-                      td
-                        button.fa.fa-trash-o(type='button', data-toggle='modal', data-target='#myModal')
-                    tr
-                      td Detox
-                      td(colspan='2') Banana,Carrot,Brocoli
-                      td 1
-                      td ฿75.00
-                      td ฿75.00
-                      td
-                        button.fa.fa-trash-o(type='button', data-toggle='modal', data-target='#myModal')
+                    each bottle, i in bottles
+                      if bottle.orderid == orders._id
+                        tr
+                          each formula, i in formulas
+                            if formula._id == bottle.formulaid
+                              td= formula.formulaname
+                              td(colspan='2')= bottle.fruit1 + ', ' + bottle.fruit2 + ', ' + bottle.fruit3
+                              td= bottle.amount
+                              td ฿75.00
+                              td= '฿' + 75*bottle.amount + '.00'
+                              td
+                                button.fa.fa-trash-o(type='button', data-toggle='modal', data-target='#myModal')
+
               .py-3.px-3.box-footer.d-flex.justify-content-between.flex-column.flex-lg-row.bg-light.border-bottom.border-top
                 .left
-                  a.btn.btn-outline-secondary(href='/formula')
+                  a.btn.btn-outline-secondary(href='/formula/' + orders.id)
                     i.fa.fa-chevron-left
                     strong Continue shopping
                 .right
@@ -130,7 +119,7 @@ html(lang='en', dir='ltr')
                 tbody
                   tr
                     td.text-muted Order subtotal
-                    th ฿300.00
+                    th= '฿' + orders.totalprice + '.00'
                   tr
                     td.text-muted Shipping and handling
                     th ฿30.00
@@ -140,4 +129,4 @@ html(lang='en', dir='ltr')
                   tr.total
                     td
                       strong  Total
-                    th ฿330.00
+                    th= '฿' + orders.totalprice + '.00'

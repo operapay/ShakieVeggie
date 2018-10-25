@@ -62,7 +62,7 @@ html
 					div(class="alert alert-danger") #{error.msg}
 			div(style="position:absolute; z-index:1;right:0;")
 				button.login
-					a(href='/formulas/cart')
+					a(href='/cart/' + orders._id)
 						img.cart_pos(src='/img/cart.png')
 				button.login
 					if user
