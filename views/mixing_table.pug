@@ -7,21 +7,25 @@ block content
         thead
             tr
                 th.text-center ORDER NO.
-                th BOTTLE NO.
-                th INGREDIENT 1
-                th INGREDIENT 2
-                th INGREDIENT 3
-                th AMOUNT
+                th.text-center BOTTLE NO.
+                th.text-center INGREDIENT 1
+                th.text-center INGREDIENT 2
+                th.text-center INGREDIENT 3
+                th.text-center AMOUNT
         tbody
             each order, i in orders
-                tr
-                    td(align='center') 
-                        if order.paymentstatus == 0
-                            br
-                            li
-                                =order._id
-                                each bottle, i in bottles
-                                    if order._id == bottle.orderid
-                                        .col
-                                        br
-                                        =bottle._id + " " + bottle.fruit1 + " , " + bottle.fruit2 + " , " + bottle.fruit3 + " ,amount: " + bottle.amount
+                tr 
+                    if order.paymentstatus == 0
+                        td(align='center')=order._id
+                            each bottle, i in bottles
+                                tr
+                                td
+                                if order._id == bottle.orderid
+                                    .col
+                                    br
+                                    td(align='center')=bottle._id
+                                    td(align='center')=bottle.fruit1
+                                    td(align='center')=bottle.fruit2
+                                    td(align='center')=bottle.fruit3
+                                    td(align='center')=bottle.amount
+                                    
