@@ -1,10 +1,74 @@
-extends layout1
+html
+    head
+        title Home
+        //link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.css')
+        title index
+        link(rel='stylesheet', type='text/css', href='/css/index_style.css')
+        style.
+            body {
+            background-color: #8ED2C9;
+            overflow: hidden;
+            }
+    body
+        .contrainer
+        if (user && user.username == 'admin')
+            nav#myTopnav.topnav
+                div
+                    button.login
+                        if user
+                            a#login(href='/users/logout') logout
+                            button.login
+                                h9 #{user.username}
+                        else
+                            a#login(href='/users/login') login
+            a(href='/')
+                img.logo-pos(src='/img/logo_circle.png')
+            .col
+                button.button
+                a(href='/admin/payment')
+                    span ORDER PAYMENT
+            .col
+                button.button
+                a(href='/admin/mixing')
+                    span MIXING
+            .col
+                button.button
+                a(href='/admin/sending')
+                    span SENDING
 
-block content
-    h1 order
-    form(action="/order/test", method="post")
-        ul.list-group
-            each order, i in orders
-                li.list-group-item
-                    =order
-        input.btn.btn-primary(type='submit',value='Submit')
+        else
+            nav#myTopnav.topnav
+                div
+                    button.login
+                        a(href='/formulas/cart')
+                            img.cart_pos(src='/img/cart.png')
+                    button.login
+                        if user
+                            a#login(href='/users/logout') logout
+                            button.login
+                                h9 #{user.username}
+                        else
+                            a#login(href='/users/login') login
+                    button.login
+                        if user
+                            a(href='/payment/tracking')#login tracking
+                a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
+            a(href='/')
+                img.logo-pos(src='/img/logo_circle.png')
+            
+            .homeFont
+                #top BE HEALTHY YOUR STYLE
+                #midd CHOOSE YOUR TASTE
+                #top MAKE IT YOUR FLAVOR
+            form(method='POST',action='/order/addorder')
+                button.btn.btn-lg.btn-defult.btn-block.text-uppercase(type='submit',value='Submit') CLICK ME
+            .recSize R-E-C-O-M-M-E-N-D
+      
+
+    script(src='/js/main.js')
+    script(src='https://code.jquery.com/jquery-3.3.1.min.js')
+    script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
+    script(src='/bower_components/sweetalert/lib/sweet-alert.min.js')
+    script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js')
