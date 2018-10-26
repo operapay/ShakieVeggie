@@ -37,7 +37,11 @@ html(lang='en', dir='ltr')
     .row.pt-5.text-center
       .col
         h1.text-info Shopping cart
-        //- p.text-muted= 'You currently have ' + + ' item(s) in your cart.'
+        - var totalItems = 0
+        each bottle in bottles
+          if bottle.orderid == orders._id
+            - totalItems += bottle.amount
+        p.text-muted= 'You currently have ' + totalItems + ' item(s) in your cart.'
     .container
       .row
         #basket.col-lg-9
@@ -119,7 +123,7 @@ html(lang='en', dir='ltr')
                 tbody
                   tr
                     td.text-muted Order subtotal
-                    th= '฿' + orders.totalprice + '.00'
+                    th= '฿' + totalItems*75 + '.00'
                   tr
                     td.text-muted Shipping and handling
                     th ฿30.00
@@ -129,4 +133,4 @@ html(lang='en', dir='ltr')
                   tr.total
                     td
                       strong  Total
-                    th= '฿' + orders.totalprice + '.00'
+                    th= '฿' + ((totalItems*75)+30) + '.00'
