@@ -47,72 +47,49 @@ html(lang='en', dir='ltr')
         #basket.col-lg-9
           hr
           .box
-            form(method='post', action='/payment')
-              .table-responsive
-                #myModal.modal.fade(role='dialog')
-                  .modal-dialog
-                    // Modal content
-                    .modal-content
-                      .modal-header
-                        h4.modal-title Are you sure?
-                        button.close(type='button', data-dismiss='modal') ×
-                      .modal-body
-                        p Are you sure that you want to delete this product?
-                      .modal-footer
-                        button.btn.btn-default(type='button', data-dismiss='modal') Sure
-                #myModal.modal.fade(role='dialog')
-                  .modal-dialog
-                    // Modal content
-                    .modal-content
-                      .modal-header
-                        h4.modal-title Are you sure?
-                        button.close(type='button', data-dismiss='modal') ×
-                      .modal-body
-                        p Are you sure that you want to delete this product?
-                      .modal-footer
-                        button.btn.btn-default(type='button', data-dismiss='modal') Sure
-                #myModal.modal.fade(role='dialog')
-                  .modal-dialog
-                    // Modal content
-                    .modal-content
-                      .modal-header
-                        h4.modal-title Are you sure?
-                        button.close(type='button', data-dismiss='modal') ×
-                      .modal-body
-                        p Are you sure that you want to delete this product?
-                      .modal-footer
-                        button.btn.btn-default(type='button', data-dismiss='modal') Sure
-                table.table
-                  thead
-                    tr
-                      th Formula
-                      th(colspan='2') Component
-                      th Quantity
-                      th Unit price
-                      th(colspan='2') Total
-                  tbody
-                    each bottle, i in bottles
-                      if bottle.orderid == orders._id
-                        tr
-                          each formula, i in formulas
-                            if formula._id == bottle.formulaid
-                              td= formula.formulaname
-                              td(colspan='2')= bottle.fruit1 + ', ' + bottle.fruit2 + ', ' + bottle.fruit3
-                              td= bottle.amount
-                              td ฿75.00
-                              td= '฿' + 75*bottle.amount + '.00'
-                              td
-                                button.fa.fa-trash-o(type='button', data-toggle='modal', data-target='#myModal')
+            .table-responsive
+              #myModal.modal.fade(role='dialog')
+                .modal-dialog
+                  // Modal content
+                  .modal-content
+                    .modal-header
+                      h4.modal-title Are you sure?
+                      button.close(type='button', data-dismiss='modal') ×
+                    .modal-body
+                      p Are you sure that you want to delete this product?
+                    .modal-footer
+                      button.btn.btn-default(type='button', data-dismiss='modal') Sure
+              table.table
+                thead
+                  tr
+                    th Formula
+                    th(colspan='2') Component
+                    th Quantity
+                    th Unit price
+                    th(colspan='2') Total
+                tbody
+                  each bottle, i in bottles
+                    if bottle.orderid == orders._id
+                      tr
+                        each formula, i in formulas
+                          if formula._id == bottle.formulaid
+                            td= formula.formulaname
+                            td(colspan='2')= bottle.fruit1 + ', ' + bottle.fruit2 + ', ' + bottle.fruit3
+                            td= bottle.amount
+                            td ฿75.00
+                            td= '฿' + 75*bottle.amount + '.00'
+                            td
+                              button.fa.fa-trash-o(type='button', data-toggle='modal', data-target='#myModal')
 
-              .py-3.px-3.box-footer.d-flex.justify-content-between.flex-column.flex-lg-row.bg-light.border-bottom.border-top
-                .left
-                  a.btn.btn-outline-secondary(href='/formula/' + orders.id)
-                    i.fa.fa-chevron-left
-                    strong Continue shopping
-                .right
-                  button.btn.btn-outline-primary(type='submit')
-                    strong Checkout 
-                    i.fa.fa-chevron-right
+            .py-3.px-3.box-footer.d-flex.justify-content-between.flex-column.flex-lg-row.bg-light.border-bottom.border-top
+              .left
+                a.btn.btn-outline-secondary(href='/formula/' + orders.id)
+                  i.fa.fa-chevron-left
+                  strong Continue shopping
+              .right
+                button.btn.btn-outline-primary(type='submit')
+                  strong Checkout 
+                  i.fa.fa-chevron-right
         .col-lg-3
           hr
           #order-summary.box.border-top.border-bottom
