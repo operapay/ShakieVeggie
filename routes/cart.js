@@ -28,17 +28,7 @@ router.post('/:id/:bottle',function(req,res){
         if(err){
            console.log(err); 
         }
-        Order.findById(req.params.id, function(err,orders){
-            Bottle.find({},function(err,bottles){
-                Formula.find({},function(err,formulas){
-                    res.render('cart',{
-                        bottles:bottles,
-                        orders:orders,
-                        formulas:formulas
-                    });
-                });
-            });
-        });
+        res.redirect('/cart/' + req.params.id);
     });
 });
 

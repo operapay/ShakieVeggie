@@ -68,8 +68,19 @@ html(lang='en', dir='ltr')
                             td ฿75.00
                             td= '฿' + 75*bottle.amount + '.00'
                             td
-                              form(method='POST',action='/cart/' +orders._id + '/' + bottle._id)
-                                button.btn.btn-outline-danger(type='submit') Delete
+                              button.fa.fa-trash-o(type='button', data-toggle='modal', data-target='#myModal')
+                              #myModal.modal.fade(role='dialog')
+                                  .modal-dialog
+                                  // Modal content
+                                  .modal-content
+                                      .modal-header
+                                          h4.modal-title Are you sure?
+                                          button.close(type='button', data-dismiss='modal') ×
+                                      .modal-body
+                                          p Are you sure that you want to delete this product?
+                                      .modal-footer
+                                          form(method='POST',action='/cart/' + orders._id + '/' + bottle._id)
+                                              button.btn.btn-outline-primary(type='submit') Sure
 
             .py-3.px-3.box-footer.d-flex.justify-content-between.flex-column.flex-lg-row.bg-light.border-bottom.border-top
               .left
