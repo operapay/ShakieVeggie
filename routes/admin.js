@@ -73,4 +73,26 @@ router.post('/sending/:id',function(req,res){
     });
 });
 
+router.post('/tracking/:id',function(req,res){
+    //console.log(req.params.id);
+    let order = {};
+    order.trackingnum = req.body.trackingnum;
+
+    let query = {_id:req.params.id}
+    Order.update(query, order, function(err){
+        if(err){
+            console.log(err);
+            return;
+        }
+        else{
+            Order.find({},function(err,orders){
+                res.render('sending_table',{
+                    orders:orders
+                });
+            });
+        }
+    });
+});
+
+
 module.exports = router;

@@ -21,10 +21,12 @@ block content
                         if order.mixingstatus == 0
                             td(align='center')
                                 input.status(onclick="track(this)" type="submit" value="READY" )
-                            td(align='center') 
-                                input.form-control(type='text', placeholder='Tracking No.', name='tracking')
-                            td(align='center') 
-                                input.status(type="submit" value="SUBMIT")
+                            form(method='POST',action="/admin/tracking/" + order._id)
+                                td(align='center') 
+                                    #form-group
+                                        input.form-control(type='text', placeholder='Tracking No.', name='trackingnum')
+                                td(align='center') 
+                                    input.status(type="submit" value="SUBMIT")
                         else
                             td(align='center') 
                                 form(action="/admin/sending/" + order._id, method="post")
