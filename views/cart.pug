@@ -69,17 +69,18 @@ html(lang='en', dir='ltr')
                             td= '฿' + 75*bottle.amount + '.00'
                             td
                               form(method='POST',action='/cart/' +orders._id + '/' + bottle._id)
-                                button.btn.btn-outline-primary(type='submit') #{bottle._id}
+                                button.btn.btn-outline-danger(type='submit') Delete
 
             .py-3.px-3.box-footer.d-flex.justify-content-between.flex-column.flex-lg-row.bg-light.border-bottom.border-top
               .left
                 a.btn.btn-outline-secondary(href='/formulas/' + orders.id)
                   i.fa.fa-chevron-left
                   strong Continue shopping
-              //- .right
-              //-   button.btn.btn-outline-primary(type='submit')
-              //-     strong Checkout 
-              //-     i.fa.fa-chevron-right
+              .right
+                form(method='POST',action='/payment/' + orders.id + '/' + ((totalItems*75)+30))
+                  button.btn.btn-outline-primary(type='submit')
+                    strong Checkout 
+                    i.fa.fa-chevron-right
         .col-lg-3
           hr
           #order-summary.box.border-top.border-bottom
