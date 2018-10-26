@@ -4,13 +4,10 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const db = require('../config/database');
 
-//payment form
-router.get('/',function(req,res){
-    res.render('payment');
-});
 
-router.post('/',function(req,res){
-    res.redirect('/payment');    
+//รับค่าจาก checkout หน้า cart
+router.post('/:id/:total',function(req,res){
+    res.render('payment');    
 });
 
 router.post('/checkout',function(req,res){

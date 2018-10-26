@@ -64,11 +64,12 @@ router.post('/sending/:id',function(req,res){
             return;
         }
         else{
-            Order.find({},function(err,orders){
-                res.render('sending_table',{
-                    orders:orders
-                });
-            });
+            res.redirect('/admin/sending');
+            // Order.find({},function(err,orders){
+            //     res.render('sending_table',{
+            //         orders:orders
+            //     });
+            // });
         }
     });
 });
@@ -85,11 +86,12 @@ router.post('/tracking/:id',function(req,res){
             return;
         }
         else{
-            Order.find({},function(err,orders){
-                res.render('sending_table',{
-                    orders:orders
-                });
-            });
+            res.redirect('/admin/sending');
+            // Order.find({},function(err,orders){
+            //     res.render('sending_table',{
+            //         orders:orders
+            //     });
+            // });
         }
     });
 });

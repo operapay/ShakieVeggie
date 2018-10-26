@@ -20,4 +20,16 @@ router.get('/:id',function(req,res){
     });
 });
 
+router.post('/:id/:bottle',function(req,res){
+    //console.log(req.params.id);
+    let query = {_id:req.params.bottle}
+
+    Bottle.remove(query, function(err){
+        if(err){
+           console.log(err); 
+        }
+        res.redirect('/cart/' + req.params.id);
+    });
+});
+
 module.exports = router;
