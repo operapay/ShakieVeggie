@@ -18,11 +18,11 @@ router.post('/checkout',function(req,res){
 });
 
 //tracking form
-router.get('/tracking/:id/:order',function(req,res){
+router.get('/track/:id',function(req,res){
     res.render('tracking');
 });
 
-router.post('/tracking/:id/:order',function(req,res){
+router.post('/track/:id',function(req,res){
     console.log('submit checkout');
 });
 

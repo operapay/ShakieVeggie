@@ -6,4 +6,4 @@ block content
         each order, i in orders
             if users._id == order.username && order.paymentstatus == 0
                 li.list-group-item
-                    a(href="/payment/tracking/" + order._id)= order._id
+                    a(href="/payment/track/" + order._id)= order._id
