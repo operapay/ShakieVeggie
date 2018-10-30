@@ -4,6 +4,6 @@ block content
     h1  #{title}
     ul.list-group
         each order, i in orders
-            if users._id == order.username && order.paymentstatus == 0
+            if users._id == order.username
                 li.list-group-item
                     a(href="/payment/track/" + order._id)= order._id
