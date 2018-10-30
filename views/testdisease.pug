@@ -1,16 +1,16 @@
 html
-    head
-        title Home
-        //link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.css')
-        title index
-        link(rel='stylesheet', type='text/css', href='/css/index_style.css')
-        style.
-            body {
-            background-color: #8ED2C9;
-            overflow: hidden;
-            }
-    body
-        .contrainer
+  head
+    title Home
+    //link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.css')
+    title index
+    link(rel='stylesheet', type='text/css', href='/css/index_style.css')
+    style.
+      body {
+      background-color: #8ED2C9;
+      overflow: hidden;
+      }
+  body
+    .contrainer
         if (user && user.username == 'admin')
             nav#myTopnav.topnav
                 div
@@ -38,29 +38,33 @@ html
 
         else
             nav#myTopnav.topnav
-                div
-                    button.login
-                        a(href='/formulas/cart')
-                            img.cart_pos(src='/img/cart.png')
-                    button.login
-                        if user
-                            a#login(href='/users/logout') logout
-                            button.login
-                                h9 #{user.username}
-                        else
-                            a#login(href='/users/login') login
-                    button.login
-                        if user
-                            a(href='/payment/tracking')#login tracking
-                a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
+            div
+                button.login
+                    a(href='/formulas/cart')
+                        img.cart_pos(src='/img/cart.png')
+                button.login
+                    if user
+                        a#login(href='/users/logout') logout
+                        button.login
+                            h9 #{user.username}
+                    else
+                        a#login(href='/users/login') login
+                button.login
+                    if user
+                        a(href='/payment/tracking')#login tracking
+            a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
             a(href='/')
                 img.logo-pos(src='/img/logo_circle.png')
             
             .homeFont
-                #top BE HEALTHY YOUR STYLE
-                #midd CHOOSE YOUR TASTE
-                #top MAKE IT YOUR FLAVOR
-            form(method='POST',action='/order/addorder')
+            #top BE HEALTHY YOUR STYLE
+            #midd CHOOSE YOUR TASTE
+            #top MAKE IT YOUR FLAVOR
+            if user
+            form(method='POST',action='/order/addorder/' + user._id)
+                button.btn.btn-lg.btn-defult.btn-block.text-uppercase(type='submit',value='Submit') CLICK ME
+            else
+            form(method='POST',action='/order/addorder/' + 1)
                 button.btn.btn-lg.btn-defult.btn-block.text-uppercase(type='submit',value='Submit') CLICK ME
             .recSize R-E-C-O-M-M-E-N-D
       
