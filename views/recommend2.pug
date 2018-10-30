@@ -138,7 +138,7 @@ html
                         a(href='/users/login')#white login
                 button.login
                     if user
-                        a(href='/payment/tracking')#white tracking
+                        a(href='/payment/tracking/' + user._id)#login tracking
             a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
         
         a(href='/')

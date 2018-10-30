@@ -12,9 +12,9 @@ router.get('/addorder',function(req,res){
     });
 });
 
-router.post('/addorder',function(req,res){
+router.post('/addorder/:id',function(req,res){
     let order = new Order();
-    order.username = 1;
+    order.username = req.params.id;
     order.address = 1;
     order.totalprice = 1;
     order.paymentstatus = 1;

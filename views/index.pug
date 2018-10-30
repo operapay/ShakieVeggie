@@ -40,9 +40,6 @@ html
         nav#myTopnav.topnav
           div
               button.login
-                  a(href='/formulas/cart')
-                      img.cart_pos(src='/img/cart.png')
-              button.login
                   if user
                       a#login(href='/users/logout') logout
                       button.login
@@ -51,7 +48,7 @@ html
                       a#login(href='/users/login') login
               button.login
                   if user
-                      a(href='/payment/tracking')#login tracking
+                      a(href='/payment/tracking/' + user._id)#login tracking
           a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
         a(href='/')
             img.logo-pos(src='/img/logo_circle.png')
@@ -60,45 +57,12 @@ html
           #top BE HEALTHY YOUR STYLE
           #midd CHOOSE YOUR TASTE
           #top MAKE IT YOUR FLAVOR
-        form(method='POST',action='/order/addorder')
-          button.btn.btn-lg.btn-defult.btn-block.text-uppercase(type='submit',value='Submit') CLICK ME
-        //.bottles
-          .bottle
-            each formula, i in formulas
-              if(formula.formulaname == "Detox")
-                if !user
-                  a(href="/users/login")
-                    img(src='/img/bottle/green_bottle.png')
-                else
-                  a(href="/recommend/" + formula._id)
-                    img(src='/img/bottle/green_bottle.png')
-            span.bottletext
-              h1 DETOX
-              h2 Guava - Kiwi - Job's Tears
-          .bottle
-            each formula, i in formulas
-              if(formula.formulaname == " Cholesterol Reducing")
-                if !user
-                  a(href="/users/login")
-                    img(src='/img/bottle/yellow_bottle.png')
-                else
-                  a(href="/recommend/" + formula._id)
-                    img(src='/img/bottle/yellow_bottle.png')
-            span.bottletext
-              h1 CHOLESTEROL REDUCING
-              h2 Pomegranate - Corn - Banana
-          .bottle
-            each formula, i in formulas
-              if(formula.formulaname == "Anti Aging")
-                if !user
-                  a(href="/users/login")
-                    img(src='/img/bottle/red_bottle.png')
-                else
-                  a(href="/recommend/" + formula._id)
-                    img(src='/img/bottle/red_bottle.png')
-            span.bottletext
-              h1 ANTI-AGING
-              h2 Tomato - Cherry - Almond
+        if user
+          form(method='POST',action='/order/addorder/' + user._id)
+            button.btn.btn-lg.btn-defult.btn-block.text-uppercase(type='submit',value='Submit') CLICK ME
+        else
+          form(method='POST',action='/order/addorder/' + 1)
+            button.btn.btn-lg.btn-defult.btn-block.text-uppercase(type='submit',value='Submit') CLICK ME
         .recSize R-E-C-O-M-M-E-N-D
       
 
