@@ -84,13 +84,13 @@ html
 						if(formula.formulaname == "Detox")
 							if !user
 								a(href="/users/login")
-									img#pos(src='/img/button_ordernow.png')
+									//img#pos(src='/img/button_ordernow.png')
 									img.d-block.w-100(src='/img/Detox_bg.png', alt='Detox')
 									h5.title-pos DETOX
 									p.comp-pos GUAVA - KIWI - JOB'S TEARS
 							else
 								a(href="/recommend/" + orders._id + "/" + formula._id)
-									img#pos(src='/img/button_ordernow.png')
+									//img#pos(src='/img/button_ordernow.png')
 									img.d-block.w-100(src='/img/Detox_bg.png', alt='Detox')
 									h5.title-pos DETOX
 									p.comp-pos GUAVA - KIWI - JOB'S TEARS
@@ -99,13 +99,13 @@ html
 						if(formula.formulaname == " Cholesterol Reducing")
 							if !user
 								a(href="/users/login")
-									img#pos(src='/img/button_ordernow.png')
+									//img#pos(src='/img/button_ordernow.png')
 									img.d-block.w-100(src='/img/Detox_bg.png', alt='')
 									h5.title-pos CHOLESTEROL REDUCING
 									p.comp-pos POMEGRANATE - CORN - BANANA
 							else
 								a(href="/recommend/" + orders._id + "/" + formula._id)
-									img#pos(src='/img/button_ordernow.png')
+									//img#pos(src='/img/button_ordernow.png')
 									img.d-block.w-100(src='/img/Detox_bg.png', alt='')
 									h5.title-pos CHOLESTEROL REDUCING
 									p.comp-pos POMEGRANATE - CORN - BANANA
@@ -114,13 +114,13 @@ html
 						if(formula.formulaname == "Anti Aging")
 							if !user
 								a(href="/users/login")
-									img#pos(src='/img/button_ordernow.png')
+									//img#pos(src='/img/button_ordernow.png')
 									img.d-block.w-100(src='/img/Detox_bg.png', alt='')
 									h5.title-pos ANTI AGING
 									p.comp-pos TOMATO - CHERRY - ALMOND
 							else
 								a(href="/recommend/" + orders._id + "/" + formula._id)
-									img#pos(src='/img/button_ordernow.png')
+									//img#pos(src='/img/button_ordernow.png')
 									img.d-block.w-100(src='/img/Detox_bg.png', alt='')
 									h5.title-pos ANTI AGING
 									p.comp-pos TOMATO - CHERRY - ALMOND
@@ -132,13 +132,12 @@ html
 				span.sr-only Next
 			
 		.row.contain
-			.col-4
-				div(style="background:black; width:100%;height:250px;")
-					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;")
-						h1(style="margin-top:-2%;width:92%").text-uppercase
+			.col-4(style="")
+				div(style="background:black;position:relative;")
+					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
+						h1(style="top:50%;left: 50%;transform: translate(0%, -50%);").text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Detox")
-									li
 										if !user
 											a(href="/users/login")= formula.formulaname
 										else
@@ -149,9 +148,9 @@ html
 							
 							
 			.col-4
-				div(style="background:black; width:100%;height:250px;")
-					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;")
-						h1(style="margin-top:-2%; width:92%").text-uppercase
+				div(style="background:black;position:relative;")
+					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
+						h1(style="top:50%;left: 50%;transform: translate(0%, -50%);").text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Fat Burn")
 									li
@@ -168,9 +167,9 @@ html
 						
 							
 			.col-4
-				div(style="background:black; width:100%;height:250px;")
-					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;")
-						h1(style="margin-top:-2%;width:92%").text-uppercase
+				div(style="background:black;position:relative;")
+					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
+						h1(style="top:50%;left: 50%;transform: translate(0%, -50%);").text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Improve Eyesight")
 									li
@@ -185,9 +184,9 @@ html
 						
 		.row.contain
 			.col-4
-				div(style="background:black; width:100%;height:250px;")
-					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;")
-						h1(style="margin-top:-2%;width:92%").text-uppercase
+				div(style="background:black;position:relative;")
+					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
+						h1(style="top:50%;left: 50%;transform: translate(0%, -50%);").text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Anti Aging")
 									li
@@ -199,9 +198,9 @@ html
 							.text COLLAGEN - VITAMIN C - VITAMIN E
 					.item.f_bg(style="background-image:url('/img/antiage.png');")
 			.col-4
-				div(style="background:black; width:100%;height:250px;")
-					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;")
-						h1(style="margin-top:-2%;width:92%").text-uppercase
+				div(style="background:black;position:relative;")
+					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
+						h1(style="top:50%;left: 50%;transform: translate(0%, -50%);").text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Sugar Reducing")
 									li
@@ -213,9 +212,9 @@ html
 							.text FIBER - VITAMIN C - VITAMIN E
 					.item.f_bg(style="background-image:url('/img/sugar.png');")
 			.col-4
-				div(style="background:black; width:100%;height:250px;")
-					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;")
-						h1(style="margin-top:-6%;width:92%").text-uppercase
+				div(style="background:black; position:relative;")
+					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
+						h1(style="top:50%;left: 50%;transform: translate(0%, -50%)").text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == " Cholesterol Reducing")
 									li
@@ -232,9 +231,9 @@ html
 				
 		.row.contain
 			.col-4
-				div(style="background:black; width:100%;height:250px;")
-					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;")
-						h1(style="margin-top:-2%;width:92%").text-uppercase
+				div(style="background:black; position:relative;")
+					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
+						h1(style="top:50%;left: 50%;transform: translate(0%, -50%)").text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Pregnancy Care")
 									li
@@ -249,9 +248,9 @@ html
 							
 							
 			.col-4
-				div(style="background:black; width:100%;height:250px;")
-					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;")
-						h1(style="margin-top:-2%;width:92%").text-uppercase
+				div(style="background:black;position:relative;")
+					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
+						h1(style="top:50%;left: 50%;transform: translate(0%, -50%)").text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Healthy Blood")
 									li
@@ -265,9 +264,9 @@ html
 				
 									
 			.col-4
-				div(style="background:black; width:100%;height:250px;")
-					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;")
-						h1(style="margin-top:-2%;width:92%").text-uppercase
+				div(style="background:black; position:relative;")
+					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
+						h1(style="top:50%;left: 50%;transform: translate(0%, -50%)").text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Anti Aging")
 									li
