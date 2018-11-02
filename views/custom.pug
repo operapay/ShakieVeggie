@@ -82,9 +82,6 @@ html
             .margin-top-set{
                 margin-top:5%;
             }
-            .set-img{
-                margin-top:30px;
-            }
             #amout{
                 color:white;
                 font-weight: 600;
@@ -143,7 +140,7 @@ html
         
         a(href='/')
             img.logo-pos.img-bottle(src='/img/logo_circle.png') 
-            img.img-bottle(src='/img/bottle_bg.png').bottle-bg
+            
         // ------------------------------------------
 
         .container
@@ -187,8 +184,8 @@ html
                 
                 .margin-top-set
                         .row
-                            .col-4.set-img
-                                img.bottle(src='/img/bottle.png')
+                            .col-4
+                                img.bottle(style="width:85%;heigth:85%;transform: translate(-15%, -10%);")(src='/img/cus_bottle.png')
                             .col-8
                                 h1.text-center.text-uppercase #{formula.formulaname}
                                 br
