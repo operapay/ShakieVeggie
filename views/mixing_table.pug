@@ -76,7 +76,7 @@ block content
             br
             each order, i in orders
                 -var count = 0;
-                    if order.paymentstatus == 0 
+                    if order.paymentstatus == 0 && order.clearmixing != 0
                         td#b(align='center' height='40' rowspan='20')=order._id                               
                             each bottle, i in bottles
                                 if order._id == bottle.orderid 
@@ -94,3 +94,6 @@ block content
                                         td(height='40' align='center')=bottle.amount
                                     - count += 1
                                 tr
+    form(method='POST',action='/admin/clearmixing')
+        button.btn.btn(type='submit',value='Submit',style='color:white;float:right') CLEAR
+    
