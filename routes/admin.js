@@ -128,9 +128,9 @@ router.post('/clearsending',function(req,res){
     Order.find({},function(err,orders){
             //orders:orders
         for(var i = 0; i < orders.length;i++){
-            if(orders[i].mixingstatus == 0){
+            if(orders[i].trackingnum != null){
                 let order = {};
-                order.clearsending = 1;
+                order.clearsending = 0;
                 let query = {_id:orders[i]._id}
                 Order.update(query, order, function(err){});
                 //console.log(query)
@@ -142,5 +142,24 @@ router.post('/clearsending',function(req,res){
 
 });
 
+router.post('/clearpayment',function(req,res){
+    //console.log('clear')
+
+    Order.find({},function(err,orders){
+            //orders:orders
+        for(var i = 0; i < orders.length;i++){
+            if(orders[i].paymentstatus == 0){
+                let order = {};
+                order.clearpayment = 0;
+                let query = {_id:orders[i]._id}
+                Order.update(query, order, function(err){});
+                //console.log(query)
+            }
+            //console.log(orders[i]._id)
+        }
+        res.redirect('/admin/payment');
+    });
+
+});
 
 module.exports = router;

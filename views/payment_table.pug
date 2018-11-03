@@ -43,17 +43,20 @@ block content
         tbody
             each order, i in orders
                 tr
-                    td(align='center') 
-                        li.list-group-item
-                            =order._id
-                            form(action="/admin/payment/" + order._id, method="post")
-                                if order.paymentstatus == 1
-                                    .row
-                                    td(align='center') 
-                                        input.status(onclick="change(this);track(this)" type="submit" value="NOT READY" )
-                                else
-                                    .row
-                                    td(align='center') 
-                                        input.status(onclick="track(this)" type="submit" value="READY" )
+                    if order.clearpayment != 0
+                        td(align='center') 
+                            li.list-group-item
+                                =order._id
+                                form(action="/admin/payment/" + order._id, method="post")
+                                    if order.paymentstatus == 1
+                                        .row
+                                        td(align='center') 
+                                            input.status(onclick="change(this);track(this)" type="submit" value="NOT READY" )
+                                    else
+                                        .row
+                                        td(align='center') 
+                                            input.status(onclick="track(this)" type="submit" value="READY" )
+    form(method='POST',action='/admin/clearpayment')
+        button.btn.btn(type='submit',value='Submit',style='color:white;float:right') CLEAR
 
     

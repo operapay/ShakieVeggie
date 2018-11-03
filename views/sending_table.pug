@@ -85,7 +85,7 @@ block content
         tbody
             each order, i in orders
                 tr
-                    if order.paymentstatus == 0 && order.clearsending != 1
+                    if order.paymentstatus == 0 && order.clearsending != 2
                         td(align='center' height='60')=order._id
                         td(align='center' height='60')=order.username
                         td(align='center' height='60')=order.address
