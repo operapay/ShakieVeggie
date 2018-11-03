@@ -276,9 +276,9 @@ a:visited{
     transition: transform .2s; /* Animation */
     margin-left: 25%;
   }
-  .bottle:hover {
+  /*.bottle:hover {
     transform: scale(1.1);
-  }
+  }*/
 #vote-pos{
     margin-top: 20px;
     margin-left: 45%;

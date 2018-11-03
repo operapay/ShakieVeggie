@@ -30,6 +30,21 @@ li{
 	width: 100%;
 	height: 250px;
 }
+
+.item-alltext{
+	text-decoration: none;
+	padding-top: 30%;
+	color: white;
+	text-align: center;
+	font-weight: bolder;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top:0%;
+}
+
+.item-component{
+    background-color: black;
+}
+
 .item-alltext:hover + .item{
 	filter: brightness(50%);
 	text-decoration: none;
@@ -42,14 +57,14 @@ li{
     right: 0;
     background-color: rgb(51, 51, 51);
     overflow: hidden;
-    width: 92%;
+    width: 100%;
     height: 0;
     transition: .5s ease;
 }
 
 .item-alltext:hover .overlay {
     height: 30%;
-    width: 92%;
+    width: 100%;
 }
 p{
     line-height: 50%;
@@ -70,26 +85,6 @@ p{
 
 .row .item{
     margin-bottom: 3px;
-}
-
-.col-6{
-	padding-left: 1.75px;
-	padding-right:1.75px;
-}
-
-
-.item-alltext{
-	text-decoration: none;
-	padding-top: 30%;
-	color: white;
-	text-align: center;
-	font-weight: bolder;
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    margin-top:0%;
-}
-
-.item-component{
-    background-color: black;
 }
 
 .contain{
