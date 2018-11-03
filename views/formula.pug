@@ -136,7 +136,7 @@ html
 											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
 							.text FIBER - FOLATE - VITAMIN B
-					.item.f_bg(style="background-image:url('/img/detox.png');")
+					.item.f_bg(style="background-image:url('/img/detox.jpg');")
 							
 							
 			.col-4
@@ -155,7 +155,7 @@ html
 								p
 								p FIBER - VITAMIN B - 
 								p L-CARNITINE
-					.item.f_bg(style="background-image:url('/img/fatburn.png');")
+					.item.f_bg(style="background-image:url('/img/fatburn.jpg');")
 						
 							
 			.col-4
@@ -170,8 +170,11 @@ html
 										else
 											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
-							.text BETA CAROTENE - VITAMIN A - VITAMIN E
-					.item.f_bg(style="background-image:url('/img/eyes.png');")
+							.text
+								p
+								p BETA CAROTENE - VITAMIN A - 
+								p VITAMIN E
+					.item.f_bg(style="background-image:url('/img/eyes.jpg');")
 				
 						
 		.row.contain
@@ -188,7 +191,7 @@ html
 											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
 							.text COLLAGEN - VITAMIN C - VITAMIN E
-					.item.f_bg(style="background-image:url('/img/antiage.png');")
+					.item.f_bg(style="background-image:url('/img/antiage.jpg');")
 			.col-4
 				div(style="background:black;position:relative;")
 					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
@@ -202,7 +205,7 @@ html
 											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
 							.text FIBER - VITAMIN C - VITAMIN E
-					.item.f_bg(style="background-image:url('/img/sugar.png');")
+					.item.f_bg(style="background-image:url('/img/sugar.jpg');")
 			.col-4
 				div(style="background:black; position:relative;")
 					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
@@ -219,7 +222,7 @@ html
 								p
 								p FIBER - ANTIOXIDANT - 
 								p VITAMIN E
-					.item.f_bg(style="background-image:url('/img/cores.png');")
+					.item.f_bg(style="background-image:url('/img/cores.jpg');")
 				
 		.row.contain
 			.col-4
@@ -235,7 +238,7 @@ html
 											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
 							.text CALCIUM - FOLATE - Fe
-					.item.f_bg(style="background-image:url('/img/custom_bg.png');")
+					.item.f_bg(style="background-image:url('/img/custom_bg.jpg');")
 				
 							
 							
@@ -252,7 +255,7 @@ html
 											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
 							.text VITAMIN K - FOLATE - Fe
-					.item.f_bg(style="background-image:url('/img/blood.png');")
+					.item.f_bg(style="background-image:url('/img/blood.jpg');")
 				
 									
 			.col-4
@@ -260,15 +263,16 @@ html
 					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
 						h1(style="top:50%;left: 50%;transform: translate(0%, -50%)").text-uppercase
 							each formula, i in formulas
-								if(formula.formulaname == "Anti Aging")
+								if(formula.formulaname == "Anti Agin")
 									li
 										if !user
 											a(href="/users/login")= formula.formulaname
 										else
 											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
+							h1 OTHERS
 						.overlay
 							.text COLLAGEN - VITAMIN C - VITAMIN E
-					.item.f_bg(style="background-image:url('/img/9.png');")
+					.item.f_bg(style="background-image:url('/img/9.jpg');")
 						
 		script(src='/js/main.js')
 		script(src='https://code.jquery.com/jquery-3.3.1.min.js')
