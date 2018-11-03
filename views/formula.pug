@@ -261,7 +261,7 @@ html
 			.col-4
 				div(style="background:black; position:relative;")
 					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
-						h1(style="top:50%;left: 50%;transform: translate(0%, -50%)").text-uppercase
+						h1(style="top:50%;left: 50%;transform: translate(0%, -50%)").text-uppercase OTHER
 							each formula, i in formulas
 								if(formula.formulaname == "Anti Agin")
 									li
@@ -269,7 +269,6 @@ html
 											a(href="/users/login")= formula.formulaname
 										else
 											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
-						h1 OTHERS
 						.overlay
 							.text COLLAGEN - VITAMIN C - VITAMIN E
 					.item.f_bg(style="background-image:url('/img/9.jpg');")
