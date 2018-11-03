@@ -122,5 +122,25 @@ router.post('/clearmixing',function(req,res){
 
 });
 
+router.post('/clearsending',function(req,res){
+    //console.log('clear')
+
+    Order.find({},function(err,orders){
+            //orders:orders
+        for(var i = 0; i < orders.length;i++){
+            if(orders[i].mixingstatus == 0){
+                let order = {};
+                order.clearsending = 1;
+                let query = {_id:orders[i]._id}
+                Order.update(query, order, function(err){});
+                //console.log(query)
+            }
+            //console.log(orders[i]._id)
+        }
+        res.redirect('/admin/sending');
+    });
+
+});
+
 
 module.exports = router;
