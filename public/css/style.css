@@ -24,13 +24,13 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    width: 100%;    
+    width: 100%;
 }
 
 
 a:link{
     text-decoration:none;
-    color: #ffb85f;
+    color: white;
 }
 a:visited{
     text-decoration:none;
@@ -39,7 +39,6 @@ a:visited{
 #white{
     color: white;
 }
-
 
 /*------------------------------NAV----------------------------------*/
 
