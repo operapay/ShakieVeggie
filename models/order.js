@@ -23,7 +23,16 @@ let OrderSchema = mongoose.Schema({
     }, 
     trackingnum:{
         type: String
-    }     
+    },
+    clearpayment:{
+        type: String
+    },
+    clearmixing:{
+        type: String
+    }, 
+    clearsending:{
+        type: String
+    }      
 });
 
 
