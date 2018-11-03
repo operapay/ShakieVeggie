@@ -7,6 +7,11 @@ const db = require('../config/database');
 let Order = require('../models/order');
 let Bottle = require('../models/bottle');
 
+router.get('/aboutus',function(req,res){
+    res.render('aboutus')
+});
+
+
 router.get('/payment',function(req,res){
     Order.find({},function(err,orders){
         res.render('payment_table',{

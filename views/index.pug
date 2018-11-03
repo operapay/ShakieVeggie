@@ -49,6 +49,9 @@ html
               button.login
                   if user
                       a(href='/payment/tracking/' + user._id)#login tracking
+              button.login
+                  if user
+                      a(href='/admin/aboutus')#login about
           a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
         a(href='/')
             img.logo-pos(src='/img/logo_circle.png')
