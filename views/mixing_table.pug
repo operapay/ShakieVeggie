@@ -1,32 +1,99 @@
 extend layout1
 
 block content
-    center
-    h1 MIXING TABLE
-    table(style='width:100%').mt-5
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    style.
+        body{
+            background-color: #8ED2C9;
+        }
+        .title-block{
+            position: relative;
+            padding-bottom: 50px;
+        }
+        .title{
+            position: absolute;
+            color: white;
+            left: 22%;
+            right:22%;
+            text-align: center;
+        }
+        .reg{
+            width: 750px;
+            height: 60px;
+            background-color: #ffcc1b;
+            position: inherit;
+            top:70px;
+            left: 25%;
+            z-index: -1;
+        }
+        .mt-5{
+            background-color: white;
+        }
+        thead{
+            background-color: #8ED2C9;
+            color: white;
+            margin: none;
+        }  
+        tbody{    
+            color: #8ED2C9;
+        }        
+        .container{
+            max-width: 100%;
+        }
+
+        div.example {
+            background-color: lightgrey;
+            padding: 20px;
+        }
+        @media screen and (min-width: 601px) {
+            div.example {
+                font-size: 80px;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            div.example {
+                font-size: 30px;
+            }
+        }
+        td#b{
+           border-top: 4px solid #8ED2C9;
+        }
+
+
+    .title-block
+        .title(style='font-size:80px') MIXING TABLE
+        .reg
+    table#ab(style='width:100%' ).mt-5
         thead
-            tr
-                th.text-center ORDER NO.
-                th.text-center BOTTLE NO.
-                th.text-center INGREDIENT 1
-                th.text-center INGREDIENT 2
-                th.text-center INGREDIENT 3
-                th.text-center AMOUNT
-        tbody
+                tr
+                th(height='60').text-center ORDER NO.
+                th(height='60').text-center BOTTLE NO.
+                th(height='60').text-center INGREDIENT 1
+                th(height='60').text-center INGREDIENT 2
+                th(height='60').text-center INGREDIENT 3
+                th(height='60').text-center AMOUNT
+        tbody(style='border: 4px solid')
             br
             each order, i in orders
-                .col
-                tr 
-                    if order.paymentstatus == 0
-                        td(align='center' style="font-weight:500;")=order._id
+                -var count = 0;
+                    if order.paymentstatus == 0 && order.clearmixing != 0
+                        td#b(align='center' height='40' rowspan='20')=order._id                               
                             each bottle, i in bottles
+                                if order._id == bottle.orderid 
+                                    if count == 0                                                                      
+                                        td(height='40' align='center' style='border-top: 4px solid #8ED2C9')=bottle._id
+                                        td(height='40' align='center' style='border-top: 4px solid #8ED2C9')=bottle.fruit1
+                                        td(height='40' align='center' style='border-top: 4px solid #8ED2C9')=bottle.fruit2
+                                        td(height='40' align='center' style='border-top: 4px solid #8ED2C9')=bottle.fruit3
+                                        td(height='40' align='center' style='border-top: 4px solid #8ED2C9')=bottle.amount
+                                    else
+                                        td(height='40' align='center')=bottle._id
+                                        td(height='40' align='center')=bottle.fruit1
+                                        td(height='40' align='center')=bottle.fruit2
+                                        td(height='40' align='center')=bottle.fruit3
+                                        td(height='40' align='center')=bottle.amount
+                                    - count += 1
                                 tr
-                                td
-                                if order._id == bottle.orderid
-                                    .col
-                                    td(align='center')=bottle._id
-                                    td(align='center')=bottle.fruit1
-                                    td(align='center')=bottle.fruit2
-                                    td(align='center')=bottle.fruit3
-                                    td(align='center')=bottle.amount
-                                    
+    form(method='POST',action='/admin/clearmixing')
+        button.btn.btn(type='submit',value='Submit',style='color:white;float:right') CLEAR
+    

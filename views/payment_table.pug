@@ -1,8 +1,40 @@
 extend layout1
 
 block content
-    center
-    h1 PAYMENTSTATUS TABLE
+    style.
+        body{
+            background-color: #8ED2C9;
+        }
+        .title-block{
+            position: relative;
+            padding-bottom: 50px;
+        }
+        .title{
+            position: absolute;
+            color: white;
+            left: 10%;
+            right:10%;
+            text-align: center;
+        }
+        .reg{
+            width: 700px;
+            height: 60px;
+            background-color: #ffcc1b;
+            position: inherit;
+            top: 65px;
+            left: 18%;
+            z-index: -1;
+        }
+        thead{
+            color: white;
+        }
+        tbody{
+            color: #8ED2C9;
+        }
+
+    .title-block
+        .title( style='font-size:80px') PAYMENT STATUS
+        .reg
     table(style='width:100%').mt-5
         thead
             tr
@@ -11,17 +43,20 @@ block content
         tbody
             each order, i in orders
                 tr
-                    td(align='center') 
-                        li.list-group-item
-                            =order._id
-                            form(action="/admin/payment/" + order._id, method="post")
-                                if order.paymentstatus == 1
-                                    .row
-                                    td(align='center') 
-                                        input.status(onclick="change(this);track(this)" type="submit" value="NOT READY" )
-                                else
-                                    .row
-                                    td(align='center') 
-                                        input.status(onclick="track(this)" type="submit" value="READY" )
+                    if order.clearpayment != 0
+                        td(align='center') 
+                            li.list-group-item
+                                =order._id
+                                form(action="/admin/payment/" + order._id, method="post")
+                                    if order.paymentstatus == 1
+                                        .row
+                                        td(align='center') 
+                                            input.status(onclick="change(this);track(this)" type="submit" value="NOT READY" )
+                                    else
+                                        .row
+                                        td(align='center') 
+                                            input.status(onclick="track(this)" type="submit" value="READY" )
+    form(method='POST',action='/admin/clearpayment')
+        button.btn.btn(type='submit',value='Submit',style='color:white;float:right') CLEAR
 
     

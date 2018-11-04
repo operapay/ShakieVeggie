@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const db = require('../config/database');
+const {ObjectId} = require('mongodb'); 
 
 let Order = require('../models/order');
 let Bottle = require('../models/bottle');
@@ -32,7 +33,7 @@ router.post('/payment/:id',function(req,res){
             return;
         }
         else{
-            console.log(req.params.id);
+            console.log(query);
         }
     });
     //console.log(req.params.id);
@@ -101,5 +102,64 @@ router.post('/tracking/:id',function(req,res){
     });
 });
 
+router.post('/clearmixing',function(req,res){
+    //console.log('clear')
+
+    Order.find({},function(err,orders){
+            //orders:orders
+        for(var i = 0; i < orders.length;i++){
+            if(orders[i].paymentstatus == 0){
+                let order = {};
+                order.clearmixing = 0;
+                let query = {_id:orders[i]._id}
+                Order.update(query, order, function(err){});
+                //console.log(query)
+            }
+            //console.log(orders[i]._id)
+        }
+        res.redirect('/admin/mixing');
+    });
+
+});
+
+router.post('/clearsending',function(req,res){
+    //console.log('clear')
+
+    Order.find({},function(err,orders){
+            //orders:orders
+        for(var i = 0; i < orders.length;i++){
+            if(orders[i].trackingnum != null){
+                let order = {};
+                order.clearsending = 0;
+                let query = {_id:orders[i]._id}
+                Order.update(query, order, function(err){});
+                //console.log(query)
+            }
+            //console.log(orders[i]._id)
+        }
+        res.redirect('/admin/sending');
+    });
+
+});
+
+router.post('/clearpayment',function(req,res){
+    //console.log('clear')
+
+    Order.find({},function(err,orders){
+            //orders:orders
+        for(var i = 0; i < orders.length;i++){
+            if(orders[i].paymentstatus == 0){
+                let order = {};
+                order.clearpayment = 0;
+                let query = {_id:orders[i]._id}
+                Order.update(query, order, function(err){});
+                //console.log(query)
+            }
+            //console.log(orders[i]._id)
+        }
+        res.redirect('/admin/payment');
+    });
+
+});
 
 module.exports = router;
