@@ -60,7 +60,7 @@ body{
     height: auto;
     width: 27%;
 }
-a#button1_index{
+#button1_index{
     display:inline-block;
     padding:12px 14px;
     border:2.5px solid #FFFFFF;
@@ -69,13 +69,15 @@ a#button1_index{
     color:#FFFFFF;
     text-align:center;
     transition: all 0.2s;
+    background-color:#8ED2C9;
 }
-a#button1_index:hover{
+#button1_index:hover{
     color:#8ED2C9;
     background-color:#FFFFFF;
 }
 .viewf{
     font-size: 13px;
+    font-weight: 700;
 }
 .readmore{
     font-size:10px;

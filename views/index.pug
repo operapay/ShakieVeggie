@@ -8,77 +8,107 @@ html
     link(rel='stylesheet', href='/vendor/bootstrap/css/bootstrap.min.css')
     link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet', href='/bower_components/sweetalert/lib/sweet-alert.css')
+    link(rel='stylesheet', type='text/css', href='/css/style.css')
+    style.
+      body {
+      background-color: #8ED2C9;
+      overflow: hidden;
+      }
   body
-    //- nav#myTopnav.topnav
-    //-         div
-    //-             button.login
-    //-                 a(href='/cart/' + orders)
-    //-                     img.cart_pos(src='/img/cart.png')
-    //-             button.login
-    //-                 if user
-    //-                     a(href='/users/logout')#white logout
-    //-                     button.login
-    //-                         h9 #{user.username}
-    //-                 else
-    //-                     a(href='/users/login')#white login
-    //-             button.login
-    //-                 if user
-    //-                     a(href='/payment/tracking/' + user._id)#login tracking
-    //-         a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
+    .contrainer
+      if (user && user.username == 'admin')
+        nav#myTopnav.topnav
+            div(style="position:absolute; z-index:1;right:0;")
+                button.login
+                    if user
+                        a(href='/users/logout')#white logout
+                        button.login
+                            h9 #{user.username}
+                    else
+                        a(href='/users/login')#white login
         
-    //-     a(href='/')
-    //-         img.logo-pos.img-bottle(src='/img/logo_circle.png') 
+        a(href='/')(style="position:absolute; z-index:1;left:2.75%;top:5.5%")
+            img.logo-pos(src='/img/logo_circle.png')
+        .row(style="top:50%;left: 50%;transform: translate(-50% 50%);")
+          .col
+              a.btn.btn-lg.btn-defult.btn-block#button1_index(href='/admin/payment') ORDER PAYMENT
+          .col
+              a.btn.btn-lg.btn-defult.btn-block#button1_index(href='/admin/mixing') MIXING
+          .col
+              a.btn.btn-lg.btn-defult.btn-block#button1_index(href='/admin/sending') SENDING
+      else
+        nav#myTopnav.topnav
+            div(style="position:absolute; z-index:1;right:0;")
+                button.login
+                    if user
+                        a(href='/users/logout')#white logout
+                        button.login
+                            h9 #{user.username}
+                    else
+                        a(href='/users/login')#white login
+                button.login
+                    if user
+                        a(href='/payment/tracking/' + user._id)#white tracking
+            a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
         
-    .blue_reg
-    .pos_cen
-      .center2 BE HEALTHY IN YOUR STYLE
-      .center1 CHOOSE YOUR TASTE
-      .center2 MAKE IT YOUR FLAVOR
-      br
-      .yugo
-        a#button1_index.viewf(href='#') VIEW FORMULA
-    img.auntie(src='/img/index/auntie.png')
-    .white_reg
-      .yugo
-        .col3
-          .pos_col
-            .col-set
-              | WHAT IS SHAKIE VEGGIE ?
-              p.index_info
-                | SHAKIE VEGGIE IS A FRUIT AND VEGGETABLE JUICE THAT YOU CAN CHOOSE THE PROPERTIES AND THE INGREDIENTS 
+        a(href='/')(style="position:absolute; z-index:1;left:2.75%;top:5.5%")
+            img.logo-pos(src='/img/logo_circle.png')
+        .blue_reg
+        .pos_cen
+          .center2 BE HEALTHY IN YOUR STYLE
+          .center1 CHOOSE YOUR TASTE
+          .center2 MAKE IT YOUR FLAVOR
+          br
+          .yugo
+            if user
+              form(method='POST',action='/order/addorder/' + user._id)
+                button#button1_index.viewf(type='submit',value='Submit') VIEW FORMULA
+            else
+              form(method='POST',action='/order/addorder/' + 1)
+                button#button1_index.viewf(type='submit',value='Submit') VIEW FORMULA
+            //a#button1_index.viewf(href='#') VIEW FORMULA
+        img.auntie(src='/img/index/auntie.png')
+        .white_reg
+          .yugo
+            .col3
+              .pos_col
+                .col-set
+                  | WHAT IS SHAKIE VEGGIE ?
+                  p.index_info
+                    | SHAKIE VEGGIE IS A FRUIT AND VEGGETABLE JUICE THAT YOU CAN CHOOSE THE PROPERTIES AND THE INGREDIENTS 
+                    br
+                    |                                 THROUGH THE WEBSITE THAT WIILL ALSO 
+                    br
+                    |                                 PROTECT YOU FROM CHOOSING THE INGREDIENTS 
+                    br
+                    |                                 THAT WILL HARM TO YOUR BODY
+                a#button2_index.readmore(href='#') READ MORE
+              .pos_col
+                | HOW TO ORDER SHAKIE VEGGIE ?
+                p.index_info
+                  | FIRST CHOOSE THE FORMULA OF SHAKKIEVEGGIE 
+                  br
+                  |                         SECOND TELL US ABOUT YOUR HEALTH CONDITION BY CHECKING THE CHOICES 
+                  br
+                  |                         THIRD CHOOSE THREE INGREDIENTS THAT YOU WANT TO MIX IT TOGETHER 
+                  br
+                  |                         FORTH SELECT AMOUNT THAT YOU WANT AND ADD THEM TO CART 
+                  br
+                  |                         FIFTH . . . . .
+                a#button2_index.readmore(href='#') READ MORE
+              .pos_col
                 br
-                |                                 THROUGH THE WEBSITE THAT WIILL ALSO 
                 br
-                |                                 PROTECT YOU FROM CHOOSING THE INGREDIENTS 
+                |                         LET'S FOLLOW AND SUBSCRIBE
                 br
-                |                                 THAT WILL HARM TO YOUR BODY
-            a#button2_index.readmore(href='#') READ MORE
-          .pos_col
-            | HOW TO ORDER SHAKIE VEGGIE ?
-            p.index_info
-              | FIRST CHOOSE THE FORMULA OF SHAKKIEVEGGIE 
-              br
-              |                         SECOND TELL US ABOUT YOUR HEALTH CONDITION BY CHECKING THE CHOICES 
-              br
-              |                         THIRD CHOOSE THREE INGREDIENTS THAT YOU WANT TO MIX IT TOGETHER 
-              br
-              |                         FORTH SELECT AMOUNT THAT YOU WANT AND ADD THEM TO CART 
-              br
-              |                         FIFTH . . . . .
-            a#button2_index.readmore(href='#') READ MORE
-          .pos_col
-            br
-            br
-            |                         LET'S FOLLOW AND SUBSCRIBE
-            br
-            .col4
-              a(href='facebook.com')
-                img.hvr-float(src='/img/index/facebook.png', width='6.5%')
-                span.snsicon
-              a(href='instagram.com')
-                img.hvr-float(src='/img/index/instagram.png', width='6.5%')
-                span.snsicon
-              a
-              a(href='twitter.com')
-                img.hvr-float(src='/img/index/twitter.png', width='6.5%')
-                span.snsicon
+                .col4
+                  a(href='facebook.com')
+                    img.hvr-float(src='/img/index/facebook.png', width='6.5%')
+                    span.snsicon
+                  a(href='instagram.com')
+                    img.hvr-float(src='/img/index/instagram.png', width='6.5%')
+                    span.snsicon
+                  a
+                  a(href='twitter.com')
+                    img.hvr-float(src='/img/index/twitter.png', width='6.5%')
+                    span.snsicon
