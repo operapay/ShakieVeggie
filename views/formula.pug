@@ -94,41 +94,41 @@ html
 				
 		#carouselExampleControls.carousel.slide(data-ride='carousel')
 			.carousel-inner
-				.carousel-item.active(style="position:relative;")
+				.carousel-item.active
 					each formula, i in formulas
 						if(formula.formulaname == "Detox")
 							if !user
 								img.d-block.w-100(src='/img/rcm_green.png', alt='Detox')
 								a(href="/users/login")
-									button#button_rec.viewf(type='submit',value='Submit') VIEW FORMULA
+									button#button_rec.viewf(type='submit',value='Submit') ORDER NOW
 							else
 								a(href="/recommend/" + orders._id + "/" + formula._id)
-									button#button_rec.viewf(type='submit',value='Submit') VIEW FORMULA
+									button#button_rec.viewf(type='submit',value='Submit') ORDER NOW
 								img.d-block.w-100(src='/img/rcm_green.png', alt='Detox')
-				.carousel-item(style="position:relative;")
+				.carousel-item
 					each formula, i in formulas
 						if(formula.formulaname == " Cholesterol Reducing")
 							if !user
 								a(href="/users/login")
-									button#button_rec.viewf(type='submit',value='Submit') VIEW FORMULA
+									button#button_rec.viewf(type='submit',value='Submit') ORDER NOW
 								img.d-block.w-100(src='/img/rcm_red.png', alt='')
 									
 							else
 								a(href="/recommend/" + orders._id + "/" + formula._id)
-									button#button_rec.viewf(type='submit',value='Submit') VIEW FORMULA
+									button#button_rec.viewf(type='submit',value='Submit') ORDER NOW
 								img.d-block.w-100(src='/img/rcm_red.png', alt='')
 									
-				.carousel-item(style="position:relative;")
+				.carousel-item
 					each formula, i in formulas
 						if(formula.formulaname == "Anti Aging")
 							if !user
 								a(href="/users/login")
-									button#button_rec.viewf(type='submit',value='Submit') VIEW FORMULA
+									button#button_rec.viewf(type='submit',value='Submit') ORDER NOW
 								img.d-block.w-100(src='/img/rcm_yellow.png', alt='')
 									
 							else
 								a(href="/recommend/" + orders._id + "/" + formula._id)
-									button#button_rec.viewf(type='submit',value='Submit') VIEW FORMULA
+									button#button_rec.viewf(type='submit',value='Submit') ORDER NOW
 								img.d-block.w-100(src='/img/rcm_yellow.png', alt='')
 									
 			a.carousel-control-prev(href='#carouselExampleControls', role='button', data-slide='prev')
@@ -252,7 +252,7 @@ html
 										else
 											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
-							.text CALCIUM - FOLATE - Fe
+							.text CALCIUM - FOLATE - FE
 					.item.f_bg(style="background-image:url('/img/custom_bg.jpg');")
 				
 							
@@ -269,14 +269,14 @@ html
 										else
 											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
-							.text VITAMIN K - FOLATE - Fe
+							.text VITAMIN K - FOLATE - FE
 					.item.f_bg(style="background-image:url('/img/blood.jpg');")
 				
 									
 			.col-4
 				div(style="background:black; position:relative;")
 					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
-						h1(style="top:50%;left: 50%;transform: translate(0%, -50%)").text-uppercase
+						h1(style="top:50%;left: 50%;transform: translate(0%, -50%)").text-uppercase OTHERS
 							each formula, i in formulas
 								if(formula.formulaname == "Anti Agin")
 									li
@@ -284,9 +284,8 @@ html
 											a(href="/users/login")= formula.formulaname
 										else
 											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
-							h1 OTHERS
 						.overlay
-							.text COLLAGEN - VITAMIN C - VITAMIN E
+							.text CHOOSE BY YOUR SELF
 					.item.f_bg(style="background-image:url('/img/9.jpg');")
 						
 		script(src='/js/main.js')
