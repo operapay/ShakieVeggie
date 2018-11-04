@@ -10,7 +10,7 @@ html
         link(rel='stylesheet', type='text/css', href='/css/style.css')
         style.
             body{
-                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/img/custom_bg.png');
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/img/custom_bg.jpg');
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-attachment: fixed;
@@ -45,6 +45,9 @@ html
                 border: 2.5px solid white;
                 font-size: 11px;
                 font-weight: 400;
+            }
+            .set-img{
+                margin-top:30px;
             }
             .line1{
                 padding: 11px;
@@ -129,6 +132,9 @@ html
                     
                 }
             }
+            .roww{
+                display:inline;
+            }
 
     body(onload="load()")
         // ----------------Navbar-------------------
@@ -163,12 +169,12 @@ html
             .margin-top-set
                 .row
                     .col-4
-                        img.bottle(style="width:85%;heigth:85%;transform: translate(-15%, -10%);")(src='/img/cus_bottle.png')
+                        img.bottle(style="width:98%;heigth:auto;transform: translate(-15%, -15%);")(src='/img/cus_bottle.png')
                     .col-8
                         h1.text-center.text-uppercase #{formula.formulaname}
                         br
                         form(method='POST',action='/custom/'+  orders + "/" + formula._id + '/component')
-                            .mt-4
+                            .mt-4(align='center')
                                 .row
                                     ul.chec-radio
                                         li.pz
@@ -487,9 +493,9 @@ html
                                                     .clab(for='exampleRadios5') #{component3.fruit6}
                                 .mt-5
                                     .row
-                                        .col-3
-                                        .col-2
-                                            input.form-control#amout(type='number', placeholder='AMOUT', name='amont', required='')
-                                        .col-1
-                                        .col-5
+                                        .col-3.roww
+                                        .col-2.roww
+                                            input.roww.form-control#amout(type='number', placeholder='AMOUT', name='amont', required='')
+                                        .col-1.roww
+                                        .col-5.roww
                                             button.text-uppercase#amout(type='submit',value='Submit') Submit			

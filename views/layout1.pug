@@ -13,7 +13,7 @@ html
         // ----------------Navbar-------------------
         nav#myTopnav.topnav
             div
-                button.login
+                //button.login
                     a(href='/custom/cart')
                         img.cart_pos(src='/img/cart.png')
                 button.login
@@ -23,7 +23,7 @@ html
                             h9 #{user.username}
                     else
                         a(href='/users/login') login
-                button.login
+                //button.login
                     if user
                         a(href='/payment/tracking')#white tracking
             a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
