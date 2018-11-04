@@ -23,10 +23,18 @@ html
         
         a(href='/')(style="position:absolute; z-index:1;left:2.75%;top:5.5%")
             img.logo-pos(src='/img/logo_circle.png')
+        .blue_reg
         .admin_buttons    
-          a.btn#admin_button(href='/admin/payment') ORDER PAYMENT
-          a.btn#admin_button(href='/admin/mixing') MIXING
-          a.btn#admin_button(href='/admin/sending') SENDING
+          .row
+            a.btn#admin_button(href='/admin/payment') ORDER PAYMENT
+          .row
+            a.btn#admin_button2(href='/admin/mixing') MIXING
+          .row
+            a.btn#admin_button2(href='/admin/sending') SENDING
+        img.auntie(src='/img/index/auntie.png')
+        .white_reg
+        .pos_cen2
+          .center3 SHAKIE VEEGIE
       else
         nav#myTopnav.topnav
             div(style="position:absolute; z-index:1;right:10;")
@@ -73,7 +81,7 @@ html
                     |                                 PROTECT YOU FROM CHOOSING THE INGREDIENTS 
                     br
                     |                                 THAT WILL HARM TO YOUR BODY
-                a#button2_index.readmore(href='#') READ MORE
+                a#button2_index.readmore(href='/admin/aboutus') READ MORE
               .pos_col
                 | HOW TO ORDER SHAKIE VEGGIE ?
                 p.index_info
@@ -86,7 +94,7 @@ html
                   |                         FORTH SELECT AMOUNT THAT YOU WANT AND ADD THEM TO CART 
                   br
                   |                         FIFTH . . . . .
-                a#button2_index.readmore(href='#') READ MORE
+                a#button2_index.readmore(href='/admin/aboutus') READ MORE
               .pos_col
                 br
                 br
