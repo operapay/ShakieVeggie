@@ -33,7 +33,7 @@ router.post('/payment/:id',function(req,res){
             return;
         }
         else{
-            console.log(query);
+            res.redirect('/admin/payment');
         }
     });
     //console.log(req.params.id);
@@ -51,7 +51,7 @@ router.post('/payment2/:id',function(req,res){
             return;
         }
         else{
-            console.log(query);
+            res.redirect('/admin/payment');
         }
     });
     //console.log(req.params.id);

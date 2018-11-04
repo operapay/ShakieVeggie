@@ -437,3 +437,16 @@ color:#ffcc1b;
     background:#ffcc1b;
     color:white;
   }
+  .status2{
+    width:100px;
+    height:40px;
+    font-size: 13px;
+    border:3px solid #ffcc1b;
+    border-radius: 4px;
+    color:#ffffff;
+    font-weight: 700;
+    background: transparent; 
+    cursor: pointer;
+    outline: none;
+    background:#ffcc1b;
+}

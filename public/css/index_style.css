@@ -167,6 +167,7 @@ a#button2_index:hover{
     background-color:#8ED2C9;
     cursor:pointer;
     margin-top:10%;
+    font-weight: 500;
 }
 #admin_button:hover{
     color:#8ED2C9;
@@ -186,6 +187,7 @@ a#button2_index:hover{
     background-color:#8ED2C9;
     cursor:pointer;
     margin-top:3%;
+    font-weight: 500;
 }
 #admin_button2:hover{
     color:#8ED2C9;

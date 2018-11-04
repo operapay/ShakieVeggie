@@ -86,7 +86,7 @@ block content
                     if order.mixingstatus == 0
                         td(align='center' )
                             form(action="/admin/sending2/" + order._id, method="post")
-                                input.status(onclick="change(this);track(this)" type="submit" value="READY" )
+                                input.status2(onclick="change(this);track(this)" type="submit" value="READY" )
                         if order.trackingnum == null
                             form(method='POST',action="/admin/tracking/" + order._id)
                                 td(align='center') 
