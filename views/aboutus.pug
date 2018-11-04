@@ -4,4 +4,46 @@ html
         link(rel='stylesheet', type='text/css', href='/css/about_style.css')
         link(rel='stylesheet', type='text/css', href='/css/style.css')
     body
-        img(src="/img/about/about.jpg")
+        if (user && user.username == 'admin')
+            nav#myTopnav.topnav
+                div(style="position:absolute; z-index:1;right:0;")
+                    button.login
+                        if user
+                            a(href='/users/logout')#white logout
+                            button.login
+                                h9 #{user.username}
+                        else
+                            a(href='/users/login')#white login
+            
+            a(href='/')(style="position:absolute; z-index:1;left:2.75%;top:5.5%")
+                img.logo-pos(src='/img/logo_circle.png')
+            .blue_reg
+            .admin_buttons    
+            .row
+                a.btn#admin_button(href='/admin/payment') ORDER PAYMENT
+            .row
+                a.btn#admin_button2(href='/admin/mixing') MIXING
+            .row
+                a.btn#admin_button2(href='/admin/sending') SENDING
+            img.auntie(src='/img/index/auntie.png')
+            .white_reg
+            .pos_cen2
+            .center3 SHAKIE VEEGIE
+        else
+            nav#myTopnav.topnav
+                div(style="position:absolute; z-index:1;right:10;")
+                    button.login
+                        if user
+                            a(href='/users/logout')#white logout
+                            button.login
+                                h9 #{user.username}
+                        else
+                            a(href='/users/login')#white login
+                    button.login
+                        if user
+                            a(href='/payment/tracking/' + user._id)#white tracking
+                a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
+            
+            a(href='/')(style="position:absolute; z-index:1;left:2.75%;top:5.5%")
+                img.logo-pos(src='/img/logo_circle.png')
+            img(src="/img/about/about.jpg")
