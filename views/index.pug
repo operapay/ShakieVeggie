@@ -9,13 +9,7 @@ html
     link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet', href='/bower_components/sweetalert/lib/sweet-alert.css')
     link(rel='stylesheet', type='text/css', href='/css/style.css')
-    style.
-      body {
-      background-color: #8ED2C9;
-      overflow: hidden;
-      }
   body
-    .contrainer
       if (user && user.username == 'admin')
         nav#myTopnav.topnav
             div(style="position:absolute; z-index:1;right:0;")
@@ -29,6 +23,7 @@ html
         
         a(href='/')(style="position:absolute; z-index:1;left:2.75%;top:5.5%")
             img.logo-pos(src='/img/logo_circle.png')
+        .blue_reg
         .row(style="top:50%;left: 50%;transform: translate(-50% 50%);")
           .col
               a.btn.btn-lg.btn-defult.btn-block#button1_index(href='/admin/payment') ORDER PAYMENT
