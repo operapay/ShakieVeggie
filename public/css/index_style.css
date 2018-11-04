@@ -70,6 +70,7 @@ body{
     text-align:center;
     transition: all 0.2s;
     background-color:#8ED2C9;
+    cursor:pointer;
 }
 #button1_index:hover{
     color:#8ED2C9;
