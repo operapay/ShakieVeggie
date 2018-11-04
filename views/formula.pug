@@ -84,46 +84,38 @@ html
 						if(formula.formulaname == "Detox")
 							if !user
 								a(href="/users/login")
-									img#pos(src='/img/button_ordernow.png')
-									img.d-block.w-100(src='/img/Detox_bg.png', alt='Detox')
-									h5.title-pos DETOX
-									p.comp-pos GUAVA - KIWI - JOB'S TEARS
+									//img#pos(src='/img/button_ordernow.png')
+									img.d-block(src='/img/Detox_bg.png', alt='Detox')
 							else
 								a(href="/recommend/" + orders._id + "/" + formula._id)
-									img#pos(src='/img/button_ordernow.png')
-									img.d-block.w-100(src='/img/Detox_bg.png', alt='Detox')
-									h5.title-pos DETOX
-									p.comp-pos GUAVA - KIWI - JOB'S TEARS
+									//img#pos(src='/img/button_ordernow.png')
+									img.d-block(src='/img/Detox_bg.png', alt='Detox')
 				.carousel-item
 					each formula, i in formulas
 						if(formula.formulaname == " Cholesterol Reducing")
 							if !user
 								a(href="/users/login")
-									img#pos(src='/img/button_ordernow.png')
+									//img#pos(src='/img/button_ordernow.png')
 									img.d-block.w-100(src='/img/Detox_bg.png', alt='')
-									h5.title-pos CHOLESTEROL REDUCING
-									p.comp-pos POMEGRANATE - CORN - BANANA
+									
 							else
 								a(href="/recommend/" + orders._id + "/" + formula._id)
-									img#pos(src='/img/button_ordernow.png')
+									//img#pos(src='/img/button_ordernow.png')
 									img.d-block.w-100(src='/img/Detox_bg.png', alt='')
-									h5.title-pos CHOLESTEROL REDUCING
-									p.comp-pos POMEGRANATE - CORN - BANANA
+									
 				.carousel-item
 					each formula, i in formulas
 						if(formula.formulaname == "Anti Aging")
 							if !user
 								a(href="/users/login")
-									img#pos(src='/img/button_ordernow.png')
+									//img#pos(src='/img/button_ordernow.png')
 									img.d-block.w-100(src='/img/Detox_bg.png', alt='')
-									h5.title-pos ANTI AGING
-									p.comp-pos TOMATO - CHERRY - ALMOND
+									
 							else
 								a(href="/recommend/" + orders._id + "/" + formula._id)
-									img#pos(src='/img/button_ordernow.png')
+									//img#pos(src='/img/button_ordernow.png')
 									img.d-block.w-100(src='/img/Detox_bg.png', alt='')
-									h5.title-pos ANTI AGING
-									p.comp-pos TOMATO - CHERRY - ALMOND
+									
 			a.carousel-control-prev(href='#carouselExampleControls', role='button', data-slide='prev')
 				span.carousel-control-prev-icon(aria-hidden='true')
 				span.sr-only Previous
@@ -132,26 +124,25 @@ html
 				span.sr-only Next
 			
 		.row.contain
-			.col-4
-				div(style="background:black; width:100%;height:250px;")
-					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;")
-						h1(style="margin-top:-2%;width:92%").text-uppercase
+			.col-4(style="")
+				div(style="background:black;position:relative;")
+					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
+						h1(style="top:50%;left: 50%;transform: translate(0%, -50%);").text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Detox")
-									li
 										if !user
 											a(href="/users/login")= formula.formulaname
 										else
 											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
 							.text FIBER - FOLATE - VITAMIN B
-					.item.f_bg(style="background-image:url('/img/detox.png');")
+					.item.f_bg(style="background-image:url('/img/detox.jpg');")
 							
 							
 			.col-4
-				div(style="background:black; width:100%;height:250px;")
-					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;")
-						h1(style="margin-top:-2%; width:92%").text-uppercase
+				div(style="background:black;position:relative;")
+					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
+						h1(style="top:50%;left: 50%;transform: translate(0%, -50%);").text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Fat Burn")
 									li
@@ -164,13 +155,13 @@ html
 								p
 								p FIBER - VITAMIN B - 
 								p L-CARNITINE
-					.item.f_bg(style="background-image:url('/img/fatburn.png');")
+					.item.f_bg(style="background-image:url('/img/fatburn.jpg');")
 						
 							
 			.col-4
-				div(style="background:black; width:100%;height:250px;")
-					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;")
-						h1(style="margin-top:-2%;width:92%").text-uppercase
+				div(style="background:black;position:relative;")
+					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
+						h1(style="top:50%;left: 50%;transform: translate(0%, -50%);").text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Improve Eyesight")
 									li
@@ -179,15 +170,18 @@ html
 										else
 											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
-							.text BETA CAROTENE - VITAMIN A - VITAMIN E
-					.item.f_bg(style="background-image:url('/img/eyes.png');")
+							.text
+								p
+								p BETA CAROTENE - VITAMIN A - 
+								p VITAMIN E
+					.item.f_bg(style="background-image:url('/img/eyes.jpg');")
 				
 						
 		.row.contain
 			.col-4
-				div(style="background:black; width:100%;height:250px;")
-					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;")
-						h1(style="margin-top:-2%;width:92%").text-uppercase
+				div(style="background:black;position:relative;")
+					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
+						h1(style="top:50%;left: 50%;transform: translate(0%, -50%);").text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Anti Aging")
 									li
@@ -197,11 +191,11 @@ html
 											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
 							.text COLLAGEN - VITAMIN C - VITAMIN E
-					.item.f_bg(style="background-image:url('/img/antiage.png');")
+					.item.f_bg(style="background-image:url('/img/antiage.jpg');")
 			.col-4
-				div(style="background:black; width:100%;height:250px;")
-					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;")
-						h1(style="margin-top:-2%;width:92%").text-uppercase
+				div(style="background:black;position:relative;")
+					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
+						h1(style="top:50%;left: 50%;transform: translate(0%, -50%);").text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Sugar Reducing")
 									li
@@ -211,11 +205,11 @@ html
 											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
 							.text FIBER - VITAMIN C - VITAMIN E
-					.item.f_bg(style="background-image:url('/img/sugar.png');")
+					.item.f_bg(style="background-image:url('/img/sugar.jpg');")
 			.col-4
-				div(style="background:black; width:100%;height:250px;")
-					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;")
-						h1(style="margin-top:-6%;width:92%").text-uppercase
+				div(style="background:black; position:relative;")
+					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
+						h1(style="top:50%;left: 50%;transform: translate(0%, -50%)").text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == " Cholesterol Reducing")
 									li
@@ -228,13 +222,13 @@ html
 								p
 								p FIBER - ANTIOXIDANT - 
 								p VITAMIN E
-					.item.f_bg(style="background-image:url('/img/cores.png');")
+					.item.f_bg(style="background-image:url('/img/cores.jpg');")
 				
 		.row.contain
 			.col-4
-				div(style="background:black; width:100%;height:250px;")
-					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;")
-						h1(style="margin-top:-2%;width:92%").text-uppercase
+				div(style="background:black; position:relative;")
+					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
+						h1(style="top:50%;left: 50%;transform: translate(0%, -50%)").text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Pregnancy Care")
 									li
@@ -244,14 +238,14 @@ html
 											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
 							.text CALCIUM - FOLATE - Fe
-					.item.f_bg(style="background-image:url('/img/custom_bg.png');")
+					.item.f_bg(style="background-image:url('/img/custom_bg.jpg');")
 				
 							
 							
 			.col-4
-				div(style="background:black; width:100%;height:250px;")
-					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;")
-						h1(style="margin-top:-2%;width:92%").text-uppercase
+				div(style="background:black;position:relative;")
+					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
+						h1(style="top:50%;left: 50%;transform: translate(0%, -50%)").text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Healthy Blood")
 									li
@@ -261,23 +255,24 @@ html
 											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
 							.text VITAMIN K - FOLATE - Fe
-					.item.f_bg(style="background-image:url('/img/blood.png');")
+					.item.f_bg(style="background-image:url('/img/blood.jpg');")
 				
 									
 			.col-4
-				div(style="background:black; width:100%;height:250px;")
-					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;")
-						h1(style="margin-top:-2%;width:92%").text-uppercase
+				div(style="background:black; position:relative;")
+					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
+						h1(style="top:50%;left: 50%;transform: translate(0%, -50%)").text-uppercase
 							each formula, i in formulas
-								if(formula.formulaname == "Anti Aging")
+								if(formula.formulaname == "Anti Agin")
 									li
 										if !user
 											a(href="/users/login")= formula.formulaname
 										else
 											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
+							h1 OTHERS
 						.overlay
 							.text COLLAGEN - VITAMIN C - VITAMIN E
-					.item.f_bg(style="background-image:url('/img/9.png');")
+					.item.f_bg(style="background-image:url('/img/9.jpg');")
 						
 		script(src='/js/main.js')
 		script(src='https://code.jquery.com/jquery-3.3.1.min.js')

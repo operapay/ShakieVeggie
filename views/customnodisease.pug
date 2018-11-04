@@ -82,9 +82,6 @@ html
             .margin-top-set{
                 margin-top:5%;
             }
-            .set-img{
-                margin-top:30px;
-            }
             #amout{
                 color:white;
                 font-weight: 600;
@@ -121,7 +118,17 @@ html
                 margin-top:-4%;
                 margin-left:  5%;
             }
-
+            .index-set{
+                display: inline;
+            }
+            @media screen and (max-width: 1200px) {
+                .row{
+                    display:block;
+                }
+                .col-8{
+                    
+                }
+            }
 
     body(onload="load()")
         // ----------------Navbar-------------------
@@ -139,7 +146,7 @@ html
                         a(href='/users/login')#white login
                 button.login
                     if user
-                        a(href='/payment/tracking/' + user._id)#login tracking
+                        a(href='/payment/tracking/' + user._id)#white tracking
             a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
         
         a(href='/')
@@ -155,10 +162,8 @@ html
 
             .margin-top-set
                 .row
-                    .col-4.set-img
-                        //ทำรูปเดียวมาเลยดีกว่า
-                        img.bottle(style="position:absolute;z-index:2;")(src='/img/bottle.png')
-                        img.img-bottle(style="position:absolute;z-index:1;")(src='/img/bottle_bg.png').bottle-bg
+                    .col-4
+                        img.bottle(style="width:85%;heigth:85%;transform: translate(-15%, -10%);")(src='/img/cus_bottle.png')
                     .col-8
                         h1.text-center.text-uppercase #{formula.formulaname}
                         br
