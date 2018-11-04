@@ -77,8 +77,9 @@ html
 					div(class="alert alert-danger") #{error.msg}
 			div(style="position:absolute; z-index:1;right:0;")
 				button.login
-					a(href='/cart/' + orders._id)
-						img.cart_pos(src='/img/cart.png')
+					if user
+						a(href='/cart/' + orders._id)
+							img.cart_pos(src='/img/cart.png')
 				button.login
 					if user
 						a(href='/users/logout')#white logout
@@ -99,7 +100,7 @@ html
 						if(formula.formulaname == "Detox")
 							if !user
 								img.d-block.w-100(src='/img/rcm_green.png', alt='Detox')
-								a(href="/users/login")
+								form(method='POST',action='/users/pleaselogin')
 									button#button_rec.viewf(type='submit',value='Submit') ORDER NOW
 							else
 								a(href="/recommend/" + orders._id + "/" + formula._id)
@@ -109,7 +110,7 @@ html
 					each formula, i in formulas
 						if(formula.formulaname == " Cholesterol Reducing")
 							if !user
-								a(href="/users/login")
+								form(method='POST',action='/users/pleaselogin')
 									button#button_rec.viewf(type='submit',value='Submit') ORDER NOW
 								img.d-block.w-100(src='/img/rcm_yellow.png', alt='')
 									
@@ -122,7 +123,7 @@ html
 					each formula, i in formulas
 						if(formula.formulaname == "Anti Aging")
 							if !user
-								a(href="/users/login")
+								form(method='POST',action='/users/pleaselogin')
 									button#button_rec.viewf(type='submit',value='Submit') ORDER NOW
 								img.d-block.w-100(src='/img/rcm_red.png', alt='')
 									
@@ -146,7 +147,8 @@ html
 							each formula, i in formulas
 								if(formula.formulaname == "Detox")
 										if !user
-											a(href="/users/login")= formula.formulaname
+											form(method='POST',action='/users/pleaselogin')
+												button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
 										else
 											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
@@ -162,7 +164,8 @@ html
 								if(formula.formulaname == "Fat Burn")
 									li
 										if !user
-											a(href="/users/login")= formula.formulaname
+											form(method='POST',action='/users/pleaselogin')
+												button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
 										else
 											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
@@ -181,7 +184,8 @@ html
 								if(formula.formulaname == "Improve Eyesight")
 									li
 										if !user
-											a(href="/users/login")= formula.formulaname
+											form(method='POST',action='/users/pleaselogin')
+												button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
 										else
 											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
@@ -201,7 +205,8 @@ html
 								if(formula.formulaname == "Anti Aging")
 									li
 										if !user
-											a(href="/users/login")= formula.formulaname
+											form(method='POST',action='/users/pleaselogin')
+												button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
 										else
 											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
@@ -215,7 +220,8 @@ html
 								if(formula.formulaname == "Sugar Reducing")
 									li
 										if !user
-											a(href="/users/login")= formula.formulaname
+											form(method='POST',action='/users/pleaselogin')
+												button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
 										else
 											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
@@ -229,7 +235,8 @@ html
 								if(formula.formulaname == " Cholesterol Reducing")
 									li
 										if !user
-											a(href="/users/login")= formula.formulaname
+											form(method='POST',action='/users/pleaselogin')
+												button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
 										else
 											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
@@ -248,7 +255,8 @@ html
 								if(formula.formulaname == "Pregnancy Care")
 									li
 										if !user
-											a(href="/users/login")= formula.formulaname
+											form(method='POST',action='/users/pleaselogin')
+												button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
 										else
 											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
@@ -265,7 +273,8 @@ html
 								if(formula.formulaname == "Healthy Blood")
 									li
 										if !user
-											a(href="/users/login")= formula.formulaname
+											form(method='POST',action='/users/pleaselogin')
+												button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
 										else
 											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
@@ -281,7 +290,8 @@ html
 								if(formula.formulaname == "Anti Agin")
 									li
 										if !user
-											a(href="/users/login")= formula.formulaname
+											form(method='POST',action='/users/pleaselogin')
+												button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
 										else
 											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 						.overlay
