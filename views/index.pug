@@ -29,14 +29,11 @@ html
         
         a(href='/')(style="position:absolute; z-index:1;left:2.75%;top:5.5%")
             img.logo-pos(src='/img/logo_circle.png')
-        .div(style="heigth:1000px;width:100%;border:3px solid black;")
-          .row(style="top:50%;left: 50%;transform: translate(0%, 100%);")
-            .col
-                a.btn.btn-lg.btn-defult.btn-block#button1_index(href='/admin/payment') ORDER PAYMENT
-            .col
-                a.btn.btn-lg.btn-defult.btn-block#button1_index(href='/admin/mixing') MIXING
-            .col
-                a.btn.btn-lg.btn-defult.btn-block#button1_index(href='/admin/sending') SENDING
+        
+        .admin_buttons    
+          a.btn#admin_button(href='/admin/payment') ORDER PAYMENT
+          a.btn#admin_button(href='/admin/mixing') MIXING
+          a.btn#admin_button(href='/admin/sending') SENDING
       else
         nav#myTopnav.topnav
             div(style="position:absolute; z-index:1;right:0;")
