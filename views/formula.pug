@@ -111,12 +111,12 @@ html
 							if !user
 								a(href="/users/login")
 									button#button_rec.viewf(type='submit',value='Submit') ORDER NOW
-								img.d-block.w-100(src='/img/rcm_red.png', alt='')
+								img.d-block.w-100(src='/img/rcm_yellow.png', alt='')
 									
 							else
 								a(href="/recommend/" + orders._id + "/" + formula._id)
 									button#button_rec.viewf(type='submit',value='Submit') ORDER NOW
-								img.d-block.w-100(src='/img/rcm_red.png', alt='')
+								img.d-block.w-100(src='/img/rcm_yellow.png', alt='')
 									
 				.carousel-item
 					each formula, i in formulas
@@ -124,12 +124,12 @@ html
 							if !user
 								a(href="/users/login")
 									button#button_rec.viewf(type='submit',value='Submit') ORDER NOW
-								img.d-block.w-100(src='/img/rcm_yellow.png', alt='')
+								img.d-block.w-100(src='/img/rcm_red.png', alt='')
 									
 							else
 								a(href="/recommend/" + orders._id + "/" + formula._id)
 									button#button_rec.viewf(type='submit',value='Submit') ORDER NOW
-								img.d-block.w-100(src='/img/rcm_yellow.png', alt='')
+								img.d-block.w-100(src='/img/rcm_red.png', alt='')
 									
 			a.carousel-control-prev(href='#carouselExampleControls', role='button', data-slide='prev')
 				span.carousel-control-prev-icon(aria-hidden='true')

@@ -168,6 +168,10 @@ a#button2_index:hover{
     cursor:pointer;
     margin-top:10%;
 }
+#admin_button:hover{
+    color:#8ED2C9;
+    background-color:#FFFFFF;
+}
 #admin_button2{
     display:inline-block;
     padding:12px 14px;
@@ -182,5 +186,9 @@ a#button2_index:hover{
     background-color:#8ED2C9;
     cursor:pointer;
     margin-top:3%;
+}
+#admin_button2:hover{
+    color:#8ED2C9;
+    background-color:#FFFFFF;
 }
 
