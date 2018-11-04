@@ -7,7 +7,10 @@
     font-family: Lemonism;
     src: url(/font/LemonismDEMO.otf);
 }
-
+@font-face {
+    font-family: Hvs;
+    src: url(/font/HaventSleptInTwoDaysShadow.ttf);
+}
 body{
     display: block;
     margin: 0px;
@@ -28,14 +31,14 @@ body{
 }
 .center1{
     color: white;
-    font-family: Havent Slept in Two Days;
+    font-family: Hvs;
     font-size:59px;
     text-shadow:1px 1px 5px grey;
 }
 
 .center2{
     color: white;
-    font-family: Lemonism DEMO;
+    font-family: Lemonism;
     font-size: 53px;
     text-shadow:1px 1px 5px grey;
 }
@@ -49,7 +52,7 @@ body{
 }
 
 .yugo{
-    font-family: Yu Gothic UI;
+    font-family: YGTH;
     font-weight: 700;
 }
 
@@ -60,7 +63,7 @@ body{
     height: auto;
     width: 27%;
 }
-#button1_index{
+a#button1_index{
     display:inline-block;
     padding:12px 14px;
     border:2.5px solid #FFFFFF;
@@ -69,15 +72,13 @@ body{
     color:#FFFFFF;
     text-align:center;
     transition: all 0.2s;
-    background-color:#8ED2C9;
 }
-#button1_index:hover{
+a#button1_index:hover{
     color:#8ED2C9;
     background-color:#FFFFFF;
 }
 .viewf{
     font-size: 13px;
-    font-weight: 700;
 }
 .readmore{
     font-size:10px;
