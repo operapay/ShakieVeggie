@@ -26,7 +26,7 @@ block content
             background-color: #ffcc1b;
             position: inherit;
             top:70px;
-            left: 25%;
+            left: 18%;
             z-index: -1;
         }
         .mt-5{
@@ -45,7 +45,6 @@ block content
             border: 4px solid;
             margin: 10px;
             border-color: #8ED2C9;
-            
         }
         .inputbox{
             color:#8ED2C9;
@@ -91,13 +90,22 @@ block content
                         td(align='center' height='60')=order.address
                         if order.mixingstatus == 0
                             td(align='center')
-                                input.status(onclick="track(this)" type="submit" value="READY" )
-                            form(method='POST',action="/admin/tracking/" + order._id)
+                                form(action="/admin/sending2/" + order._id, method="post")
+                                    input.status(onclick="change(this);track(this)" type="submit" value="READY" )
+                            if order.trackingnum == null
+                                form(method='POST',action="/admin/tracking/" + order._id)
+                                    td(align='center') 
+                                        #form-group
+                                            input.inputbox(type='text', placeholder='Tracking No.', name='trackingnum')
+                                    td(align='center') 
+                                        input.status(type="submit" value="SUBMIT")
+                            else
                                 td(align='center') 
-                                    #form-group
-                                        input.inputbox(type='text', placeholder='Tracking No.', name='trackingnum')
+                                    text(type='text', name='trackingnum') #{order.trackingnum}
                                 td(align='center') 
-                                    input.status(type="submit" value="SUBMIT")
+                                    form(method='POST',action="/admin/tracking2/" + order._id)
+                                        button.status(type="submit" value="SUBMIT") Edit
+
                         else
                             td(align='center') 
                                 form(action="/admin/sending/" + order._id, method="post")
