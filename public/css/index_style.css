@@ -74,6 +74,7 @@ body{
     transition: all 0.2s;
     background-color:#8ED2C9;
     font-weight: 700;
+    cursor:pointer;
 }
 #button1_index:hover{
     color:#8ED2C9;
@@ -139,3 +140,20 @@ a#button2_index:hover{
     -webkit-transform: translateY(-8px);
     transform: translateY(-4px);
 }
+
+#admin_button{
+    display:inline-block;
+    padding:12px 14px;
+    margin-left: 10%;
+    width:20%;
+    border:2.5px solid #FFFFFF;
+    box-sizing: border-box;
+    text-decoration:none;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.2s;
+    background-color:#8ED2C9;
+    cursor:pointer;
+    margin-top:23%;
+}
+
