@@ -106,3 +106,7 @@ color: white;
     margin-top:-2.25%;
     margin-left:  5%;
 }
+.bottle_pos{
+    width:98%;heigth:auto;
+    transform: translate(-15%, -15%);
+}
