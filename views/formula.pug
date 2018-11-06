@@ -50,9 +50,9 @@ block content
 		
 	.row.contain
 		.col-4(style="")
-			div(style="background:black;position:relative;")
-				.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
-					h1(style="top:50%;left: 50%;transform: translate(0%, -50%);").text-uppercase
+			.back_menu
+				.item-alltext.f_bg
+					h1.text-uppercase
 						each formula, i in formulas
 							if(formula.formulaname == "Detox")
 									if !user
@@ -66,9 +66,9 @@ block content
 						
 						
 		.col-4
-			div(style="background:black;position:relative;")
-				.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
-					h1(style="top:50%;left: 50%;transform: translate(0%, -50%);").text-uppercase
+			.back_menu
+				.item-alltext.f_bg
+					h1.text-uppercase
 						each formula, i in formulas
 							if(formula.formulaname == "Fat Burn")
 								li
@@ -86,9 +86,9 @@ block content
 					
 						
 		.col-4
-			div(style="background:black;position:relative;")
-				.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
-					h1(style="top:50%;left: 50%;transform: translate(0%, -50%);").text-uppercase
+			.back_menu
+				.item-alltext.f_bg
+					h1.text-uppercase
 						each formula, i in formulas
 							if(formula.formulaname == "Improve Eyesight")
 								li
@@ -107,9 +107,9 @@ block content
 					
 	.row.contain
 		.col-4
-			div(style="background:black;position:relative;")
-				.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
-					h1(style="top:50%;left: 50%;transform: translate(0%, -50%);").text-uppercase
+			.back_menu
+				.item-alltext.f_bg
+					h1.text-uppercase
 						each formula, i in formulas
 							if(formula.formulaname == "Anti Aging")
 								li
@@ -122,9 +122,9 @@ block content
 						.text COLLAGEN - VITAMIN C - VITAMIN E
 				.item.f_bg(style="background-image:url('/img/antiage.jpg');")
 		.col-4
-			div(style="background:black;position:relative;")
-				.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
-					h1(style="top:50%;left: 50%;transform: translate(0%, -50%);").text-uppercase
+			.back_menu
+				.item-alltext.f_bg
+					h1.text-uppercase
 						each formula, i in formulas
 							if(formula.formulaname == "Sugar Reducing")
 								li
@@ -137,9 +137,9 @@ block content
 						.text FIBER - VITAMIN C - VITAMIN E
 				.item.f_bg(style="background-image:url('/img/sugar.jpg');")
 		.col-4
-			div(style="background:black; position:relative;")
-				.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
-					h1(style="top:50%;left: 50%;transform: translate(0%, -50%)").text-uppercase
+			.back_menu
+				.item-alltext.f_bg
+					h1.text-uppercase
 						each formula, i in formulas
 							if(formula.formulaname == " Cholesterol Reducing")
 								li
@@ -157,9 +157,9 @@ block content
 			
 	.row.contain
 		.col-4
-			div(style="background:black; position:relative;")
-				.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
-					h1(style="top:50%;left: 50%;transform: translate(0%, -50%)").text-uppercase
+			.back_menu
+				.item-alltext.f_bg
+					h1.text-uppercase
 						each formula, i in formulas
 							if(formula.formulaname == "Pregnancy Care")
 								li
@@ -175,9 +175,9 @@ block content
 						
 						
 		.col-4
-			div(style="background:black;position:relative;")
-				.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
-					h1(style="top:50%;left: 50%;transform: translate(0%, -50%)").text-uppercase
+			.back_menu
+				.item-alltext.f_bg
+					h1.text-uppercase
 						each formula, i in formulas
 							if(formula.formulaname == "Healthy Blood")
 								li
@@ -192,9 +192,9 @@ block content
 			
 								
 		.col-4
-			div(style="background:black; position:relative;")
-				.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
-					h1(style="top:50%;left: 50%;transform: translate(0%, -50%)").text-uppercase OTHERS
+			.back_menu
+				.item-alltext.f_bg
+					h1.text-uppercase OTHERS
 						each formula, i in formulas
 							if(formula.formulaname == "Anti Agin")
 								li
@@ -207,10 +207,4 @@ block content
 						.text CHOOSE BY YOUR SELF
 				.item.f_bg(style="background-image:url('/img/9.jpg');")
 					
-	script(src='/js/main.js')
-	script(src='https://code.jquery.com/jquery-3.3.1.min.js')
-	script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
-	script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')
-	script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
-	script(src='/bower_components/sweetalert/lib/sweet-alert.min.js')
-	script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js')
+
