@@ -1,0 +1,108 @@
+body{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/img/custom_bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+}
+ul.chec-radio {
+    margin: 8px;
+}
+ul.chec-radio{
+    display: inline;
+}
+li.pz{
+    display: inline;
+    margin-left:9px;
+}
+.chec-radio .radio-inline .clab {
+    cursor: pointer;
+    background: transparent;
+    padding-top: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    position: relative;
+    width: 87.75px;
+    height: 48px;
+    line-height:93%;
+    float: left;
+    margin: 0;
+    /*margin-bottom: 5px;*/
+    border-radius: 2px;
+    /*border-style: solid;*/
+    border: 2.5px solid white;
+    font-size: 11px;
+    font-weight: 400;
+}
+.line1{
+    padding: 11px;
+}
+.line2{
+    padding-top: 7px;
+}
+.chec-radio label.radio-inline input[type="radio"] {
+    display: none;
+}
+.chec-radio label.radio-inline input[type="radio"]:checked+div {
+    color: #8fd2c9;
+    background-color: white;
+    border-radius: 3px;
+    border-color: transparent;
+    font-weight: bold;
+}
+.chec-radio label.radio-inline input[type="radio"][disabled] :checked+div 
+{
+    border-color: purple;
+}
+#type{
+    background-color: #ffcc1b;
+    color: black;
+    border-style: none;
+    padding-top: 19px;
+    font-weight:650;
+    margin-right:10px;
+}
+h1{
+    font-size:70px;
+    color:#ffcc1b;
+    text-shadow: 4px 4px #452065;
+}
+.margin-top-set{
+    margin-top:5%;
+}
+#amout{
+    color:white;
+    font-weight: 600;
+    background-color:transparent;
+    border-radius: 0px;
+    width:150px;
+    height:30px;
+    border: 2.5px solid;
+    cursor:pointer;
+
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+color: white;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+color: white;
+}
+#gray{
+    color: gray;
+    border-color:gray;
+}
+.img-bottle {
+    position: absolute;
+}
+.bottle-bg{
+    width:25%;
+    height:90%;
+    margin-top:-2.25%;
+    margin-left:  5%;
+}
