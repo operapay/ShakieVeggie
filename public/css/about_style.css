@@ -66,3 +66,7 @@ body{
     padding: 45px;
     line-height: 3;
 }
+
+::-webkit-scrollbar {
+    display: none;
+    }
