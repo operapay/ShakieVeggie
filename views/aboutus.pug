@@ -18,10 +18,6 @@ html
             div(style="position:absolute; z-index:1;right:0;")
                 button.login
                     if user
-                        a(href='/cart/' + orders._id)
-                            img.cart_pos(src='/img/cart.png')
-                button.login
-                    if user
                         a(href='/users/logout')#white logout
                         button.login.mt-1 
                             h9 #{user.username}
