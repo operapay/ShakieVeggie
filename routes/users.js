@@ -102,4 +102,9 @@ router.get('/logout',function(req,res){
     res.redirect('/users/login');
 });
 
+router.post('/pleaselogin',function(req,res){
+    req.flash('danger','Please login');
+    res.redirect('/users/login');
+});
+
 module.exports = router;

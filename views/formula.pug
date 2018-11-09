@@ -1,282 +1,206 @@
-doctype html
-html
-	head
-		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.css')
-		link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css', integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO', crossorigin='anonymous')
-		title Formula
-		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
-		script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
-		script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+extends layout1
 
-		link(rel='stylesheet', type='text/css', href='/css/formulastyle.css')
-	style.
-		body{
-			background-image:url("/img/f_bg.png");
-			background-repeat: no-repeat;
-			background-position-y:100%;
-			background-size:100%;
-		}
-		img#pos{
-			position:absolute;
-			margin-top:250px;
-			margin-left:47%;
-			width:240px;
-			height:70px;
-			cursor:pointer;
-		}
-		.title-pos{
-			position:absolute;
-			top:30%;
-			right:40%;
-			color:white;
-			font-size:48px;
-		}
-		.comp-pos{
-			position:absolute;
-			top:45%;
-			right:23.5%;
-			color:white;
-			font-size:30px;
-		}
-		.formula-pos{
-			position:absolute;
-			text-align: center;
-			margin-top:0;
-		}
-		div.f_bg{
-			background-size: cover;
-			background-repeat: no-repeat;
-			width: 100%;
-		}
-		div > h1 {
-			color:white;    
-		}
-
-	body
-		//ขาดnav------------------------------------------------------------------
+block content
+	link(rel='stylesheet', type='text/css', href='/css/formulastyle.css')
+	#carouselExampleControls.carousel.slide(data-ride='carousel')
+		.carousel-inner
+			.carousel-item.active
+				each formula, i in formulas
+					if(formula.formulaname == "Detox")
+						if !user
+							img.d-block.w-100(src='/img/rcm_green.png', alt='Detox')
+							form(method='POST',action='/users/pleaselogin')
+								button#button_rec.viewf(type='submit',value='Submit') ORDER NOW
+						else
+							a(href="/recommend/" + orders._id + "/" + formula._id)
+								button#button_rec.viewf(type='submit',value='Submit') ORDER NOW
+							img.d-block.w-100(src='/img/rcm_green.png', alt='Detox')
+			.carousel-item
+				each formula, i in formulas
+					if(formula.formulaname == " Cholesterol Reducing")
+						if !user
+							form(method='POST',action='/users/pleaselogin')
+								button#button_rec.viewf(type='submit',value='Submit') ORDER NOW
+							img.d-block.w-100(src='/img/rcm_yellow.png', alt='')
+								
+						else
+							a(href="/recommend/" + orders._id + "/" + formula._id)
+								button#button_rec.viewf(type='submit',value='Submit') ORDER NOW
+							img.d-block.w-100(src='/img/rcm_yellow.png', alt='')
+								
+			.carousel-item
+				each formula, i in formulas
+					if(formula.formulaname == "Anti Aging")
+						if !user
+							form(method='POST',action='/users/pleaselogin')
+								button#button_rec.viewf(type='submit',value='Submit') ORDER NOW
+							img.d-block.w-100(src='/img/rcm_red.png', alt='')
+								
+						else
+							a(href="/recommend/" + orders._id + "/" + formula._id)
+								button#button_rec.viewf(type='submit',value='Submit') ORDER NOW
+							img.d-block.w-100(src='/img/rcm_red.png', alt='')
+								
+		a.carousel-control-prev(href='#carouselExampleControls', role='button', data-slide='prev')
+			span.carousel-control-prev-icon(aria-hidden='true')
+			span.sr-only Previous
+		a.carousel-control-next(href='#carouselExampleControls', role='button', data-slide='next')
+			span.carousel-control-next-icon(aria-hidden='true')
+			span.sr-only Next
 		
-		.container
-			!= messages('message',locals)
-			if errors
-				each error, i in errors
-					div(class="alert alert-danger") #{error.msg}
-			div(style="position:absolute; z-index:1;right:0;")
-				button.login
-					a(href='/cart/' + orders._id)
-						img.cart_pos(src='/img/cart.png')
-				button.login
-					if user
-						a(href='/users/logout')#white logout
-						button.login.mt-1 
-							h9 #{user.username}
-					else
-						a(href='/users/login')#white login
-				button.login
-					if user
-						a(href='/payment/tracking/' + user._id)#login tracking
-			a(href='/')(style="position:absolute; z-index:1;left:2.75%;top:5.5%")
-				img.logo-pos(src='/img/logo_circle.png')
-				
-		#carouselExampleControls.carousel.slide(data-ride='carousel')
-			.carousel-inner
-				.carousel-item.active
-					each formula, i in formulas
-						if(formula.formulaname == "Detox")
-							if !user
-								a(href="/users/login")
-									//img#pos(src='/img/button_ordernow.png')
-									img.d-block(src='/img/Detox_bg.png', alt='Detox')
-							else
-								a(href="/recommend/" + orders._id + "/" + formula._id)
-									//img#pos(src='/img/button_ordernow.png')
-									img.d-block(src='/img/Detox_bg.png', alt='Detox')
-				.carousel-item
-					each formula, i in formulas
-						if(formula.formulaname == " Cholesterol Reducing")
-							if !user
-								a(href="/users/login")
-									//img#pos(src='/img/button_ordernow.png')
-									img.d-block.w-100(src='/img/Detox_bg.png', alt='')
-									
-							else
-								a(href="/recommend/" + orders._id + "/" + formula._id)
-									//img#pos(src='/img/button_ordernow.png')
-									img.d-block.w-100(src='/img/Detox_bg.png', alt='')
-									
-				.carousel-item
-					each formula, i in formulas
-						if(formula.formulaname == "Anti Aging")
-							if !user
-								a(href="/users/login")
-									//img#pos(src='/img/button_ordernow.png')
-									img.d-block.w-100(src='/img/Detox_bg.png', alt='')
-									
-							else
-								a(href="/recommend/" + orders._id + "/" + formula._id)
-									//img#pos(src='/img/button_ordernow.png')
-									img.d-block.w-100(src='/img/Detox_bg.png', alt='')
-									
-			a.carousel-control-prev(href='#carouselExampleControls', role='button', data-slide='prev')
-				span.carousel-control-prev-icon(aria-hidden='true')
-				span.sr-only Previous
-			a.carousel-control-next(href='#carouselExampleControls', role='button', data-slide='next')
-				span.carousel-control-next-icon(aria-hidden='true')
-				span.sr-only Next
+	.row.contain
+		.col-4(style="")
+			.back_menu
+				.item-alltext.f_bg
+					h1.text-uppercase
+						each formula, i in formulas
+							if(formula.formulaname == "Detox")
+									if !user
+										form(method='POST',action='/users/pleaselogin')
+											button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
+									else
+										a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
+					.overlay
+						.text FIBER - FOLATE - VITAMIN B
+				.item.f_bg(style="background-image:url('/img/detox.jpg');")
+						
+						
+		.col-4
+			.back_menu
+				.item-alltext.f_bg
+					h1.text-uppercase
+						each formula, i in formulas
+							if(formula.formulaname == "Fat Burn")
+								li
+									if !user
+										form(method='POST',action='/users/pleaselogin')
+											button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
+									else
+										a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
+					.overlay
+						.text
+							p
+							p FIBER - VITAMIN B - 
+							p L-CARNITINE
+				.item.f_bg(style="background-image:url('/img/fatburn.jpg');")
+					
+						
+		.col-4
+			.back_menu
+				.item-alltext.f_bg
+					h1.text-uppercase
+						each formula, i in formulas
+							if(formula.formulaname == "Improve Eyesight")
+								li
+									if !user
+										form(method='POST',action='/users/pleaselogin')
+											button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
+									else
+										a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
+					.overlay
+						.text
+							p
+							p BETA CAROTENE - VITAMIN A - 
+							p VITAMIN E
+				.item.f_bg(style="background-image:url('/img/eyes.jpg');")
 			
-		.row.contain
-			.col-4(style="")
-				div(style="background:black;position:relative;")
-					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
-						h1(style="top:50%;left: 50%;transform: translate(0%, -50%);").text-uppercase
-							each formula, i in formulas
-								if(formula.formulaname == "Detox")
-										if !user
-											a(href="/users/login")= formula.formulaname
-										else
-											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
-						.overlay
-							.text FIBER - FOLATE - VITAMIN B
-					.item.f_bg(style="background-image:url('/img/detox.jpg');")
-							
-							
-			.col-4
-				div(style="background:black;position:relative;")
-					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
-						h1(style="top:50%;left: 50%;transform: translate(0%, -50%);").text-uppercase
-							each formula, i in formulas
-								if(formula.formulaname == "Fat Burn")
-									li
-										if !user
-											a(href="/users/login")= formula.formulaname
-										else
-											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
-						.overlay
-							.text
-								p
-								p FIBER - VITAMIN B - 
-								p L-CARNITINE
-					.item.f_bg(style="background-image:url('/img/fatburn.jpg');")
-						
-							
-			.col-4
-				div(style="background:black;position:relative;")
-					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
-						h1(style="top:50%;left: 50%;transform: translate(0%, -50%);").text-uppercase
-							each formula, i in formulas
-								if(formula.formulaname == "Improve Eyesight")
-									li
-										if !user
-											a(href="/users/login")= formula.formulaname
-										else
-											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
-						.overlay
-							.text
-								p
-								p BETA CAROTENE - VITAMIN A - 
-								p VITAMIN E
-					.item.f_bg(style="background-image:url('/img/eyes.jpg');")
-				
-						
-		.row.contain
-			.col-4
-				div(style="background:black;position:relative;")
-					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
-						h1(style="top:50%;left: 50%;transform: translate(0%, -50%);").text-uppercase
-							each formula, i in formulas
-								if(formula.formulaname == "Anti Aging")
-									li
-										if !user
-											a(href="/users/login")= formula.formulaname
-										else
-											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
-						.overlay
-							.text COLLAGEN - VITAMIN C - VITAMIN E
-					.item.f_bg(style="background-image:url('/img/antiage.jpg');")
-			.col-4
-				div(style="background:black;position:relative;")
-					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
-						h1(style="top:50%;left: 50%;transform: translate(0%, -50%);").text-uppercase
-							each formula, i in formulas
-								if(formula.formulaname == "Sugar Reducing")
-									li
-										if !user
-											a(href="/users/login")= formula.formulaname
-										else
-											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
-						.overlay
-							.text FIBER - VITAMIN C - VITAMIN E
-					.item.f_bg(style="background-image:url('/img/sugar.jpg');")
-			.col-4
-				div(style="background:black; position:relative;")
-					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
-						h1(style="top:50%;left: 50%;transform: translate(0%, -50%)").text-uppercase
-							each formula, i in formulas
-								if(formula.formulaname == " Cholesterol Reducing")
-									li
-										if !user
-											a(href="/users/login")= formula.formulaname
-										else
-											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
-						.overlay
-							.text 
-								p
-								p FIBER - ANTIOXIDANT - 
-								p VITAMIN E
-					.item.f_bg(style="background-image:url('/img/cores.jpg');")
-				
-		.row.contain
-			.col-4
-				div(style="background:black; position:relative;")
-					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
-						h1(style="top:50%;left: 50%;transform: translate(0%, -50%)").text-uppercase
-							each formula, i in formulas
-								if(formula.formulaname == "Pregnancy Care")
-									li
-										if !user
-											a(href="/users/login")= formula.formulaname
-										else
-											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
-						.overlay
-							.text CALCIUM - FOLATE - Fe
-					.item.f_bg(style="background-image:url('/img/custom_bg.jpg');")
-				
-							
-							
-			.col-4
-				div(style="background:black;position:relative;")
-					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
-						h1(style="top:50%;left: 50%;transform: translate(0%, -50%)").text-uppercase
-							each formula, i in formulas
-								if(formula.formulaname == "Healthy Blood")
-									li
-										if !user
-											a(href="/users/login")= formula.formulaname
-										else
-											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
-						.overlay
-							.text VITAMIN K - FOLATE - Fe
-					.item.f_bg(style="background-image:url('/img/blood.jpg');")
-				
+					
+	.row.contain
+		.col-4
+			.back_menu
+				.item-alltext.f_bg
+					h1.text-uppercase
+						each formula, i in formulas
+							if(formula.formulaname == "Anti Aging")
+								li
+									if !user
+										form(method='POST',action='/users/pleaselogin')
+											button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
+									else
+										a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
+					.overlay
+						.text COLLAGEN - VITAMIN C - VITAMIN E
+				.item.f_bg(style="background-image:url('/img/antiage.jpg');")
+		.col-4
+			.back_menu
+				.item-alltext.f_bg
+					h1.text-uppercase
+						each formula, i in formulas
+							if(formula.formulaname == "Sugar Reducing")
+								li
+									if !user
+										form(method='POST',action='/users/pleaselogin')
+											button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
+									else
+										a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
+					.overlay
+						.text FIBER - VITAMIN C - VITAMIN E
+				.item.f_bg(style="background-image:url('/img/sugar.jpg');")
+		.col-4
+			.back_menu
+				.item-alltext.f_bg
+					h1.text-uppercase
+						each formula, i in formulas
+							if(formula.formulaname == " Cholesterol Reducing")
+								li
+									if !user
+										form(method='POST',action='/users/pleaselogin')
+											button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
+									else
+										a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
+					.overlay
+						.text 
+							p
+							p FIBER - ANTIOXIDANT - 
+							p VITAMIN E
+				.item.f_bg(style="background-image:url('/img/cores.jpg');")
+			
+	.row.contain
+		.col-4
+			.back_menu
+				.item-alltext.f_bg
+					h1.text-uppercase
+						each formula, i in formulas
+							if(formula.formulaname == "Pregnancy Care")
+								li
+									if !user
+										form(method='POST',action='/users/pleaselogin')
+											button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
+									else
+										a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
+					.overlay
+						.text CALCIUM - FOLATE - FE
+				.item.f_bg(style="background-image:url('/img/custom_bg.jpg');")
 									
-			.col-4
-				div(style="background:black; position:relative;")
-					.item-alltext.f_bg(style="position:absolute;z-index: 1;height:100%;width:100%;top:50%;left: 50%;transform: translate(-50%, -50%);")
-						h1(style="top:50%;left: 50%;transform: translate(0%, -50%)").text-uppercase OTHER
-							each formula, i in formulas
-								if(formula.formulaname == "Anti Agin")
-									li
-										if !user
-											a(href="/users/login")= formula.formulaname
-										else
-											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
-						.overlay
-							.text COLLAGEN - VITAMIN C - VITAMIN E
-					.item.f_bg(style="background-image:url('/img/9.jpg');")
-						
-		script(src='/js/main.js')
-		script(src='https://code.jquery.com/jquery-3.3.1.min.js')
-		script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
-		script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')
-		script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
-		script(src='/bower_components/sweetalert/lib/sweet-alert.min.js')
-		script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js')
+		.col-4
+			.back_menu
+				.item-alltext.f_bg
+					h1.text-uppercase
+						each formula, i in formulas
+							if(formula.formulaname == "Healthy Blood")
+								li
+									if !user
+										form(method='POST',action='/users/pleaselogin')
+											button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
+									else
+										a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
+					.overlay
+						.text VITAMIN K - FOLATE - FE
+				.item.f_bg(style="background-image:url('/img/blood.jpg');")
+			
+								
+		.col-4
+			.back_menu
+				.item-alltext.f_bg
+					h1.text-uppercase OTHERS
+						each formula, i in formulas
+							if(formula.formulaname == "Anti Agin")
+								li
+									if !user
+										form(method='POST',action='/users/pleaselogin')
+											button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
+									else
+										a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
+					.overlay
+						.text CHOOSE BY YOUR SELF
+				.item.f_bg(style="background-image:url('/img/9.jpg');")

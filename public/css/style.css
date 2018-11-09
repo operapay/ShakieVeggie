@@ -24,13 +24,13 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    width: 100%;    
+    width: 100%;
 }
 
 
 a:link{
     text-decoration:none;
-    color: #ffb85f;
+    color: white;
 }
 a:visited{
     text-decoration:none;
@@ -40,7 +40,9 @@ a:visited{
     color: white;
 }
 
-
+#yellow{
+color:#ffcc1b;
+}
 /*------------------------------NAV----------------------------------*/
 
 .logo-pos{
@@ -424,13 +426,27 @@ a:visited{
       height:40px;
       font-size: 13px;
       border:3px solid #ffcc1b;
-      border-radius: 0.1rem;
+      border-radius: 4px;
       color:#ffcc1b;
-      font-weight: 600;
+      font-weight: 700;
       background: transparent; 
       cursor: pointer;
+      outline: none;
   }
   .status:hover{
     background:#ffcc1b;
     color:white;
   }
+  .status2{
+    width:100px;
+    height:40px;
+    font-size: 13px;
+    border:3px solid #ffcc1b;
+    border-radius: 4px;
+    color:#ffffff;
+    font-weight: 700;
+    background: transparent; 
+    cursor: pointer;
+    outline: none;
+    background:#ffcc1b;
+}

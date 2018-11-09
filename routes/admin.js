@@ -33,7 +33,25 @@ router.post('/payment/:id',function(req,res){
             return;
         }
         else{
-            console.log(query);
+            res.redirect('/admin/payment');
+        }
+    });
+    //console.log(req.params.id);
+});
+
+router.post('/payment2/:id',function(req,res){
+    let order = {};
+    order.paymentstatus = 1;
+    //จ่ายแล้ว
+
+    let query = {_id:req.params.id}
+    Order.update(query, order, function(err){
+        if(err){
+            console.log(err);
+            return;
+        }
+        else{
+            res.redirect('/admin/payment');
         }
     });
     //console.log(req.params.id);
@@ -80,10 +98,54 @@ router.post('/sending/:id',function(req,res){
     });
 });
 
+router.post('/sending2/:id',function(req,res){
+    let order = {};
+    order.mixingstatus = 1;
+    //พร้อมส่ง
+
+    let query = {_id:req.params.id}
+    Order.update(query, order, function(err){
+        if(err){
+            console.log(err);
+            return;
+        }
+        else{
+            res.redirect('/admin/sending');
+            // Order.find({},function(err,orders){
+            //     res.render('sending_table',{
+            //         orders:orders
+            //     });
+            // });
+        }
+    });
+});
+
 router.post('/tracking/:id',function(req,res){
     //console.log(req.params.id);
     let order = {};
     order.trackingnum = req.body.trackingnum;
+
+    let query = {_id:req.params.id}
+    Order.update(query, order, function(err){
+        if(err){
+            console.log(err);
+            return;
+        }
+        else{
+            res.redirect('/admin/sending');
+            // Order.find({},function(err,orders){
+            //     res.render('sending_table',{
+            //         orders:orders
+            //     });
+            // });
+        }
+    });
+});
+
+router.post('/tracking2/:id',function(req,res){
+    //console.log(req.params.id);
+    let order = {};
+    order.trackingnum = null;
 
     let query = {_id:req.params.id}
     Order.update(query, order, function(err){
