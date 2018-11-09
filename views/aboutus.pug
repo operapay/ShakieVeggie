@@ -57,8 +57,12 @@ html
             #shakie    
                 p SHAKIE VEGGIE
                 p#detail DELIVERY HELTHY AND FRESHNESS AT YOUR DOORBELL
+        a#nav(href='#what',style="font-size:50px;color:black;width:60px;border:3px solid black;margin-left:50px") what
+        a#nav(href='#how',style="font-size:50px;color:black;width:60px;border:3px solid black;margin-left:50px") how
+
         .block2
-            p#what WHAT IS SHAKIE VEGGIE
+            p 
+                a#what WHAT IS SHAKIE VEGGIE
             #detail_what
                 p
                 | SHAKIE VEGGIE IS A 
@@ -93,7 +97,8 @@ html
             .row
                 .col-6
                     .order
-                        p#how HOW TO ORDER SHAKIE VEGGIE ?
+                        p#how 
+                            a(name='what_is') HOW TO ORDER SHAKIE VEGGIE ?
                         hr
                         p
                         | 1. CHOOSE THE FORMULA OF SHAKKIEVEGGIE
@@ -112,5 +117,20 @@ html
                         | 6. CHECK AND PAY THE BILL THEN WAIT FOR YOUR SHEKIE VEGGIE
                         | AT YOUR FRONT DOOR!!!
                 .col-6(style="background-size: cover;background-image:url(/img/about/lemon.png)")
+    script(type='text/javascript').
+        $(document).ready(function() {
+        $('#nav').localScroll({duration:800});
+        });
+
+    script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript")
+    script(src="jquery.localscroll.js" type="text/javascript")
+    script(src="jquery.scrollTo.js" type="text/javascript")
+    script(src='/js/main.js')
+    script(src='https://code.jquery.com/jquery-3.3.1.min.js')
+    script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
+    script(src='/bower_components/sweetalert/lib/sweet-alert.min.js')
+    script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js')
 
         
