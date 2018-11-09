@@ -34,7 +34,7 @@ html
             img.auntie(src='/img/index/auntie.png')
             .white_reg
             .pos_cen2
-            .center3 SHAKIE VEEGIE
+            .center3 SHAKIE VEGGIE
         else
             nav#myTopnav.topnav
                 div(style="position:absolute; z-index:1;right:10;")
@@ -52,43 +52,65 @@ html
             
             a(href='/')(style="position:absolute; z-index:1;left:2.75%;top:5.5%")
                 img.logo-pos(src='/img/logo_circle.png')
-        img(src="/img/about/avocado.jpg")
-        p SHAKIE VEGGIE
-        p DELIVERY HELTHY AND FRESHNESS AT YOUR DOORBELL
-        p WHAT IS SHAKIE VEGGIE
-        p
-        | SHAKIE VEGGIE IS A FRUIT AND VEGGETABLE JUICE THAT YOU CAN CHOOSE THE PROPERTIES
-        | AND THE INGREDIENTS THROUGH THE WEBSITE THAT WIILL ALSO  PROTECT YOU FROM CHOOSING
-        | THE INGREDIENTS THAT WILL HARM TO YOUR BODY CAN ALSO SAY THAT
-        | SHAKIEVEGGIE IS YOUR PERSONAL HEALTH GUARD THAT YOU  WILL
-        | NEVER FORGET.
-        img(src='/img/about/certificate.png')
-        p CERTIFICATE
-        p
-        | APPROVAL BY BLABLABLA COORPERATION
-        | WITH A CERTIFICATE NO. 0123456789
-        img(src='/img/about/harvest.png')
-        p FRUIT ORIGIN
-        p
-        | 100% ORGANIC FRUIT FROM BLABLABLA ORCHARD
-        | IN BLABLABLA PROVINCE
-        img(src='/img/about/truck.png')
-        p DELIVERY
-        p
-        | WE SENDING SHAKIE VEGGIE TO YOU BY
-        | BLABLALBA COMPANY THAT YOU WILL RECIEVE IN 2-3 DAYS
-        p HOW TO ORDER SHAKIE VEGGIE ?
-        p
-        | 1. CHOOSE THE FORMULA OF SHAKKIEVEGGIE
-        | 2. TELL US ABOUT YOUR HEALTH CONDITION BY CHECKING
-        | THE CHOICES
-        | 3. CHOOSE THREE INGREDIENTS THAT YOU WANT TO MIX IT
-        | TOGETHER
-        | 4. SELECT AMOUNT THAT YOU WANT AND ADD THEM TO CART
-        | 5. DO 1-4 AGAIN IF YOU WANT TO ORDER MORE. IF NOT, CLICK
-        | CHECKOUT
-        | 6. CHECK AND PAY THE BILL THEN WAIT FOR YOUR SHEKIE VEGGIE
-        | AT YOUR FRONT DOOR!!!
-        img(src='/img/about/lemon.png')
+        .block1
+            img(src='/img/about/avocado.jpg')(style="width:100%;")
+            #shakie    
+                p SHAKIE VEGGIE
+                p#detail DELIVERY HELTHY AND FRESHNESS AT YOUR DOORBELL
+        .block2
+            p#what WHAT IS SHAKIE VEGGIE
+            #detail_what
+                p
+                | SHAKIE VEGGIE IS A 
+                span(style="font-size:18px;") FRUIT AND VEGGETABLE JUICE 
+                | THAT YOU CAN CHOOSE THE PROPERTIES
+                | AND THE INGREDIENTS THROUGH THE WEBSITE THAT WIILL ALSO  PROTECT YOU FROM CHOOSING
+                | THE INGREDIENTS THAT WILL HARM TO YOUR BODY CAN ALSO SAY THAT
+                | SHAKIEVEGGIE IS 
+                span(style="font-size:18px;") YOUR PERSONAL HEALTH GUARD THAT YOU  WILL
+                | NEVER FORGET.
+            .column
+                div
+                    img(src='/img/about/certificate.png')
+                    p.service CERTIFICATE
+                    p.detail_s
+                    | APPROVAL BY BLABLABLA COORPERATION
+                    | WITH A CERTIFICATE NO. 0123456789
+                div
+                    img(src='/img/about/harvest.png')
+                    p.service FRUIT ORIGIN
+                    p.detail_s
+                    | 100% ORGANIC FRUIT FROM BLABLABLA ORCHARD
+                    | IN BLABLABLA PROVINCE
+                div
+                    img(src='/img/about/truck.png')
+                    p.service DELIVERY
+                    p.detail_s
+                    | WE SENDING SHAKIE VEGGIE TO YOU BY
+                    | BLABLALBA COMPANY THAT YOU WILL RECIEVE IN 2-3 DAYS
+        .block3
+            .row
+                .col-6
+                    .order
+                        p#how HOW TO ORDER SHAKIE VEGGIE ?
+                        hr
+                        p
+                        | 1. CHOOSE THE FORMULA OF SHAKKIEVEGGIE
+                        br
+                        | 2. TELL US ABOUT YOUR HEALTH CONDITION BY CHECKING
+                        | THE CHOICES
+                        br
+                        | 3. CHOOSE THREE INGREDIENTS THAT YOU WANT TO MIX IT
+                        | TOGETHER
+                        br
+                        | 4. SELECT AMOUNT THAT YOU WANT AND ADD THEM TO CART
+                        br
+                        | 5. DO 1-4 AGAIN IF YOU WANT TO ORDER MORE. IF NOT, CLICK
+                        | CHECKOUT
+                        br
+                        | 6. CHECK AND PAY THE BILL THEN WAIT FOR YOUR SHEKIE VEGGIE
+                        | AT YOUR FRONT DOOR!!!
+                .col-6
+                    img(src='/img/about/lemon.png')
 
         
