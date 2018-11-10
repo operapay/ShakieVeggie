@@ -1,0 +1,49 @@
+doctype html
+html
+    head
+        title ShakieVeggie
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css')
+        link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', rel='stylesheet')
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+        link(rel='stylesheet', href='/vendor/bootstrap/css/bootstrap.min.css')
+        link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/bower_components/sweetalert/lib/sweet-alert.css')
+        
+        
+    body(onload="load()")
+        // ----------------Navbar-------------------
+        nav#myTopnav.topnav
+            div
+                button.login
+                    a(href='/cart/' + orders)
+                        img.cart_pos(src='/img/cart.png')
+                button.login
+                    if user
+                        a(href='/users/logout')#white logout
+                        button.login
+                            h9 #{user.username}
+                    else
+                        a(href='/users/login')#white login
+                button.login
+                    if user
+                        a(href='/payment/tracking/' + user._id)#login tracking
+            a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
+        
+        a(href='/')
+            img.logo-pos.img-bottle(src='/img/logo_circle.png') 
+        // ------------------------------------------
+
+        .container
+            != messages('message',locals)
+            if errors
+                each error, i in errors
+                    div(class="alert alert-danger") #{error.msg}
+            block content 
+
+        script(src='/js/main.js')
+        script(src='https://code.jquery.com/jquery-3.3.1.min.js')
+        script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
+        script(src='/bower_components/sweetalert/lib/sweet-alert.min.js')
+        script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js')

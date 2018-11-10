@@ -1,0 +1,75 @@
+html {
+    scroll-behavior: smooth;
+}
+body{
+    display: block;
+    margin: 0px;
+}
+.block1{
+    position:relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+#shakie{
+    font-size: 80px;
+    font-weight: 500;
+    position: absolute;
+    text-align: center;
+    width:100%;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#detail{
+    font-size: 20px;
+}
+.block2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:gray;
+    width:100%;
+    text-align: center;
+    padding-top:5%;
+    font-weight: 400;
+}
+#what{
+    font-size: 35px;
+    text-align: center;
+}
+#detail_what{
+    font-size: 13px;
+    padding-top:15px;
+    width: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+.column{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 8%;
+    padding:8%;
+    
+}
+.service{
+    font-size: 30px;
+}
+.detail_s{
+    font-size: 13px;
+}
+.block3{
+    background-color: #aaddd6;
+    color:white;
+}
+#how{
+    font-size: 25px;
+    font-weight: 500;
+}
+.order{
+    padding: 45px;
+    line-height: 3;
+}
+
+::-webkit-scrollbar {
+    display: none;
+    }

@@ -1,490 +1,337 @@
-html
-    head
-        title ShakieVeggie
-        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css')
-        link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', rel='stylesheet')
-        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
-        link(rel='stylesheet', href='/vendor/bootstrap/css/bootstrap.min.css')
-        link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
-        link(rel='stylesheet', href='/bower_components/sweetalert/lib/sweet-alert.css')
-        link(rel='stylesheet', type='text/css', href='/css/style.css')
-        style.
-            body{
-                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/img/custom_bg.png');
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-                width: 100%;
-            }
-            ul.chec-radio {
-                margin: 8px;
-            }
-            ul.chec-radio{
-                display: inline;
-            }
-            li.pz{
-                display: inline;
-                margin-left:9px;
-            }
-            .chec-radio .radio-inline .clab {
-                cursor: pointer;
-                background: transparent;
-                padding-top: 16px;
-                text-align: center;
-                text-transform: uppercase;
-                color: white;
-                position: relative;
-                width: 87.75px;
-                height: 48px;
-                line-height:93%;
-                float: left;
-                margin: 0;
-                /*margin-bottom: 5px;*/
-                border-radius: 2px;
-                /*border-style: solid;*/
-                border: 2.5px solid white;
-                font-size: 11px;
-                font-weight: 400;
-            }
-            .line1{
-                padding: 11px;
-            }
-            .line2{
-                padding-top: 7px;
-            }
-            .chec-radio label.radio-inline input[type="radio"] {
-                display: none;
-            }
-            .chec-radio label.radio-inline input[type="radio"]:checked+div {
-                color: #8fd2c9;
-                background-color: white;
-                border-radius: 3px;
-                border-color: transparent;
-                font-weight: bold;
-            }
-            .chec-radio label.radio-inline input[type="radio"][disabled] :checked+div 
-            {
-                border-color: purple;
-            }
-            #type{
-                background-color: #ffcc1b;
-                color: black;
-                border-style: none;
-                padding-top: 19px;
-                font-weight:650;
-                margin-right:10px;
-            }
-            h1{
-                font-size:70px;
-                color:#ffcc1b;
-                text-shadow: 4px 4px #452065;
-            }
-            .margin-top-set{
-                margin-top:5%;
-            }
-            .set-img{
-                margin-top:30px;
-            }
-            #amout{
-                color:white;
-                font-weight: 600;
-                background-color:transparent;
-                border-radius: 0px;
-                width:150px;
-                height:30px;
-                border: 2.5px solid;
-                cursor:pointer;
-
-            }
-            ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-                color: white;
-                opacity: 1; /* Firefox */
-            }
-            :-ms-input-placeholder { /* Internet Explorer 10-11 */
-            color: white;
-            }
-
-            ::-ms-input-placeholder { /* Microsoft Edge */
-            color: white;
-            }
-            #gray{
-                color: gray;
-                border-color:gray;
-            }
-            .img-bottle {
-                position: absolute;
-            }
-            .bottle-bg{
-                width:80%;
-                height:110%;
-                padding-bottom:0%;
-                margin-top:-4%;
-                margin-left:  5%;
-            }
+extends layout_cus
+block content
+    link(rel='stylesheet', type='text/css', href='/css/style.css')
+    link(rel='stylesheet', type='text/css', href='/css/custom.css')
+    .margin-top-set
+        .row
+            .col-4
+                img.bottle.bottle_pos(src='/img/cus_bottle.png')
+            .col-8
+                h1.text-center.text-uppercase #{formula.formulaname}
+                br
+                form(method='POST',action='/custom/'+  orders + "/" + formula._id + '/component')
+                    .mt-4(align='center')
+                        .row
+                            ul.chec-radio
+                                li.pz
+                                    label.radio-inline
+                                        #type.clab #{component1.name}
+                                li.pz
+                                    label.radio-inline
+                                        input#com1.pro-chx(type='radio',name='component1', value=component1.fruit1, checked='')
+                                        .clab(for='com1') #{component1.fruit1}
+                                li.pz
+                                    label.radio-inline
+                                        input#com2.pro-chx(type='radio', name='component1', value=component1.fruit2)
+                                        .clab(for='com2') #{component1.fruit2}
+                                li.pz
+                                    label.radio-inline
+                                        input#com3.pro-chx(type='radio', name='component1', value=component1.fruit3)
+                                        .clab(for='com3')  #{component1.fruit3}
+                                li.pz
+                                    if checksurgery==1 && (component1.fruit4 == 'Tomato' || component1.fruit4 == 'Ripe Mango' || component1.fruit4 == 'Pumpkin' || component1.fruit4 == 'Banana')
+                                        label.radio-inline
+                                            input#exampleRadios4.pro-chx(type='radio', name='component1', value=component1.fruit4,disabled='')
+                                            .clab(for='exampleRadios4')#gray #{component1.fruit4}
+                                    else if checkliver==1 && (component1.fruit4 == 'Ripe Mango')
+                                        label.radio-inline
+                                            input#exampleRadios4.pro-chx(type='radio', name='component1', value=component1.fruit4,disabled='')
+                                            .clab(for='exampleRadios4')#gray #{component1.fruit4}
+                                    else if checkhypertension==1 && (component1.fruit4 == 'Kale' || component1.fruit4 == 'Carrot' || component1.fruit4 == 'Tomato')
+                                        label.radio-inline
+                                            input#exampleRadios4.pro-chx(type='radio', name='component1', value=component1.fruit4,disabled='')
+                                            .clab(for='exampleRadios4')#gray #{component1.fruit4}
+                                    else if checkdiabetes==1 && (component1.fruit4 == 'Mixed berry' || component1.fruit4 == 'Kiwi' || component1.fruit4 == 'Avocado')
+                                        label.radio-inline
+                                            input#exampleRadios4.pro-chx(type='radio', name='component1', value=component1.fruit4,disabled='')
+                                            .clab(for='exampleRadios4')#gray #{component1.fruit4}
+                                    else if checkpregnant==1 && (component1.fruit4 == 'Carrot' || component1.fruit4 == 'Kale' || component1.fruit4 == 'Pumpkin' || component1.fruit4 == 'Apricot')
+                                        label.radio-inline
+                                            input#exampleRadios4.pro-chx(type='radio', name='component1', value=component1.fruit4,disabled='')
+                                            .clab(for='exampleRadios4')#gray #{component1.fruit4}
+                                    else if checkkidney==1 && (component1.fruit4 == 'Avocado' || component1.fruit4 == 'Kale' || component1.fruit4 == 'Banana' || component1.fruit4 == 'Spinach')
+                                        label.radio-inline
+                                            input#exampleRadios4.pro-chx(type='radio', name='component1', value=component1.fruit4,disabled='')
+                                            .clab(for='exampleRadios4')#gray #{component1.fruit4}
+                                    else
+                                        label.radio-inline
+                                            input#exampleRadios4.pro-chx(type='radio', name='component1', value=component1.fruit4)
+                                            .clab.line2(for='exampleRadios4') #{component1.fruit4}
+                                li.pz
+                                    if checksurgery==1 && (component1.fruit5 == 'Tomato' || component1.fruit5 == 'Ripe Mango' || component1.fruit5 == 'Pumpkin' || component1.fruit5 == 'Banana')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component1', value=component1.fruit5,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component1.fruit5}
+                                    else if checkliver==1 && (component1.fruit5 == 'Ripe Mango')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component1', value=component1.fruit5,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component1.fruit5}
+                                    else if checkhypertension==1 && (component1.fruit5 == 'Kale' || component1.fruit5 == 'Carrot' || component1.fruit5 == 'Tomato')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component1', value=component1.fruit5,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component1.fruit5}
+                                    else if checkdiabetes==1 && (component1.fruit5 == 'Mixed berry' || component1.fruit5 == 'Kiwi' || component1.fruit5 == 'Avocado')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component1', value=component1.fruit5,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component1.fruit5}
+                                    else if checkpregnant==1 && (component1.fruit5 == 'Carrot' || component1.fruit5 == 'Kale' || component1.fruit5 == 'Pumpkin' || component1.fruit5 == 'Apricot')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component1', value=component1.fruit5,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component1.fruit5}
+                                    else if checkkidney==1 && (component1.fruit5 == 'Avocado' || component1.fruit5 == 'Kale' || component1.fruit5 == 'Banana' || component1.fruit5 == 'Spinach')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component1', value=component1.fruit5,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component1.fruit5}
+                                    else
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component1', value=component1.fruit5)
+                                            .clab(for='exampleRadios5') #{component1.fruit5}
+                                li.pz    
+                                    if checksurgery==1 && (component1.fruit6 == 'Tomato' || component1.fruit6 == 'Ripe Mango' || component1.fruit6 == 'Pumpkin' || component1.fruit6 == 'Banana')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component1', value=component1.fruit6,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component1.fruit6}
+                                    else if checkliver==1 && (component1.fruit6 == 'Ripe Mango')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component1', value=component1.fruit6,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component1.fruit6}
+                                    else if checkhypertension==1 && (component1.fruit6 == 'Kale' || component1.fruit6 == 'Carrot' || component1.fruit6 == 'Tomato')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component1', value=component1.fruit6,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component1.fruit6}
+                                    else if checkdiabetes==1 && (component1.fruit6 == 'Mixed berry' || component1.fruit6 == 'Kiwi' || component1.fruit6 == 'Avocado')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component1', value=component1.fruit6,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component1.fruit6}
+                                    else if checkpregnant==1 && (component1.fruit6 == 'Carrot' || component1.fruit6 == 'Kale' || component1.fruit6 == 'Pumpkin' || component1.fruit6 == 'Apricot')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component1', value=component1.fruit6,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component1.fruit6}
+                                    else if checkkidney==1 && (component1.fruit6 == 'Avocado' || component1.fruit6 == 'Kale' || component1.fruit6 == 'Banana' || component1.fruit6 == 'Spinach')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component1', value=component1.fruit6,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component1.fruit6}
+                                    else    
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component1', value=component1.fruit6)
+                                            .clab(for='exampleRadios5') #{component1.fruit6}
 
 
-    body(onload="load()")
-        // ----------------Navbar-------------------
-        nav#myTopnav.topnav
-            div
-                button.login
-                    a(href='/cart/' + orders)
-                        img.cart_pos(src='/img/cart.png')
-                button.login
-                    if user
-                        a(href='/users/logout')#white logout
-                        button.login
-                            h9 #{user.username}
-                    else
-                        a(href='/users/login')#white login
-                button.login
-                    if user
-                        a(href='/payment/tracking/' + user._id)#login tracking
-            a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
-        
-        a(href='/')
-            img.logo-pos(src='/img/logo_circle.png')
-            
-        // ------------------------------------------
-
-        .container
-            != messages('message',locals)
-            if errors
-                each error, i in errors
-                    div(class="alert alert-danger") #{error.msg}
-
-            .margin-top-set
-                .row
-                    .col-4.set-img
-                        //ทำรูปเดียวมาเลยดีกว่า
-                        img.bottle(style="position:absolute;z-index:2;")(src='/img/bottle.png')
-                        img.img-bottle(style="position:absolute;z-index:1;")(src='/img/bottle_bg.png').bottle-bg
-                    .col-8
-                        h1.text-center.text-uppercase #{formula.formulaname}
-                        br
-                        form(method='POST',action='/custom/'+  orders + "/" + formula._id + '/component')
-                            .mt-4
-                                .row
-                                    ul.chec-radio
-                                        li.pz
-                                            label.radio-inline
-                                                #type.clab #{component1.name}
-                                        li.pz
-                                            label.radio-inline
-                                                input#com1.pro-chx(type='radio',name='component1', value=component1.fruit1, checked='')
-                                                .clab(for='com1') #{component1.fruit1}
-                                        li.pz
-                                            label.radio-inline
-                                                input#com2.pro-chx(type='radio', name='component1', value=component1.fruit2)
-                                                .clab(for='com2') #{component1.fruit2}
-                                        li.pz
-                                            label.radio-inline
-                                                input#com3.pro-chx(type='radio', name='component1', value=component1.fruit3)
-                                                .clab(for='com3')  #{component1.fruit3}
-                                        li.pz
-                                            if checksurgery==1 && (component1.fruit4 == 'Tomato' || component1.fruit4 == 'Ripe Mango' || component1.fruit4 == 'Pumpkin' || component1.fruit4 == 'Banana')
-                                                label.radio-inline
-                                                    input#exampleRadios4.pro-chx(type='radio', name='component1', value=component1.fruit4,disabled='')
-                                                    .clab(for='exampleRadios4')#gray #{component1.fruit4}
-                                            else if checkliver==1 && (component1.fruit4 == 'Ripe Mango')
-                                                label.radio-inline
-                                                    input#exampleRadios4.pro-chx(type='radio', name='component1', value=component1.fruit4,disabled='')
-                                                    .clab(for='exampleRadios4')#gray #{component1.fruit4}
-                                            else if checkhypertension==1 && (component1.fruit4 == 'Kale' || component1.fruit4 == 'Carrot' || component1.fruit4 == 'Tomato')
-                                                label.radio-inline
-                                                    input#exampleRadios4.pro-chx(type='radio', name='component1', value=component1.fruit4,disabled='')
-                                                    .clab(for='exampleRadios4')#gray #{component1.fruit4}
-                                            else if checkdiabetes==1 && (component1.fruit4 == 'Mixed berry' || component1.fruit4 == 'Kiwi' || component1.fruit4 == 'Avocado')
-                                                label.radio-inline
-                                                    input#exampleRadios4.pro-chx(type='radio', name='component1', value=component1.fruit4,disabled='')
-                                                    .clab(for='exampleRadios4')#gray #{component1.fruit4}
-                                            else if checkpregnant==1 && (component1.fruit4 == 'Carrot' || component1.fruit4 == 'Kale' || component1.fruit4 == 'Pumpkin' || component1.fruit4 == 'Apricot')
-                                                label.radio-inline
-                                                    input#exampleRadios4.pro-chx(type='radio', name='component1', value=component1.fruit4,disabled='')
-                                                    .clab(for='exampleRadios4')#gray #{component1.fruit4}
-                                            else if checkkidney==1 && (component1.fruit4 == 'Avocado' || component1.fruit4 == 'Kale' || component1.fruit4 == 'Banana' || component1.fruit4 == 'Spinach')
-                                                label.radio-inline
-                                                    input#exampleRadios4.pro-chx(type='radio', name='component1', value=component1.fruit4,disabled='')
-                                                    .clab(for='exampleRadios4')#gray #{component1.fruit4}
-                                            else
-                                                label.radio-inline
-                                                    input#exampleRadios4.pro-chx(type='radio', name='component1', value=component1.fruit4)
-                                                    .clab.line2(for='exampleRadios4') #{component1.fruit4}
-                                        li.pz
-                                            if checksurgery==1 && (component1.fruit5 == 'Tomato' || component1.fruit5 == 'Ripe Mango' || component1.fruit5 == 'Pumpkin' || component1.fruit5 == 'Banana')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component1', value=component1.fruit5,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component1.fruit5}
-                                            else if checkliver==1 && (component1.fruit5 == 'Ripe Mango')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component1', value=component1.fruit5,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component1.fruit5}
-                                            else if checkhypertension==1 && (component1.fruit5 == 'Kale' || component1.fruit5 == 'Carrot' || component1.fruit5 == 'Tomato')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component1', value=component1.fruit5,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component1.fruit5}
-                                            else if checkdiabetes==1 && (component1.fruit5 == 'Mixed berry' || component1.fruit5 == 'Kiwi' || component1.fruit5 == 'Avocado')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component1', value=component1.fruit5,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component1.fruit5}
-                                            else if checkpregnant==1 && (component1.fruit5 == 'Carrot' || component1.fruit5 == 'Kale' || component1.fruit5 == 'Pumpkin' || component1.fruit5 == 'Apricot')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component1', value=component1.fruit5,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component1.fruit5}
-                                            else if checkkidney==1 && (component1.fruit5 == 'Avocado' || component1.fruit5 == 'Kale' || component1.fruit5 == 'Banana' || component1.fruit5 == 'Spinach')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component1', value=component1.fruit5,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component1.fruit5}
-                                            else
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component1', value=component1.fruit5)
-                                                    .clab(for='exampleRadios5') #{component1.fruit5}
-                                        li.pz    
-                                            if checksurgery==1 && (component1.fruit6 == 'Tomato' || component1.fruit6 == 'Ripe Mango' || component1.fruit6 == 'Pumpkin' || component1.fruit6 == 'Banana')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component1', value=component1.fruit6,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component1.fruit6}
-                                            else if checkliver==1 && (component1.fruit6 == 'Ripe Mango')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component1', value=component1.fruit6,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component1.fruit6}
-                                            else if checkhypertension==1 && (component1.fruit6 == 'Kale' || component1.fruit6 == 'Carrot' || component1.fruit6 == 'Tomato')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component1', value=component1.fruit6,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component1.fruit6}
-                                            else if checkdiabetes==1 && (component1.fruit6 == 'Mixed berry' || component1.fruit6 == 'Kiwi' || component1.fruit6 == 'Avocado')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component1', value=component1.fruit6,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component1.fruit6}
-                                            else if checkpregnant==1 && (component1.fruit6 == 'Carrot' || component1.fruit6 == 'Kale' || component1.fruit6 == 'Pumpkin' || component1.fruit6 == 'Apricot')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component1', value=component1.fruit6,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component1.fruit6}
-                                            else if checkkidney==1 && (component1.fruit6 == 'Avocado' || component1.fruit6 == 'Kale' || component1.fruit6 == 'Banana' || component1.fruit6 == 'Spinach')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component1', value=component1.fruit6,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component1.fruit6}
-                                            else    
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component1', value=component1.fruit6)
-                                                    .clab(for='exampleRadios5') #{component1.fruit6}
+                            //---------------------------TYPE2---------------------------------------------------
+                            ul.chec-radio
+                                li.pz
+                                    label.radio-inline
+                                        #type.clab #{component2.name}
+                                li.pz
+                                    label.radio-inline
+                                        input#com1.pro-chx(type='radio',name='component2', value=component2.fruit1, checked='')
+                                        .clab(for='com1') #{component2.fruit1}
+                                li.pz
+                                    label.radio-inline
+                                        input#com2.pro-chx(type='radio', name='component2', value=component2.fruit2)
+                                        .clab(for='com2') #{component2.fruit2}
+                                li.pz
+                                    label.radio-inline
+                                        input#com3.pro-chx(type='radio', name='component2', value=component2.fruit3)
+                                        .clab(for='com3')  #{component2.fruit3}
+                                li.pz
+                                    if checksurgery==1 && (component2.fruit4 == 'Tomato' || component2.fruit4 == 'Ripe Mango' || component2.fruit4 == 'Pumpkin' || component2.fruit4 == 'Banana')
+                                        label.radio-inline
+                                            input#exampleRadios4.pro-chx(type='radio', name='component2', value=component2.fruit4,disabled='')
+                                            .clab(for='exampleRadios4')#gray #{component2.fruit4}
+                                    else if checkliver==1 && (component2.fruit4 == 'Ripe Mango')
+                                        label.radio-inline
+                                            input#exampleRadios4.pro-chx(type='radio', name='component2', value=component2.fruit4,disabled='')
+                                            .clab(for='exampleRadios4')#gray #{component2.fruit4}
+                                    else if checkhypertension==1 && (component2.fruit4 == 'Kale' || component2.fruit4 == 'Carrot' || component2.fruit4 == 'Tomato')
+                                        label.radio-inline
+                                            input#exampleRadios4.pro-chx(type='radio', name='component2', value=component2.fruit4,disabled='')
+                                            .clab(for='exampleRadios4')#gray #{component2.fruit4}
+                                    else if checkdiabetes==1 && (component2.fruit4 == 'Mixed berry' || component2.fruit4 == 'Kiwi' || component2.fruit4 == 'Avocado')
+                                        label.radio-inline
+                                            input#exampleRadios4.pro-chx(type='radio', name='component2', value=component2.fruit4,disabled='')
+                                            .clab(for='exampleRadios4')#gray #{component2.fruit4}
+                                    else if checkpregnant==1 && (component2.fruit4 == 'Carrot' || component2.fruit4 == 'Kale' || component2.fruit4 == 'Pumpkin' || component2.fruit4 == 'Apricot')
+                                        label.radio-inline
+                                            input#exampleRadios4.pro-chx(type='radio', name='component2', value=component2.fruit4,disabled='')
+                                            .clab(for='exampleRadios4')#gray #{component2.fruit4}
+                                    else if checkkidney==1 && (component2.fruit4 == 'Avocado' || component2.fruit4 == 'Kale' || component2.fruit4 == 'Banana' || component2.fruit4 == 'Spinach')
+                                        label.radio-inline
+                                            input#exampleRadios4.pro-chx(type='radio', name='component2', value=component2.fruit4,disabled='')
+                                            .clab(for='exampleRadios4')#gray #{component2.fruit4}
+                                    else
+                                        label.radio-inline
+                                            input#exampleRadios4.pro-chx(type='radio', name='component2', value=component2.fruit4)
+                                            .clab(for='exampleRadios4') #{component2.fruit4}
+                                li.pz
+                                    if checksurgery==1 && (component2.fruit5 == 'Tomato' || component2.fruit5 == 'Ripe Mango' || component2.fruit5 == 'Pumpkin' || component2.fruit5 == 'Banana')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component2', value=component2.fruit5,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component2.fruit5}
+                                    else if checkliver==1 && (component2.fruit5 == 'Ripe Mango')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component2', value=component2.fruit5,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component2.fruit5}
+                                    else if checkhypertension==1 && (component2.fruit5 == 'Kale' || component2.fruit5 == 'Carrot' || component2.fruit5 == 'Tomato')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component2', value=component2.fruit5,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component2.fruit5}
+                                    else if checkdiabetes==1 && (component2.fruit5 == 'Mixed berry' || component2.fruit5 == 'Kiwi' || component2.fruit5 == 'Avocado')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component2', value=component2.fruit5,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component2.fruit5}
+                                    else if checkpregnant==1 && (component2.fruit5 == 'Carrot' || component2.fruit5 == 'Kale' || component2.fruit5 == 'Pumpkin' || component2.fruit5 == 'Apricot')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component2', value=component2.fruit5,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component2.fruit5}
+                                    else if checkkidney==1 && (component2.fruit5 == 'Avocado' || component2.fruit5 == 'Kale' || component2.fruit5 == 'Banana' || component2.fruit5 == 'Spinach')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component2', value=component2.fruit5,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component2.fruit5}
+                                    else
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component2', value=component2.fruit5)
+                                            .clab(for='exampleRadios5') #{component2.fruit5}
+                                li.pz    
+                                    if checksurgery==1 && (component2.fruit6 == 'Tomato' || component2.fruit6 == 'Ripe Mango' || component2.fruit6 == 'Pumpkin' || component2.fruit6 == 'Banana')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component2', value=component2.fruit6,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component2.fruit6}
+                                    else if checkliver==1 && (component2.fruit6 == 'Ripe Mango')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component2', value=component2.fruit6,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component2.fruit6}
+                                    else if checkhypertension==1 && (component2.fruit6 == 'Kale' || component2.fruit6 == 'Carrot' || component2.fruit6 == 'Tomato')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component2', value=component2.fruit6,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component2.fruit6}
+                                    else if checkdiabetes==1 && (component2.fruit6 == 'Mixed berry' || component2.fruit6 == 'Kiwi' || component2.fruit6 == 'Avocado')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component2', value=component2.fruit6,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component2.fruit6}
+                                    else if checkpregnant==1 && (component2.fruit6 == 'Carrot' || component2.fruit6 == 'Kale' || component2.fruit6 == 'Pumpkin' || component2.fruit6 == 'Apricot')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component2', value=component2.fruit6,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component2.fruit6}
+                                    else if checkkidney==1 && (component2.fruit6 == 'Avocado' || component2.fruit6 == 'Kale' || component2.fruit6 == 'Banana' || component2.fruit6 == 'Spinach')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component2', value=component2.fruit6,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component2.fruit6}
+                                    else    
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component2', value=component2.fruit6)
+                                            .clab(for='exampleRadios5') #{component2.fruit6}
 
 
-                                    //---------------------------TYPE2---------------------------------------------------
-                                    ul.chec-radio
-                                        li.pz
-                                            label.radio-inline
-                                                #type.clab #{component2.name}
-                                        li.pz
-                                            label.radio-inline
-                                                input#com1.pro-chx(type='radio',name='component2', value=component2.fruit1, checked='')
-                                                .clab(for='com1') #{component2.fruit1}
-                                        li.pz
-                                            label.radio-inline
-                                                input#com2.pro-chx(type='radio', name='component2', value=component2.fruit2)
-                                                .clab(for='com2') #{component2.fruit2}
-                                        li.pz
-                                            label.radio-inline
-                                                input#com3.pro-chx(type='radio', name='component2', value=component2.fruit3)
-                                                .clab(for='com3')  #{component2.fruit3}
-                                        li.pz
-                                            if checksurgery==1 && (component2.fruit4 == 'Tomato' || component2.fruit4 == 'Ripe Mango' || component2.fruit4 == 'Pumpkin' || component2.fruit4 == 'Banana')
-                                                label.radio-inline
-                                                    input#exampleRadios4.pro-chx(type='radio', name='component2', value=component2.fruit4,disabled='')
-                                                    .clab(for='exampleRadios4')#gray #{component2.fruit4}
-                                            else if checkliver==1 && (component2.fruit4 == 'Ripe Mango')
-                                                label.radio-inline
-                                                    input#exampleRadios4.pro-chx(type='radio', name='component2', value=component2.fruit4,disabled='')
-                                                    .clab(for='exampleRadios4')#gray #{component2.fruit4}
-                                            else if checkhypertension==1 && (component2.fruit4 == 'Kale' || component2.fruit4 == 'Carrot' || component2.fruit4 == 'Tomato')
-                                                label.radio-inline
-                                                    input#exampleRadios4.pro-chx(type='radio', name='component2', value=component2.fruit4,disabled='')
-                                                    .clab(for='exampleRadios4')#gray #{component2.fruit4}
-                                            else if checkdiabetes==1 && (component2.fruit4 == 'Mixed berry' || component2.fruit4 == 'Kiwi' || component2.fruit4 == 'Avocado')
-                                                label.radio-inline
-                                                    input#exampleRadios4.pro-chx(type='radio', name='component2', value=component2.fruit4,disabled='')
-                                                    .clab(for='exampleRadios4')#gray #{component2.fruit4}
-                                            else if checkpregnant==1 && (component2.fruit4 == 'Carrot' || component2.fruit4 == 'Kale' || component2.fruit4 == 'Pumpkin' || component2.fruit4 == 'Apricot')
-                                                label.radio-inline
-                                                    input#exampleRadios4.pro-chx(type='radio', name='component2', value=component2.fruit4,disabled='')
-                                                    .clab(for='exampleRadios4')#gray #{component2.fruit4}
-                                            else if checkkidney==1 && (component2.fruit4 == 'Avocado' || component2.fruit4 == 'Kale' || component2.fruit4 == 'Banana' || component2.fruit4 == 'Spinach')
-                                                label.radio-inline
-                                                    input#exampleRadios4.pro-chx(type='radio', name='component2', value=component2.fruit4,disabled='')
-                                                    .clab(for='exampleRadios4')#gray #{component2.fruit4}
-                                            else
-                                                label.radio-inline
-                                                    input#exampleRadios4.pro-chx(type='radio', name='component2', value=component2.fruit4)
-                                                    .clab(for='exampleRadios4') #{component2.fruit4}
-                                        li.pz
-                                            if checksurgery==1 && (component2.fruit5 == 'Tomato' || component2.fruit5 == 'Ripe Mango' || component2.fruit5 == 'Pumpkin' || component2.fruit5 == 'Banana')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component2', value=component2.fruit5,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component2.fruit5}
-                                            else if checkliver==1 && (component2.fruit5 == 'Ripe Mango')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component2', value=component2.fruit5,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component2.fruit5}
-                                            else if checkhypertension==1 && (component2.fruit5 == 'Kale' || component2.fruit5 == 'Carrot' || component2.fruit5 == 'Tomato')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component2', value=component2.fruit5,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component2.fruit5}
-                                            else if checkdiabetes==1 && (component2.fruit5 == 'Mixed berry' || component2.fruit5 == 'Kiwi' || component2.fruit5 == 'Avocado')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component2', value=component2.fruit5,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component2.fruit5}
-                                            else if checkpregnant==1 && (component2.fruit5 == 'Carrot' || component2.fruit5 == 'Kale' || component2.fruit5 == 'Pumpkin' || component2.fruit5 == 'Apricot')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component2', value=component2.fruit5,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component2.fruit5}
-                                            else if checkkidney==1 && (component2.fruit5 == 'Avocado' || component2.fruit5 == 'Kale' || component2.fruit5 == 'Banana' || component2.fruit5 == 'Spinach')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component2', value=component2.fruit5,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component2.fruit5}
-                                            else
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component2', value=component2.fruit5)
-                                                    .clab(for='exampleRadios5') #{component2.fruit5}
-                                        li.pz    
-                                            if checksurgery==1 && (component2.fruit6 == 'Tomato' || component2.fruit6 == 'Ripe Mango' || component2.fruit6 == 'Pumpkin' || component2.fruit6 == 'Banana')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component2', value=component2.fruit6,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component2.fruit6}
-                                            else if checkliver==1 && (component2.fruit6 == 'Ripe Mango')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component2', value=component2.fruit6,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component2.fruit6}
-                                            else if checkhypertension==1 && (component2.fruit6 == 'Kale' || component2.fruit6 == 'Carrot' || component2.fruit6 == 'Tomato')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component2', value=component2.fruit6,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component2.fruit6}
-                                            else if checkdiabetes==1 && (component2.fruit6 == 'Mixed berry' || component2.fruit6 == 'Kiwi' || component2.fruit6 == 'Avocado')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component2', value=component2.fruit6,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component2.fruit6}
-                                            else if checkpregnant==1 && (component2.fruit6 == 'Carrot' || component2.fruit6 == 'Kale' || component2.fruit6 == 'Pumpkin' || component2.fruit6 == 'Apricot')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component2', value=component2.fruit6,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component2.fruit6}
-                                            else if checkkidney==1 && (component2.fruit6 == 'Avocado' || component2.fruit6 == 'Kale' || component2.fruit6 == 'Banana' || component2.fruit6 == 'Spinach')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component2', value=component2.fruit6,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component2.fruit6}
-                                            else    
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component2', value=component2.fruit6)
-                                                    .clab(for='exampleRadios5') #{component2.fruit6}
-
-
-                                    //---------------------------TYPE3---------------------------------------------------
-                                    ul.chec-radio
-                                        li.pz
-                                            label.radio-inline
-                                                #type.clab #{component3.name}
-                                        li.pz
-                                            label.radio-inline
-                                                input#com1.pro-chx(type='radio',name='component3', value=component3.fruit1, checked='')
-                                                .clab(for='com1') #{component3.fruit1}
-                                        li.pz
-                                            label.radio-inline
-                                                input#com2.pro-chx(type='radio', name='component3', value=component3.fruit2)
-                                                .clab(for='com2') #{component3.fruit2}
-                                        li.pz
-                                            label.radio-inline
-                                                input#com3.pro-chx(type='radio', name='component3', value=component3.fruit3)
-                                                .clab(for='com3')  #{component3.fruit3}
-                                        li.pz
-                                            if checksurgery==1 && (component3.fruit4 == 'Tomato' || component3.fruit4 == 'Ripe Mango' || component3.fruit4 == 'Pumpkin' || component3.fruit4 == 'Banana')
-                                                label.radio-inline
-                                                    input#exampleRadios4.pro-chx(type='radio', name='component3', value=component3.fruit4,disabled='')
-                                                    .clab(for='exampleRadios4')#gray #{component3.fruit4}
-                                            else if checkliver==1 && (component3.fruit4 == 'Ripe Mango')
-                                                label.radio-inline
-                                                    input#exampleRadios4.pro-chx(type='radio', name='component3', value=component3.fruit4,disabled='')
-                                                    .clab(for='exampleRadios4')#gray #{component3.fruit4}
-                                            else if checkhypertension==1 && (component3.fruit4 == 'Kale' || component3.fruit4 == 'Carrot' || component3.fruit4 == 'Tomato')
-                                                label.radio-inline
-                                                    input#exampleRadios4.pro-chx(type='radio', name='component3', value=component3.fruit4,disabled='')
-                                                    .clab(for='exampleRadios4')#gray #{component2.fruit4}
-                                            else if checkdiabetes==1 && (component3.fruit4 == 'Mixed berry' || component3.fruit4 == 'Kiwi' || component3.fruit4 == 'Avocado')
-                                                label.radio-inline
-                                                    input#exampleRadios4.pro-chx(type='radio', name='component3', value=component3.fruit4,disabled='')
-                                                    .clab(for='exampleRadios4')#gray #{component2.fruit4}
-                                            else if checkpregnant==1 && (component3.fruit4 == 'Carrot' || component3.fruit4 == 'Kale' || component3.fruit4 == 'Pumpkin' || component3.fruit4 == 'Apricot')
-                                                label.radio-inline
-                                                    input#exampleRadios4.pro-chx(type='radio', name='component3', value=component3.fruit4,disabled='')
-                                                    .clab(for='exampleRadios4')#gray #{component3.fruit4}
-                                            else if checkkidney==1 && (component3.fruit4 == 'Avocado' || component3.fruit4 == 'Kale' || component3.fruit4 == 'Banana' || component3.fruit4 == 'Spinach')
-                                                label.radio-inline
-                                                    input#exampleRadios4.pro-chx(type='radio', name='component3', value=component3.fruit4,disabled='')
-                                                    .clab(for='exampleRadios4')#gray #{component3.fruit4}
-                                            else
-                                                label.radio-inline
-                                                    input#exampleRadios4.pro-chx(type='radio', name='component3', value=component3.fruit4)
-                                                    .clab(for='exampleRadios4') #{component3.fruit4}
-                                        li.pz
-                                            if checksurgery==1 && (component3.fruit5 == 'Tomato' || component3.fruit5 == 'Ripe Mango' || component3.fruit5 == 'Pumpkin' || component3.fruit5 == 'Banana')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit5,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component3.fruit5}
-                                            else if checkliver==1 && (component3.fruit5 == 'Ripe Mango')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit5,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component3.fruit5}
-                                            else if checkhypertension==1 && (component3.fruit5 == 'Kale' || component3.fruit5 == 'Carrot' || component3.fruit5 == 'Tomato')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit5,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component3.fruit5}
-                                            else if checkdiabetes==1 && (component3.fruit5 == 'Mixed berry' || component3.fruit5 == 'Kiwi' || component3.fruit5 == 'Avocado')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit5,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component3.fruit5}
-                                            else if checkpregnant==1 && (component3.fruit5 == 'Carrot' || component3.fruit5 == 'Kale' || component3.fruit5 == 'Pumpkin' || component3.fruit5 == 'Apricot')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit5,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component3.fruit5}
-                                            else if checkkidney==1 && (component3.fruit5 == 'Avocado' || component3.fruit5 == 'Kale' || component3.fruit5 == 'Banana' || component3.fruit5 == 'Spinach')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit5,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component3.fruit5}
-                                            else
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit5)
-                                                    .clab(for='exampleRadios5') #{component3.fruit5}
-                                        li.pz    
-                                            if checksurgery==1 && (component3.fruit6 == 'Tomato' || component3.fruit6 == 'Ripe Mango' || component3.fruit6 == 'Pumpkin' || component3.fruit6 == 'Banana')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit6,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component3.fruit6}
-                                            else if checkliver==1 && (component3.fruit6 == 'Ripe Mango')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit6,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component3.fruit6}
-                                            else if checkhypertension==1 && (component3.fruit6 == 'Kale' || component3.fruit6 == 'Carrot' || component3.fruit6 == 'Tomato')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit6,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component3.fruit6}
-                                            else if checkdiabetes==1 && (component3.fruit6 == 'Mixed berry' || component3.fruit6 == 'Kiwi' || component3.fruit6 == 'Avocado')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit6,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component3.fruit6}
-                                            else if checkpregnant==1 && (component3.fruit6 == 'Carrot' || component3.fruit6 == 'Kale' || component3.fruit6 == 'Pumpkin' || component3.fruit6 == 'Apricot')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit6,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component3.fruit6}
-                                            else if checkkidney==1 && (component3.fruit6 == 'Avocado' || component3.fruit6 == 'Kale' || component3.fruit6 == 'Banana' || component3.fruit6 == 'Spinach')
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit6,disabled='')
-                                                    .clab(for='exampleRadios5')#gray #{component3.fruit6}
-                                            else    
-                                                label.radio-inline
-                                                    input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit6)
-                                                    .clab(for='exampleRadios5') #{component3.fruit6}
-                                .mt-5
-                                    .row
-                                        .col-3
-                                        .col-2
-                                            input.form-control#amout(type='number', placeholder='AMOUT', name='amont', required='')
-                                        .col-1
-                                        .col-5
-                                            button.text-uppercase#amout(type='submit',value='Submit') Submit			
+                            //---------------------------TYPE3---------------------------------------------------
+                            ul.chec-radio
+                                li.pz
+                                    label.radio-inline
+                                        #type.clab #{component3.name}
+                                li.pz
+                                    label.radio-inline
+                                        input#com1.pro-chx(type='radio',name='component3', value=component3.fruit1, checked='')
+                                        .clab(for='com1') #{component3.fruit1}
+                                li.pz
+                                    label.radio-inline
+                                        input#com2.pro-chx(type='radio', name='component3', value=component3.fruit2)
+                                        .clab(for='com2') #{component3.fruit2}
+                                li.pz
+                                    label.radio-inline
+                                        input#com3.pro-chx(type='radio', name='component3', value=component3.fruit3)
+                                        .clab(for='com3')  #{component3.fruit3}
+                                li.pz
+                                    if checksurgery==1 && (component3.fruit4 == 'Tomato' || component3.fruit4 == 'Ripe Mango' || component3.fruit4 == 'Pumpkin' || component3.fruit4 == 'Banana')
+                                        label.radio-inline
+                                            input#exampleRadios4.pro-chx(type='radio', name='component3', value=component3.fruit4,disabled='')
+                                            .clab(for='exampleRadios4')#gray #{component3.fruit4}
+                                    else if checkliver==1 && (component3.fruit4 == 'Ripe Mango')
+                                        label.radio-inline
+                                            input#exampleRadios4.pro-chx(type='radio', name='component3', value=component3.fruit4,disabled='')
+                                            .clab(for='exampleRadios4')#gray #{component3.fruit4}
+                                    else if checkhypertension==1 && (component3.fruit4 == 'Kale' || component3.fruit4 == 'Carrot' || component3.fruit4 == 'Tomato')
+                                        label.radio-inline
+                                            input#exampleRadios4.pro-chx(type='radio', name='component3', value=component3.fruit4,disabled='')
+                                            .clab(for='exampleRadios4')#gray #{component2.fruit4}
+                                    else if checkdiabetes==1 && (component3.fruit4 == 'Mixed berry' || component3.fruit4 == 'Kiwi' || component3.fruit4 == 'Avocado')
+                                        label.radio-inline
+                                            input#exampleRadios4.pro-chx(type='radio', name='component3', value=component3.fruit4,disabled='')
+                                            .clab(for='exampleRadios4')#gray #{component2.fruit4}
+                                    else if checkpregnant==1 && (component3.fruit4 == 'Carrot' || component3.fruit4 == 'Kale' || component3.fruit4 == 'Pumpkin' || component3.fruit4 == 'Apricot')
+                                        label.radio-inline
+                                            input#exampleRadios4.pro-chx(type='radio', name='component3', value=component3.fruit4,disabled='')
+                                            .clab(for='exampleRadios4')#gray #{component3.fruit4}
+                                    else if checkkidney==1 && (component3.fruit4 == 'Avocado' || component3.fruit4 == 'Kale' || component3.fruit4 == 'Banana' || component3.fruit4 == 'Spinach')
+                                        label.radio-inline
+                                            input#exampleRadios4.pro-chx(type='radio', name='component3', value=component3.fruit4,disabled='')
+                                            .clab(for='exampleRadios4')#gray #{component3.fruit4}
+                                    else
+                                        label.radio-inline
+                                            input#exampleRadios4.pro-chx(type='radio', name='component3', value=component3.fruit4)
+                                            .clab(for='exampleRadios4') #{component3.fruit4}
+                                li.pz
+                                    if checksurgery==1 && (component3.fruit5 == 'Tomato' || component3.fruit5 == 'Ripe Mango' || component3.fruit5 == 'Pumpkin' || component3.fruit5 == 'Banana')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit5,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component3.fruit5}
+                                    else if checkliver==1 && (component3.fruit5 == 'Ripe Mango')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit5,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component3.fruit5}
+                                    else if checkhypertension==1 && (component3.fruit5 == 'Kale' || component3.fruit5 == 'Carrot' || component3.fruit5 == 'Tomato')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit5,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component3.fruit5}
+                                    else if checkdiabetes==1 && (component3.fruit5 == 'Mixed berry' || component3.fruit5 == 'Kiwi' || component3.fruit5 == 'Avocado')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit5,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component3.fruit5}
+                                    else if checkpregnant==1 && (component3.fruit5 == 'Carrot' || component3.fruit5 == 'Kale' || component3.fruit5 == 'Pumpkin' || component3.fruit5 == 'Apricot')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit5,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component3.fruit5}
+                                    else if checkkidney==1 && (component3.fruit5 == 'Avocado' || component3.fruit5 == 'Kale' || component3.fruit5 == 'Banana' || component3.fruit5 == 'Spinach')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit5,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component3.fruit5}
+                                    else
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit5)
+                                            .clab(for='exampleRadios5') #{component3.fruit5}
+                                li.pz    
+                                    if checksurgery==1 && (component3.fruit6 == 'Tomato' || component3.fruit6 == 'Ripe Mango' || component3.fruit6 == 'Pumpkin' || component3.fruit6 == 'Banana')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit6,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component3.fruit6}
+                                    else if checkliver==1 && (component3.fruit6 == 'Ripe Mango')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit6,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component3.fruit6}
+                                    else if checkhypertension==1 && (component3.fruit6 == 'Kale' || component3.fruit6 == 'Carrot' || component3.fruit6 == 'Tomato')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit6,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component3.fruit6}
+                                    else if checkdiabetes==1 && (component3.fruit6 == 'Mixed berry' || component3.fruit6 == 'Kiwi' || component3.fruit6 == 'Avocado')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit6,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component3.fruit6}
+                                    else if checkpregnant==1 && (component3.fruit6 == 'Carrot' || component3.fruit6 == 'Kale' || component3.fruit6 == 'Pumpkin' || component3.fruit6 == 'Apricot')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit6,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component3.fruit6}
+                                    else if checkkidney==1 && (component3.fruit6 == 'Avocado' || component3.fruit6 == 'Kale' || component3.fruit6 == 'Banana' || component3.fruit6 == 'Spinach')
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit6,disabled='')
+                                            .clab(for='exampleRadios5')#gray #{component3.fruit6}
+                                    else    
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit6)
+                                            .clab(for='exampleRadios5') #{component3.fruit6}
+                        .mt-5
+                            .row
+                                .col-3.roww
+                                .col-2.roww
+                                    input.roww.form-control#amout(type='number', placeholder='AMOUT', name='amont', required='')
+                                .col-1.roww
+                                .col-5.roww
+                                    button.text-uppercase#amout(type='submit',value='Submit') Submit			

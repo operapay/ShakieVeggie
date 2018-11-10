@@ -1,32 +1,45 @@
-extend layout1
+extends layout_cus
 
 block content
-    center
-    h1 MIXING TABLE
-    table(style='width:100%').mt-5
+    link(rel='stylesheet', type='text/css', href='/css/style.css')
+    link(rel='stylesheet', type='text/css', href='/css/admin.css')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    .title-block
+        .title MIXING TABLE
+        .reg
+
+    table#table.mt-5
         thead
-            tr
-                th.text-center ORDER NO.
-                th.text-center BOTTLE NO.
-                th.text-center INGREDIENT 1
-                th.text-center INGREDIENT 2
-                th.text-center INGREDIENT 3
-                th.text-center AMOUNT
-        tbody
-            br
+                th ORDER NO.
+                th BOTTLE NO.
+                th INGREDIENT 1
+                th INGREDIENT 2
+                th INGREDIENT 3
+                th AMOUNT
+        tbody   
             each order, i in orders
-                .col
-                tr 
-                    if order.paymentstatus == 0
-                        td(align='center')=order._id
-                            each bottle, i in bottles
-                                tr
-                                td
-                                if order._id == bottle.orderid
-                                    .col
-                                    td(align='center')=bottle._id
-                                    td(align='center')=bottle.fruit1
-                                    td(align='center')=bottle.fruit2
-                                    td(align='center')=bottle.fruit3
-                                    td(align='center')=bottle.amount
-                                    
+                    -var count = 0;          
+                    if order.paymentstatus == 0 && order.clearmixing != 0
+                            td#b_l=order._id                      
+                                each bottle, i in bottles   
+                                    if order._id == bottle.orderid
+                                        if count == 0                                                                   
+                                            td#b_t=bottle._id
+                                            td#b_t=bottle.fruit1
+                                            td#b_t=bottle.fruit2
+                                            td#b_t=bottle.fruit3
+                                            td#b_tr=bottle.amount
+                                        else
+                                            td#b_l
+                                            td=bottle._id
+                                            td=bottle.fruit1
+                                            td=bottle.fruit2
+                                            td=bottle.fruit3
+                                            td#b_r=bottle.amount
+                                        - count += 1
+                                        tr
+
+    form(method='POST',action='/admin/clearmixing')
+        button.btn.btn(type='submit',value='Submit',style='color:white;float:right') CLEAR
+    
