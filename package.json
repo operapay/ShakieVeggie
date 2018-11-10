@@ -4,7 +4,8 @@
   "description": "shakie\u001b[D\u001b[D\u001b[D\u001b[D\u001b[S\u001b[C\u001b[C\u001b[C\u001b[C\u001b[CVeggie Project",
   "main": "app.js",
   "scripts": {
-    "start": "node app"
+    "start": "node app",
+    "test": "mocha"
   },
   "author": "ChubChai",
   "license": "ISC",
@@ -20,5 +21,8 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
   }
 }
