@@ -68,6 +68,11 @@ html(lang='en', dir='ltr')
                             td ฿75.00
                             td= '฿' + 75*bottle.amount + '.00'
                             td
+                              input.status2(onclick="edit(this);edit_a(this);" type="submit" value="EDIT" )
+                            td
+                              //อันนี้จะใส่เงื่อนไขไรให้กล่องมันขึ้นก็ใส่เรจ้า กูทำไว้แต่กล่อง ถถถถถถถถถถ
+                              input(type='number', name='edit_amount',id='edit_amount',disabled="")
+                            td
                               button.fa.fa-trash-o(type='button', data-toggle='modal', data-target='#myModal')
                               #myModal.modal.fade(role='dialog')
                                   .modal-dialog
@@ -113,3 +118,6 @@ html(lang='en', dir='ltr')
                     td
                       strong  Total
                     th= '฿' + ((totalItems*75)+30) + '.00'
+  script(src='/js/main.js')
+  script(src='https://code.jquery.com/jquery-3.3.1.min.js')
+  script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
