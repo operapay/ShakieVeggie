@@ -32,4 +32,43 @@ router.post('/:id/:bottle',function(req,res){
     });
 });
 
+router.post('/edit/:id/:bottle',function(req,res){
+    //console.log(req.params.id);
+    let bottle = {};
+    bottle.edit = 0;
+    //console.log(bottle.amount);
+
+    let query = {_id:req.params.bottle}
+
+    Bottle.update(query, bottle, function(err){
+        if(err){
+            console.log(err);
+            return;
+        }
+        else{
+            res.redirect('/cart/' + req.params.id);
+        }
+    });
+});
+
+router.post('/confirm/:id/:bottle',function(req,res){
+    //console.log(req.params.id);
+    let bottle = {};
+    bottle.amount = req.body.amount;
+    bottle.edit = 1;
+    //console.log(bottle.amount);
+
+    let query = {_id:req.params.bottle}
+
+    Bottle.update(query, bottle, function(err){
+        if(err){
+            console.log(err);
+            return;
+        }
+        else{
+            res.redirect('/cart/' + req.params.id);
+        }
+    });
+});
+
 module.exports = router;
