@@ -25,6 +25,9 @@ let BottleSchema = mongoose.Schema({
     amount:{
         type: Number,
         required: true
+    },
+    edit:{
+        type: Number
     }
 });
 

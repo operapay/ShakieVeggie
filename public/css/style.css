@@ -390,10 +390,21 @@ color:#ffcc1b;
   }
   
   .btn-google {
-    color: white;
-    background-color: #ea4335;
+    width:100px;
+    height:40px;
+    font-size: 13px;
+    border:3px solid white;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    color: #000000;
+    background-color: white;
   }
-  
+  .btn-google:hover{
+    background:#ea4335;
+    color:white;
+  }
   .btn-facebook {
     color: white;
     background-color: #3b5998;

@@ -54,6 +54,7 @@ html(lang='en', dir='ltr')
                     th Formula
                     th(colspan='2') Component
                     th Quantity
+                    th 
                     th Unit price
                     th(colspan='2') Total
                 tbody
@@ -64,14 +65,21 @@ html(lang='en', dir='ltr')
                           if formula._id == bottle.formulaid
                             td= formula.formulaname
                             td(colspan='2')= bottle.fruit1 + ', ' + bottle.fruit2 + ', ' + bottle.fruit3
-                            td= bottle.amount
+                            if bottle.edit != 0
+                              form(method='POST',action='/cart/edit/' + orders._id + '/' + bottle._id)
+                                td
+                                  textarea(type='text', name='amount',id='edit_amount', cols="5", rows="1",disabled="") #{bottle.amount}
+                                td
+                                  button.btn-google(type='submit') Edit
+                            else
+                              form(method='POST',action='/cart/confirm/' + orders._id + '/' + bottle._id)
+                                td
+                                  #form-group
+                                    textarea(type='text', name='amount',id='edit_amount', cols="5", rows="1") #{bottle.amount}
+                                td
+                                  button.btn-google(type='submit') Submit
                             td ฿75.00
                             td= '฿' + 75*bottle.amount + '.00'
-                            td
-                              input.status2(onclick="edit(this);edit_a(this);" type="submit" value="EDIT" )
-                            td
-                              //อันนี้จะใส่เงื่อนไขไรให้กล่องมันขึ้นก็ใส่เรจ้า กูทำไว้แต่กล่อง ถถถถถถถถถถ
-                              input(type='number', name='edit_amount',id='edit_amount',disabled="")
                             td
                               button.fa.fa-trash-o(type='button', data-toggle='modal', data-target='#myModal')
                               #myModal.modal.fade(role='dialog')
