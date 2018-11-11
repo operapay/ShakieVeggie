@@ -1,89 +1,42 @@
-extend layout1
+extends layout_cus
 
 block content
+    link(rel='stylesheet', type='text/css', href='/css/style.css')
+    link(rel='stylesheet', type='text/css', href='/css/admin.css')
     meta(name='viewport', content='width=device-width, initial-scale=1')
 
-    style.
-        body{
-            background-color: #8ED2C9;
-        }
-        .title-block{
-            position: relative;
-            padding-bottom: 50px;
-        }
-        .title{
-            position: absolute;
-            font-weight: 620;
-            color: white;
-            left: 22%;
-            right:22%;
-            text-align: center;
-        }
-        .reg{
-            width: 750px;
-            height: 60px;
-            background-color: #ffcc1b;
-            position: inherit;
-            top:70px;
-            left: 18%;
-            z-index: -1;
-        }
-        thead{
-            background-color: #8ED2C9;
-            color: white;
-        }
-        tbody{    
-            color: #8ED2C9;
-        }        
-        .container{
-            max-width: 100%;
-        }
-        #mixtable{
-            width:100%;
-            border-collapse: separate;
-            border-spacing: 0 5px;
-            padding: 0 5px;
-            background-color: white;
-        }
-        tbody tr,td{
-            border-top: 3px solid #8ED2C9;
-            border-bottom: 3px solid #8ED2C9;
-            margin: 10px;
-        }
-
-
     .title-block
-        .title(style='font-size:80px') MIXING TABLE
+        .title MIXING TABLE
         .reg
 
-    table#mixtable.mt-5
+    table#table.mt-5
         thead
-                th(height='60').text-center ORDER NO.
-                th(height='60').text-center BOTTLE NO.
-                th(height='60').text-center INGREDIENT 1
-                th(height='60').text-center INGREDIENT 2
-                th(height='60').text-center INGREDIENT 3
-                th(height='60').text-center AMOUNT
+                th ORDER NO.
+                th BOTTLE NO.
+                th INGREDIENT 1
+                th INGREDIENT 2
+                th INGREDIENT 3
+                th AMOUNT
         tbody   
             each order, i in orders
                     -var count = 0;          
                     if order.paymentstatus == 0 && order.clearmixing != 0
-                            td(align='center' height='40' style='border-left: 3px solid #8ED2C9')=order._id                      
+                            td#b_l=order._id                      
                                 each bottle, i in bottles   
                                     if order._id == bottle.orderid
                                         if count == 0                                                                   
-                                            td(height='60' align='center' style='border-top: 3px solid #8ED2C9' )=bottle._id
-                                            td(height='60' align='center' style='border-top: 3px solid #8ED2C9')=bottle.fruit1
-                                            td(height='60' align='center' style='border-top: 3px solid #8ED2C9')=bottle.fruit2
-                                            td(height='60' align='center' style='border-top: 3px solid #8ED2C9')=bottle.fruit3
-                                            td(height='60' align='center' style='border-top: 3px solid #8ED2C9;border-right: 3px solid #8ED2C9;')=bottle.amount
+                                            td#b_t=bottle._id
+                                            td#b_t=bottle.fruit1
+                                            td#b_t=bottle.fruit2
+                                            td#b_t=bottle.fruit3
+                                            td#b_tr=bottle.amount
                                         else
-                                            td(style='border-left: 3px solid #8ED2C9')
-                                            td(height='60' align='center')=bottle._id
-                                            td(height='60' align='center')=bottle.fruit1
-                                            td(height='60' align='center')=bottle.fruit2
-                                            td(height='60' align='center')=bottle.fruit3
-                                            td(height='60' align='center' style='border-right: 3px solid #8ED2C9')=bottle.amount
+                                            td#b_l
+                                            td=bottle._id
+                                            td=bottle.fruit1
+                                            td=bottle.fruit2
+                                            td=bottle.fruit3
+                                            td#b_r=bottle.amount
                                         - count += 1
                                         tr
 

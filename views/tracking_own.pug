@@ -1,6 +1,11 @@
-extends layout1
+extends layout_cus
 
 block content
+    link(rel='stylesheet', type='text/css', href='/css/style.css')
+    style.
+        body{
+            background-color:pink;
+        }
     h1  #{title}
     ul.list-group
         -for (var i = orders.length-1 ; i >= 0; i--) 
