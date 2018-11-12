@@ -66,3 +66,20 @@ function track(input){
         document.getElementById("track").disabled = false;
     }
 }
+
+function edit(input){
+    if (input.value=="EDIT") {
+        input.value="NO";
+    }
+    else if (input.value=="NO"){
+        input.value="EDIT"
+    }
+}
+function edit_a(input){
+    if (input.value=="EDIT") {
+        document.getElementById("edit_amount").disabled = true;
+    }
+    else if (input.value=="NO"){
+        document.getElementById("edit_amount").disabled = false;
+    }
+}

@@ -1,3 +1,4 @@
+var should = require('chai').should();
 var assert = require('assert');
 let User = require('../models/user');
 const add = (x, y) => (+x) + (+y);
@@ -10,6 +11,10 @@ describe('Array', function() {
   });
 });
 
-it('correctly calculates the sum of 1 and 3', () => {
-    assert.equal(add(1, 3), 4);
-  });
+// describe('#find()', function(){
+//     it('respond with matching records', function(done){
+//         User.find({ type: 'username' }, function(err, res){
+//             res.should.have.length(3);
+//         })
+//     })
+// })

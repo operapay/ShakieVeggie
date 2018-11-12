@@ -54,6 +54,7 @@ html(lang='en', dir='ltr')
                     th Formula
                     th(colspan='2') Component
                     th Quantity
+                    th 
                     th Unit price
                     th(colspan='2') Total
                 tbody
@@ -64,7 +65,19 @@ html(lang='en', dir='ltr')
                           if formula._id == bottle.formulaid
                             td= formula.formulaname
                             td(colspan='2')= bottle.fruit1 + ', ' + bottle.fruit2 + ', ' + bottle.fruit3
-                            td= bottle.amount
+                            if bottle.edit != 0
+                              form(method='POST',action='/cart/edit/' + orders._id + '/' + bottle._id)
+                                td
+                                  textarea(type='text', name='amount',id='edit_amount', cols="5", rows="1",disabled="") #{bottle.amount}
+                                td
+                                  button.btn-google(type='submit') Edit
+                            else
+                              form(method='POST',action='/cart/confirm/' + orders._id + '/' + bottle._id)
+                                td
+                                  #form-group
+                                    textarea(type='text', name='amount',id='edit_amount', cols="5", rows="1") #{bottle.amount}
+                                td
+                                  button.btn-google(type='submit') Submit
                             td ฿75.00
                             td= '฿' + 75*bottle.amount + '.00'
                             td
@@ -113,3 +126,6 @@ html(lang='en', dir='ltr')
                     td
                       strong  Total
                     th= '฿' + ((totalItems*75)+30) + '.00'
+  script(src='/js/main.js')
+  script(src='https://code.jquery.com/jquery-3.3.1.min.js')
+  script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
