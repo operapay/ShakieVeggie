@@ -10,6 +10,21 @@ let OrderSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    address2:{
+        type: String,
+    },
+    country:{
+        type: String,
+        required: true
+    },
+    state:{
+        type: String,
+        required: true
+    },
+    zip:{
+        type: Number,
+        required: true
+    },
     totalprice:{
         type: Number,
         required: true
