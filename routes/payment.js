@@ -9,10 +9,10 @@ let Formula = require('../models/formula');
 let Bottle = require('../models/bottle');
 
 //รับค่าจาก checkout หน้า cart
-router.post('/:id/:total',function(req,res){
+router.get('/:id/:total',function(req,res){
     Order.findById(req.params.id, function(req, order){
         res.render('payment', {
-            orders:order
+            order:order
         });        
     });
 });
@@ -26,7 +26,7 @@ router.post('/:id/:total',function(req,res){
 // });
 
 
-router.post('/check/:id',function(req,res){
+router.post('/:id/:total',function(req,res){
     // var update = { $set: {username:req.body.name, 
     //                     address:req.body.address,
     //                     address2:req.body.address2,
@@ -34,19 +34,13 @@ router.post('/check/:id',function(req,res){
     //                     state:req.body.state,
     //                     zip:req.body.zip }};
     let order = {};
-    order.username = req.body.name;
+    order.name = req.body.name;
     order.address = req.body.address;
     order.address2 = req.body.address2;
     order.country = req.body.country;
     order.state = req.body.state;
     order.zip = req.body.zip;
-
-    console.log(req.body.name);
-    console.log(req.body.address);
-    console.log(req.body.address2);
-    console.log(req.body.country);
-    console.log(req.body.state);
-    console.log(req.body.zip);
+    order.totalprice = req.params.total;
 
     let query = {_id:req.params.id}
 
@@ -54,8 +48,6 @@ router.post('/check/:id',function(req,res){
         if(err) {
             console.log(err);
             return;
-        } else {
-            req.flash('success','order in system');
         }
     });    
 });
