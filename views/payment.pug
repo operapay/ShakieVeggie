@@ -6,9 +6,15 @@ block content
       h2.payment-title PAYMENT
     .container
       .row
-      form(method='post', action='/payment/checkout')
+      //- form(method='post', action='/payment/checkout')
+      form(method='POST',action='/payment/check/' + orders)
         .col-sm-9.col-md-7.col-lg-5.mx-auto
           h4.mb-3 Billing address
+            h6.mb-3
+              label(for='name') Name
+              input#address.form-control(type='text', placeholder='Name', name='name', required='')
+              .invalid-feedback
+                | Please enter your name.
             h6.mb-3
               label(for='address') Address
               input#address.form-control(type='text', placeholder='Address1', name='address', required='')
@@ -67,7 +73,7 @@ block content
                         dt ref.No2: 
                         dd  12345678912345
                       dl.param
-                        dt totalprice: 
-                        dd  330
+                        dt totalprice:
+                        dd 330
         hr
         button.btn.btn-primary.btn-lg.btn-block(type='submit') Continue to checkout
