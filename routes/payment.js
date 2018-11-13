@@ -11,9 +11,12 @@ let Bottle = require('../models/bottle');
 //รับค่าจาก checkout หน้า cart
 router.get('/:id/:total',function(req,res){
     Order.findById(req.params.id, function(req, order){
-        res.render('payment', {
-            order:order
-        });        
+        Bottle.find({}, function(req, bottle){
+            res.render('payment', {
+                order:order,
+                bottle:bottle
+            }); 
+        })       
     });
 });
 
@@ -27,12 +30,7 @@ router.get('/:id/:total',function(req,res){
 
 
 router.post('/:id/:total',function(req,res){
-    // var update = { $set: {username:req.body.name, 
-    //                     address:req.body.address,
-    //                     address2:req.body.address2,
-    //                     country:req.body.country,
-    //                     state:req.body.state,
-    //                     zip:req.body.zip }};
+
     let order = {};
     order.name = req.body.name;
     order.address = req.body.address;
@@ -41,6 +39,7 @@ router.post('/:id/:total',function(req,res){
     order.state = req.body.state;
     order.zip = req.body.zip;
     order.totalprice = req.params.total;
+
 
     let query = {_id:req.params.id}
 
