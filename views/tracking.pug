@@ -6,93 +6,20 @@ block content
         body{
             background-image:url('/img/tracking/bg.jpg');
         }
-        .yellow-reg{
-            width: 670px;
-            height: 60px;
-            background-color: #ffcc1b;
+        .line{
+            font-weight:800;
             position: fixed;
-            top: 15%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color:white;
-
-        }
-        .card-track {
-            border: 0;
-            box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-            background-color: white;
-        }
-        .track-card{
-            width: 600px;
-            height: 370px;
-            background-color:white;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-        }
-        #text-shadow{
-            text-shadow: 2px 2px rgb(0,0,0,0.1); 
-        }
-        .set-layout-tracking{
-            position:relative;
-        }
-        .track_status{
-            width:10%;
-            height:auto;
-            position: fixed;
-            top: 50%;
+            top: 62.5%;
             transform: translate(-50%, -50%);
         }
-        .track_check{
-            width:4%;
-            height:auto;
-            position: fixed;
-            top: 65%;
-            transform: translate(-50%, -50%);
-            font-size:10px;
+        #line1{
+            left:30%;
         }
-        #order-in-sys{
-            left: 20%;
+        #line2{
+            left:50%;
         }
-        #mixer{
-            left:40%;
-        }
-        #packed{
-            left:60%;
-        }
-        #deliver{
-            left:80%;
-        }
-        .track_text{
-            height:auto;
-            position: fixed;
-            top: 73%;
-            transform: translate(-50%, -50%);
-            font-size:10px;
-            font-weight:500;
-            text-transform: uppercase;
-        }
-        .done{
-            color:#8ED2C9;
-        }
-        .doing{
-            color:#FFCC1C;
-        }
-        .yet{
-            color:#D1D1D1;
-        }
-        #track-num{
-            position: fixed;
-            top: 86%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 20px;
-            color:#cfc959;
-            font-weight:500;
-            text-transform: uppercase;
+        #line3{
+            left:70%;
         }
     form(method = 'POST' action="/payment/tracking")
         .set-layout-tracking
@@ -103,40 +30,48 @@ block content
                 img.track_status#order-in-sys(src="/img/tracking/check-list-y.png")
                 img.track_check#order-in-sys(src="/img/tracking/clock.png")
                 .track_text.doing#order-in-sys order in system
+                p.line.yet#line1 _______________
                 //else if(done)
                     img.track_status#order-in-sys(src="/img/tracking/check-list-b.png") อันนี้สีฟ้า
                     img.track_check#order-in-sys(src="/img/tracking/verified.png")
                     .track_text.done#order-in-sys order in system
+                    p.line.done#line1 _______________
 
                 //if(yet)
                 img.track_status#mixer(src="/img/tracking/mixer-w.png")
-                img.track_check#mixer(src="/img/tracking/clock.png")
+                img.track_check#mixer(src="/img/tracking/yet.png")
                 .track_text.yet#mixer mixed
+                p.line.yet#line2 _______________
                 //else if(doing)
                     img.track_status#mixer(src="/img/tracking/mixer-y.png")
                     img.track_check#mixer(src="/img/tracking/clock.png")
                     .track_text.doing#mixer mixed
+                    p.line.yet#line2 _______________
                 //else if(done)
                     img.track_status#mixer(src="/img/tracking/mixer-b.png")
                     img.track_check#mixer(src="/img/tracking/verified.png")
                     .track_text.done#mixer mixed
+                    p.line.done#line2 _______________
 
                 //if(yet)
                 img.track_status#packed(src="/img/tracking/order-w.png")
-                img.track_check#packed(src="/img/tracking/clock.png")
+                img.track_check#packed(src="/img/tracking/yet.png")
                 .track_text.yet#packed packed
+                p.line.yet#line3 _______________
                 //else if(doing)
                     img.track_status#packed(src="/img/tracking/order-y.png")
                     img.track_check#packed(src="/img/tracking/clock.png")
                     .track_text.doing#packed packed
+                    p.line.yet#line3 _______________
                 //else if(done)
                     img.track_status#packed(src="/img/tracking/order-b.png")
                     img.track_check#packed(src="/img/tracking/verified.png")
                     .track_text.done#packed packed
+                    p.line.done#line3 _______________
 
                 //if(yet)
                 img.track_status#deliver(src="/img/tracking/truck-w.png")
-                img.track_check#deliver(src="/img/tracking/clock.png")
+                img.track_check#deliver(src="/img/tracking/yet.png")
                 .track_text.yet#deliver delivered
                 //else if(doing)
                     img.track_status#deliver(src="/img/tracking/truck-y.png")

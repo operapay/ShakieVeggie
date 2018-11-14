@@ -333,29 +333,7 @@ color:#ffcc1b;
     color: #777;
     
   }
-  /*
-  .btn-google {
-    width:100px;
-    height:40px;
-    font-size: 13px;
-    border:3px solid white;
-    border-radius: 4px;
-    font-weight: 700;
-    cursor: pointer;
-    outline: none;
-    color: #000000;
-    background-color: white;
-  }
-  .btn-google:hover{
-    background:#ea4335;
-    color:white;
-  }
-  .btn-facebook {
-    color: white;
-    background-color: #3b5998;
-  }
-*/
-  #img-pos{
+ #img-pos{
     margin-top:5%;
     margin-left:13%;
   }
@@ -376,12 +354,6 @@ color:#ffcc1b;
       background: transparent; 
       cursor: pointer;
       outline: none;
-  }
-  #status_yellow{
-    background:#ffcc1b;
-  }
-  #status_trnsparent{
-    background:transparent;
   }
   .status2{
     width:100px;
@@ -416,7 +388,7 @@ color:#ffcc1b;
 }
 .track-card{
   width: 600px;
-  height: 370px;
+  height: 350px;
   background-color:white;
   position: fixed;
   top: 50%;
