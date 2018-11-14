@@ -4,21 +4,157 @@ block content
     link(rel='stylesheet', type='text/css', href='/css/style.css')
     style.
         body{
-            background-color:pink;
+            background-image:url('/img/tracking/bg.jpg');
+        }
+        .yellow-reg{
+            width: 670px;
+            height: 60px;
+            background-color: #ffcc1b;
+            position: fixed;
+            top: 15%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color:white;
+
+        }
+        .card-track {
+            border: 0;
+            box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+        .track-card{
+            width: 600px;
+            height: 370px;
+            background-color:white;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+        }
+        #text-shadow{
+            text-shadow: 2px 2px rgb(0,0,0,0.1); 
+        }
+        .set-layout-tracking{
+            position:relative;
+        }
+        .track_status{
+            width:10%;
+            height:auto;
+            position: fixed;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .track_check{
+            width:4%;
+            height:auto;
+            position: fixed;
+            top: 65%;
+            transform: translate(-50%, -50%);
+            font-size:10px;
+        }
+        #order-in-sys{
+            left: 20%;
+        }
+        #mixer{
+            left:40%;
+        }
+        #packed{
+            left:60%;
+        }
+        #deliver{
+            left:80%;
+        }
+        .track_text{
+            height:auto;
+            position: fixed;
+            top: 73%;
+            transform: translate(-50%, -50%);
+            font-size:10px;
+            font-weight:500;
+            text-transform: uppercase;
+        }
+        .done{
+            color:#8ED2C9;
+        }
+        .doing{
+            color:#FFCC1C;
+        }
+        .yet{
+            color:#D1D1D1;
+        }
+        #track-num{
+            position: fixed;
+            top: 86%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            color:#cfc959;
+            font-weight:500;
+            text-transform: uppercase;
         }
     form(method = 'POST' action="/payment/tracking")
-        #tracking.card.card-signin
-            .card-body
-                h4#card-tracking-title.text-center Tracking
-                form.form-tracking
-                    .row
-                        .col-4
-                            img#img-pos(src="/img/order.png", alt="")
-                        .col-8
-                            br
-                            .text-uppercase order in system
-                    .row
-                        img#dash-pos(src="/img/dash-gray.png", alt="")
+        .set-layout-tracking
+            .track-card
+                .yellow-reg
+                    h1#text-shadow ORDER
+                //if(doing)
+                img.track_status#order-in-sys(src="/img/tracking/check-list-y.png")
+                img.track_check#order-in-sys(src="/img/tracking/clock.png")
+                .track_text.doing#order-in-sys order in system
+                //else if(done)
+                    img.track_status#order-in-sys(src="/img/tracking/check-list-b.png") อันนี้สีฟ้า
+                    img.track_check#order-in-sys(src="/img/tracking/verified.png")
+                    .track_text.done#order-in-sys order in system
+
+                //if(yet)
+                img.track_status#mixer(src="/img/tracking/mixer-w.png")
+                img.track_check#mixer(src="/img/tracking/clock.png")
+                .track_text.yet#mixer mixed
+                //else if(doing)
+                    img.track_status#mixer(src="/img/tracking/mixer-y.png")
+                    img.track_check#mixer(src="/img/tracking/clock.png")
+                    .track_text.doing#mixer mixed
+                //else if(done)
+                    img.track_status#mixer(src="/img/tracking/mixer-b.png")
+                    img.track_check#mixer(src="/img/tracking/verified.png")
+                    .track_text.done#mixer mixed
+
+                //if(yet)
+                img.track_status#packed(src="/img/tracking/order-w.png")
+                img.track_check#packed(src="/img/tracking/clock.png")
+                .track_text.yet#packed packed
+                //else if(doing)
+                    img.track_status#packed(src="/img/tracking/order-y.png")
+                    img.track_check#packed(src="/img/tracking/clock.png")
+                    .track_text.doing#packed packed
+                //else if(done)
+                    img.track_status#packed(src="/img/tracking/order-b.png")
+                    img.track_check#packed(src="/img/tracking/verified.png")
+                    .track_text.done#packed packed
+
+                //if(yet)
+                img.track_status#deliver(src="/img/tracking/truck-w.png")
+                img.track_check#deliver(src="/img/tracking/clock.png")
+                .track_text.yet#deliver delivered
+                //else if(doing)
+                    img.track_status#deliver(src="/img/tracking/truck-y.png")
+                    img.track_check#deliver(src="/img/tracking/clock.png")
+                    .track_text.doing#deliver delivered
+                //else if(done)
+                    img.track_status#deliver(src="/img/tracking/truck-b.png")
+                    img.track_check#deliver(src="/img/tracking/verified.png")
+                    .track_text.done#deliver delivered
+
+                //if(มีเลขแทรคแล้ว ตอนไหนอะ deliveredปะ)
+                    #track-num tracking (tracknum) span<style="color:#a5a047"> อันนี้รอถามซูว่าเอาไง  
+                #track-num tracking _________________
+                
+
+                   
+                    
+                    
                         
                         
                     
