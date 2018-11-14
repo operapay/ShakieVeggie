@@ -37,10 +37,10 @@ block content
     form(method='POST',action='/custom/'+  orders + "/" + formula._id + '/component')
         
         .margin-top-set
-                .row
-                    .col-4
+                .grid
+                    div
                         img.bottle.bottle_pos(src='/img/cus_bottle.png')
-                    .col-8
+                    div
                         h1.text-center.text-uppercase #{formula.formulaname}
                         br
                         form(method='POST',action='/custom/' + formula._id + '/component')
