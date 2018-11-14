@@ -24,7 +24,7 @@ block content
 
                 if order.paymentstatus != 0
                     img.track_status#mixer(src="/img/tracking/mixer-w.png")
-                    img.track_check#mixer(src="/img/tracking/clock.png")
+                    img.track_check#mixer(src="/img/tracking/yet.png")
                     .track_text.yet#mixer mixed
                     p.line.yet#line2 _______________
                 else if order.paymentstatus == 0 && order.mixingstatus != 0
@@ -40,7 +40,7 @@ block content
 
                 if order.mixingstatus != 0
                     img.track_status#packed(src="/img/tracking/order-w.png")
-                    img.track_check#packed(src="/img/tracking/clock.png")
+                    img.track_check#packed(src="/img/tracking/yet.png")
                     .track_text.yet#packed packed
                     p.line.yet#line3 _______________
                 else if order.mixingstatus == 0 && order.trackingnum == null
@@ -56,7 +56,7 @@ block content
 
                 if order.trackingnum == null
                     img.track_status#deliver(src="/img/tracking/truck-w.png")
-                    img.track_check#deliver(src="/img/tracking/clock.png")
+                    img.track_check#deliver(src="/img/tracking/yet.png")
                     .track_text.yet#deliver delivered
                 else if order.trackingnum != null
                     img.track_status#deliver(src="/img/tracking/truck-b.png")
