@@ -17,22 +17,9 @@ router.get('/:id/:total',function(req,res){
     });
 });
 
-// router.get('/checkout/:id', function(req,res){
-//     Order.findById(req.params.id, function(req, order){
-//         res.render('payment', {
-//             orders:order
-//         });        
-//     });
-// });
 
 
 router.post('/:id/:total',function(req,res){
-    // var update = { $set: {username:req.body.name, 
-    //                     address:req.body.address,
-    //                     address2:req.body.address2,
-    //                     country:req.body.country,
-    //                     state:req.body.state,
-    //                     zip:req.body.zip }};
     let order = {};
     order.name = req.body.name;
     order.address = req.body.address;
@@ -50,32 +37,6 @@ router.post('/:id/:total',function(req,res){
             return;
         }
     });    
-});
-
-//tracking form
-router.get('/track/:id',function(req,res){
-    res.render('tracking');
-});
-
-router.post('/track/:id',function(req,res){
-    console.log('submit checkout');
-});
-
-router.get('/tracking/:id', function(req,res){
-    User.findById(req.params.id,function(err,users){
-        Order.find({},function(err,orders){
-            if(err){
-                console.log(err);
-            }
-            else{
-                res.render('tracking_own', {
-                    title:'YOUR ORDER' ,
-                    orders: orders,
-                    users : users
-                });
-            }
-        });
-    });
 });
 
 module.exports = router;

@@ -96,6 +96,9 @@ app.get('/', function(req,res){
 let users = require('./routes/users');
 app.use('/users', users);
 
+let tracking = require('./routes/tracking');
+app.use('/tracking', tracking);
+
 let custom = require('./routes/custom');
 app.use('/custom', custom);
 

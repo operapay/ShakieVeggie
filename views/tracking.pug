@@ -99,57 +99,54 @@ block content
             .track-card
                 .yellow-reg
                     h1#text-shadow ORDER
-                //if(doing)
-                img.track_status#order-in-sys(src="/img/tracking/check-list-y.png")
-                img.track_check#order-in-sys(src="/img/tracking/clock.png")
-                .track_text.doing#order-in-sys order in system
-                //else if(done)
-                    img.track_status#order-in-sys(src="/img/tracking/check-list-b.png") อันนี้สีฟ้า
+                if order.paymentstatus != 0
+                    img.track_status#order-in-sys(src="/img/tracking/check-list-y.png")
+                    img.track_check#order-in-sys(src="/img/tracking/clock.png")
+                    .track_text.doing#order-in-sys order in system
+                else if order.paymentstatus == 0
+                    img.track_status#order-in-sys(src="/img/tracking/check-list-b.png")
                     img.track_check#order-in-sys(src="/img/tracking/verified.png")
                     .track_text.done#order-in-sys order in system
 
-                //if(yet)
-                img.track_status#mixer(src="/img/tracking/mixer-w.png")
-                img.track_check#mixer(src="/img/tracking/clock.png")
-                .track_text.yet#mixer mixed
-                //else if(doing)
+                if order.paymentstatus != 0
+                    img.track_status#mixer(src="/img/tracking/mixer-w.png")
+                    img.track_check#mixer(src="/img/tracking/clock.png")
+                    .track_text.yet#mixer mixed
+                else if order.paymentstatus == 0 && order.mixingstatus != 0
                     img.track_status#mixer(src="/img/tracking/mixer-y.png")
                     img.track_check#mixer(src="/img/tracking/clock.png")
                     .track_text.doing#mixer mixed
-                //else if(done)
+                else if order.mixingstatus == 0
                     img.track_status#mixer(src="/img/tracking/mixer-b.png")
                     img.track_check#mixer(src="/img/tracking/verified.png")
                     .track_text.done#mixer mixed
 
-                //if(yet)
-                img.track_status#packed(src="/img/tracking/order-w.png")
-                img.track_check#packed(src="/img/tracking/clock.png")
-                .track_text.yet#packed packed
-                //else if(doing)
+                if order.mixingstatus != 0
+                    img.track_status#packed(src="/img/tracking/order-w.png")
+                    img.track_check#packed(src="/img/tracking/clock.png")
+                    .track_text.yet#packed packed
+                else if order.mixingstatus == 0 && order.trackingnum == null
                     img.track_status#packed(src="/img/tracking/order-y.png")
                     img.track_check#packed(src="/img/tracking/clock.png")
                     .track_text.doing#packed packed
-                //else if(done)
+                else if order.trackingnum != null
                     img.track_status#packed(src="/img/tracking/order-b.png")
                     img.track_check#packed(src="/img/tracking/verified.png")
                     .track_text.done#packed packed
 
-                //if(yet)
-                img.track_status#deliver(src="/img/tracking/truck-w.png")
-                img.track_check#deliver(src="/img/tracking/clock.png")
-                .track_text.yet#deliver delivered
-                //else if(doing)
-                    img.track_status#deliver(src="/img/tracking/truck-y.png")
+                if order.trackingnum == null
+                    img.track_status#deliver(src="/img/tracking/truck-w.png")
                     img.track_check#deliver(src="/img/tracking/clock.png")
-                    .track_text.doing#deliver delivered
-                //else if(done)
+                    .track_text.yet#deliver delivered
+                else if order.trackingnum != null
                     img.track_status#deliver(src="/img/tracking/truck-b.png")
                     img.track_check#deliver(src="/img/tracking/verified.png")
                     .track_text.done#deliver delivered
 
-                //if(มีเลขแทรคแล้ว ตอนไหนอะ deliveredปะ)
-                    #track-num tracking (tracknum) span<style="color:#a5a047"> อันนี้รอถามซูว่าเอาไง  
-                #track-num tracking _________________
+                if order.trackingnum != null
+                    #track-num  TRACKING NO. #{order.trackingnum} 
+                else
+                    #track-num  TRACKING NO. _____________
                 
 
                    

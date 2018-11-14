@@ -23,7 +23,7 @@ html(lang='en', dir='ltr')
                   a(href='/users/login') login
           button.login
               if user
-                  a(href='/payment/tracking/' + user._id)#login tracking
+                a(href='/tracking/' + user._id)#login tracking
         a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
       a(href='/')
         img.logo-pos(src='/img/logo_circle.png')
@@ -114,9 +114,8 @@ html(lang='en', dir='ltr')
               .col-4
                   h4= '฿' + ((totalItems*75)+30) + '.00'
             .row
-              form(method='POST',action='/payment/' + orders.id + '/' + ((totalItems*75)+30))
-                button#button1_checkout(type='submit')
-                  p PROCEED TO CHECKOUT           
+              a.button#button1_checkout(href='/payment/' + orders.id + '/' + ((totalItems*75)+30))
+                p PROCEED TO CHECKOUT           
           .row    
             a.button#button1_line(href='/formulas/' + orders.id)
               p CONTINUE SHOPPING
