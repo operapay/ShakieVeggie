@@ -78,6 +78,13 @@ a:visited{
     --input-padding-y: .75rem;
   }
   
+  .set-position-card{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position:fixed;
+  }
+
   .card-signin {
     /*width: 350px;*/
     border: 0;
@@ -96,7 +103,7 @@ a:visited{
   }
   
   .card-signin .card-body {
-    padding: 2rem;
+    /*padding: 2rem;*/
   }
   
   .form-signin {
@@ -195,29 +202,6 @@ a:visited{
       font-style: bold;
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
-
-/*------ tracking part------- เเอาcardมไปด้วยตอนทำไฟลใหม่*/
-#tracking{
-  width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 8%;
-}
-#card-tracking-title{
-  margin-bottom: 2rem;
-  font-weight: 300;
-  font-size: 30px;
-  font-style: bold;
-}
-#img-pos{
-  margin-top:5%;
-  margin-left:13%;
-}
-
-#dash-pos{
-  margin-top:5%;
-  margin-left:13%;
-}
 
 .logo-pos{
     margin-left:2.75%;
