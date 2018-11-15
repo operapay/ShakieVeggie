@@ -100,23 +100,37 @@ color: white;
 .img-bottle {
     position: absolute;
 }
+.bottle {
+    overflow: hidden;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    
+}
 .bottle_pos{
     width:100%;
     height: auto;
-    transform: translate(-15%, -15%);
 }
 
 .grid{
     display: grid;
-    grid-template-columns: 27% 67%;
+    grid-template-columns: 29% 65%;
     grid-gap: 6%;
     padding:0%;
 }
 
-
-
 @media only screen and (max-width: 1200px) {
     .grid{
         display: block;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .pic{
+        margin-right: auto;
+        margin-left: auto;
+        width:35%;
+        height:auto;
+    }
+    .choice{
     }
 }
