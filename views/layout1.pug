@@ -32,12 +32,9 @@ html
             img.logo-pos(src='/img/logo_circle.png')
         // ------------------------------------------
 
-
-        != messages('message',locals)
-            if errors
-                each error, i in errors
-                    div(class="alert alert-danger") #{error.msg}
-            block content 
+        .container
+            
+        block content 
 
         script(src='/js/main.js')
         script(src='https://code.jquery.com/jquery-3.3.1.min.js')
