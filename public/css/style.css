@@ -17,6 +17,7 @@
     color: #3c763d;
     background-color: #dff0d8;
     border-color: #d6e9c6;
+    width:80%;
 }
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -52,6 +53,13 @@ color:#ffcc1b;
     width:60px;
     height: 60px;
 }
+.logo-pos-nocart{
+  margin-left:2.75%;
+  margin-top:2.5%;
+  width:60px;
+  height: 60px;
+}
+
 .cart_pos{
     width:38px;
     height: 38px;
@@ -216,14 +224,14 @@ color:#ffcc1b;
     cursor: pointer;
 }
 
-.bottle {
+/*.bottle {
     overflow: hidden;
     border: none;
     outline: none;
     background-color: inherit;
-    transition: transform .2s; /* Animation */
+    transition: transform .2s; /* Animation
     margin-left: 25%;
-  }
+  }*/
 
 #vote-pos{
     margin-top: 20px;
