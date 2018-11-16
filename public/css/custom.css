@@ -124,6 +124,7 @@ color: white;
         display: block;
         margin-right: auto;
         margin-left: auto;
+        position:relative;
     }
     .pic{
         margin-right: auto;
@@ -132,5 +133,9 @@ color: white;
         height:auto;
     }
     .choice{
+        position:relative;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }

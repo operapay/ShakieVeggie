@@ -2,6 +2,11 @@ extends layout1
 
 block content
 	link(rel='stylesheet', type='text/css', href='/css/formulastyle.css')
+	div(style="position:absolute;z-index:2;width:80%;top:20%;left:50%;transform: translate(-50%, -50%);")
+		!= messages('message',locals)
+		if errors
+			each error, i in errors
+				div(class="alert alert-danger") #{error.msg}
 	#carouselExampleControls.carousel.slide(data-ride='carousel')
 		.carousel-inner
 			.carousel-item.active
