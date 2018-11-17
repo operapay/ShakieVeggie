@@ -1,45 +1,23 @@
-doctype html
-html
-    head
-        title ShakieVeggie
-        link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
-        link(rel='stylesheet', type='text/css', href='/css/style_login.css')
-    style.
-        body{
-            background-image: url("/img/mango_bg.jpg");
-        }
-        .card-signin {
-            width: 350px;
-        }
-        .card-signin .card-title {
-            margin-top:50px;
-        }
-    body()
-        a(href='/')
-            img.logo-pos(src='/img/logo_circle.png') 
-        .container
-            != messages('message',locals)
-            if errors
-                each error, i in errors
-                    div(class="alert alert-danger") #{error.msg}
-            .row.mt-5 
-                .mx-auto
-                    .card.card-signin
-                        .card-body
-                            h5.card-title.text-center#member MEMBER
-                            form(method='POST',action='/users/login').form-signin
-                                .form-label-group#username
-                                    input#inputUsername.form-control(name='username',type='text', placeholder='Username', required='', autofocus='')
-                                    label(for='inputUsername') Username
-                                .form-label-group
-                                    input#inputPassword.form-control(name='password',type='password', placeholder='Password', required='')
-                                    label(for='inputPassword') Password
-                                button.btn.btn-lg.btn-defult.btn-block.text-uppercase#login(type='submit',value='Submit') Login
-                                button.btn.btn-lg.btn-defult.btn-block.text-uppercase(type='button')
-                                    a(href='/users/register') Register
-        footer
-                //p(style="color:white") Copyright © 2018  
+extends layout_login
 
-        script(src='/js/main.js')
-        script(src='https://code.jquery.com/jquery-3.3.1.min.js')
-        script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
+block content
+    .container
+        != messages('message',locals)
+        if errors
+            each error, i in errors
+                div(class="alert alert-danger") #{error.msg}
+        .row
+            .set-position-card
+                .card.card-signin
+                    .card-body
+                        h5.card-title.text-center#member MEMBER
+                        form(method='POST',action='/users/login').form-signin
+                            .form-label-group#username
+                                input#inputUsername.form-control(name='username',type='text', placeholder='Username', required='', autofocus='')
+                                label(for='inputUsername') Username
+                            .form-label-group
+                                input#inputPassword.form-control(name='password',type='password', placeholder='Password', required='')
+                                label(for='inputPassword') Password
+                            button.btn.btn-lg.btn-defult.btn-block.text-uppercase#login(type='submit',value='Submit') Login
+                            button.btn.btn-lg.btn-defult.btn-block.text-uppercase(type='button')
+                                a(href='/users/register') Register

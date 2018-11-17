@@ -3,12 +3,13 @@ block content
     link(rel='stylesheet', type='text/css', href='/css/style.css')
     link(rel='stylesheet', type='text/css', href='/css/custom.css')
     .margin-top-set
-        .row
-            .col-4
+        .grid
+            div
+            h1.text-center.text-uppercase #{formula.formulaname}
+        .grid
+            .pic
                 img.bottle.bottle_pos(src='/img/cus_bottle.png')
-            .col-8
-                h1.text-center.text-uppercase #{formula.formulaname}
-                br
+            .choice
                 form(method='POST',action='/custom/'+  orders + "/" + formula._id + '/component')
                     .mt-4(align='center')
                         .row
@@ -331,7 +332,7 @@ block content
                             .row
                                 .col-3
                                 .col-2
-                                    input.form-control#amout(type='number', placeholder='AMOUT', name='amont', required='')
+                                    input.form-control#amout(type='number', placeholder='AMOUNT', name='amont', required='')
                                 .col-1
                                 .col-5
                                     button.text-uppercase#amout(type='submit',value='Submit') Submit			

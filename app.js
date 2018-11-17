@@ -96,6 +96,9 @@ app.get('/', function(req,res){
 let users = require('./routes/users');
 app.use('/users', users);
 
+let tracking = require('./routes/tracking');
+app.use('/tracking', tracking);
+
 let custom = require('./routes/custom');
 app.use('/custom', custom);
 
@@ -118,6 +121,6 @@ let cart = require('./routes/cart');
 app.use('/cart', cart);
 
 // Start Server
-app.listen(80, function(){
+app.listen(3000, function(){
     console.log('Server started on port 80...');
 });

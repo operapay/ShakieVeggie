@@ -100,13 +100,43 @@ color: white;
 .img-bottle {
     position: absolute;
 }
-.bottle-bg{
-    width:25%;
-    height:90%;
-    margin-top:-2.25%;
-    margin-left:  5%;
+.bottle {
+    overflow: hidden;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    
 }
 .bottle_pos{
-    width:98%;heigth:auto;
-    transform: translate(-15%, -15%);
+    width:100%;
+    height: auto;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 29% 65%;
+    grid-gap: 6%;
+    padding:0%;
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .grid{
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        position:relative;
+    }
+    .pic{
+        margin-right: auto;
+        margin-left: auto;
+        width:35%;
+        height:auto;
+    }
+    .choice{
+        position:relative;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
