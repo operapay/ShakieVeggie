@@ -54,25 +54,28 @@ html
             img.logo-pos(src='/img/logo_circle.png')
         .blue_reg
         .pos_cen
-          .center2 BE HEALTHY IN YOUR STYLE
-          .center1 CHOOSE YOUR TASTE
-          .center2 MAKE IT YOUR FLAVOR
-          br
-          .yugo
-            if user
-              form(method='POST',action='/order/addorder/' + user._id)
-                button#button1_index.viewf(type='submit',value='Submit') VIEW FORMULA
-            else
-              form(method='POST',action='/order/addorder/' + 1)
-                button#button1_index.viewf(type='submit',value='Submit') VIEW FORMULA
-            //a#button1_index.viewf(href='#') VIEW FORMULA
-        img.auntie(src='/img/index/auntie.png')
+          .head
+            .text_head
+              .center2 BE HEALTHY IN YOUR STYLE
+              .center1 CHOOSE YOUR TASTE
+              .center2 MAKE IT YOUR FLAVOR
+              br
+              .yugo
+                if user
+                  form(method='POST',action='/order/addorder/' + user._id)
+                    button#button1_index.viewf(type='submit',value='Submit') VIEW FORMULA
+                else
+                  form(method='POST',action='/order/addorder/' + 1)
+                    button#button1_index.viewf(type='submit',value='Submit') VIEW FORMULA
+                //a#button1_index.viewf(href='#') VIEW FORMULA
+          .aunt
+            img.auntie(src='/img/index/auntie.png')
         .white_reg
           .yugo
             .col3
               .pos_col
                 .col-set
-                  | WHAT IS SHAKIE VEGGIE ?
+                  .h_p  WHAT IS SHAKIE VEGGIE ?
                   p.index_info
                     | SHAKIE VEGGIE IS A FRUIT AND VEGGETABLE JUICE THAT YOU CAN CHOOSE THE PROPERTIES AND THE INGREDIENTS 
                     br
@@ -83,7 +86,7 @@ html
                     |                                 THAT WILL HARM TO YOUR BODY
                 a#button2_index.readmore(href='/admin/aboutus#what') READ MORE
               .pos_col
-                | HOW TO ORDER SHAKIE VEGGIE ?
+                .h_p HOW TO ORDER SHAKIE VEGGIE ?
                 p.index_info
                   | FIRST CHOOSE THE FORMULA OF SHAKKIEVEGGIE 
                   br

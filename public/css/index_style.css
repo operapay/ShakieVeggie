@@ -29,10 +29,21 @@ body{
     background-color: #8ED2C9;
     z-index: -1;
 }
+.head{
+    position:relative
+}
+.text_head{
+    position:absolute;
+    width:100%;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
 .center1{
     color: white;
     font-family: Hvs;
-    font-size:59px;
+    font-size:5vw;
     text-shadow:1px 1px 5px grey;
 }
 
@@ -45,15 +56,19 @@ body{
 .center2{
     color: white;
     font-family: Lemonism;
-    font-size: 53px;
+    font-size: 4vw;
     text-shadow:1px 1px 5px grey;
 }
 .pos_cen{
-    position: relative;
-    width: 65%;
-    top: 22.5%;
+    display:grid;
+    grid-template-columns: 60% 40%;
+    position: fixed;
+    height:70%;
+    top:0;
+    width: 100%;
     text-align: center;
     line-height: 1.25;
+    background-color: #8ED2C9;
 }
 .pos_cen2{
     position: relative;
@@ -67,13 +82,16 @@ body{
     font-family: YGTH;
     font-weight: 700;
 }
-
+.aunt{
+    position:relative;
+}
 .auntie{
     position:absolute;
-    right: 10%;
-    top: 10%;
     height: auto;
-    width: 27%;
+    width:70%;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 #button1_index{
     display:inline-block;
@@ -113,17 +131,19 @@ a#button2_index:hover{
     background-color:#8ED2C9;
 }
 .index_info{
-    font-size: 8px;
+    font-size: 0.65vw;
 }
 .pos_col{
     position: relative;
     padding: 10% 10%;
     /*width:25%;*/
-    text-align: center;   
+    text-align: center;  
+    margin-top:  auto;
+    margin-bottom: auto;
 }
 .col3{
     display: grid;
-    grid-template-columns: 30% 30% 35%;
+    grid-template-columns: 30% 32.5% 35%;
 }
 .col4{
     position: relative;
@@ -193,7 +213,7 @@ a#button2_index:hover{
     color:#8ED2C9;
     background-color:#FFFFFF;
 }
-.fruit{
-    font-size: 40px;
+.h_p{
+    font-size: 1.3vw;
 }
 
