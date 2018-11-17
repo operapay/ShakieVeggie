@@ -211,8 +211,8 @@ color:#ffcc1b;
 }
 .set-submit{
   position:fixed;
-  bottom:3%;
-  left:50%;
+  bottom:20%;
+  left:45%;
   width:250px;
   height:50px;
   transform: translate(-50%, -50%);
