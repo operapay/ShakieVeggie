@@ -8,7 +8,7 @@ block content
             .set-layout-modal    
                 .yellow-reg-modal
                     h2#text-shadow Health Condition
-                form(method='POST',action='/custom/'+  orders + "/" + formula._id)
+                form(method='POST',action='/recommend/'+  orders + "/" + formula._id)
                     .disease
                         .form-check.squaredThree 
                             input#kidney.form-check-input(type='checkbox', name='kidney')
@@ -26,7 +26,6 @@ block content
                             input#liver.form-check-input(type='checkbox', name='liver')
                             label.form-check-label(for='liver')
                             .c liver disease
-                        
                         .form-check.squaredThree
                             input#pregnant.form-check-input(type='checkbox', name='pregnant')
                             label.form-check-label(for='pregnant')
@@ -35,7 +34,7 @@ block content
                             input#surgery.form-check-input(type='checkbox', name='surgery')
                             label.form-check-label(for='surgery')
                             .c underwent surgery
-                button.set-submit(type='submit',value='Submit') Submit
+                        button.set-submit(type='submit',value='Submit') Submit
     form(method='POST',action='/custom/' + formula._id + '/component')
         
         .margin-top-set
