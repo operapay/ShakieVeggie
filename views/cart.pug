@@ -114,12 +114,12 @@ html(lang='en', dir='ltr')
               .col-4
                   h4= '฿' + ((totalItems*75)+30) + '.00'
             .row
-              form(method='POST',action='/payment/' + orders.id + '/' + ((totalItems*75)+30))
-                button#button1_checkout(type='submit')
-                  p PROCEED TO CHECKOUT           
-          .row    
-            a.button#button1_line(href='/formulas/' + orders.id)
-              p CONTINUE SHOPPING
+              a.button#button1_checkout(href='/payment/' + orders.id + '/' + ((totalItems*75)+30))
+                p PROCEED TO CHECKOUT  
+              
+              a.button#button2_checkout(href='/formulas/' + orders.id)
+                  p CONTINUE SHOPPING           
+   
 
   script(src='https://code.jquery.com/jquery-3.3.1.min.js')
   script(src='/bower_components/bootstrap/dist/js/bootstrap.js')

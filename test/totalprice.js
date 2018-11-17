@@ -2,6 +2,7 @@ var chai = require('chai');
 var expect = chai.expect;
 
 chai.should();
+
 function totalprice(items){
   return ((items*75)+30)
 }
