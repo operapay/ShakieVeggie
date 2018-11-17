@@ -23,8 +23,6 @@ block content
                     td#b_l=order._id
                     td=order.name
                     td=order.address + ' ' + order.state + ' ' + order.country + ' ' + order.zip
-                        br
-                        order.address2
                     if order.mixingstatus == 0
                         td
                             form(action="/admin/sending2/" + order._id, method="post")
