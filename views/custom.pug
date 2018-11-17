@@ -5,34 +5,37 @@ block content
     #myModal.modal
         // Modal content
         .modal-content
-            h2.text-center Health Condition
-            .mt-3
-            form(method='POST',action='/custom/'+  orders + "/" + formula._id)
-                .form-check
-                    input#kidney.form-check-input(type='checkbox', name='kidney')
-                    label.form-check-label(for='kidney')
-                        | kidney
-                .form-check
-                    input#liver.form-check-input(type='checkbox', name='liver')
-                    label.form-check-label(for='liver')
-                        | liver
-                .form-check
-                    input#hyper.form-check-input(type='checkbox', name='hypertension')
-                    label.form-check-label(for='hypertension')
-                        | hypertension
-                .form-check
-                    input#diabete.form-check-input(type='checkbox', name='diabetes')
-                    label.form-check-label(for='diabete')
-                        | diabete
-                .form-check
-                    input#pregnant.form-check-input(type='checkbox', name='pregnant')
-                    label.form-check-label(for='pregnant')
-                        | pregnant
-                .form-check
-                    input#surgery.form-check-input(type='checkbox', name='surgery')
-                    label.form-check-label(for='surgery')
-                        | surgery
-                button.btn.btn-lg.btn-defult.btn-block.text-uppercase#myBtn(type='submit',value='Submit') Submit
+            .set-layout-modal    
+                .yellow-reg-modal
+                    h2#text-shadow Health Condition
+                form(method='POST',action='/custom/'+  orders + "/" + formula._id)
+                    .disease
+                        .form-check.squaredThree 
+                            input#kidney.form-check-input(type='checkbox', name='kidney')
+                            label.form-check-label(for='kidney')
+                            .c kidney disease
+                        .form-check.squaredThree
+                            input#diabete.form-check-input(type='checkbox', name='diabetes')
+                            label.form-check-label(for='diabete')
+                            .c diabete
+                        .form-check.squaredThree 
+                            input#hyper.form-check-input(type='checkbox', name='hypertension')
+                            label.form-check-label(for='hypertension')
+                            .c hypertension
+                        .form-check.squaredThree 
+                            input#liver.form-check-input(type='checkbox', name='liver')
+                            label.form-check-label(for='liver')
+                            .c liver disease
+                        
+                        .form-check.squaredThree
+                            input#pregnant.form-check-input(type='checkbox', name='pregnant')
+                            label.form-check-label(for='pregnant')
+                            .c pregnant
+                        .form-check.squaredThree
+                            input#surgery.form-check-input(type='checkbox', name='surgery')
+                            label.form-check-label(for='surgery')
+                            .c underwent surgery
+                button.set-submit(type='submit',value='Submit') Submit
     
     form(method='POST',action='/custom/'+  orders + "/" + formula._id + '/component')
         
