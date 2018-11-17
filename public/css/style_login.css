@@ -33,11 +33,11 @@
 }
 a:link{
     text-decoration:none;
-    color: #213037;
+    color: white;
 }
 a:visited{
     text-decoration:none;
-    color: #213037;
+    color: white;
 }
 body{
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/img/custom_bg.jpg');
@@ -78,6 +78,12 @@ body{
   background-color: transparent;
   left:17.5%;
   top:77%;
+}
+
+#regis-regis{
+  left:17.5%;
+  top:82.5%;
+
 }
 
 .btn:hover , .login:hover {
@@ -148,6 +154,19 @@ body{
   position:relative;
   /*border:4px solid black;*/
 }
+.regis-grid{
+  display:grid;
+  grid-template-columns: auto auto;
+  grid-row-gap: 15px;
+  width:80%;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#regis-card{
+  width:780px;
+}
 
 .card{
   width: 390px;
@@ -188,6 +207,10 @@ body{
   width:78%;
   left:50%;
   transform: translate(-50%, -50%);
+}
+
+#regis-form{
+  left:25%;
 }
 
 .form-label-group#username {
