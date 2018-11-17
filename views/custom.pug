@@ -14,26 +14,27 @@ block content
                             input#kidney.form-check-input(type='checkbox', name='kidney')
                             label.form-check-label(for='kidney')
                             .c kidney disease
+                        .form-check.squaredThree
+                            input#diabete.form-check-input(type='checkbox', name='diabetes')
+                            label.form-check-label(for='diabete')
+                            .c diabete
+                        .form-check.squaredThree 
+                            input#hyper.form-check-input(type='checkbox', name='hypertension')
+                            label.form-check-label(for='hypertension')
+                            .c hypertension
                         .form-check.squaredThree 
                             input#liver.form-check-input(type='checkbox', name='liver')
                             label.form-check-label(for='liver')
                             .c liver disease
-                        .form-check.squaredThree 
-                            input#hyper.form-check-input(type='checkbox', name='hypertension')
-                            label.form-check-label(for='hypertension')
-                            .c hypertension disease
-                        .form-check.squaredThree
-                            input#diabete.form-check-input(type='checkbox', name='diabetes')
-                            label.form-check-label(for='diabete')
-                            .c diabete disease
+                        
                         .form-check.squaredThree
                             input#pregnant.form-check-input(type='checkbox', name='pregnant')
                             label.form-check-label(for='pregnant')
-                            .c pregnant disease
+                            .c pregnant
                         .form-check.squaredThree
                             input#surgery.form-check-input(type='checkbox', name='surgery')
                             label.form-check-label(for='surgery')
-                            .c surgery disease
+                            .c underwent surgery
                 button.set-submit(type='submit',value='Submit') Submit
     
     form(method='POST',action='/custom/'+  orders + "/" + formula._id + '/component')

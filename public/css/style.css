@@ -163,8 +163,7 @@ color:#ffcc1b;
 .modal-content {
     background-color: #fefefe;
     margin: auto;
-    padding: 30px;
-    height:400px;
+    height:450px;
     width: 50%;
     -webkit-border-radius: 0px !important;
     -moz-border-radius: 0px !important;
@@ -179,43 +178,47 @@ color:#ffcc1b;
   position:relative;
 }
 .yellow-reg-modal{
-  width: 110%;
-  height: 60px;
+  width: 115%;
+  height: 90px;
   background-color: #ffcc1b;
   position: fixed;
-  top: 17%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   color:white;
 }
 .yellow-reg-modal > h2{
-  margin-top:10px;
+  margin-top:20px;
+  font-size:37px;
 }
 .disease  {
-  width:70%;
-  height:65%;
+  width:75%;
+  height:70%;
   position: fixed;
-  left:50%;
-  top: 65%;
+  left:53%;
+  top: 75%;
   transform: translate(-50%, -50%);
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: 25% 25% 25%;
+  grid-template-rows: 18% 18% 18%;
+  grid-column-gap: 120px;
   text-transform: uppercase;
   font-weight: 500;
   color:#8fd2c9;
   font-size:13px;
+  
 }
 .set-submit{
   position:fixed;
-  bottom:0;
+  bottom:3%;
   left:50%;
-  width:55%;
-  height:15%;
+  width:250px;
+  height:50px;
   transform: translate(-50%, -50%);
   text-transform: uppercase;
   font-weight: 500;
+  font-size:15px;
   background-color:#8fd2c9;
   color:white;
   border:none;
@@ -234,7 +237,7 @@ color:#ffcc1b;
   top: 0;
   left: 0;
   background: transparent;
-  border: 2.5px solid #8fd2c9;
+  border: 2px solid #8fd2c9;
 }
 
 .squaredThree label:after {
