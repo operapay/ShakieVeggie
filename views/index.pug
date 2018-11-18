@@ -28,17 +28,18 @@ html
         a(href='/')(style="position:absolute; z-index:1;left:2.75%;top:5.5%")
             img.logo-pos(src='/img/logo_circle.png')
         .blue_reg
-        .admin_buttons    
-          .row
-            a.btn#admin_button(href='/admin/payment') ORDER PAYMENT
-          .row
-            a.btn#admin_button2(href='/admin/mixing') MIXING
-          .row
-            a.btn#admin_button2(href='/admin/sending') SENDING
-        img.auntie(src='/img/index/auntie.png')
+          .pos_cen
+            .admin_buttons    
+              .row
+                a.btn#admin_button(href='/admin/payment') ORDER PAYMENT
+              .row
+                a.btn#admin_button2(href='/admin/mixing') MIXING
+              .row
+                a.btn#admin_button2(href='/admin/sending') SENDING
+            .aunt      
+              img.auntie(src='/img/index/auntie.png')
         .white_reg
-        .pos_cen2
-          .center3 SHAKIE VEGGIE
+            .center3 SHAKIE VEGGIE
       else
         nav#myTopnav.topnav
             div(style="position:absolute; z-index:1;right:10;")
