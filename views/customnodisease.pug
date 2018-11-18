@@ -11,7 +11,7 @@ block content
                 img.bottle.bottle_pos(src='/img/cus_bottle.png')
             .choice
                 form(method='POST',action='/custom/'+  orders + "/" + formula._id + '/component')
-                    .mt-4(align='center')
+                    .mt-4
                         .row
                             ul.chec-radio
                                 li.pz
@@ -329,10 +329,8 @@ block content
                                             input#exampleRadios3.pro-chx(type='radio', name='component3', value=component3.fruit6)
                                             .clab(for='exampleRadios5') #{component3.fruit6}
                         .mt-5
-                            .row
-                                .col-3
-                                .col-2
-                                    input.form-control#amout(type='number', placeholder='AMOUNT', name='amont', required='')
-                                .col-1
+                            .row(style="width:80%;margin-left:auto;margin-right:auto;")
+                                .col-6
+                                    input.form-control#amount(style="float:right")(type='number', placeholder='AMOUNT', name='amont', required='')
                                 .col-5
-                                    button.text-uppercase#amout(type='submit',value='Submit') Submit			
+                                    button.text-uppercase#amount(style="float:right")(type='submit',value='Submit') Submit			
