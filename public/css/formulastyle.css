@@ -141,6 +141,7 @@ li{
     outline: none;
     color: white;
     background-color: inherit;
+    font-weight: 500;
 }
 .btn {
     float: left;
