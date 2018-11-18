@@ -2,77 +2,48 @@ extends layout_cus
 
 block content
     link(rel='stylesheet', type='text/css', href='/css/style.css')
-    .py-5.text-center
-      h2.payment-title PAYMENT
-    .container
-      .row
-      form(method='POST',action='/payment/' + order)
-        .col-sm-9.col-md-7.col-lg-5.mx-auto
-          h4.mb-3 Billing address
-            h6.mb-3
+    link(rel="stylesheet", type='text/css', href='/css/payment.css')    
+    
+    .payment-title
+      .payment-head PAYMENT
+      h5 Billing address
+    .block
+      .col-6.mx-auto
+        .payment-reg
+        .payment-inside
+          form(method='POST',action='/payment/' + order)
+            h6.mb-4
               label(for='name') Name
-              input#address.form-control(type='text', placeholder='Name', name='name', required='')
+              input#payment-input.form-control(type='text', name='name', required='')
               .invalid-feedback
                 | Please enter your name.
-            h6.mb-3
+            h6.mb-4
               label(for='address') Address
-              input#address.form-control(type='text', placeholder='Address1', name='address', required='')
+              input#payment-input.form-control(type='text', name='address', required='')
               .invalid-feedback
                 | Please enter your shipping address.
-            .mb-3
+            .mb-4
               label(for='address2')
                 | Address 2 
-                span.text-muted (Optional)
-              input#address2.form-control(type='text', placeholder='Apartment or suite', name='address2')
+                span (Optional)
+              input#payment-input.form-control(type='text', name='address2')
             .row
-              .col.mb-3
+              .col.mb-4
                 label(for='country') Country
-                select#country.custom-select.d-block.w-100(name='country', required='')
-                  option(value='') Choose...
-                  option Thailand
+                select#payment-input.custom-select(name='country', required='')
+                  option(value='')
+                  option THAILAND
                 .invalid-feedback
                   | Please select a valid country.
             .row
-              .col.mb-3
-                label(for='state') State/Province
-                input#state.form-control(type='text', placeholder='State/Province', name='state', required='')
+              .col-8.mb-4
+                label(for='state') State
+                input#payment-input.form-control(type='text', name='state', required='')
                 .invalid-feedback
                   | Please provide a valid state.
-              .col.mb-3
+              .col-4.mb-4
                 label(for='zip') Zip
-                input#zip.form-control(type='text', placeholder='zip code', name='zip', required='')
+                input#payment-input.form-control(type='text', name='zip', required='')
                 .invalid-feedback
-                  | Zip code required.
-        .col-sm-9.col-md-7.col-lg-5.mx-auto
-          h4.mb-3 Bill Payment
-          .row
-            .col
-              article.card
-                .card-body.p-5
-                  ul.nav.bg-light.nav-pills.rounded.nav-fill.mb-3(role='tablist')
-                    li.nav-item
-                      a.nav-link(data-toggle='pill', href='#nav-tab-bank')
-                        i.fa.fa-university
-                        |  Please Click
-                  .tab-content
-                    #nav-tab-bank.tab-pane.fade
-                      dl.param
-                        dt Bank: 
-                        dd  THE WORLD BANK
-                      dl.param
-                        dt Comp Code: 
-                        dd  45189
-                      dl.param
-                        dt Name: 
-                        dd  Jimmy Grey
-                      dl.param
-                        dt ref.No1: 
-                        dd  12345678912345
-                      dl.param
-                        dt ref.No2: 
-                        dd  12345678912345
-                      dl.param
-                        dt totalprice:
-                        dd 330
-        hr
-        button.btn.btn-primary.btn-lg.btn-block(type='submit') Continue to checkout
+                  | Zip code required.          
+          button#button_payment(type='submit') GET YOUR BILL
