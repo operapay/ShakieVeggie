@@ -3,10 +3,10 @@ extends layout_cus
 block content
     link(rel='stylesheet', type='text/css', href='/css/style.css')
 
-    - var totalItems = 0
-    each b in bottle
-      if b.orderid == order._id
-        - totalItems += b.amount
+    //- - var totalItems = 0
+    //- each b in bottle
+    //-   if b.orderid == order._id
+    //-     - totalItems += b.amount
 
     .py-5.text-center
       h2.payment-title PAYMENT
