@@ -46,6 +46,7 @@ router.post('/:id',function(req,res){
     order.zip = req.body.zip;
     //order.totalprice = req.params.total;
 
+
     let query = {_id:req.params.id}
 
     Order.update(query, order, function(err){

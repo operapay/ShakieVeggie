@@ -2,6 +2,12 @@ extends layout_cus
 
 block content
     link(rel='stylesheet', type='text/css', href='/css/style.css')
+
+    - var totalItems = 0
+    each b in bottle
+      if b.orderid == order._id
+        - totalItems += b.amount
+
     .py-5.text-center
       h2.payment-title PAYMENT
     .container
@@ -73,6 +79,6 @@ block content
                         dd  12345678912345
                       dl.param
                         dt totalprice:
-                        dd 330
+                        dd= '฿'+ (totalItems*75+30)
         hr
         button.btn.btn-primary.btn-lg.btn-block(type='submit') Continue to checkout
