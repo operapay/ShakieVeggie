@@ -1,73 +1,40 @@
-doctype html
-html
-    head
-        title ShakieVeggie
-        link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
-        link(rel='stylesheet', type='text/css', href='/css/style_login.css')
-    style.
-        body{
-            background-image: url("/img/reg.jpg");
-        }
-        .card-signin {
-            width: 700px;
-        }
-        .card-signin .card-title {
-            margin-top:40px;
-        }
-    body()
-        a(href='/')
-            img.logo-pos(src='/img/logo_circle.png') 
-        .container
-            != messages('message',locals)
-            if errors
-                each error, i in errors
-                    div(class="alert alert-danger") #{error.msg}
-            .row.mt-5
-                .mx-auto
-                    .card.card-signin
-                        .card-body
-                            h5.card-title.text-center#member REGISTER
-                            form(method='POST',action='/users/register').form-signin
-                                .row
-                                    .ml-4
-                                    .col-5.form-label-group
-                                        input#inputFirstName.form-control(name='firstname',type='text', placeholder='Firstname', required='', autofocus='')
-                                        label(for='inputFirstName') Firstname 
-                                    .col-1
-                                    .col-5.form-label-group
-                                        input#inputLastName.form-control(name='lastname',type='text', placeholder='Lastname', required='')
-                                        label(for='inputLastName') Lastname
-                                .mt-2  
-                                .row    
-                                    .ml-4
-                                    .col-5.form-label-group
-                                        input#inputUsername.form-control(name='username',type='text', placeholder='Username', required='', autofocus='')
-                                        label(for='inputUsername') Username
-                                    .col-1
-                                    .col-5.form-label-group
-                                        input#inputEmail.form-control(name='email',type='text', placeholder='Email', required='')
-                                        label(for='inputEmail') Email
-                                .mt-2     
-                                .row    
-                                    .ml-4
-                                    .col-5.form-label-group
-                                        input#inputPassword.form-control(name='password',type='password', placeholder='Password', required='')
-                                        label(for='inputPassword') Password
-                                    .col-1
-                                    .col-5.form-label-group
-                                        input#inputPassword2.form-control(name='password2',type='password', placeholder='Confirm Password', required='')
-                                        label(for='inputPassword2') Confirm Password
-                                .mt-2
-                                .row    
-                                    .ml-4
-                                    .col-5.form-label-group
-                                        input#inputPhone.form-control(name='phone',type='text', placeholder='Phone', required='')
-                                        label(for='inputPhone') Phone
-                                br
-                                button.btn.btn-lg.btn-defult.text-uppercase#regis(type='submit',value='Submit') Register
-        footer
-                //p(style="color:white") Copyright © 2018  
+extends layout_login
 
-        script(src='/js/main.js')
-        script(src='https://code.jquery.com/jquery-3.3.1.min.js')
-        script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
+block content
+    .container
+        != messages('message',locals)
+        if errors
+            each error, i in errors
+                div(class="alert alert-danger") #{error.msg}
+        .row.mt-5
+            .mx-auto
+                .card-signin#regis-card
+                .card#regis-card
+                    .yellow-reg
+                        h1 REGISTER
+                    .card-body
+                        form(method='POST',action='/users/register').form-signin
+                            .regis-grid
+                                .form-label-group#regis-form
+                                    input#inputFirstName.form-control(name='firstname',type='text', placeholder='Firstname', required='', autofocus='')
+                                    label(for='inputFirstName') Firstname
+                                .form-label-group#regis-form
+                                    input#inputLastName.form-control(name='lastname',type='text', placeholder='Lastname', required='')
+                                    label(for='inputLastName') Lastname
+                                .form-label-group#regis-form
+                                    input#inputUsername.form-control(name='username',type='text', placeholder='Username', required='', autofocus='')
+                                    label(for='inputUsername') Username
+                                .form-label-group#regis-form
+                                    input#inputEmail.form-control(name='email',type='text', placeholder='Email', required='')
+                                    label(for='inputEmail') Email
+                                .form-label-group#regis-form
+                                    input#inputPassword.form-control(name='password',type='password', placeholder='Password', required='')
+                                    label(for='inputPassword') Password
+                                .form-label-group#regis-form
+                                    input#inputPassword2.form-control(name='password2',type='password', placeholder='Confirm Password', required='')
+                                    label(for='inputPassword2') Confirm Password
+                                .form-label-group#regis-form
+                                    input#inputPhone.form-control(name='phone',type='text', placeholder='Phone', required='')
+                                    label(for='inputPhone') Phone
+                            br
+                            button.btn.btn-lg.btn-defult.text-uppercase#regis-regis(type='submit',value='Submit') Register
