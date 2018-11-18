@@ -52,160 +52,160 @@ block content
 		a.carousel-control-next(href='#carouselExampleControls', role='button', data-slide='next')
 			span.carousel-control-next-icon(aria-hidden='true')
 			span.sr-only Next
-		
-	.row.contain
-		.col-4(style="")
-			.back_menu
-				.item-alltext.f_bg
-					h1.text-uppercase
-						each formula, i in formulas
-							if(formula.formulaname == "Detox")
-									if !user
-										form(method='POST',action='/users/pleaselogin')
-											button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
-									else
-										a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
-					.overlay
-						.text FIBER - FOLATE - VITAMIN B
-				.item.f_bg(style="background-image:url('/img/detox.jpg');")
+	.no-respon
+		.row.contain(style="")
+			.col-4
+				.back_menu
+					.item-alltext.f_bg
+						h1.text-uppercase
+							each formula, i in formulas
+								if(formula.formulaname == "Detox")
+										if !user
+											form(method='POST',action='/users/pleaselogin')
+												button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
+										else
+											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
+						.overlay
+							.text FIBER - FOLATE - VITAMIN B
+					.item.f_bg(style="background-image:url('/img/detox.jpg');")
+							
+							
+			.col-4
+				.back_menu
+					.item-alltext.f_bg
+						h1.text-uppercase
+							each formula, i in formulas
+								if(formula.formulaname == "Fat Burn")
+									li
+										if !user
+											form(method='POST',action='/users/pleaselogin')
+												button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
+										else
+											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
+						.overlay
+							.text
+								p
+								p FIBER - VITAMIN B - 
+								p L-CARNITINE
+					.item.f_bg(style="background-image:url('/img/fatburn.jpg');")
 						
+							
+			.col-4
+				.back_menu
+					.item-alltext.f_bg
+						h1.text-uppercase
+							each formula, i in formulas
+								if(formula.formulaname == "Improve Eyesight")
+									li
+										if !user
+											form(method='POST',action='/users/pleaselogin')
+												button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
+										else
+											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
+						.overlay
+							.text
+								p
+								p BETA CAROTENE - VITAMIN A - 
+								p VITAMIN E
+					.item.f_bg(style="background-image:url('/img/eyes.jpg');")
+				
 						
-		.col-4
-			.back_menu
-				.item-alltext.f_bg
-					h1.text-uppercase
-						each formula, i in formulas
-							if(formula.formulaname == "Fat Burn")
-								li
-									if !user
-										form(method='POST',action='/users/pleaselogin')
-											button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
-									else
-										a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
-					.overlay
-						.text
-							p
-							p FIBER - VITAMIN B - 
-							p L-CARNITINE
-				.item.f_bg(style="background-image:url('/img/fatburn.jpg');")
-					
-						
-		.col-4
-			.back_menu
-				.item-alltext.f_bg
-					h1.text-uppercase
-						each formula, i in formulas
-							if(formula.formulaname == "Improve Eyesight")
-								li
-									if !user
-										form(method='POST',action='/users/pleaselogin')
-											button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
-									else
-										a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
-					.overlay
-						.text
-							p
-							p BETA CAROTENE - VITAMIN A - 
-							p VITAMIN E
-				.item.f_bg(style="background-image:url('/img/eyes.jpg');")
-			
-					
-	.row.contain
-		.col-4
-			.back_menu
-				.item-alltext.f_bg
-					h1.text-uppercase
-						each formula, i in formulas
-							if(formula.formulaname == "Anti Aging")
-								li
-									if !user
-										form(method='POST',action='/users/pleaselogin')
-											button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
-									else
-										a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
-					.overlay
-						.text COLLAGEN - VITAMIN C - VITAMIN E
-				.item.f_bg(style="background-image:url('/img/antiage.jpg');")
-		.col-4
-			.back_menu
-				.item-alltext.f_bg
-					h1.text-uppercase
-						each formula, i in formulas
-							if(formula.formulaname == "Sugar Reducing")
-								li
-									if !user
-										form(method='POST',action='/users/pleaselogin')
-											button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
-									else
-										a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
-					.overlay
-						.text FIBER - VITAMIN C - VITAMIN E
-				.item.f_bg(style="background-image:url('/img/sugar.jpg');")
-		.col-4
-			.back_menu
-				.item-alltext.f_bg
-					h1.text-uppercase
-						each formula, i in formulas
-							if(formula.formulaname == " Cholesterol Reducing")
-								li
-									if !user
-										form(method='POST',action='/users/pleaselogin')
-											button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
-									else
-										a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
-					.overlay
-						.text 
-							p
-							p FIBER - ANTIOXIDANT - 
-							p VITAMIN E
-				.item.f_bg(style="background-image:url('/img/cores.jpg');")
-			
-	.row.contain
-		.col-4
-			.back_menu
-				.item-alltext.f_bg
-					h1.text-uppercase
-						each formula, i in formulas
-							if(formula.formulaname == "Pregnancy Care")
-								li
-									if !user
-										form(method='POST',action='/users/pleaselogin')
-											button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
-									else
-										a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
-					.overlay
-						.text CALCIUM - FOLATE - FE
-				.item.f_bg(style="background-image:url('/img/custom_bg.jpg');")
+		.row.contain
+			.col-4
+				.back_menu
+					.item-alltext.f_bg
+						h1.text-uppercase
+							each formula, i in formulas
+								if(formula.formulaname == "Anti Aging")
+									li
+										if !user
+											form(method='POST',action='/users/pleaselogin')
+												button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
+										else
+											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
+						.overlay
+							.text COLLAGEN - VITAMIN C - VITAMIN E
+					.item.f_bg(style="background-image:url('/img/antiage.jpg');")
+			.col-4
+				.back_menu
+					.item-alltext.f_bg
+						h1.text-uppercase
+							each formula, i in formulas
+								if(formula.formulaname == "Sugar Reducing")
+									li
+										if !user
+											form(method='POST',action='/users/pleaselogin')
+												button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
+										else
+											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
+						.overlay
+							.text FIBER - VITAMIN C - VITAMIN E
+					.item.f_bg(style="background-image:url('/img/sugar.jpg');")
+			.col-4
+				.back_menu
+					.item-alltext.f_bg
+						h1.text-uppercase
+							each formula, i in formulas
+								if(formula.formulaname == " Cholesterol Reducing")
+									li
+										if !user
+											form(method='POST',action='/users/pleaselogin')
+												button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
+										else
+											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
+						.overlay
+							.text 
+								p
+								p FIBER - ANTIOXIDANT - 
+								p VITAMIN E
+					.item.f_bg(style="background-image:url('/img/cores.jpg');")
+				
+		.row.contain
+			.col-4
+				.back_menu
+					.item-alltext.f_bg
+						h1.text-uppercase
+							each formula, i in formulas
+								if(formula.formulaname == "Pregnancy Care")
+									li
+										if !user
+											form(method='POST',action='/users/pleaselogin')
+												button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
+										else
+											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
+						.overlay
+							.text CALCIUM - FOLATE - FE
+					.item.f_bg(style="background-image:url('/img/custom_bg.jpg');")
+										
+			.col-4
+				.back_menu
+					.item-alltext.f_bg
+						h1.text-uppercase
+							each formula, i in formulas
+								if(formula.formulaname == "Healthy Blood")
+									li
+										if !user
+											form(method='POST',action='/users/pleaselogin')
+												button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
+										else
+											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
+						.overlay
+							.text VITAMIN K - FOLATE - FE
+					.item.f_bg(style="background-image:url('/img/blood.jpg');")
+				
 									
-		.col-4
-			.back_menu
-				.item-alltext.f_bg
-					h1.text-uppercase
-						each formula, i in formulas
-							if(formula.formulaname == "Healthy Blood")
-								li
-									if !user
-										form(method='POST',action='/users/pleaselogin')
-											button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
-									else
-										a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
-					.overlay
-						.text VITAMIN K - FOLATE - FE
-				.item.f_bg(style="background-image:url('/img/blood.jpg');")
-			
-								
-		.col-4
-			.back_menu
-				.item-alltext.f_bg
-					h1.text-uppercase OTHERS
-						each formula, i in formulas
-							if(formula.formulaname == "Anti Agin")
-								li
-									if !user
-										form(method='POST',action='/users/pleaselogin')
-											button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
-									else
-										a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
-					.overlay
-						.text CHOOSE BY YOUR SELF
-				.item.f_bg(style="background-image:url('/img/9.jpg');")
+			.col-4
+				.back_menu
+					.item-alltext.f_bg
+						h1.text-uppercase OTHERS
+							each formula, i in formulas
+								if(formula.formulaname == "Anti Agin")
+									li
+										if !user
+											form(method='POST',action='/users/pleaselogin')
+												button.formula.text-uppercase#white(type='submit',value='Submit')= formula.formulaname
+										else
+											a(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
+						.overlay
+							.text CHOOSE BY YOUR SELF
+					.item.f_bg(style="background-image:url('/img/9.jpg');")

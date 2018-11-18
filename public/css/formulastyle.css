@@ -1,3 +1,7 @@
+::-webkit-scrollbar {
+    display: none;
+    }
+
 a:link{
     text-decoration:none;
     color: white;
@@ -9,6 +13,7 @@ a:visited{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
 li{
     list-style-type: none;
 }
@@ -16,9 +21,7 @@ li{
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
-    grid-gap: 35px;
     background-color:white;
-    padding: 35px;
   }
 
 .slide-pos{
@@ -93,112 +96,11 @@ li{
     margin-top:3%;
     padding-left: 50px;
     padding-right: 50px;
-}
-
-
-
-/*====================NAV=================================*/
-
-.logo-pos{
-    width:60px;
-    height: 60px;
-}
-.cart_pos{
-    width:40px;
-    height: 35px;
-    margin-bottom:5%;
-}
-/* Add a black background color to the top navigation */
-.topnav {
-    background-color: #462066;
-    overflow: hidden;
-}
-
-/* Hide the link that should open and close the topnav on small screens */
-.topnav .icon {
-    display: none;
-}
-
-/* Dropdown container - needed to position the dropdown content */
-.dropdown {
-    float: left;
-    overflow: hidden;
-}
-.login {
-    font-size: 17px;
-    float: right;
-    overflow: hidden;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    transition: transform .2s; /* Animation */
-}
-.formula {
-    overflow: hidden;
-    border: none;
-    outline: none;
-    color: white;
-    background-color: inherit;
-    font-weight: 500;
-}
-.btn {
-    float: left;
-    overflow: hidden;
-    border: none;
-    outline: none;
-    color: #ffb85f;
-    padding: 14px 16px;
-    background-color: inherit;
-    transition: transform .2s; /* Animation */
-}
-.btn:hover , .login:hover {
-    transform: scale(1.1);
     
 }
+.no-respon{
 
-
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-  .topnav.responsive .dropdown {float: none;}
-  .topnav.responsive .dropdown-content {position: relative;}
-  .topnav.responsive .dropdown .dropbtn {
-    display: block;
-    width: 100%;
-    text-align: left;
-  }
 }
-
-/*---------------------------------end NAV --------------------------------*/
-
-/* The Close Button */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-
 
 body{
     background-image:url("/img/f_bg.png");
@@ -261,3 +163,110 @@ div > h1 {
     background:black;
     position:relative;
 }
+
+.col-4{
+    width:300px !important;
+}
+
+/*@media screen and (max-width: 1000px){
+    .row{
+        display: grid;
+        grid-template-columns: 100% 100%;
+        border:4px solid black;
+    }
+    .no-respon{
+        width:1000px;
+    }
+    .col-4{
+        width:350px !important;
+    }
+    ::-webkit-scrollbar {
+        display: none;
+        }
+}
+@media screen and (max-width: 700px){
+    .row{
+        display:block;
+    }
+    .col-4{
+        width:350px !important;
+    }
+}
+
+/*====================NAV=================================*/
+
+.logo-pos{
+    width:60px;
+    height: 60px;
+}
+.cart_pos{
+    width:40px;
+    height: 35px;
+    margin-bottom:5%;
+}
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: transparent;
+    overflow: hidden;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+    display: none;
+}
+
+/* Dropdown container - needed to position the dropdown content */
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+.login {
+    font-size: 17px;
+    float: right;
+    overflow: hidden;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    transition: transform .2s; /* Animation */
+}
+.formula {
+    overflow: hidden;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: inherit;
+    font-weight: 500;
+}
+
+.login:hover {
+    transform: scale(1.1);  
+}
+
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/*---------------------------------end NAV --------------------------------*/
+
+
