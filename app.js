@@ -121,6 +121,6 @@ let cart = require('./routes/cart');
 app.use('/cart', cart);
 
 // Start Server
-app.listen(3000, function(){
+app.listen(80, function(){
     console.log('Server started on port 80...');
 });
