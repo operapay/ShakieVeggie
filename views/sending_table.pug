@@ -12,7 +12,7 @@ block content
         thead
             tr
                 th ORDER
-                th USERNAME
+                th NAME
                 th ADDRESS
                 th SENDING STATUS
                 th TRACKING NO.
@@ -21,8 +21,8 @@ block content
             each order, i in orders
                 if order.paymentstatus == 0 && order.clearsending != 2
                     td#b_l=order._id
-                    td=order.username
-                    td=order.address
+                    td=order.name
+                    td=order.address + ' ' + order.state + ' ' + order.country + ' ' + order.zip
                     if order.mixingstatus == 0
                         td
                             form(action="/admin/sending2/" + order._id, method="post")
