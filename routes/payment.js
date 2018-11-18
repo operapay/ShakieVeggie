@@ -55,9 +55,10 @@ router.post('/:id',function(req,res){
             return;
         }
         else{
-            res.redirect('/tracking/track/'+ req.params.id);
+            res.redirect('/order/billpayment/' + req.params.id);
         }
     });    
 });
+
 
 module.exports = router;
