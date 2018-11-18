@@ -6,8 +6,8 @@ block content
         if errors
             each error, i in errors
                 div(class="alert alert-danger") #{error.msg}
-        .card-signin#regis-card
-        .card#regis-card
+        //.card-signin#regis-card
+        //.card#regis-card
             .yellow-reg
                 h1 REGISTER
             form(method='POST',action='/users/login').form-signin
@@ -33,47 +33,37 @@ block content
                     .form-label-group#regis-form
                         input#inputPhone.form-control(name='phone',type='text', placeholder='Phone', required='')
                         label(for='inputPhone') Phone
-                .btn-pos
+                button.btn.btn-lg.btn-defult.text-uppercase#regis(type='submit',value='Submit') Register
+                //.btn-pos
                     button.text-uppercase.btn#regis-regis(type='submit',value='Submit') Register
-        //.row.mt-5
+        .row.mt-5
             .mx-auto
-                .card.card-signin
+                .card-signin#regis-card
+                .card#regis-card
+                    .yellow-reg
+                        h1 REGISTER
                     .card-body
-                        h5.card-title.text-center#member REGISTER
                         form(method='POST',action='/users/register').form-signin
-                            .row
-                                .ml-4
-                                .col-5.form-label-group
+                            .regis-grid
+                                .form-label-group#regis-form
                                     input#inputFirstName.form-control(name='firstname',type='text', placeholder='Firstname', required='', autofocus='')
-                                    label(for='inputFirstName') Firstname 
-                                .col-1
-                                .col-5.form-label-group
+                                    label(for='inputFirstName') Firstname
+                                .form-label-group#regis-form
                                     input#inputLastName.form-control(name='lastname',type='text', placeholder='Lastname', required='')
                                     label(for='inputLastName') Lastname
-                            .mt-2  
-                            .row    
-                                .ml-4
-                                .col-5.form-label-group
+                                .form-label-group#regis-form
                                     input#inputUsername.form-control(name='username',type='text', placeholder='Username', required='', autofocus='')
                                     label(for='inputUsername') Username
-                                .col-1
-                                .col-5.form-label-group
+                                .form-label-group#regis-form
                                     input#inputEmail.form-control(name='email',type='text', placeholder='Email', required='')
                                     label(for='inputEmail') Email
-                            .mt-2     
-                            .row    
-                                .ml-4
-                                .col-5.form-label-group
+                                .form-label-group#regis-form
                                     input#inputPassword.form-control(name='password',type='password', placeholder='Password', required='')
                                     label(for='inputPassword') Password
-                                .col-1
-                                .col-5.form-label-group
+                                .form-label-group#regis-form
                                     input#inputPassword2.form-control(name='password2',type='password', placeholder='Confirm Password', required='')
                                     label(for='inputPassword2') Confirm Password
-                            .mt-2
-                            .row    
-                                .ml-4
-                                .col-5.form-label-group
+                                .form-label-group#regis-form
                                     input#inputPhone.form-control(name='phone',type='text', placeholder='Phone', required='')
                                     label(for='inputPhone') Phone
                             br
