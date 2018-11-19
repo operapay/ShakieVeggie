@@ -1,13 +1,24 @@
 var chai = require('chai');
-var expect = chai.expect;
+var chaiHttp = require('chai-http');
+var server = require('../app');
+var should = chai.should();
 
-chai.should();
-function totalprice(items){
-  return ((items*75)+30)
-}
+chai.use(chaiHttp);
 
-describe('test total price', function() {
-  it('return total price passes function',function(){
-    totalprice(2).should.equal(180);
-  })
+
+describe('Blobs', function() {
+  it('should list ALL blobs on /blobs GET');
+  it('should list a SINGLE blob on /blob/<id> GET');
+  it('should add a SINGLE blob on /blobs POST');
+  it('should update a SINGLE blob on /blob/<id> PUT');
+  it('should delete a SINGLE blob on /blob/<id> DELETE');
+});
+
+it('should list ALL blobs on /blobs GET', function(done) {
+  chai.request('http:localhost:3000')
+    .get('/blobs')
+    .end(function(err, res){
+      res.should.have.status(200);
+      done();
+    });
 });
