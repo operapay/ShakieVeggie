@@ -79,7 +79,7 @@ html(lang='en', dir='ltr')
                           //- popup delete
                           #myModal.modal.fade(role='dialog')
                                 .modal-dialog
-                                .modal-content
+                                .modal-content#cart_modal
                                   .modal-body
                                     h5 Are you sure that you want to delete this product?
                                   .modal-footer
@@ -114,8 +114,9 @@ html(lang='en', dir='ltr')
               .col-4
                   h4= '฿' + ((totalItems*75)+30) + '.00'
             .row
-              a.button#button1_checkout(href='/payment/' + orders.id + '/' + ((totalItems*75)+30))
-                p PROCEED TO CHECKOUT  
+              form(method='POST',action='/payment/' + orders.id + '/' + ((totalItems*75)+30))
+                button.button#button1_checkout(type='submit')
+                  p PROCEED TO CHECKOUT  
               
               a.button#button2_checkout(href='/formulas/' + orders.id)
                   p CONTINUE SHOPPING           
