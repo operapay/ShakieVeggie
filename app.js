@@ -108,6 +108,9 @@ app.use('/payment', payment);
 let formula = require('./routes/formulas');
 app.use('/formulas', formula);
 
+let formulas = require('./routes/formula');
+app.use('/formula', formulas);
+
 let recommend = require('./routes/recommends');
 app.use('/recommend', recommend);
 
@@ -124,3 +127,4 @@ app.use('/cart', cart);
 app.listen(3000, function(){
     console.log('Server started on port 80...');
 });
+
