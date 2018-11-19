@@ -22,7 +22,7 @@ block content
 							img.d-block.w-100(src='/img/rcm_green.png', alt='Detox')
 			.carousel-item
 				each formula, i in formulas
-					if(formula.formulaname == " Cholesterol Reducing")
+					if(formula.formulaname == "Cholesterol Reducing")
 						if !user
 							form(method='POST',action='/users/pleaselogin')
 								button#button_rec.viewf(type='submit',value='Submit') ORDER NOW
@@ -146,7 +146,7 @@ block content
 					.item-alltext.f_bg
 						h1.text-uppercase
 							each formula, i in formulas
-								if(formula.formulaname == " Cholesterol Reducing")
+								if(formula.formulaname == "Cholesterol Reducing")
 									li
 										if !user
 											form(method='POST',action='/users/pleaselogin')
