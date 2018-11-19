@@ -1,0 +1,83 @@
+
+body{
+    display: block;
+    margin: 0px;
+    background: black;
+}
+.bg_bpm{
+    width: 1280px;
+    height: auto;
+}
+.bill_scope{
+    width: 370px;
+    height: 570px;
+    /* border: 4px solid pink; */
+    background-color:white; 
+    position: relative;
+    margin: 5% auto;
+}
+.bill_bluetag{
+    width: 100%;
+    height: 10%;
+    background-color: #8ED2C9;
+    position: relative;
+    top: 10%;
+    text-align: center;
+}
+.bill_logo{
+    position: relative;
+    width: 30%;
+    margin-top: -7%;
+}
+.bill_textbox1{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    /* border: 4px solid pink; */
+    left: 6%;
+    top: 26%;
+}
+
+.bill_textbox2{
+    position: absolute;
+    width: 50%;
+    height: auto;
+    /* border: 4px solid pink; */
+    right: 6%;
+    top: 26%;
+    text-align: right;
+}
+.bill_textbox3{
+    position: relative;
+    width: 100%;
+    height: auto;
+    /* border: 4px solid pink; */
+    top: 74%;
+    left: 6%;
+}
+
+.bill_text{
+    color: #8ED2C9;
+    position: relative;
+    
+    font-size: 10.5px;
+    font-weight: 600;
+}
+.bill_text4{
+    color: #707070;
+    position: relative;
+    
+    font-size: 10.5px;
+    font-weight: 600;
+}
+.bill_text2{
+    color:#F85727;
+    font-size: 9px;
+    font-weight: 600;
+}
+.bill_text3{
+    color: #F85727;
+    font-size: 6px;
+    font-weight: 600;
+    line-height: 80%;
+}
