@@ -1,24 +1,36 @@
-var chai = require('chai');
-var chaiHttp = require('chai-http');
-var server = require('../app');
-var should = chai.should();
+let mongoose = require("mongoose");
+let Book = require('../models/user');
+
+let chai = require('chai');
+let chaiHttp = require('chai-http');
+//let server = require('../server');
+let should = chai.should();
+
 
 chai.use(chaiHttp);
 
-
-describe('Blobs', function() {
-  it('should list ALL blobs on /blobs GET');
-  it('should list a SINGLE blob on /blob/<id> GET');
-  it('should add a SINGLE blob on /blobs POST');
-  it('should update a SINGLE blob on /blob/<id> PUT');
-  it('should delete a SINGLE blob on /blob/<id> DELETE');
-});
-
-it('should list ALL blobs on /blobs GET', function(done) {
-  chai.request('http:localhost:3000')
-    .get('/blobs')
-    .end(function(err, res){
-      res.should.have.status(200);
-      done();
-    });
+describe('Books', () => {
+  describe('/GET book', () => {
+      it('it should POST a book ', (done) => {
+          let book = {
+              title: "The Lord of the Rings",
+              author: "J.R.R. Tolkien",
+              year: 1954,
+              pages: 1170
+          }
+        chai.request('http://localhost:3000')
+            .post('/book')
+            .send(book)
+            .end((err, res) => {
+                  res.should.have.status(200);
+                  res.body.should.be.a('objsect');
+                  res.body.should.have.property('message').eql('Book successfully added!');
+                  res.body.book.should.have.property('title');
+                  res.body.book.should.have.property('author');
+                  res.body.book.should.have.property('pages');
+                  res.body.book.should.have.property('year');
+              done();
+            });
+      });
+  });
 });
