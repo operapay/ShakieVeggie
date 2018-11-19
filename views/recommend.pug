@@ -5,142 +5,141 @@ block content
     #myModal.modal
         // Modal content
         .modal-content
-            h2.text-center Health Condition
-            .mt-3
-            form(method='POST',action='/recommend/' +  orders + '/' + formula._id)
-                .form-check
-                    input#kidney.form-check-input(type='checkbox', name='kidney')
-                    label.form-check-label(for='kidney')
-                        | kidney
-                .form-check
-                    input#liver.form-check-input(type='checkbox', name='liver')
-                    label.form-check-label(for='liver')
-                        | liver
-                .form-check
-                    input#hyper.form-check-input(type='checkbox', name='hypertension')
-                    label.form-check-label(for='hypertension')
-                        | hypertension
-                .form-check
-                    input#diabete.form-check-input(type='checkbox', name='diabetes')
-                    label.form-check-label(for='diabete')
-                        | diabete
-                .form-check
-                    input#pregnant.form-check-input(type='checkbox', name='pregnant')
-                    label.form-check-label(for='pregnant')
-                        | pregnant
-                .form-check
-                    input#surgery.form-check-input(type='checkbox', name='surgery')
-                    label.form-check-label(for='surgery')
-                        | surgery
-                button.btn.btn-lg.btn-defult.btn-block.text-uppercase#myBtn(type='submit',value='Submit') Submit
-    
+            .set-layout-modal    
+                .yellow-reg-modal
+                    h2#text-shadow Health Condition
+                form(method='POST',action='/recommend/'+  orders + "/" + formula._id)
+                    .disease
+                        .form-check.squaredThree 
+                            input#kidney.form-check-input(type='checkbox', name='kidney')
+                            label.form-check-label(for='kidney')
+                            .c kidney disease
+                        .form-check.squaredThree
+                            input#diabete.form-check-input(type='checkbox', name='diabetes')
+                            label.form-check-label(for='diabete')
+                            .c diabete
+                        .form-check.squaredThree
+                            input#hypertension.form-check-input(type='checkbox', name='hypertension')
+                            label.form-check-label(for='hypertension')
+                            .c hypertension
+                        .form-check.squaredThree 
+                            input#liver.form-check-input(type='checkbox', name='liver')
+                            label.form-check-label(for='liver')
+                            .c liver disease
+                        .form-check.squaredThree
+                            input#pregnant.form-check-input(type='checkbox', name='pregnant')
+                            label.form-check-label(for='pregnant')
+                            .c pregnant
+                        .form-check.squaredThree
+                            input#surgery.form-check-input(type='checkbox', name='surgery')
+                            label.form-check-label(for='surgery')
+                            .c underwent surgery
+                        button.set-submit(type='submit',value='Submit') Submit
     form(method='POST',action='/custom/' + formula._id + '/component')
         
         .margin-top-set
-                .row
-                    .col-4.set-img
-                        img.bottle.bottle_pos(src='/img/cus_bottle.png')
-                    .col-8
-                        h1.text-center.text-uppercase #{formula.formulaname}
-                        br
-                        form(method='POST',action='/custom/' + formula._id + '/component')
-                            .mt-4
-                                .row
-                                    ul.chec-radio(id='component1')
-                                        li.pz
-                                            label.radio-inline
-                                                #type.clab #{component1.name}
-                                        li.pz
-                                            label.radio-inline
-                                                input#com1.pro-chx(type='radio',name='component1', value='vit1.1', checked='')
-                                                .clab(for='com1') #{component1.fruit1}
-                                        li.pz
-                                            label.radio-inline
-                                                input#com2.pro-chx(type='radio', name='component1', value='vit1.2')
-                                                .clab(for='com2') #{component1.fruit2}
-                                        li.pz
-                                            label.radio-inline
-                                                input#com3.pro-chx(type='radio', name='component1', value='vit1.3')
-                                                .clab(for='com3')  #{component1.fruit3}
-                                        li.pz
-                                            label.radio-inline
-                                                input#exampleRadios4.pro-chx(type='radio', name='component1', value='vit1.4')
-                                                .clab.line2(for='exampleRadios4') #{component1.fruit4}
-                                        li.pz
-                                            label.radio-inline
-                                                input#exampleRadios3.pro-chx(type='radio', name='component1', value='vit1.5')
-                                                .clab(for='exampleRadios5') #{component1.fruit5}
-                                        li.pz   
-                                            label.radio-inline
-                                                input#exampleRadios3.pro-chx(type='radio', name='component1', value='vit1.6')
-                                                .clab(for='exampleRadios5') #{component1.fruit6}
+            .grid
+                .pic
+                    img.bottle.bottle_pos(src='/img/cus_bottle.png')
+                .choice
+                    h1.text-center.text-uppercase #{formula.formulaname}
+                    br
+                    form(method='POST',action='/custom/' + formula._id + '/component')
+                        .mt-4
+                            .row
+                                ul.chec-radio(id='component1')
+                                    li.pz
+                                        label.radio-inline
+                                            #type.clab #{component1.name}
+                                    li.pz
+                                        label.radio-inline
+                                            input#com1.pro-chx(type='radio',name='component1', value='vit1.1', checked='')
+                                            .clab(for='com1') #{component1.fruit1}
+                                    li.pz
+                                        label.radio-inline
+                                            input#com2.pro-chx(type='radio', name='component1', value='vit1.2')
+                                            .clab(for='com2') #{component1.fruit2}
+                                    li.pz
+                                        label.radio-inline
+                                            input#com3.pro-chx(type='radio', name='component1', value='vit1.3')
+                                            .clab(for='com3')  #{component1.fruit3}
+                                    li.pz
+                                        label.radio-inline
+                                            input#exampleRadios4.pro-chx(type='radio', name='component1', value='vit1.4')
+                                            .clab.line2(for='exampleRadios4') #{component1.fruit4}
+                                    li.pz
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component1', value='vit1.5')
+                                            .clab(for='exampleRadios5') #{component1.fruit5}
+                                    li.pz   
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component1', value='vit1.6')
+                                            .clab(for='exampleRadios5') #{component1.fruit6}
 
 
-                                    //---------------------------TYPE2---------------------------------------------------
-                                    ul.chec-radio(id='component2')
-                                        li.pz
-                                            label.radio-inline
-                                                #type.clab #{component2.name}
-                                        li.pz
-                                            label.radio-inline
-                                                input#com1.pro-chx(type='radio',name='component2', value='vit2.1', checked='')
-                                                .clab(for='com1') #{component2.fruit1}
-                                        li.pz
-                                            label.radio-inline
-                                                input#com2.pro-chx(type='radio', name='component2', value='vit2.2')
-                                                .clab(for='com2') #{component2.fruit2}
-                                        li.pz
-                                            label.radio-inline
-                                                input#com3.pro-chx(type='radio', name='component2', value='vit2.3')
-                                                .clab(for='com3')  #{component2.fruit3}
-                                        li.pz
-                                            label.radio-inline
-                                                input#exampleRadios4.pro-chx(type='radio', name='component2', value='vit2.4')
-                                                .clab(for='exampleRadios4') #{component2.fruit4}
-                                        li.pz
-                                            label.radio-inline
-                                                input#exampleRadios3.pro-chx(type='radio', name='component2', value='vit2.5')
-                                                .clab(for='exampleRadios5') #{component2.fruit5}
-                                        li.pz    
-                                            label.radio-inline
-                                                input#exampleRadios3.pro-chx(type='radio', name='component2', value='vit2.6')
-                                                .clab(for='exampleRadios5') #{component2.fruit6}
+                                //---------------------------TYPE2---------------------------------------------------
+                                ul.chec-radio(id='component2')
+                                    li.pz
+                                        label.radio-inline
+                                            #type.clab #{component2.name}
+                                    li.pz
+                                        label.radio-inline
+                                            input#com1.pro-chx(type='radio',name='component2', value='vit2.1', checked='')
+                                            .clab(for='com1') #{component2.fruit1}
+                                    li.pz
+                                        label.radio-inline
+                                            input#com2.pro-chx(type='radio', name='component2', value='vit2.2')
+                                            .clab(for='com2') #{component2.fruit2}
+                                    li.pz
+                                        label.radio-inline
+                                            input#com3.pro-chx(type='radio', name='component2', value='vit2.3')
+                                            .clab(for='com3')  #{component2.fruit3}
+                                    li.pz
+                                        label.radio-inline
+                                            input#exampleRadios4.pro-chx(type='radio', name='component2', value='vit2.4')
+                                            .clab(for='exampleRadios4') #{component2.fruit4}
+                                    li.pz
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component2', value='vit2.5')
+                                            .clab(for='exampleRadios5') #{component2.fruit5}
+                                    li.pz    
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component2', value='vit2.6')
+                                            .clab(for='exampleRadios5') #{component2.fruit6}
 
 
-                                    //---------------------------TYPE3---------------------------------------------------
-                                    ul.chec-radio(id='component3')
-                                        li.pz
-                                            label.radio-inline
-                                                #type.clab #{component3.name}
-                                        li.pz
-                                            label.radio-inline
-                                                input#com1.pro-chx(type='radio',name='component3', value='vit3.1', checked='')
-                                                .clab(for='com1') #{component3.fruit1}
-                                        li.pz
-                                            label.radio-inline
-                                                input#com2.pro-chx(type='radio', name='component3', value='vit3.2')
-                                                .clab(for='com2') #{component3.fruit2}
-                                        li.pz
-                                            label.radio-inline
-                                                input#com3.pro-chx(type='radio', name='component3', value='vit3.3')
-                                                .clab(for='com3')  #{component3.fruit3}
-                                        li.pz
-                                            label.radio-inline
-                                                input#exampleRadios4.pro-chx(type='radio', name='component3', value='vit3.4')
-                                                .clab(for='exampleRadios4') #{component3.fruit4}
-                                        li.pz
-                                            label.radio-inline
-                                                input#exampleRadios3.pro-chx(type='radio', name='component3', value='vit3.5')
-                                                .clab(for='exampleRadios5') #{component3.fruit5}
-                                        li.pz       
-                                            label.radio-inline
-                                                input#exampleRadios3.pro-chx(type='radio', name='component3', value='vit3.6')
-                                                .clab(for='exampleRadios5') #{component3.fruit6}
-                            .mt-5
-                                .row
-                                    .col-3
-                                    .col-2
-                                        input.form-control#amout(type='number', placeholder='AMOUT', name='amont', required='')
-                                    .col-1
-                                    .col-5
-                                        button.text-uppercase#amout(type='submit',value='Submit') Submit
+                                //---------------------------TYPE3---------------------------------------------------
+                                ul.chec-radio(id='component3')
+                                    li.pz
+                                        label.radio-inline
+                                            #type.clab #{component3.name}
+                                    li.pz
+                                        label.radio-inline
+                                            input#com1.pro-chx(type='radio',name='component3', value='vit3.1', checked='')
+                                            .clab(for='com1') #{component3.fruit1}
+                                    li.pz
+                                        label.radio-inline
+                                            input#com2.pro-chx(type='radio', name='component3', value='vit3.2')
+                                            .clab(for='com2') #{component3.fruit2}
+                                    li.pz
+                                        label.radio-inline
+                                            input#com3.pro-chx(type='radio', name='component3', value='vit3.3')
+                                            .clab(for='com3')  #{component3.fruit3}
+                                    li.pz
+                                        label.radio-inline
+                                            input#exampleRadios4.pro-chx(type='radio', name='component3', value='vit3.4')
+                                            .clab(for='exampleRadios4') #{component3.fruit4}
+                                    li.pz
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component3', value='vit3.5')
+                                            .clab(for='exampleRadios5') #{component3.fruit5}
+                                    li.pz       
+                                        label.radio-inline
+                                            input#exampleRadios3.pro-chx(type='radio', name='component3', value='vit3.6')
+                                            .clab(for='exampleRadios5') #{component3.fruit6}
+                        .mt-5
+                            .row(style="width:80%;margin-left:auto;margin-right:auto;")
+                                .col-6
+                                    input.form-control#amount(style="float:right")(type='number', placeholder='AMOUNT', name='amont', required='')
+                                .col-5
+                                    button.text-uppercase#amount(style="float:right")(type='submit',value='Submit') Submit

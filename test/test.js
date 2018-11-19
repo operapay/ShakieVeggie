@@ -1,20 +1,24 @@
-var should = require('chai').should();
-var assert = require('assert');
-let User = require('../models/user');
-const add = (x, y) => (+x) + (+y);
+var chai = require('chai');
+var chaiHttp = require('chai-http');
+var server = require('../app');
+var should = chai.should();
 
-describe('Array', function() {
-  describe('#indexOf()', function() {
-    it('should return -1 when the value is not present', function() {
-      assert.equal([1,2,3].indexOf(4), -1);
-    });
-  });
+chai.use(chaiHttp);
+
+
+describe('Blobs', function() {
+  it('should list ALL blobs on /blobs GET');
+  it('should list a SINGLE blob on /blob/<id> GET');
+  it('should add a SINGLE blob on /blobs POST');
+  it('should update a SINGLE blob on /blob/<id> PUT');
+  it('should delete a SINGLE blob on /blob/<id> DELETE');
 });
 
-// describe('#find()', function(){
-//     it('respond with matching records', function(done){
-//         User.find({ type: 'username' }, function(err, res){
-//             res.should.have.length(3);
-//         })
-//     })
-// })
+it('should list ALL blobs on /blobs GET', function(done) {
+  chai.request('http:localhost:3000')
+    .get('/blobs')
+    .end(function(err, res){
+      res.should.have.status(200);
+      done();
+    });
+});
