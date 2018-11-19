@@ -1,8 +1,8 @@
-extends layout1
+extends layout_login
 
 block content
     h1 #{title}
-    form(method='POST',action='/formulas/add')
+    form(method='POST',action='/formula/add')
         #form-group
             label name:
             input.form-control(name='formulaname',type='text')

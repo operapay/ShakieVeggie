@@ -71,22 +71,22 @@ router.post('/:order/:id', function (req, res) {
         checksurgery = 1;
         console.log('surgery');
     }
-    if(req.params.id=="5bc3f01165a21c60281cac7b" && checkdiabetes) {
+    if(req.params.id=="5bf2629659f86d3d406b8039" && checkdiabetes) {
         req.flash('danger','Please choose the other formulas.');
         res.redirect('/formulas/' + req.params.order);
-    } else if(req.params.id=="5bc86640f03647141457274e" && checksurgery) {
+    } else if(req.params.id=="5bf26994ccc6ab2390d8fe6a" && checksurgery) {
         req.flash('danger','Please choose the other formulas.');
         res.redirect('/formulas/' + req.params.order);
-    } else if(req.params.id=="5bc86640f03647141457274e" && checkkidney) {
+    } else if(req.params.id=="5bf26994ccc6ab2390d8fe6a" && checkkidney) {
         req.flash('danger','Please choose the other formulas.');
         res.redirect('/formulas/' + req.params.order);
-    } else if(req.params.id=="5bc8665df03647141457274f" && checksurgery) {
+    } else if(req.params.id=="5bf2626c59f86d3d406b8038" && checksurgery) {
         req.flash('danger','Please choose the other formulas.');
         res.redirect('/formulas/' + req.params.order);
-    } else if(req.params.id=="5bc8665df03647141457274f" && checkdiabetes) {
+    } else if(req.params.id=="5bf2626c59f86d3d406b8038" && checkdiabetes) {
         req.flash('danger','Please choose the other formulas.');
         res.redirect('/formulas/' + req.params.order);
-    } else if(req.params.id=="5bc8665df03647141457274f" && checkhypertension) {
+    } else if(req.params.id=="5bf2626c59f86d3d406b8038" && checkhypertension) {
         req.flash('danger','Please choose the other formulas.');
         res.redirect('/formulas/' + req.params.order);
     } else {
