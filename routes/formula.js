@@ -4,10 +4,16 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const db = require('../config/database');
 
+<<<<<<< HEAD
 let Formula = require('../models/formula');
 let Nutrient = require('../models/nutrient');
 let Bottle = require('../models/bottle');
 let Order = require('../models/order');
+=======
+let Nutrient = require('../models/nutrient')
+let Formula = require('../models/formula')
+
+>>>>>>> origin/nch
 //payment form
 router.get('/',function(req,res){
     res.render('formula');
