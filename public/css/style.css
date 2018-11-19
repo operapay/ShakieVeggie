@@ -432,20 +432,23 @@ color:#ffcc1b;
   position:relative;
 }
 .yellow-reg{
-  width: 670px;
-  height: 60px;
+  width: 110%;
+  height: 80px;
   background-color: #ffcc1b;
   position: fixed;
-  top: 15%;
+  top: 18%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   color:white;
+}
 
+.yellow-reg > h1{
+  margin-top:10px;
 }
 .track-card{
-  width: 600px;
-  height: 350px;
+  width: 700px;
+  height: 400px;
   background-color:white;
   position: fixed;
   top: 50%;
@@ -461,14 +464,14 @@ color:#ffcc1b;
   width:10%;
   height:auto;
   position: fixed;
-  top: 50%;
+  top:45%;
   transform: translate(-50%, -50%);
 }
 .track_check{
   width:4%;
   height:auto;
   position: fixed;
-  top: 65%;
+  top: 60%;
   transform: translate(-50%, -50%);
   font-size:10px;
 }
@@ -487,7 +490,7 @@ color:#ffcc1b;
 .track_text{
   height:auto;
   position: fixed;
-  top: 73%;
+  top: 68%;
   transform: translate(-50%, -50%);
   font-size:10px;
   font-weight:500;
@@ -504,7 +507,7 @@ color:#ffcc1b;
 }
 #track-num{
   position: fixed;
-  top: 86%;
+  top: 81%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 20px;
@@ -515,7 +518,7 @@ color:#ffcc1b;
 .line{
   font-weight:800;
   position: fixed;
-  top: 62.5%;
+  top: 57.5%;
   transform: translate(-50%, -50%);
 }
 #line1{
