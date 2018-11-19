@@ -1,14 +1,13 @@
-extends layout_nocart
-
-block content
-    link(rel='stylesheet', type='text/css', href='/css/style.css')
-    style.
-        body{
-            background-color:pink;
-        }
-    h1  #{title}
-    ul.list-group
-        -for (var i = orders.length-1 ; i >= 0; i--) 
-            if users._id == orders[i].username
-                li.list-group-item
-                    a(href="/tracking/track/" + orders[i]._id)#yellow= users.username + '00' + i
+html
+  head
+    title Home
+    link(rel='stylesheet', type='text/css', href='/css/tracking_order_style.css')
+  body
+    .orderown_scope
+        .orderown_parting
+            .orderown_gridhead
+                .orderown_headbox
+                    .orderown_headword IN SYSTEM ORDER(S)
+            .orderown_gridhead
+                .orderown_headbox
+                    .orderown_headword SENDED ORDER(S)
