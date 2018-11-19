@@ -129,3 +129,5 @@ app.listen(PORT, function(){
     console.log('Server started on port 80...');
 });
 
+module.exports = app; // for testing
+

@@ -43,7 +43,7 @@ router.post('/test',function(req,res){
 router.get('/billpayment/:order',function(req,res){
     //console.log(req.params.order);
     Order.findById(req.params.order, function(req, order){
-        res.render('add_bottle', {
+        res.render('billpayment', {
             order:order
         });        
     });
