@@ -11,3 +11,4 @@ describe('test total price', function() {
     totalprice(2).should.equal(180);
   })
 });
+
