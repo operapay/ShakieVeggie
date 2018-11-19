@@ -10,7 +10,11 @@ block content
         .set-layout-tracking
             .track-card
                 .yellow-reg
-                    h1#text-shadow ORDER
+                    -for (var i = orders.length-1 ; i >= 0; i--) 
+                        if users._id == orders[i].username
+                            li.list-group-item
+                                a(href="/tracking/track/" + orders[i]._id)#yellow= users.username + '00' + i
+                    h1#text-shadow #{order._id}
                 if order.paymentstatus != 0
                     img.track_status#order-in-sys(src="/img/tracking/check-list-y.png")
                     img.track_check#order-in-sys(src="/img/tracking/clock.png")

@@ -4,6 +4,10 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const db = require('../config/database');
 
+let Formula = require('../models/formula');
+let Nutrient = require('../models/nutrient');
+let Bottle = require('../models/bottle');
+let Order = require('../models/order');
 //payment form
 router.get('/',function(req,res){
     res.render('formula');
@@ -30,7 +34,7 @@ router.post('/add',function(req,res){
         }
         else{
             //req.flash('success','Formula Added');
-            res.redirect('/');
+            res.redirect('/formula/add');
         }
     });
 });
@@ -59,7 +63,7 @@ router.post('/nutrient',function(req,res){
         }
         else{
             //req.flash('success','nutrient Added');
-            res.redirect('/');
+            res.redirect('/formula/nutrient');
         }
     });
 });
