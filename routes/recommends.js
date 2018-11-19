@@ -74,10 +74,10 @@ router.post('/:order/:id', function (req, res) {
     if(req.params.id=="5bf2629659f86d3d406b8039" && checkdiabetes) {
         req.flash('danger','Please choose the other formulas.');
         res.redirect('/formulas/' + req.params.order);
-    } else if(req.params.id=="5bf262819740b128788f18e1" && checksurgery) {
+    } else if(req.params.id=="5bf26994ccc6ab2390d8fe6a" && checksurgery) {
         req.flash('danger','Please choose the other formulas.');
         res.redirect('/formulas/' + req.params.order);
-    } else if(req.params.id=="5bf262819740b128788f18e1" && checkkidney) {
+    } else if(req.params.id=="5bf26994ccc6ab2390d8fe6a" && checkkidney) {
         req.flash('danger','Please choose the other formulas.');
         res.redirect('/formulas/' + req.params.order);
     } else if(req.params.id=="5bf2626c59f86d3d406b8038" && checksurgery) {
