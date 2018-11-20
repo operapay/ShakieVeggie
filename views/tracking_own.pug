@@ -4,25 +4,30 @@ html
         link(rel="stylesheet", href="/css/style.css")
         link(rel="stylesheet", href="/css/tracking_own_style.css")
     body
-        table
-            tr
-                th.bill_headbox
-                    .orderown_headbox
-                        .orderown_headword IN SYSTEM ORDER(S)
-                th.bill_headbox
-                    .orderown_headbox
-                        .orderown_headword SENT ORDER(S)
+        .track_parting
+            table
+                tr
+                    th.bill_headbox
+                        .orderown_headbox
+                            .orderown_headword IN SYSTEM ORDER(S)
+                    
+                tr
+                    td.bill_childtable
+                        a(href="/")#button_track SUSAN004
+                tr
+                    td.bill_childtable
+                        a(href="/")#button_track SUSAN003
+                tr
+                    td.bill_childtable
+                        a(href="/")#button_track SUSAN002
                 
-            tr
-                td.bill_childtable
-                    a(href="/")#button_track SUSAN004
-                td.bill_childtable
-                    a(href="/")#button_track SUSAN001
-
-            tr
-                td.bill_childtable
-                    a(href="/")#button_track SUSAN003
-            
-            tr
-                td.bill_childtable
-                    a(href="/")#button_track SUSAN002
+                
+            table
+                tr
+                    th.bill_headbox
+                        .orderown_headbox
+                            .orderown_headword SENT ORDER(S)
+                tr
+                    td.bill_childtable
+                        a(href="/")#button_track SUSAN001
+                
