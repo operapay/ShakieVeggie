@@ -7,21 +7,31 @@ var expect = chai.expect;
 
 chai.use(chaiHttp);
 
-describe('App', function() {
-  describe('get index', function() {
+describe('Admin Get', function() {
+  describe('get payment status table', function() {
     it('responds with status 200', function(done) {
       chai.request(app)
-        .get('/')
+        .get('/admin/payment')
         .end(function(err, res) {
           expect(res).to.have.status(200);
           done();
         });
     });
   });
-  describe('get aboutus', function() {
+  describe('get mixing status table', function() {
     it('responds with status 200', function(done) {
       chai.request(app)
-        .get('/admin/aboutus')
+        .get('/admin/mixing')
+        .end(function(err, res) {
+          expect(res).to.have.status(200);
+          done();
+        });
+    });
+  });
+  describe('get sending status table', function() {
+    it('responds with status 200', function(done) {
+      chai.request(app)
+        .get('/admin/sending')
         .end(function(err, res) {
           expect(res).to.have.status(200);
           done();
