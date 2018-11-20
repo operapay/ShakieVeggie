@@ -1,6 +1,7 @@
 var chai = require('chai');
 var chaiHttp = require('chai-http');
 var app = require('../app');
+//var router = require('../app/admin');
 
 var expect = chai.expect;
 
@@ -11,6 +12,16 @@ describe('App', function() {
     it('responds with status 200', function(done) {
       chai.request(app)
         .get('/')
+        .end(function(err, res) {
+          expect(res).to.have.status(200);
+          done();
+        });
+    });
+  });
+  describe('get aboutus', function() {
+    it('responds with status 200', function(done) {
+      chai.request(app)
+        .get('/admin/aboutus')
         .end(function(err, res) {
           expect(res).to.have.status(200);
           done();
