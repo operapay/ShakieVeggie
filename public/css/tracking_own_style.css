@@ -1,7 +1,9 @@
 body{
-    display: block;
-    margin: 0px 0px;
-    background-color: black;
+    background: url('/img/order_own/orderown_bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
 }
 .bg_track{
     position: fixed;
