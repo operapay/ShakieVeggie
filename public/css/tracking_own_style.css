@@ -1,5 +1,5 @@
 body{
-    background: url('/img/order_own/orderown_bg.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.2)), url('/img/order_own/orderown_bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -15,8 +15,9 @@ body{
 .track_parting{
     display: grid;
     grid-template-columns: 40% 40%;
+    grid-gap: 5%;
     position: relative;
-    left: 10%;
+    margin-left: 13%;
     top: 10%;
 }
 table {
