@@ -20,25 +20,25 @@ block content
         tbody   
             each order, i in orders
                     -var count = 0;          
-                    if order.paymentstatus == 0 && order.clearmixing != 0
-                            td#b_l=order._id                      
-                                each bottle, i in bottles   
-                                    if order._id == bottle.orderid
-                                        if count == 0                                                                   
-                                            td#b_t=bottle._id
-                                            td#b_t=bottle.fruit1
-                                            td#b_t=bottle.fruit2
-                                            td#b_t=bottle.fruit3
-                                            td#b_tr=bottle.amount
-                                        else
-                                            td#b_l
-                                            td=bottle._id
-                                            td=bottle.fruit1
-                                            td=bottle.fruit2
-                                            td=bottle.fruit3
-                                            td#b_r=bottle.amount
-                                        - count += 1
-                                        tr
+                    if order.paymentstatus == 0 && order.clearmixing != 0                    
+                            each bottle, i in bottles   
+                                if order._id == bottle.orderid
+                                    if count == 0         
+                                        td#b_l=order._id                                                            
+                                        td#b_t=bottle._id
+                                        td#b_t=bottle.fruit1
+                                        td#b_t=bottle.fruit2
+                                        td#b_t=bottle.fruit3
+                                        td#b_tr=bottle.amount
+                                    else
+                                        td#b_l
+                                        td=bottle._id
+                                        td=bottle.fruit1
+                                        td=bottle.fruit2
+                                        td=bottle.fruit3
+                                        td#b_r=bottle.amount
+                                    - count += 1
+                                    tr
 
     form(method='POST',action='/admin/clearmixing')
         button.btn.btn(type='submit',value='Submit',style='color:white;float:right') CLEAR

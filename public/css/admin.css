@@ -84,6 +84,7 @@ th,td{
 }
 #b_r{
     border-right: 3px solid #8ED2C9;
+    position:relative;
 }
 #b_t{
     border-top: 3px solid #8ED2C9;
@@ -91,4 +92,7 @@ th,td{
 #b_tr{
     border-top: 3px solid #8ED2C9;
     border-right: 3px solid #8ED2C9;
+}
+.relative{
+    position:relative;
 }
