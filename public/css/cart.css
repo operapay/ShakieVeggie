@@ -2,6 +2,10 @@ body{
     background-image: url(/img/cart/cart_bg.jpg);
     color: white;
 }
+::-webkit-scrollbar {
+    display: none;
+    }
+
 .cart-block{
     text-align: center;
     
