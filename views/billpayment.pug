@@ -4,7 +4,7 @@ html
         link(rel="stylesheet", href="/css/style.css")
         link(rel="stylesheet", href="/css/billpayment_style.css")
     body
-        //- img.bg_bpm(src="/img/billpayment/bpm_bg.jpg")
+        //img.payment_bg(src="/img/billpayment/bill_bg.jpg")
         .bill_scope
             .bill_bluetag
                 img.bill_logo(src="/img/logo_circle.png")
@@ -49,3 +49,12 @@ html
                     p - THIS PAYMENT ONLY AVAILABLE AT BLABLABLA BANK
                     p - PLEASE PAY THIS BILL WITHIN 7 DAYS.
                     p - THE BANK FEES IS 10฿ NATIONWIDE.
+            .billbutblock
+                button(onclick="javascript:window.print()" class="btn-print")#button_bill PRINT  THE  BILL
+                br
+                br
+                a(href="/")#button_bill CONTINUE  CHECKOUT
+    br
+    
+            
+            

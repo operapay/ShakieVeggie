@@ -27,7 +27,8 @@ body{
     background-attachment: fixed;
     width: 100%;
     text-transform: uppercase;
-
+    /* display: block;
+    margin: 0px 0px; */
 }
 
 a:link{
