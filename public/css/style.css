@@ -413,6 +413,10 @@ color:#ffcc1b;
       background: transparent; 
       cursor: pointer;
       outline: none;
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
   }
   .status2{
     width:100px;
@@ -425,6 +429,10 @@ color:#ffcc1b;
     cursor: pointer;
     outline: none;
     background:#ffcc1b;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
 }
 
 /*-----------------start tracking-------------------*/

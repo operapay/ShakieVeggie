@@ -16,7 +16,8 @@ block content
                 th ADDRESS
                 th SENDING STATUS
                 th TRACKING NO.
-                th
+                th(style="width:150px;")
+
         tbody
             each order, i in orders
                 if order.paymentstatus == 0 && order.clearsending != 2
@@ -24,7 +25,7 @@ block content
                     td=order.name
                     td=order.address + ' ' + order.state + ' ' + order.country + ' ' + order.zip
                     if order.mixingstatus == 0
-                        td
+                        td.relative
                             form(action="/admin/sending2/" + order._id, method="post")
                                 input.status2(onclick="change(this);track(this)" type="submit" value="READY" )
                         if order.trackingnum == null
@@ -32,7 +33,7 @@ block content
                                 td
                                     #form-group
                                         input.inputbox(type='text', placeholder='Tracking No.', name='trackingnum')
-                                td#b_r 
+                                td#b_r.relative
                                     input.status(type="submit" value="SUBMIT")
                         else
                             td
@@ -41,7 +42,7 @@ block content
                                 form(method='POST',action="/admin/tracking2/" + order._id)
                                     button.status(type="submit" value="SUBMIT") Edit
                     else
-                        td
+                        td.relative
                             form(action="/admin/sending/" + order._id, method="post")
                                 input.status(onclick="change(this);track(this)" type="submit" value="NOT READY" )
                         td
