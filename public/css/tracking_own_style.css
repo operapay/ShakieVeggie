@@ -1,13 +1,14 @@
 body{
     display: block;
     margin: 0px 0px;
-    /* background-color: #8ED2C9; */
+    background-color: black;
 }
 .bg_track{
     position: fixed;
-    width: 1280;
+    width:1280px;
     height: auto;
-    z-index: -1;
+    z-index: -2;
+    opacity: 0.89;
 }
 .track_parting{
     display: grid;
