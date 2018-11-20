@@ -1,13 +1,28 @@
 html
-  head
-    title Home
-    link(rel='stylesheet', type='text/css', href='/css/tracking_order_style.css')
-  body
-    .orderown_scope
-        .orderown_parting
-            .orderown_gridhead
-                .orderown_headbox
-                    .orderown_headword IN SYSTEM ORDER(S)
-            .orderown_gridhead
-                .orderown_headbox
-                    .orderown_headword SENDED ORDER(S)
+    head
+        title Tracking Orders
+        link(rel="stylesheet", href="/css/style.css")
+        link(rel="stylesheet", href="/css/tracking_own_style.css")
+    body
+        table
+            tr
+                th.bill_headbox
+                    .orderown_headbox
+                        .orderown_headword IN SYSTEM ORDER(S)
+                th.bill_headbox
+                    .orderown_headbox
+                        .orderown_headword SENT ORDER(S)
+                
+            tr
+                td.bill_childtable
+                    a(href="/")#button_track SUSAN004
+                td.bill_childtable
+                    a(href="/")#button_track SUSAN001
+
+            tr
+                td.bill_childtable
+                    a(href="/")#button_track SUSAN003
+            
+            tr
+                td.bill_childtable
+                    a(href="/")#button_track SUSAN002
