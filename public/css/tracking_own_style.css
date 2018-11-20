@@ -1,7 +1,13 @@
 body{
     display: block;
     margin: 0px 0px;
-    background-color: #8ED2C9;
+    /* background-color: #8ED2C9; */
+}
+.bg_track{
+    position: fixed;
+    width: 1280;
+    height: auto;
+    z-index: -1;
 }
 .track_parting{
     display: grid;
