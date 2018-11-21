@@ -1,8 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcryptjs');
-const passport = require('passport');
-const db = require('../config/database');
 
 let Order = require('../models/order');
 
@@ -36,12 +33,8 @@ router.post('/addorder/:id',function(req,res){
     });
 });
 
-router.post('/test',function(req,res){
-    console.log('paid');
-});
 
 router.get('/billpayment/:order',function(req,res){
-    //console.log(req.params.order);
     Order.findById(req.params.order, function(req, order){
         res.render('billpayment', {
             order:order

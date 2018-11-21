@@ -1,11 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcryptjs');
-const passport = require('passport');
-const db = require('../config/database');
-
-
-let User = require('../models/user');
 let Formula = require('../models/formula');
 let Nutrient = require('../models/nutrient');
 let Bottle = require('../models/bottle')

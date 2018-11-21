@@ -1,16 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcryptjs');
 const passport = require('passport');
-const db = require('../config/database');
-const LocalStrategy = require('passport-local').Strategy;
 const userCtrl = require('../controller/user-controller')
 const config = require('../validation/user-validation')
 const checkValidation = require('../validation/checkvalidation')
-
-
-//Bring in User model
-let User = require('../models/user');
 
 //Register form
 router.get('/register', function(req,res){

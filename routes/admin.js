@@ -1,9 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcryptjs');
-const passport = require('passport');
-const db = require('../config/database');
-const {ObjectId} = require('mongodb'); 
 
 let Order = require('../models/order');
 let Bottle = require('../models/bottle');
@@ -36,7 +32,6 @@ router.post('/payment/:id',function(req,res){
             res.redirect('/admin/payment');
         }
     });
-    //console.log(req.params.id);
 });
 
 router.post('/payment2/:id',function(req,res){
@@ -54,7 +49,6 @@ router.post('/payment2/:id',function(req,res){
             res.redirect('/admin/payment');
         }
     });
-    //console.log(req.params.id);
 });
 
 router.get('/mixing',function(req,res){
@@ -89,11 +83,6 @@ router.post('/sending/:id',function(req,res){
         }
         else{
             res.redirect('/admin/sending');
-            // Order.find({},function(err,orders){
-            //     res.render('sending_table',{
-            //         orders:orders
-            //     });
-            // });
         }
     });
 });
@@ -111,17 +100,11 @@ router.post('/sending2/:id',function(req,res){
         }
         else{
             res.redirect('/admin/sending');
-            // Order.find({},function(err,orders){
-            //     res.render('sending_table',{
-            //         orders:orders
-            //     });
-            // });
         }
     });
 });
 
 router.post('/tracking/:id',function(req,res){
-    //console.log(req.params.id);
     let order = {};
     order.trackingnum = req.body.trackingnum;
 
@@ -133,17 +116,11 @@ router.post('/tracking/:id',function(req,res){
         }
         else{
             res.redirect('/admin/sending');
-            // Order.find({},function(err,orders){
-            //     res.render('sending_table',{
-            //         orders:orders
-            //     });
-            // });
         }
     });
 });
 
 router.post('/tracking2/:id',function(req,res){
-    //console.log(req.params.id);
     let order = {};
     order.trackingnum = null;
 
@@ -155,18 +132,11 @@ router.post('/tracking2/:id',function(req,res){
         }
         else{
             res.redirect('/admin/sending');
-            // Order.find({},function(err,orders){
-            //     res.render('sending_table',{
-            //         orders:orders
-            //     });
-            // });
         }
     });
 });
 
 router.post('/clearmixing',function(req,res){
-    //console.log('clear')
-
     Order.find({},function(err,orders){
             //orders:orders
         for(var i = 0; i < orders.length;i++){
@@ -175,9 +145,7 @@ router.post('/clearmixing',function(req,res){
                 order.clearmixing = 0;
                 let query = {_id:orders[i]._id}
                 Order.update(query, order, function(err){});
-                //console.log(query)
             }
-            //console.log(orders[i]._id)
         }
         res.redirect('/admin/mixing');
     });
@@ -185,19 +153,14 @@ router.post('/clearmixing',function(req,res){
 });
 
 router.post('/clearsending',function(req,res){
-    //console.log('clear')
-
     Order.find({},function(err,orders){
-            //orders:orders
         for(var i = 0; i < orders.length;i++){
             if(orders[i].trackingnum != null){
                 let order = {};
                 order.clearsending = 0;
                 let query = {_id:orders[i]._id}
                 Order.update(query, order, function(err){});
-                //console.log(query)
             }
-            //console.log(orders[i]._id)
         }
         res.redirect('/admin/sending');
     });
@@ -205,19 +168,14 @@ router.post('/clearsending',function(req,res){
 });
 
 router.post('/clearpayment',function(req,res){
-    //console.log('clear')
-
     Order.find({},function(err,orders){
-            //orders:orders
         for(var i = 0; i < orders.length;i++){
             if(orders[i].paymentstatus == 0){
                 let order = {};
                 order.clearpayment = 0;
                 let query = {_id:orders[i]._id}
                 Order.update(query, order, function(err){});
-                //console.log(query)
             }
-            //console.log(orders[i]._id)
         }
         res.redirect('/admin/payment');
     });

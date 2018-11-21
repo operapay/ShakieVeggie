@@ -14,13 +14,3 @@ exports.HandingErorr = function (res, e) {
         }
     })
 }
-// exports.EmailAlreadyExits = function (res) {
-//     this.name = "errors"
-//     this.status = 409
-//     this.message = "Email is already exits"
-// }
-// exports.UserAlreadyExits = function (res) {
-//     this.name = "errors"
-//     this.status = 409
-//     this.message = "Username is already exits"
-// }

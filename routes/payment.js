@@ -1,12 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcryptjs');
-const passport = require('passport');
-const db = require('../config/database');
 
 let Order = require('../models/order');
-let Formula = require('../models/formula');
-let Bottle = require('../models/bottle');
 
 //รับค่าจาก checkout หน้า cart
 router.get('/:id/:total',function(req,res){

@@ -1,7 +1,4 @@
-//const passport = require('passport');
 let User = require('../models/user');
-//const Tour = require('../models/tour-models');
-//const Booking = require('../models/booking-models');
 const {HandingErorr} = require('./handingError')
 exports.userSignup = async (req, res, next) => {
     try {
@@ -15,7 +12,6 @@ exports.userSignup = async (req, res, next) => {
         } = req.body;
 
         const user = await User.find({ username: username });
-        //const useremail = await User.find({ email: email });
 
         if (user.length >= 1) {
             req.flash('danger','Username is already exits');
