@@ -1,5 +1,7 @@
 let mongoose = require('mongoose');
 
+const bcrypt = require('bcryptjs');
+
 //user schema
 let UserSchema = mongoose.Schema({
     firstname:{
@@ -28,5 +30,8 @@ let UserSchema = mongoose.Schema({
     }
 });
 
+UserSchema.methods.generateHash = function (pwd) {
+    return bcrypt.hashSync(pwd, bcrypt.genSaltSync(10), null)
+}
 
 let User = module.exports = mongoose.model('User', UserSchema);
