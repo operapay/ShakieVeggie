@@ -6,12 +6,12 @@ const config = {
             .isLength({ min: 3 })
             .trim()
             .escape()
-            .withMessage('require string more than 3 charater'),
+            .withMessage('firstname require string more than 3 charater'),
         body('lastname')
             .isLength({ min: 3 })
             .trim()
             .escape()
-            .withMessage('require string more than 3 charater'),
+            .withMessage('lastname require string more than 3 charater'),
         body('email')
             .isEmail()
             .normalizeEmail()
@@ -20,13 +20,13 @@ const config = {
             .isLength({ min: 3 })
             .trim()
             .escape()
-            .withMessage('require string more than 3 charater'),
+            .withMessage('username require string more than 3 charater'),
         body('password')
-            .withMessage('require password'),
+            .withMessage('password require password'),
         body('password2')
             .custom((value,{req,res}) => {
                 if (value !== req.body.password) {
-                    throw new Error("Passwords don't match");
+                    throw new Error("Passwords not match");
                 } else {
                     return value;
                 }
@@ -35,7 +35,7 @@ const config = {
             .isLength({ min: 10 })
             .trim()
             .escape()
-            .withMessage('require string 10 charater'),
+            .withMessage('phone require string 10 charater'),
     ]
 }
 module.exports = config

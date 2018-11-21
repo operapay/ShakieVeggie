@@ -1,9 +1,16 @@
 const express = require('express');
 const router = express.Router();
+const bcrypt = require('bcryptjs');
 const passport = require('passport');
+const db = require('../config/database');
+const LocalStrategy = require('passport-local').Strategy;
 const userCtrl = require('../controller/user-controller')
 const config = require('../validation/user-validation')
-const checkValidation = require('../validation/checkValidation')
+const checkValidation = require('../validation/checkvalidation')
+
+
+//Bring in User model
+let User = require('../models/user');
 
 //Register form
 router.get('/register', function(req,res){
@@ -11,7 +18,7 @@ router.get('/register', function(req,res){
 });
 
 //register process
-router.post('/register',config.signup,checkValidation,userCtrl.userSignup);
+router.post('/register',config.signup,checkValidation,userCtrl.userSignup)
 
 //login form
 router.get('/login', function(req,res){
@@ -34,7 +41,6 @@ router.get('/logout',function(req,res){
     res.redirect('/users/login');
 });
 
-//check user
 router.post('/pleaselogin',function(req,res){
     req.flash('danger','Please login');
     res.redirect('/users/login');
