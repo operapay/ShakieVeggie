@@ -1,15 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcryptjs');
-const passport = require('passport');
-const db = require('../config/database');
 
 let Order = require('../models/order');
 
 let User = require('../models/user');
-let Formula = require('../models/formula');
-let Bottle = require('../models/bottle');
-
 //tracking form
 router.get('/track/:id',function(req,res){
     Order.findById(req.params.id,function(err,order){

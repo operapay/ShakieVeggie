@@ -68,14 +68,4 @@ describe('App Get', function() {
         });
     });
   });
-  describe('get tracking', function() {
-    it('responds with status 200', function(done) {
-      chai.request(app)
-        .get('/tracking/5bf2cbb4b3f3ab45889c82ea')
-        .end(function(err, res) {
-          expect(res).to.have.status(200);
-          done();
-        });
-    });
-  });
 });

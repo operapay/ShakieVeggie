@@ -40,11 +40,12 @@ block content
         
         .margin-top-set
             .grid
+                div
+                    h1.text-center.text-uppercase #{formula.formulaname}
+            .grid
                 .pic
                     img.bottle.bottle_pos(src='/img/cus_bottle.png')
                 .choice
-                    h1.text-center.text-uppercase #{formula.formulaname}
-                    br
                     form(method='POST',action='/custom/' + formula._id + '/component')
                         .mt-4
                             .row

@@ -8,8 +8,7 @@ var expect = chai.expect;
 chai.use(chaiHttp);
 
 describe('Admin Get', function() {
-  describe('get payment status table', function() {
-    it('responds with status 200', function(done) {
+    it('payment status table', function(done) {
       chai.request(app)
         .get('/admin/payment')
         .end(function(err, res) {
@@ -17,9 +16,7 @@ describe('Admin Get', function() {
           done();
         });
     });
-  });
-  describe('get mixing status table', function() {
-    it('responds with status 200', function(done) {
+    it('mixing status table', function(done) {
       chai.request(app)
         .get('/admin/mixing')
         .end(function(err, res) {
@@ -27,9 +24,7 @@ describe('Admin Get', function() {
           done();
         });
     });
-  });
-  describe('get sending status table', function() {
-    it('responds with status 200', function(done) {
+    it('sending status table', function(done) {
       chai.request(app)
         .get('/admin/sending')
         .end(function(err, res) {
@@ -37,5 +32,4 @@ describe('Admin Get', function() {
           done();
         });
     });
-  });
 });

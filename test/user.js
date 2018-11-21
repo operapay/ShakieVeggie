@@ -7,7 +7,7 @@ var expect = chai.expect;
 
 chai.use(chaiHttp);
 
-describe('User', function() {
+describe('User Get', function() {
   describe('get login', function() {
     it('responds with status 200', function(done) {
       chai.request(app)
@@ -32,36 +32,6 @@ describe('User', function() {
     it('responds with status 200', function(done) {
       chai.request(app)
         .get('/users/logout')
-        .end(function(err, res) {
-          expect(res).to.have.status(200);
-          done();
-        });
-    });
-  });
-  describe('post login', function() {
-    it('responds with status 200', function(done) {
-      chai.request(app)
-        .post('/users/login')
-        .end(function(err, res) {
-          expect(res).to.have.status(200);
-          done();
-        });
-    });
-  });
-  describe('post register', function() {
-    it('responds with status 200', function(done) {
-      chai.request(app)
-        .post('/users/register')
-        .end(function(err, res) {
-          expect(res).to.have.status(200);
-          done();
-        });
-    });
-  });
-  describe('post check user', function() {
-    it('responds with status 200', function(done) {
-      chai.request(app)
-        .post('/users/pleaselogin')
         .end(function(err, res) {
           expect(res).to.have.status(200);
           done();

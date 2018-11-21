@@ -169,7 +169,7 @@ body{
   transform: translate(-50%, -50%);
 }
 #regis-card{
-  width:780px;
+  width:60%;
 }
 
 .card{
@@ -363,5 +363,33 @@ input[type="color"]:focus,
   }
   #top{
     margin-bottom: 0px;
+  }
+  #regis-card{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -18.75%);
+  }
+
+  .regis-grid{
+    display:grid;
+    grid-template-columns: auto auto;
+    grid-row-gap: 10px;
+    width:100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .yellow-reg{
+    height: 60px;
+    font-size: 5px;
+  }
+  .yellow-reg >h1 {
+    font-size: 20px;
+  }
+  .text{
+    font-size:1vw;
   }
 }
