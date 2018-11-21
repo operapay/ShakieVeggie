@@ -103,9 +103,13 @@ table {
     position:absolute;
     font-weight: 500;
     font-size: 1.5vw;
-    color:#FFFFFF;
+    z-index: 1;
+    width:100%;
 }
 #button_track:hover{
     color:#8ED2C9;
     background-color:#FFFFFF;
+}
+#button_track:hover > #user{
+    color:#8ED2C9;
 }
