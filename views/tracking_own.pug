@@ -1,29 +1,29 @@
-html
-    head
-        title Tracking Orders
-        link(rel="stylesheet", href="/css/style.css")
-        link(rel="stylesheet", href="/css/tracking_own_style.css")
-    body
-        .track_parting
-            table
-                tr
-                    th.bill_headbox
-                        .orderown_headbox
-                            .orderown_headword IN SYSTEM ORDER(S)
-                -for (var i = orders.length-1 ; i >= 0; i--) 
-                    if users._id == orders[i].username && orders[i].trackingnum == null
-                        tr
-                            td.bill_childtable
-                                a(href="/tracking/track/" + orders[i]._id)#button_track= users.username + '00' + i
-                                
-            table
-                tr
-                    th.bill_headbox
-                        .orderown_headbox
-                            .orderown_headword SENT ORDER(S)
-                -for (var i = orders.length-1 ; i >= 0; i--) 
-                    if users._id == orders[i].username && orders[i].trackingnum != null
-                        tr
-                            td.bill_childtable
-                                a(href="/tracking/track/" + orders[i]._id)#button_track= users.username + '00' + i
+extends layout_nocart
+block content
+    link(rel='stylesheet', type='text/css', href='/css/style.css')
+    link(rel='stylesheet', type='text/css', href='/css/tracking_own_style.css')
+    .track_parting
+        table
+            tr
+                th.bill_headbox
+                    .orderown_headbox
+                        .orderown_headword IN SYSTEM ORDER(S)
+            -for (var i = orders.length-1 ; i >= 0; i--) 
+                if users._id == orders[i].username && orders[i].trackingnum == null
+                    tr
+                        td.bill_childtable
+                            #button_track
+                                a(href="/tracking/track/" + orders[i]._id)#user= users.username + '00' + i
+                            
+        table
+            tr
+                th.bill_headbox
+                    .orderown_headbox
+                        .orderown_headword SENT ORDER(S)
+            -for (var i = orders.length-1 ; i >= 0; i--) 
+                if users._id == orders[i].username && orders[i].trackingnum != null
+                    tr
+                        td.bill_childtable
+                            #button_track
+                                a(href="/tracking/track/" + orders[i]._id)#user= users.username + '00' + i
                 

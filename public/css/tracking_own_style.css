@@ -14,10 +14,11 @@ body{
 }
 .track_parting{
     display: grid;
-    grid-template-columns: 40% 40%;
+    grid-template-columns: auto auto;
     grid-gap: 5%;
     position: relative;
-    margin-left: 13%;
+    padding-left: 7vw;
+    padding-right: 7vw;
     top: 10%;
 }
 table {
@@ -30,16 +31,16 @@ table {
 .bill_childtable {
 
     padding: 5px;
-    /* border: 2px solid black; */
     /* font-size: 20px; */
-    /* position: relative; */
+    position: relative;
     /* text-align:center; */
+    height:6vw;
+    margin-left:auto;
 }
 .bill_childbox{
     position: relative;
     /* left: 15%; */
     width: 70%;
-    border: 2px solid pink;
     margin: 0% auto;
 }
 .bill_headbox{
@@ -49,24 +50,25 @@ table {
     width: 50%;
     /* height: 40px; */
     /* border: 2px solid pink; */
-    padding: 60px;
+    padding: 5vw;
     /* margin: 0% auto; */
 }
 
 .orderown_headbox{
-    width: 80%;
+    width: 90%;
     height: 30%;
     background-color: #ffcc1c;
     position:absolute;
     z-index:-1;
     top:50%;
-    left: 10%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     /* border:4px solid green; */
 }
 .orderown_headword{
     color: white;
     text-shadow: 2px 2px 5px rgba(128, 128, 128, 0.8);
-    font-size: 38px;
+    font-size: 2.75vw;
     font-weight: 500;
     position: absolute;
     transform:translate(-50%,-50%);
@@ -75,22 +77,33 @@ table {
     width:100%;
     text-align: center;
     
-    /* border: 4px solid black; */
 }
 #button_track{
     display:inline-block;
-    padding:18px 115px;
-    /* position: absolute; */
+    height:5vw;
+    width:25vw;
+    margin-left:auto;
+    margin-right: auto;
+    position: absolute; 
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
     border:2.5px solid #FFFFFF;
     box-sizing: border-box;
     text-decoration:none;
-    color:#FFFFFF;
     text-align:center;
     transition: all 0.2s;
     background-color:transparent;
-    font-weight: 500;
     cursor:pointer;
-    font-size: 20px;
+}
+#user{
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    position:absolute;
+    font-weight: 500;
+    font-size: 1.5vw;
+    color:#FFFFFF;
 }
 #button_track:hover{
     color:#8ED2C9;
