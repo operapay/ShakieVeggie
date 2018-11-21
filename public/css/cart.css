@@ -84,10 +84,13 @@ body{
 #delete-text{
     color: black; 
     text-align:left;
+    font-size: 20px;
+    padding-top: 10px;
 }
- #cart_modal{
-    width:400px;
-    height:200px;
+#cart_modal{
+    margin-top: 60%;
+    height:220px;
+    padding: 20px;  
 }
 
 /* summary block */
