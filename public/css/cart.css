@@ -1,66 +1,49 @@
+/* use for all*/
 body{
     background-image: url(/img/cart/cart_bg.jpg);
     color: white;
+    margin-bottom: 20%;
 }
-::-webkit-scrollbar {
-    display: none;
-    }
+.left{
+    text-align: left;
+}
+.right{
+    text-align: right;
+}
+.last{
+    padding-bottom: 40px;   
+    border-bottom:  2.5px solid white;
+}
 
-.cart-block{
-    text-align: center;
-    
-    font-weight: 420;
-    font-weight: 500;
-    width: 100%;
-    margin-left: 12%;
-    margin-bottom:5%; 
-    padding: 0 !important; 
-}
+/* cart block */
 .headline{
     text-align: center;
-    line-height: 220%;
-    margin-bottom:3% 
+    line-height: 220%; 
 }
 .cart-title{
     font-size: 320%;
-    margin-bottom: 0px;
+    padding-top:10%;
+}
+.cart-container{
+    display: grid;
+    grid-template-columns: 68% 32%;
+    margin: 2% 8%;
+
+    text-align: center;
+}
+.cart_block{
+    height: 100px;
+    margin-right: 5%;
+    
+    font-weight: 600;
+}
+.price{
+    padding-top: 2px;
 }
 .cart-text{
     font-size: 75%;
     font-weight: 400;
     margin-bottom:0px; 
-}
-
-/* cart table */
-
-#headofcart{
-    padding-top: 0 !important;
-    padding-left: 0 !important;
-    padding-bottom: 5px;
-    border-bottom: 3px solid white;
-    margin: 0 !important;
-}
-#firstcol{
-    text-align: left;
-    padding-left: 0 !important;
-}
-#secondhead{
-    text-align: left;
-    padding-left: 5%;
-}
-#lastcol{
-    text-align: right;
-    padding-right: 0 !important;
-}
-.rowofcart{
-    border-bottom: 3px solid white;
-    margin-left: 0 !important;
-    width: 100%;
-    padding-bottom:4% ;
-    padding-top:4% ;   
-}
-#formula{
-    font-size: 20px;
 }
 .cart-textarea{
     background: transparent;
@@ -73,19 +56,74 @@ body{
     border-bottom: 1px solid white;
     resize: horizontal;
 }
+.headofcart{
+    display: grid;
+    grid-template-columns: 40% 25% 18% 17%;
+    padding:20px 0 0 0 !important;
+    border-bottom: 2.5px solid white;    
+}
+.rowofcart{
+    display: grid;
+    grid-template-columns: 40% 25% 18% 17%;
+    padding:3% 0;
+    border-bottom: 2.5px solid white;
+}
+.second-row{
+    display: grid;
+    grid-template-columns: 30% 30%;
+    gap: 20%;
+}
 .cart-trash{
     background: url(/img/cart/cart1.png);
     background-color: transparent;
     width: 20px;
     height: 20px;
-    margin-right: 30%;
-    margin-top: 5%;
+    margin-right: 15%;
+    margin-top: 4%;
 }
 #delete-text{
     color: black; 
     text-align:left;
 }
-/* botton */
+/* #cart_modal{
+    width:400px;
+    height:200px;
+} */
+
+/* summary block */
+.summary_block{
+    position: relative;
+}
+.summary-title{
+    font-size: 24px;
+    font-weight: 600;
+    border-bottom: 2.5px solid white;
+    padding-bottom: 7%; 
+}
+.summary-inside{
+    margin: 7% 10%;
+    width: 330px;
+    height: 630px;
+}
+.summary_bg{
+    width: 410px;
+    height: 590px;
+    background-color: white;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.15;
+}
+.summary-text{
+    margin: 10% 0;
+    display: grid;
+    grid-row-gap: 10%;
+}
+.summary_block h4{
+    font-size: 18px;
+    margin: 0;
+}
+
+/* button*/
 button {
     display: inline-block;
     vertical-align: top;
@@ -97,19 +135,21 @@ button {
     color:#FFFFFF;
 }
 #button_cart{
-    padding:2px 15px;
+    padding:5% 0;    
+    width: 100%;
     border:2.5px solid #FFFFFF;
     box-sizing: border-box;
     text-align:center;
     transition: all 0.2s;
     font-size: 12px;
+    margin-top:2px; 
 }
 #button_cart:hover{
     color:black;
     background-color:#FFFFFF;
 }
 #button1_checkout{
-    padding:15px 92px;
+    padding:5% 111px;
     border:2.5px solid #FFFFFF;
     box-sizing: border-box;
     text-align:center;
@@ -120,8 +160,8 @@ button {
     background-color:#FFFFFF;
 }
 #button2_checkout{
-    padding:15px 98.5px;
-    margin-top: 2%;
+    padding:5% 0;
+    width: 100%;
     border:2.5px solid #FFFFFF;
     box-sizing: border-box;
     text-align:center;
@@ -131,63 +171,67 @@ button {
     color:black;
     background-color:#FFFFFF;
 }
-
-/* summary table */
-.summary-title{
-    font-size: 28px;
-    padding-bottom: 30px;
-    border-bottom: 3px solid white;
-}
-.summary_block{
-    width: 100%;
-    height: 60%;
-    margin-right:12% ;
-}   
-.summary_text{
-    margin-left: 13%;
-    padding: 8%;
-}
-.summary_bg{
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    position: absolute;
-    z-index: -1;
-    opacity: 0.15;
-    margin-left: 8%;
-}
-.summary_block .col-8{
-    text-align: left;
-}
-.summary_block .col-4{
-    text-align: right;
-}
-.summary_block h4{
-    font-size: 18px;
-    margin: 0;
-}
-#firstrow{
-    padding-top: 30px;  
-}
-#lastrow{
-    padding-bottom: 30px;   
-    border-bottom:  3px solid white;
-}
-#price{
-    padding-top: 5%; 
-}
-#cart_modal{
-    width:400px;
-    height:200px;
-}
-.grid{
-    display:grid;
-    grid-template-columns: 10% 10%
-;
+.summary-button{
+    display: grid;
+    grid-row-gap: 8%;
+    margin-top: 100px; 
 }
 
-@media only screen and (max-width: 1200px){}
-
-.summary_text .row{
-    margin-bottom: 5%;
+/* responsive*/
+@media only screen and (max-width: 1000px) {
+    .cart-container{
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        position:relative;
+        width:100%;
+    }
+    .cart_block{
+        width: 80%;
+        margin: 0 10%;
+    }
+    .summary_block{
+        width: 50%;
+        margin: 30% 25%;
+    }
+    .summary-inside{
+        padding-top: 5%;
+    }
+}
+@media only screen and (max-width: 650px) {
+    .cart-container{
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        position:relative;
+        width:100%;
+    }
+    .cart_block{
+        width: 90%;
+        margin: 0 5%;
+    }
+    .summary_block{
+        width: 70%;
+        margin: 40% 15%;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .cart-container{
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        position:relative;
+        width:100%;
+    }
+    .cart_block{
+        width: 96%;
+        margin: 0 2%;
+    }
+    .summary_block{
+        width: 100%;
+        margin: 60% 0%;
+    }
+    .headline{
+        padding-top:100px; 
+    }
 }
