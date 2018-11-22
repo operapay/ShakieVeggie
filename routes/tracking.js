@@ -13,9 +13,6 @@ router.get('/track/:id',function(req,res){
     });
 });
 
-// router.post('/track/:id',function(req,res){
-//     console.log('submit checkout');
-// });
 
 router.get('/:id', function(req,res){
     User.findById(req.params.id,function(err,users){

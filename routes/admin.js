@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const adminCtrl = require('../controller/admin-controller')
 
 let Order = require('../models/order');
 let Bottle = require('../models/bottle');
@@ -17,39 +18,9 @@ router.get('/payment',function(req,res){
     });
 });
 
-router.post('/payment/:id',function(req,res){
-    let order = {};
-    order.paymentstatus = 0;
-    //จ่ายแล้ว
+router.post('/payment/:id',adminCtrl.notpaid)
 
-    let query = {_id:req.params.id}
-    Order.update(query, order, function(err){
-        if(err){
-            console.log(err);
-            return;
-        }
-        else{
-            res.redirect('/admin/payment');
-        }
-    });
-});
-
-router.post('/payment2/:id',function(req,res){
-    let order = {};
-    order.paymentstatus = 1;
-    //จ่ายแล้ว
-
-    let query = {_id:req.params.id}
-    Order.update(query, order, function(err){
-        if(err){
-            console.log(err);
-            return;
-        }
-        else{
-            res.redirect('/admin/payment');
-        }
-    });
-});
+router.post('/payment2/:id',adminCtrl.paid)
 
 router.get('/mixing',function(req,res){
     Order.find({},function(err,orders){
@@ -70,116 +41,18 @@ router.get('/sending',function(req,res){
     });
 });
 
-router.post('/sending/:id',function(req,res){
-    let order = {};
-    order.mixingstatus = 0;
-    //พร้อมส่ง
+router.post('/sending/:id',adminCtrl.mixing)
 
-    let query = {_id:req.params.id}
-    Order.update(query, order, function(err){
-        if(err){
-            console.log(err);
-            return;
-        }
-        else{
-            res.redirect('/admin/sending');
-        }
-    });
-});
+router.post('/sending2/:id',adminCtrl.mixed)
 
-router.post('/sending2/:id',function(req,res){
-    let order = {};
-    order.mixingstatus = 1;
-    //พร้อมส่ง
+router.post('/tracking/:id',adminCtrl.trackingnum)
 
-    let query = {_id:req.params.id}
-    Order.update(query, order, function(err){
-        if(err){
-            console.log(err);
-            return;
-        }
-        else{
-            res.redirect('/admin/sending');
-        }
-    });
-});
+router.post('/tracking2/:id',adminCtrl.trackingnull)
 
-router.post('/tracking/:id',function(req,res){
-    let order = {};
-    order.trackingnum = req.body.trackingnum;
+router.post('/clearmixing',adminCtrl.clearmixing)
 
-    let query = {_id:req.params.id}
-    Order.update(query, order, function(err){
-        if(err){
-            console.log(err);
-            return;
-        }
-        else{
-            res.redirect('/admin/sending');
-        }
-    });
-});
+router.post('/clearsending',adminCtrl.clearsending)
 
-router.post('/tracking2/:id',function(req,res){
-    let order = {};
-    order.trackingnum = null;
-
-    let query = {_id:req.params.id}
-    Order.update(query, order, function(err){
-        if(err){
-            console.log(err);
-            return;
-        }
-        else{
-            res.redirect('/admin/sending');
-        }
-    });
-});
-
-router.post('/clearmixing',function(req,res){
-    Order.find({},function(err,orders){
-            //orders:orders
-        for(var i = 0; i < orders.length;i++){
-            if(orders[i].paymentstatus == 0){
-                let order = {};
-                order.clearmixing = 0;
-                let query = {_id:orders[i]._id}
-                Order.update(query, order, function(err){});
-            }
-        }
-        res.redirect('/admin/mixing');
-    });
-
-});
-
-router.post('/clearsending',function(req,res){
-    Order.find({},function(err,orders){
-        for(var i = 0; i < orders.length;i++){
-            if(orders[i].trackingnum != null){
-                let order = {};
-                order.clearsending = 0;
-                let query = {_id:orders[i]._id}
-                Order.update(query, order, function(err){});
-            }
-        }
-        res.redirect('/admin/sending');
-    });
-
-});
-
-router.post('/clearpayment',function(req,res){
-    Order.find({},function(err,orders){
-        for(var i = 0; i < orders.length;i++){
-            if(orders[i].paymentstatus == 0){
-                let order = {};
-                order.clearpayment = 0;
-                let query = {_id:orders[i]._id}
-                Order.update(query, order, function(err){});
-            }
-        }
-        res.redirect('/admin/payment');
-    });
-
-});
+router.post('/clearpayment',adminCtrl.clearpayment)
 
 module.exports = router;

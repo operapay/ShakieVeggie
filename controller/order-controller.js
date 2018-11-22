@@ -1,4 +1,6 @@
 let Order = require('../models/order');
+let Formula = require('../models/formula');
+let Bottle = require('../models/bottle');
 const {HandingErorr} = require('./handingError')
 
 exports.genorder = async (req, res, next) => {
@@ -26,6 +28,87 @@ exports.bill = async (req, res, next) => {
             res.render('billpayment', {
                 order:order
             });        
+        });
+    }
+    catch (e) {
+        HandingErorr(res, e)
+    }
+}
+exports.deletecart = async (req, res, next) => {
+    try {
+        const query = {_id:req.params.bottle}
+
+        Bottle.remove(query, function(err){
+            if(err){
+               console.log(err); 
+            }
+            res.redirect('/cart/' + req.params.id);
+        });
+    }
+    catch (e) {
+        HandingErorr(res, e)
+    }
+}
+exports.editcart = async (req, res, next) => {
+    try {
+        const bottle = {};
+        bottle.edit = 0;
+        //console.log(bottle.amount);
+    
+        const query = {_id:req.params.bottle}
+    
+        Bottle.update(query, bottle, function(err){
+            if(err){
+                console.log(err);
+                return;
+            }
+            else{
+                res.redirect('/cart/' + req.params.id);
+            }
+        });
+    }
+    catch (e) {
+        HandingErorr(res, e)
+    }
+}
+exports.confirmcart = async (req, res, next) => {
+    try {
+        const {
+            amount,
+        } = req.body;
+
+        const bottle = {};
+        bottle.amount = amount;
+        bottle.edit = 1;
+    
+        const query = {_id:req.params.bottle}
+    
+        Bottle.update(query, bottle, function(err){
+            if(err){
+                console.log(err);
+                return;
+            }
+            else{
+                res.redirect('/cart/' + req.params.id);
+            }
+        });
+    }
+    catch (e) {
+        HandingErorr(res, e)
+    }
+}
+exports.cart = async (req, res, next) => {
+    try {
+        Order.findById(req.params.id, function(err,orders){
+            Bottle.find({},function(err,bottles){
+                Formula.find({},function(err,formulas){
+                    res.render('cart',{
+                        bottles:bottles,
+                        orders:orders,
+                        formulas:formulas
+                    });
+                });
+            });
         });
     }
     catch (e) {
