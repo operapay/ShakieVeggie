@@ -4,47 +4,46 @@ block content
     link(rel='stylesheet', type='text/css', href='/css/style.css')
     link(rel="stylesheet", type='text/css', href='/css/payment.css')    
 
-    img.payment_bg(src="/img/payment/payment_bg.jpg", alt="")    
+    //img.payment_bg(src="/img/payment/payment_bg.jpg", alt="")    
     .payment-title
       .payment-head PAYMENT
       h5 Billing address
     .payment-block
-      .col-6.mx-auto
-        .payment-reg
-        .payment-inside
-          form(method='POST',action='/payment/' + order)
-            h6.mb-4
-              label(for='name') Name
-              input#payment-input.form-control(type='text', name='name', required='')
+      .payment-reg
+      .payment-text
+        form(method='POST',action='/payment/' + order)
+          h6.mb-4
+            label(for='name') Name
+            input#payment-input.form-control(type='text', name='name', required='')
+            .invalid-feedback
+              | Please enter your name.
+          h6.mb-4
+            label(for='address') Address
+            input#payment-input.form-control(type='text', name='address', required='')
+            .invalid-feedback
+              | Please enter your shipping address.
+          .mb-4
+            label(for='address2')
+              | Address 2 
+              span (Optional)
+            input#payment-input.form-control(type='text', name='address2')
+          .row
+            .col.mb-4
+              label(for='country') Country
+              select#payment-input.custom-select(name='country', required='')
+                option(value='')
+                option THAILAND
               .invalid-feedback
-                | Please enter your name.
-            h6.mb-4
-              label(for='address') Address
-              input#payment-input.form-control(type='text', name='address', required='')
+                | Please select a valid country.
+          .row
+            .col-8.mb-4
+              label(for='state') State
+              input#payment-input.form-control(type='text', name='state', required='')
               .invalid-feedback
-                | Please enter your shipping address.
-            .mb-4
-              label(for='address2')
-                | Address 2 
-                span (Optional)
-              input#payment-input.form-control(type='text', name='address2')
-            .row
-              .col.mb-4
-                label(for='country') Country
-                select#payment-input.custom-select(name='country', required='')
-                  option(value='')
-                  option THAILAND
-                .invalid-feedback
-                  | Please select a valid country.
-            .row
-              .col-8.mb-4
-                label(for='state') State
-                input#payment-input.form-control(type='text', name='state', required='')
-                .invalid-feedback
-                  | Please provide a valid state.
-              .col-4.mb-4
-                label(for='zip') Zip
-                input#payment-input.form-control(type='text', name='zip', required='')
-                .invalid-feedback
-                  | Zip code required.          
-            button#button_payment(type='submit') GET YOUR BILL
+                | Please provide a valid state.
+            .col-4.mb-4
+              label(for='zip') Zip
+              input#payment-input.form-control(type='text', name='zip', required='')
+              .invalid-feedback
+                | Zip code required.          
+          button#button_payment(type='submit') GET YOUR BILL

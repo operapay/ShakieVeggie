@@ -1,6 +1,5 @@
 extends layout_cart
 block content
-  //- content
   .headline
     .cart-title SHOPPING CART
     - var totalItems = 0
@@ -8,87 +7,83 @@ block content
       if bottle.orderid == orders._id
         - totalItems += bottle.amount
     .cart-text='You currently have ' + totalItems + ' item(s) in your cart.'
-  .cart-block
-    .row
-      .col-6.cart_block
-        .row#headofcart
-          .col-4#firstcol Product
-          .col-4#secondhead Amount
-          .col Unit price
-          .col#lastcol Remove
-        each bottle, i in bottles
-            if bottle.orderid == orders._id
-              each formula, i in formulas
-                  if formula._id == bottle.formulaid  
-                    .row.rowofcart
-                      .col-4#firstcol
-                        td#formula= formula.formulaname 
-                          .cart-text='INGREDIENT 1 : ' + bottle.fruit1
-                          .cart-text='INGREDIENT 2 : ' + bottle.fruit2 
-                          .cart-text='INGREDIENT 3 : '  + bottle.fruit3
-                      .col-4
-                        if bottle.edit != 0
-                          .col
-                            form(method='POST',action='/cart/edit/' + orders._id + '/' + bottle._id)
-                              .row
-                                .col
-                                  textarea.cart-textarea(type='text', name='amount',id='edit_amount', cols="2", rows="1",disabled="") #{bottle.amount}
-                                .col
-                                  button#button_cart(type='submit') EDIT
-                        else
-                          form(method='POST',action='/cart/confirm/' + orders._id + '/' + bottle._id)
-                            .col
-                              #form-group
-                                .row
-                                  .col
-                                    textarea.edit-area.cart-textarea(type='text', name='amount',id='edit_amount', cols="5", rows="1") #{bottle.amount}
-                                  .col
-                                    button#button_cart(type='submit') Submit
-                      .col
-                        h6#price ฿75.00
-                      .col#lastcol
-                        button.cart-trash(type='button', data-toggle='modal', data-target='#myModal')
-                        //- popup delete
-                        #myModal.modal.fade(role='dialog')
-                              .modal-dialog
-                              .modal-content#cart_modal
-                                .modal-body
-                                  h5#delete-text Are you sure that you want to delete this product?
-                                .modal-footer
-                                  form(method='POST',action='/cart/' + orders._id + '/' + bottle._id)
-                                      button.btn.btn-outline-danger(type='submit') DELETE
-      .col-3.summary_block         
-        .summary_bg
-        .col.summary_text
-          .summary-title Order summary
-          .row#firstrow
-            .col-8
-                h4 Order subtotal
-            .col-4
-                h4='฿' + totalItems*75 + '.00'
+  .cart-container
+    .cart_block
+      .headofcart
+        .left Product
+        .left Amount
+        .div Unit price
+        .right Remove
+      each bottle, i in bottles
+          if bottle.orderid == orders._id
+            each formula, i in formulas
+                if formula._id == bottle.formulaid  
+                  .rowofcart
+                    .left
+                      #formula= formula.formulaname 
+                        .cart-text='INGREDIENT 1 : ' + bottle.fruit1
+                        .cart-text='INGREDIENT 2 : ' + bottle.fruit2 
+                        .cart-text='INGREDIENT 3 : '  + bottle.fruit3
+                    .div
+                      if bottle.edit != 0
+                        form(method='POST',action='/cart/edit/' + orders._id + '/' + bottle._id)
+                          .second-row
+                            textarea.cart-textarea(type='text', name='amount',id='edit_amount', cols="2", rows="1",disabled="") #{bottle.amount}
+                            button#button_cart(type='submit') EDIT
+                      else
+                        form(method='POST',action='/cart/confirm/' + orders._id + '/' + bottle._id)
+                          #form-group
+                            .second-row
+                              textarea.edit-area.cart-textarea(type='text', name='amount',id='edit_amount', cols="5", rows="1") #{bottle.amount}
+                              button#button_cart(type='submit') Submit
+                    .price ฿75.00
+                    .right
+                      button.cart-trash(type='button', data-toggle='modal', data-target='#deleteModal')
+                      // Modal
+                      #deleteModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+                        .modal-dialog(role='document')
+                          .modal-content#cart_modal
+                            button.right.close(type='button', data-dismiss='modal', aria-label='Close') ×
+                            .modal-body
+                              #delete-text Are you sure that you want to delete this product?
+                            .modal-footer
+                              form(method='POST',action='/cart/' + orders._id + '/' + bottle._id)
+                                button.btn.btn-outline-danger(type='submit') DELETE
+    .summary_block
+      .summary_bg
+      .summary-inside
+        .summary-title Order summary        
+        .summary-text
           .row
-            .col-8
-                h4 Shipping fee
-                .cart-text= 'shipping by'
-                .cart-text= 'blablabla company'
-                .cart-text= 'for shipping information'
-                .cart-text= 'please check at tracking page'
-            .col-4
-                h4='฿30.00'
-          .row#lastrow
-            .col-8
-                h4 Tax
-            .col-4
-                h4= '฿0.00'
+            .left.col-8
+              h4 Order subtotal
+            .right.col-4
+              h4='฿' + totalItems*75 + '.00'
           .row
-            .col-8
-                h4 Total
-            .col-4
-                h4= '฿' + ((totalItems*75)+30) + '.00'
+            .left.col-8
+              h4 Shipping fee
+              .cart-text= 'shipping by'
+              .cart-text= 'blablabla company'
+              .cart-text= 'for shipping information'
+              .cart-text= 'please check at tracking page'
+            .right.col-4
+              h4='฿30.00'
+          .row.last
+            .left.col-8
+              h4 Tax
+            .right.col-4
+              h4= '฿0.00'
+          .row
+            .left.col-8
+              h4 Total
+            .right.col-4
+              h4= '฿' + ((totalItems*75)+30) + '.00'
+        .summary-button  
           .row
             form(method='POST',action='/payment/' + orders.id + '/' + ((totalItems*75)+30))
               button.button#button1_checkout(type='submit')
-                .cart-text PROCEED TO CHECKOUT  
-            
+                .cart-text PROCEED TO CHECKOUT   
+          .row  
             a.button#button2_checkout(href='/formulas/' + orders.id)
                 .cart-text CONTINUE SHOPPING           
+    

@@ -78,7 +78,7 @@ li{
 }
 .text {
     color: white;
-    font-size: 12px;
+    font-size: 1vw;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -235,6 +235,8 @@ div > h1 {
     color: white;
     background-color: inherit;
     font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 #formula-size{
     font-size:3.125vw;
