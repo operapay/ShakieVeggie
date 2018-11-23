@@ -13,7 +13,7 @@ block content
                     tr
                         td.bill_childtable
                             #button_track
-                                a(href="/tracking/track/" + orders[i]._id)#user= users.username + '00' + i
+                                a(href="/tracking/track/" + orders[i]._id + '/' + orders[i].username + '/' + i)#user= users.username + '00' + i
                             
         table
             tr
@@ -25,5 +25,5 @@ block content
                     tr
                         td.bill_childtable
                             #button_track
-                                a(href="/tracking/track/" + orders[i]._id)#user= users.username + '00' + i
+                                a(href="/tracking/track/" + orders[i]._id + '/' + orders[i].username + '/' + i)#user= users.username + '00' + i
                 

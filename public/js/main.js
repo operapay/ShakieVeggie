@@ -84,6 +84,6 @@ function checkdisease(checksurgery,checkliver,checkhypertension,checkdiabetes,ch
     else
         return false;
 }
-function check_test(){
-    return "It's working!"
-}
+function myFunction(input) {
+    return true;
+};

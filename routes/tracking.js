@@ -5,10 +5,15 @@ let Order = require('../models/order');
 let User = require('../models/user');
 
 //tracking
-router.get('/track/:id',function(req,res){
+router.get('/track/:id/:user/:num',function(req,res){
+    var num = req.params.num;
     Order.findById(req.params.id,function(err,order){
-        res.render('tracking',{
-            order:order
+        User.findById(req.params.user,function(err,users){
+            res.render('tracking',{
+                order:order,
+                users:users,
+                num
+            });
         });
     });
 });
