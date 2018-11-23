@@ -67,11 +67,11 @@ block content
                     #track-num  TRACKING NO. #{order.trackingnum} 
                 else
                     #track-num  TRACKING NO. _____________
-                
-
-                   
-                    
-                    
-                        
-                        
-                    
+    
+    center 
+        //- h2 ORDER DETAILS
+        each bottle, i in bottles
+            if bottle.orderid == order._id
+                each formula, i in formulas
+                    if formula._id == bottle.formulaid
+                        p= formula.formulaname + ' (x' + bottle.amount + ')' + ' : ' + bottle.fruit1 + ' | ' + bottle.fruit2 + ' | ' + bottle.fruit3
