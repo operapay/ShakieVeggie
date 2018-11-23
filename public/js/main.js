@@ -33,37 +33,6 @@ btn.onclick = function() {
 //-------------------------------------------------------------count amount
 
 
-var counter = 0;
-
-$("#plus").click(function(){
-  counter++;
-  $("#count").text(counter);
-});
-
-$("#minus").click(function(){
-    console.log("minus");
-    if(counter>=1){
-        counter--; 
-    }   
-  $("#count").text(counter);
-});
-
-
-/*
-var c = 0;
-var count = document.getElementById("count");
-function plus(){
-    c++;
-    count.value = c;
-}
-function minus(){
-  if (c > 0) {
-    c--;
-    count.value = c;
-  }  
-}
-*/
-
 function change(input)
 {
     if (input.value=="NOT READY") {
