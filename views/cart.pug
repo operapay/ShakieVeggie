@@ -36,7 +36,10 @@ block content
                         form(method='POST',action='/cart/confirm/' + orders._id + '/' + bottle._id)
                           #form-group
                             .second-row
-                              textarea.edit-area.cart-textarea(type='text', name='amount',id='edit_amount', cols="5", rows="1") #{bottle.amount}
+                              button.btn-number(style="float:right")(type='button', data-type='plus', data-field='amount') +
+                              input.form-control.input-number(style="float:right")(type='text', name='amount', value=bottle.amount, min='1', max='1000')
+                              button.btn-number(style="float:right")(type='button', data-type='minus', data-field='amount') -
+                              //textarea.edit-area.cart-textarea(type='text', name='amount',id='edit_amount', cols="5", rows="1") #{bottle.amount}
                               button#button_cart(type='submit') Submit
                     .price ฿75.00
                     .right
