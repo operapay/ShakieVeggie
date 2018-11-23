@@ -2,9 +2,9 @@ const express = require('express');
 const router = express.Router();
 
 let Order = require('../models/order');
-
 let User = require('../models/user');
-//tracking form
+
+//tracking
 router.get('/track/:id',function(req,res){
     Order.findById(req.params.id,function(err,order){
         res.render('tracking',{
@@ -13,9 +13,6 @@ router.get('/track/:id',function(req,res){
     });
 });
 
-router.post('/track/:id',function(req,res){
-    console.log('submit checkout');
-});
 
 router.get('/:id', function(req,res){
     User.findById(req.params.id,function(err,users){

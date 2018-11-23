@@ -13,11 +13,11 @@ html
             div
                 button.login
                     if user
-                        a(href='/users/logout')#white logout
+                        a(href='/users/logout')#white.text-uppercase logout
                         button.login
-                            h9 #{user.username}
+                            h9.text-uppercase #{user.username}
                     else
-                        a(href='/users/login')#white login
+                        a(href='/users/login')#white.text-uppercase login
             
             a(href='/')
                 img.logo-pos-nocart.img-bottle(src='/img/logo_circle.png') 
