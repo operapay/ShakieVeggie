@@ -19,15 +19,15 @@ html
                         img.cart_pos(src='/img/cart.png')
             button.login
                 if user
-                    a(href='/users/logout')#white logout
+                    a(href='/users/logout')#white.text-uppercase logout
                     button.login
-                        h9 #{user.username}
+                        h9.text-uppercase #{user.username}
                 else
-                    a(href='/users/login')#white login
+                    a(href='/users/login')#white.text-uppercase login
             button.login
                 if user
                     //a(href='/users/login')#white login
-                    a(href='/tracking/' + user._id)#login tracking
+                    a(href='/tracking/' + user._id)#login.text-uppercase tracking
         a(href='/')(style="position:absolute; z-index:1;left:2.75%;top:5.5%")
             img.logo-pos(src='/img/logo_circle.png')
         // ------------------------------------------
