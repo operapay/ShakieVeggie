@@ -1,1 +1,10 @@
-h1 test
+extends layout_cus
+block content
+    link(rel='stylesheet', type='text/css', href='/css/style.css')
+    link(rel='stylesheet', type='text/css', href='/css/test.css')
+    div yay
+    #input_div
+        input#minus(type='button', value='-', onclick='minus()')
+        input#count(type='text', size='10', value='0')
+        input#plus(type='button', value='+', onclick='plus()')
+    script(src='/js/main.js')
