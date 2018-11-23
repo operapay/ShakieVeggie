@@ -83,3 +83,23 @@ function edit_a(input){
         document.getElementById("edit_amount").disabled = false;
     }
 }
+function checkdisease(checksurgery,checkliver,checkhypertension,checkdiabetes,checkpregnant,checkkidney,component1){
+    console.log('com' + component1);
+    if (checksurgery==1 && (component1 == 'Tomato' || component1 == 'Ripe Mango' || component1 == 'Pumpkin' || component1 == 'Banana'))
+        return true;
+    else if (checkliver==1 && (component1 == 'Ripe Mango'))
+        return true;
+    else if (checkhypertension==1 && (component1== 'Kale' || component1 == 'Carrot' || component1 == 'Tomato'))
+        return true;
+    else if (checkdiabetes==1 && (component1 == 'Mixed berry' || component1 == 'Kiwi' || component1== 'Avocado'))
+        return true;
+    else if (checkpregnant==1 && (component1 == 'Carrot' || component1 == 'Kale' || component1 == 'Pumpkin' || component1 == 'Apricot'))
+        return true;
+    else if (checkkidney==1 && (component1 == 'Avocado' || component1 == 'Kale' || component1 == 'Banana' || component1 == 'Spinach'))
+        return true;
+    else
+        return false;
+}
+function check_test(){
+    return "It's working!"
+}

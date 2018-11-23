@@ -15,11 +15,11 @@ html
             div(style="position:absolute; z-index:1;right:0;")
                 button.login
                     if user
-                        a(href='/users/logout')#white logout
+                        a(href='/users/logout')#white.text-uppercase logout
                         button.login
-                            h9 #{user.username}
+                            h9.text-uppercase #{user.username}
                     else
-                        a(href='/users/login')#white login
+                        a(href='/users/login')#white.text-uppercase login
         
         a(href='/')(style="position:absolute; z-index:1;left:2.75%;top:5.5%")
             img.logo-pos(src='/img/logo_circle.png')
@@ -41,14 +41,14 @@ html
             div(style="position:absolute; z-index:1;right:10;")
                 button.login
                     if user
-                        a(href='/users/logout')#white logout
+                        a(href='/users/logout')#white.text-uppercase logout
                         button.login
-                            h9 #{user.username}
+                            h9.text-uppercase #{user.username}
                     else
-                        a(href='/users/login')#white login
+                        a(href='/users/login')#white.text-uppercase login
                 button.login
                     if user
-                      a(href='/tracking/' + user._id)#white tracking
+                      a(href='/tracking/' + user._id)#white.text-uppercase tracking
             a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
         
         a(href='/')(style="position:absolute; z-index:1;left:2.75%;top:5.5%")

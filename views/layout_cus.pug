@@ -11,7 +11,6 @@ html
         
         
     body(onload="load()")
-        // ----------------Navbar-------------------
         nav#myTopnav.topnav
             div
                 button.login
@@ -19,19 +18,19 @@ html
                         img.cart_pos(src='/img/cart.png')
                 button.login
                     if user
-                        a(href='/users/logout')#white logout
+                        a(href='/users/logout')#white.text-uppercase logout
                         button.login
-                            h9 #{user.username}
+                            h9.text-uppercase #{user.username}
                     else
-                        a(href='/users/login')#white login
+                        a(href='/users/login')#white.text-uppercase login
                 button.login
                     if user
-                        a(href='/tracking/' + user._id)#login tracking
+                        a(href='/tracking/' + user._id)#login.text-uppercase tracking
             a.icon(href='javascript:void(0);', onclick='myFunction()') ☰
         
         a(href='/')
             img.logo-pos.img-bottle(src='/img/logo_circle.png') 
-        // ------------------------------------------
+
         .container
             if errors
                 each error, i in errors
