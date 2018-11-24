@@ -53,11 +53,11 @@ block content
 			span.carousel-control-next-icon(aria-hidden='true')
 			span.sr-only Next
 	.no-respon
-		.row.contain(style="")
+		.row.contain
 			.col-4
 				.back_menu
 					.item-alltext.f_bg
-						h1.text-uppercase
+						.head.text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Detox")
 										if !user
@@ -73,7 +73,7 @@ block content
 			.col-4
 				.back_menu
 					.item-alltext.f_bg
-						h1.text-uppercase
+						.head.text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Fat Burn")
 									li
@@ -90,7 +90,7 @@ block content
 			.col-4
 				.back_menu
 					.item-alltext.f_bg
-						h1.text-uppercase
+						.head.text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Improve Eyesight")
 									li
@@ -108,7 +108,7 @@ block content
 			.col-4
 				.back_menu
 					.item-alltext.f_bg
-						h1.text-uppercase
+						.head.text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Anti Aging")
 									li
@@ -123,7 +123,7 @@ block content
 			.col-4
 				.back_menu
 					.item-alltext.f_bg
-						h1.text-uppercase
+						.head.text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Sugar Reducing")
 									li
@@ -138,7 +138,7 @@ block content
 			.col-4
 				.back_menu
 					.item-alltext.f_bg
-						h1.text-uppercase
+						.head.text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Cholesterol Reducing")
 									li
@@ -155,7 +155,7 @@ block content
 			.col-4
 				.back_menu
 					.item-alltext.f_bg
-						h1.text-uppercase
+						.head.text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Pregnancy Care")
 									li
@@ -171,7 +171,7 @@ block content
 			.col-4
 				.back_menu
 					.item-alltext.f_bg
-						h1.text-uppercase
+						.head.text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Healthy Blood")
 									li
@@ -188,7 +188,7 @@ block content
 			.col-4
 				.back_menu
 					.item-alltext.f_bg
-						h1#formula-size.text-uppercase OTHERS
+						.head#formula-size.text-uppercase OTHERS
 							each formula, i in formulas
 								if(formula.formulaname == "Anti Agin")
 									li
