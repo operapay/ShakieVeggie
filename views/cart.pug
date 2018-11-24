@@ -35,12 +35,10 @@ block content
                       else
                         form(method='POST',action='/cart/confirm/' + orders._id + '/' + bottle._id)
                           #form-group
-                            .second-row
-                              button.btn-number(style="float:right")(type='button', data-type='plus', data-field='amount') +
-                              input.form-control.input-number(style="float:right")(type='text', name='amount', value=bottle.amount, min='1', max='1000')
-                              button.btn-number(style="float:right")(type='button', data-type='minus', data-field='amount') -
-                              //textarea.edit-area.cart-textarea(type='text', name='amount',id='edit_amount', cols="5", rows="1") #{bottle.amount}
-                              button#button_cart(type='submit') Submit
+                            button.btn-number#operate(style="float:left")(type='button', data-type='minus', data-field='amount') -
+                            input.form-control.input-number#amount(style="float:left")(type='text', name='amount', value=bottle.amount, min='1', max='1000')
+                            button.btn-number#operate(style="float:left")(type='button', data-type='plus', data-field='amount') +
+                            button#button_cart(type='submit',style="float:left") Submit
                     .price ฿75.00
                     .right
                       button.cart-trash(type='button', data-toggle='modal', data-target='#deleteModal')
@@ -85,9 +83,21 @@ block content
               h4= '฿' + ((totalItems*75)+30) + '.00'
         .summary-button  
           .row
-            form(method='POST',action='/payment/' + orders.id + '/' + ((totalItems*75)+30))
-              button.button#button1_checkout(type='submit')
-                .cart-text PROCEED TO CHECKOUT   
+            if totalItems == 0
+              button.button#button1_checkout(type='button', data-toggle='modal', data-target='#deleteModal') 
+                .cart-text PROCEED TO CHECKOUT
+              #deleteModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+                .modal-dialog(role='document')
+                  .modal-content#cart_modal
+                    button.right.close(type='button', data-dismiss='modal', aria-label='Close') ×
+                    .modal-body
+                      #delete-text Please add order to cart
+                    .modal-footer
+                      a.btn.btn-outline-danger(href='/formulas/' + orders.id)#black OK
+            else
+              form(method='POST',action='/payment/' + orders.id + '/' + ((totalItems*75)+30))
+                button.button#button1_checkout(type='submit')
+                  .cart-text PROCEED TO CHECKOUT   
           .row  
             a.button#button2_checkout(href='/formulas/' + orders.id)
                 .cart-text CONTINUE SHOPPING           

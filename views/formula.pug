@@ -45,19 +45,20 @@ block content
 							a(href="/recommend/" + orders._id + "/" + formula._id)
 								button#button_rec.viewf(type='submit',value='Submit') ORDER NOW
 							img.d-block.w-100(src='/img/rcm_red.png', alt='')
+			
 								
-		a.carousel-control-prev(href='#carouselExampleControls', role='button', data-slide='prev')
-			span.carousel-control-prev-icon(aria-hidden='true')
-			span.sr-only Previous
-		a.carousel-control-next(href='#carouselExampleControls', role='button', data-slide='next')
-			span.carousel-control-next-icon(aria-hidden='true')
-			span.sr-only Next
+			a.carousel-control-prev(href='#carouselExampleControls', role='button', data-slide='prev')
+				span.carousel-control-prev-icon(aria-hidden='true')
+				span.sr-only Previous
+			a.carousel-control-next(href='#carouselExampleControls', role='button', data-slide='next')
+				span.carousel-control-next-icon(aria-hidden='true')
+				span.sr-only Next
 	.no-respon
-		.row.contain(style="")
+		.row.contain
 			.col-4
 				.back_menu
 					.item-alltext.f_bg
-						h1.text-uppercase
+						.head.text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Detox")
 										if !user
@@ -73,7 +74,7 @@ block content
 			.col-4
 				.back_menu
 					.item-alltext.f_bg
-						h1.text-uppercase
+						.head.text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Fat Burn")
 									li
@@ -90,7 +91,7 @@ block content
 			.col-4
 				.back_menu
 					.item-alltext.f_bg
-						h1.text-uppercase
+						.head.text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Improve Eyesight")
 									li
@@ -108,7 +109,7 @@ block content
 			.col-4
 				.back_menu
 					.item-alltext.f_bg
-						h1.text-uppercase
+						.head.text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Anti Aging")
 									li
@@ -123,7 +124,7 @@ block content
 			.col-4
 				.back_menu
 					.item-alltext.f_bg
-						h1.text-uppercase
+						.head.text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Sugar Reducing")
 									li
@@ -138,7 +139,7 @@ block content
 			.col-4
 				.back_menu
 					.item-alltext.f_bg
-						h1.text-uppercase
+						.head.text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Cholesterol Reducing")
 									li
@@ -155,7 +156,7 @@ block content
 			.col-4
 				.back_menu
 					.item-alltext.f_bg
-						h1.text-uppercase
+						.head.text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Pregnancy Care")
 									li
@@ -171,7 +172,7 @@ block content
 			.col-4
 				.back_menu
 					.item-alltext.f_bg
-						h1.text-uppercase
+						.head.text-uppercase
 							each formula, i in formulas
 								if(formula.formulaname == "Healthy Blood")
 									li
@@ -188,7 +189,7 @@ block content
 			.col-4
 				.back_menu
 					.item-alltext.f_bg
-						h1#formula-size.text-uppercase OTHERS
+						.head#formula-size.text-uppercase OTHERS
 							each formula, i in formulas
 								if(formula.formulaname == "Anti Agin")
 									li
