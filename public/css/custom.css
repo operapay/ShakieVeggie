@@ -93,13 +93,13 @@ h1{
 }
 .submit_but:hover{
     background-color: white;
-    color:rgb(104, 90, 15);
+    color:#ffcc1b;
     font-weight: 700;
     border: none;
 }
 #operate:hover{
     background-color: white;
-    color:rgb(104, 90, 15);
+    color:#ffcc1b;
     font-weight: 700;
     border: none;
 }
