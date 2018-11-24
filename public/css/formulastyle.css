@@ -104,6 +104,8 @@ body{
     background-repeat: no-repeat;
     background-position-y:100%;
     background-size:100%;
+    
+    overflow-x: hidden;
 }
 img#pos{
     position:absolute;
