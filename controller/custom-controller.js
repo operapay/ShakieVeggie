@@ -96,6 +96,7 @@ exports.addtocart = async (req, res, next) => {
         bottle.fruit2 = component2;
         bottle.fruit3 = component3;
         bottle.amount = amont;
+        //console.log(bottle.amount);
         bottle.save();
         req.flash('success','Added order to cart');
         res.redirect('/formulas/' + req.params.order);

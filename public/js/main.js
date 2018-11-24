@@ -33,22 +33,6 @@ btn.onclick = function() {
 //-------------------------------------------------------------count amount
 
 
-/*var counter = 0;
-
-$("#plus").click(function(){
-  counter++;
-  $("#count").text(counter);
-});
-
-$("#minus").click(function(){
-    if(counter>=1){
-        counter--; 
-    }   
-  $("#count").text(counter);
-});*/
-
-
-
 function change(input)
 {
     if (input.value=="NOT READY") {
@@ -100,6 +84,6 @@ function checkdisease(checksurgery,checkliver,checkhypertension,checkdiabetes,ch
     else
         return false;
 }
-function check_test(){
-    return "It's working!"
-}
+function myFunction(input) {
+    return true;
+};

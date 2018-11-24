@@ -10,7 +10,7 @@ block content
         .set-layout-tracking
             .track-card
                 .yellow-reg
-                    h1#text-shadow ORDER
+                    h1#text-shadow #{users.username}00#{num}
                 if order.paymentstatus != 0
                     img.track_status#order-in-sys(src="/img/tracking/check-list-y.png")
                     img.track_check#order-in-sys(src="/img/tracking/clock.png")
@@ -67,11 +67,11 @@ block content
                     #track-num  TRACKING NO. #{order.trackingnum} 
                 else
                     #track-num  TRACKING NO. _____________
-                
-
-                   
-                    
-                    
-                        
-                        
-                    
+    
+    center 
+        //- h2 ORDER DETAILS
+        each bottle, i in bottles
+            if bottle.orderid == order._id
+                each formula, i in formulas
+                    if formula._id == bottle.formulaid
+                        p= formula.formulaname + ' (x' + bottle.amount + ')' + ' : ' + bottle.fruit1 + ' | ' + bottle.fruit2 + ' | ' + bottle.fruit3

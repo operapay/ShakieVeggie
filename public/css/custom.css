@@ -76,11 +76,20 @@ h1{
     font-weight: 600;
     background-color:transparent;
     border-radius: 0px;
-    width:150px;
+    width:100px;
     height:30px;
     border: 2.5px solid;
     cursor:pointer;
-
+}
+#operate{
+    color:white;
+    font-weight: 600;
+    background-color:transparent;
+    border-radius: 0px;
+    width:40px;
+    height:30px;
+    border: 2.5px solid;
+    cursor:pointer;
 }
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: white;
