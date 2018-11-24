@@ -4,7 +4,11 @@ block content
     link(rel='stylesheet', type='text/css', href='/css/style.css')
     style.
         body{
-            background-image:url('/img/tracking/bg.jpg');
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/img/tracking/bg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            width: 100%;
         }
     form(method = 'POST' action="/payment/tracking")
         .set-layout-tracking
@@ -68,10 +72,15 @@ block content
                 else
                     #track-num  TRACKING NO. _____________
     
-    center 
-        //- h2 ORDER DETAILS
-        each bottle, i in bottles
-            if bottle.orderid == order._id
-                each formula, i in formulas
-                    if formula._id == bottle.formulaid
-                        p= formula.formulaname + ' (x' + bottle.amount + ')' + ' : ' + bottle.fruit1 + ' | ' + bottle.fruit2 + ' | ' + bottle.fruit3
+    .set-order
+        center
+            h2 ORDER DETAILS
+            #{order._id}
+            br
+            br
+            br
+            each bottle, i in bottles
+                if bottle.orderid == order._id
+                    each formula, i in formulas
+                        if formula._id == bottle.formulaid
+                            p= formula.formulaname + ' (x' + bottle.amount + ')' + ' : ' + bottle.fruit1 + ' | ' + bottle.fruit2 + ' | ' + bottle.fruit3
