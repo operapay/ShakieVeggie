@@ -97,12 +97,7 @@ h1{
     font-weight: 700;
     border: none;
 }
-#operate:hover{
-    background-color: white;
-    color:#ffcc1b;
-    font-weight: 700;
-    border: none;
-}
+
 #operate{
     color:white;
     font-weight: 600;
