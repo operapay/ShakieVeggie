@@ -3,12 +3,25 @@ const router = express.Router();
 
 let Order = require('../models/order');
 let User = require('../models/user');
+let Bottle = require('../models/bottle');
+let Formula = require('../models/formula');
 
 //tracking
-router.get('/track/:id',function(req,res){
+router.get('/track/:id/:user/:num',function(req,res){
+    var num = req.params.num;
     Order.findById(req.params.id,function(err,order){
-        res.render('tracking',{
-            order:order
+        User.findById(req.params.user,function(err,users){
+            Bottle.find({},function(err,bottles){
+                Formula.find({},function(err,formulas){
+                    res.render('tracking',{
+                        order:order,
+                        users:users,
+                        bottles:bottles,
+                        formulas:formulas,
+                        num
+                    });
+                });
+            });
         });
     });
 });
