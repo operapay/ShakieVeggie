@@ -83,9 +83,21 @@ block content
               h4= '฿' + ((totalItems*75)+30) + '.00'
         .summary-button  
           .row
-            form(method='POST',action='/payment/' + orders.id + '/' + ((totalItems*75)+30))
-              button.button#button1_checkout(type='submit')
-                .cart-text PROCEED TO CHECKOUT   
+            if totalItems == 0
+              button.button#button1_checkout(type='button', data-toggle='modal', data-target='#deleteModal') 
+                .cart-text PROCEED TO CHECKOUT
+              #deleteModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+                .modal-dialog(role='document')
+                  .modal-content#cart_modal
+                    button.right.close(type='button', data-dismiss='modal', aria-label='Close') ×
+                    .modal-body
+                      #delete-text Please add order to cart
+                    .modal-footer
+                      a.btn.btn-outline-danger(href='/formulas/' + orders.id)#black OK
+            else
+              form(method='POST',action='/payment/' + orders.id + '/' + ((totalItems*75)+30))
+                button.button#button1_checkout(type='submit')
+                  .cart-text PROCEED TO CHECKOUT   
           .row  
             a.button#button2_checkout(href='/formulas/' + orders.id)
                 .cart-text CONTINUE SHOPPING           

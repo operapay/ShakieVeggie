@@ -13,6 +13,10 @@ body{
         color: white;    
         
     }*/
+
+#black{
+    color: black
+}
 .left{
     text-align: left;
 }
@@ -151,6 +155,7 @@ button {
     text-decoration:none;   
     color:#FFFFFF;
 }
+
 #button_cart{
     padding:5% 0;    
     width: 80px;
