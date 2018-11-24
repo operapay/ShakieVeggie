@@ -76,7 +76,17 @@ h1{
     font-weight: 600;
     background-color:transparent;
     border-radius: 0px;
-    width:100px;
+    width:90px;
+    height:30px;
+    border: 2.5px solid;
+    cursor:pointer;
+}
+.submit_but{
+    color:white;
+    font-weight: 600;
+    background-color:transparent;
+    border-radius: 0px;
+    width:150px;
     height:30px;
     border: 2.5px solid;
     cursor:pointer;
@@ -86,7 +96,7 @@ h1{
     font-weight: 600;
     background-color:transparent;
     border-radius: 0px;
-    width:40px;
+    width:30px;
     height:30px;
     border: 2.5px solid;
     cursor:pointer;
@@ -189,7 +199,7 @@ color: white;
         margin: 0;
         border-radius: 2px;
         border: 0.2vw solid white;
-        font-size: 1vw;
+        font-size: 1.25vw;
         font-weight: 400;
     }
 }
