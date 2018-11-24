@@ -91,6 +91,18 @@ h1{
     border: 2.5px solid;
     cursor:pointer;
 }
+.submit_but:hover{
+    background-color: white;
+    color:rgb(104, 90, 15);
+    font-weight: 700;
+    border: none;
+}
+#operate:hover{
+    background-color: white;
+    color:rgb(104, 90, 15);
+    font-weight: 700;
+    border: none;
+}
 #operate{
     color:white;
     font-weight: 600;
