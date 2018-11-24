@@ -456,12 +456,13 @@ color:#ffcc1b;
   margin-top:10px;
 }
 .track-card{
-  width: 63%;
+  width: 53%;
   height: 400px;
   background-color:white;
   position: relative;
   margin-left: auto;
   margin-right: auto;
+  margin-top:100px;
   /*top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);*/
@@ -550,7 +551,7 @@ color:#ffcc1b;
   font-weight: 500;
   margin-left: auto;
   margin-right: auto;
-  width:65%;
+  width:100%;
 }
 .set-order > h2{
   text-align: center;
