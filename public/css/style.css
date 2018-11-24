@@ -456,7 +456,7 @@ color:#ffcc1b;
   margin-top:10px;
 }
 .track-card{
-  width: 700px;
+  width: 63%;
   height: 400px;
   background-color:white;
   position: relative;
@@ -521,15 +521,17 @@ color:#ffcc1b;
   top: 81%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 20px;
+  font-size: 1.5vw;
   color:#cfc959;
   font-weight:500;
   text-transform: uppercase;
 }
 .line{
+  width:16.5%;
   font-weight:800;
   position: absolute;
-  top: 57.5%;
+  top: 60%;
+  font-size:1.25vw;
   transform: translate(-50%, -50%);
 }
 #line1{
