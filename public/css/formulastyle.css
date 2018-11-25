@@ -97,7 +97,6 @@ li{
     margin-top:3%;
     padding-left: 50px;
     padding-right: 50px;
-    
 }
 
 body{
@@ -105,6 +104,8 @@ body{
     background-repeat: no-repeat;
     background-position-y:100%;
     background-size:100%;
+    
+    overflow-x: hidden;
 }
 img#pos{
     position:absolute;
@@ -119,14 +120,14 @@ img#pos{
     top:30%;
     right:40%;
     color:white;
-    font-size:48px;
+    font-size:30px;
 }
 .comp-pos{
     position:absolute;
     top:45%;
     right:23.5%;
     color:white;
-    font-size:30px;
+    font-size:20px;
 }
 .formula-pos{
     position:absolute;
@@ -249,7 +250,7 @@ img#pos{
     cursor: pointer;
 }
 #formula-size{
-    font-size:3.125vw;
+    font-size:2.75vw;
     line-height: 1.6;
 }
 
@@ -283,3 +284,7 @@ img#pos{
 /*---------------------------------end NAV --------------------------------*/
 
 
+.carousel-control-prev,
+.carousel-control-next{
+      bottom: 15%;
+}
