@@ -29,29 +29,36 @@ block content
                     .div
                       if bottle.edit != 0
                         form(method='POST',action='/cart/edit/' + orders._id + '/' + bottle._id)
-                          .second-row
+                          .edit_amount
                             textarea.cart-textarea(type='text', name='amount',id='edit_amount', cols="2", rows="1",disabled="") #{bottle.amount}
                             button#button_cart(type='submit') EDIT
                       else
                         form(method='POST',action='/cart/confirm/' + orders._id + '/' + bottle._id)
                           #form-group
-                            button.btn-number#operate(style="float:left")(type='button', data-type='minus', data-field='amount') -
-                            input.form-control.input-number#amount(style="float:left")(type='text', name='amount', value=bottle.amount, min='1', max='1000')
-                            button.btn-number#operate(style="float:left")(type='button', data-type='plus', data-field='amount') +
-                            button#button_cart(type='submit',style="float:left") Submit
+                            .edit_amount
+                              .row.left
+                                button.btn-number#operate(type='button', data-type='minus', data-field='amount') -
+                                input.form-control.input-number#amount(type='text', name='amount', value=bottle.amount, min='1', max='1000')
+                                button.btn-number#operate(type='button', data-type='plus', data-field='amount') +
+                              button#button_cart(type='submit') Submit
                     .price ฿75.00
                     .right
                       button.cart-trash(type='button', data-toggle='modal', data-target='#deleteModal')
                       // Modal
                       #deleteModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
-                        .modal-dialog(role='document')
-                          .modal-content#cart_modal
-                            button.right.close(type='button', data-dismiss='modal', aria-label='Close') ×
-                            .modal-body
-                              #delete-text Are you sure that you want to delete this product?
-                            .modal-footer
-                              form(method='POST',action='/cart/' + orders._id + '/' + bottle._id)
-                                button.btn.btn-outline-danger(type='submit') DELETE
+                        .modal-dialog.modal-confirm(role='document')
+                          .modal-content
+                              .modal-header
+                                .row.icon-block
+                                  .icon-box
+                                button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+                              .modal-body
+                                h4.modal-title Are you sure?
+                                p Do you really want to delete these products? This process cannot be undone.
+                              .modal-footer
+                                .col.del
+                                  form(method='POST',action='/cart/' + orders._id + '/' + bottle._id)
+                                    button.btn.btn-outline-danger(type='submit') DELETE                    
     .summary_block
       .summary_bg
       .summary-inside
@@ -82,23 +89,27 @@ block content
             .right.col-4
               h4= '฿' + ((totalItems*75)+30) + '.00'
         .summary-button  
-          .row
-            if totalItems == 0
-              button.button#button1_checkout(type='button', data-toggle='modal', data-target='#deleteModal') 
-                .cart-text PROCEED TO CHECKOUT
-              #deleteModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
-                .modal-dialog(role='document')
-                  .modal-content#cart_modal
-                    button.right.close(type='button', data-dismiss='modal', aria-label='Close') ×
-                    .modal-body
-                      #delete-text Please add order to cart
-                    .modal-footer
-                      a.btn.btn-outline-danger(href='/formulas/' + orders.id)#black OK
-            else
-              form(method='POST',action='/payment/' + orders.id + '/' + ((totalItems*75)+30))
-                button.button#button1_checkout(type='submit')
-                  .cart-text PROCEED TO CHECKOUT   
-          .row  
-            a.button#button2_checkout(href='/formulas/' + orders.id)
-                .cart-text CONTINUE SHOPPING           
+          if totalItems == 0
+            button.button#button_checkout(type='button', data-toggle='modal', data-target='#deleteModal') 
+              .cart-text PROCEED TO CHECKOUT
+            #deleteModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+                  .modal-dialog.modal-confirm(role='document')
+                    .modal-content
+                        .modal-header
+                          .row.icon-block
+                            .icon-box
+                          button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+                        .modal-body
+                          h4.modal-title add first !! 
+                          p There is no order in the cart. Please add order to the cart before checkout
+                        .modal-footer
+                          .col.del
+                            a.btn.btn-outline-danger(href='/formulas/' + orders.id)
+                              #add-text ORDER        
+          else  
+            form(method='POST',action='/payment/' + orders.id + '/' + ((totalItems*75)+30))                
+              button.button#button_checkout(type='submit')
+                .cart-text PROCEED TO CHECKOUT    
+            a.button#button_checkout(href='/formulas/' + orders.id)
+              .cart-text CONTINUE SHOPPING           
     

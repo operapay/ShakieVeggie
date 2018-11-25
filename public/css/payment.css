@@ -80,7 +80,8 @@ button {
       5px 5px,
       5px 5px;
     background-repeat: no-repeat;
-    z-index: -1;
+    z-index: -1; 
+    cursor: pointer;
 }
   
 .custom-select:focus {
@@ -95,9 +96,13 @@ button {
       5px 5px;
     background-repeat: no-repeat;
     outline: 0;
-    background-color:transparent !important;
+    background-color:transparent !important;      
+    cursor: pointer;
 }
 
 option{
-    background-color:black;
+    background-color: white;
+    opacity: 0.5;
+    color: grey;
+    cursor: pointer;
 }
