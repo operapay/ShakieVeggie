@@ -1,8 +1,5 @@
 /* index */
-@font-face {
-    font-family: YGTH;
-    src: url(/font/YuGothM.ttc);
-}
+
 @font-face {
     font-family: Lemonism;
     src: url(/font/LemonismDEMO.otf);
@@ -11,7 +8,9 @@
     font-family: Hvs;
     src: url(/font/HaventSleptInTwoDaysShadow.ttf);
 }
-
+span{
+    height: 10px;
+}
 body{
     display: block;
     margin: 0px;
@@ -87,8 +86,7 @@ body{
 }
 
 .yugo{
-    font-family: YGTH;
-    font-weight: 700;
+    font-weight: 500;
 }
 .aunt{
     position:relative;
@@ -140,45 +138,50 @@ a#button2_index:hover{
 }
 .index_info{
     font-size: 0.65vw;
+    padding-bottom: 3px;
 }
 .pos_col{
     position: relative;
-    padding: 10% 10%;
+    padding:6% 10%;
+    height: 100%;
     /*width:25%;*/
     text-align: center;  
-    margin-top:  auto;
-    margin-bottom: auto;
+    /* margin-top:  auto;
+    margin-bottom: auto; */
+    /* border: 4px solid black; */
+    
+}
+.mid{
+    width: 100%;
+    /* border: 4px solid greenyellow; */
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 .col3{
     display: grid;
     grid-template-columns: 30% 32.5% 35%;
 }
+.scope_col4{
+    width: 100%;
+    margin: 3% auto;
+}
 .col4{
-    position: relative;
-    top: 7%;
-    display: inline;
-    /* grid-template-columns: 33% 33% 33%; */
+    grid-template-columns: auto auto auto;
+}
+.what{
+    padding: 0 12px;
 }
 .snsicon{
-    padding-right:25px; 
+    width: 20px;
+    height: auto;
+    transition: all 0.2s;
 }
-
-.hvr-float {
-    display: inline-block;
-    vertical-align: middle;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-property: transform;
-    transition-property: transform;
-    -webkit-transition-timing-function: ease-out;
-    transition-timing-function: ease-out;
-}
-.hvr-float:hover, .hvr-float:focus, .hvr-float:active {
-    -webkit-transform: translateY(-8px);
-    transform: translateY(-4px);
+.snsicon:hover{
+    transform:scale(1.2);
 }
 
 #admin_button{
@@ -224,6 +227,7 @@ a#button2_index:hover{
     background-color:#FFFFFF;
 }
 .h_p{
-    font-size: 1.3vw;
+    font-size: 16px;
+    padding-bottom: 13px;
 }
 
