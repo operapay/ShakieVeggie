@@ -165,7 +165,7 @@ button {
     transition: all 0.2s;
     font-size: 10px;
     margin-top:2px; 
-    margin-left: 18px;
+    margin-left: 10%;
 }
 #button_cart:hover{
     color:black;
@@ -227,9 +227,13 @@ button {
     text-align: center;
     font-size: 26px;
     margin: 10% 10% ;
+    color: #707070;
 }
 .modal-confirm .modal-body {
     padding: 15% 20% ;
+}
+.modal-confirm p {
+    font-weight: 600;
 }
 .modal-confirm .modal-footer {
     border: none;
@@ -252,7 +256,7 @@ button {
 .modal-confirm .btn {
     color: #fff;
     border-radius: 4px;
-    background: #f15e5e;
+    background: #f85727;
     text-decoration: none;
     transition: all 0.4s;
     line-height: normal;
@@ -267,15 +271,39 @@ button {
     margin: 0 !important;
     }
 .modal-confirm .btn-danger {
-    background: #f15e5e;
+    background: #f85727;
     width:100%;
 }
 .modal-confirm .btn-danger:hover, .modal-confirm .btn-danger:focus {
-    background: #ee3535;
+    background: #ce4a22;
 }
-
 /* responsive*/
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 1200px) {
+    .cart-container{
+        display: block;
+        position:relative;
+        width:100%;
+    }
+    .cart_block{
+        width: 100%;
+    }
+    .summary_block{
+        width: 60%;
+        margin: 10% 20%;
+    }
+    .summary_bg{
+        height: 100%;
+    }
+    .modal-confirm {
+        margin: 30%;
+        width: 40%;
+        height: 40%;
+    }
+    .icon-block{
+        margin:9% 0 0 38%;
+    }
+}
+@media only screen and (max-width: 770px) {
     .cart-container{
         display: block;
         position:relative;
@@ -299,5 +327,10 @@ button {
     .icon-block{
         margin:9% 0 0 38%;
     }
-
+    .edit_amount{
+        display: grid;
+        grid-template-columns: 100%;
+        gap: 5%;
+    }
+    
 }
