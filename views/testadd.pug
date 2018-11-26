@@ -1,2 +1,9 @@
-each formula, i in formulas
-    p #{formula.formulaname}
+link(rel='stylesheet', type='text/css', href='/css/test.css')
+.mt-5    
+    .gird
+        each formula, i in formulas
+            .box 
+                .menu #{formula.formulaname}
+                img.bg_img(src="img/detox.jpg")
+            .overlay
+                .text yay
