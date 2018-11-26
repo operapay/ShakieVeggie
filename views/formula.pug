@@ -2,6 +2,7 @@ extends layout1
 
 block content
 	link(rel='stylesheet', type='text/css', href='/css/formulastyle.css')
+	link(rel='stylesheet', type='text/css', href='/css/formula2.css')
 	div(style="position:absolute;z-index:2;width:80%;top:20%;left:50%;transform: translate(-50%, -50%);")
 		!= messages('message',locals)
 		if errors
@@ -53,7 +54,15 @@ block content
 			a.carousel-control-next(href='#carouselExampleControls', role='button', data-slide='next')
 				span.carousel-control-next-icon(aria-hidden='true')
 				span.sr-only Next
-	.no-respon
+	.gird_for
+		each formula, i in formulas
+			.box 
+				.menu
+					.for #{formula.formulaname}
+					img.bg_img(src=bg[i%8])
+				.overlay
+					.text yay
+	//.no-respon
 		.row.contain
 			.col-4
 				.back_menu

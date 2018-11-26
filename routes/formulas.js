@@ -3,13 +3,16 @@ const router = express.Router();
 let Formula = require('../models/formula');
 let Order = require('../models/order');
 
+
 router.get('/:id',function(req,res){
+    var bg = ['/img/sugar.jpg','/img/antiage.jpg','/img/cores.jpg','/img/detox.jpg','/img/custom_bg.jpg','/img/fatburn.jpg','/img/blood.jpg','/img/eyes.jpg']
     Order.findById(req.params.id, function(err,orders){
         Formula.find({},function(err,formulas){
             res.render('formula',{
                 title:'formulas',
                 formulas:formulas,
-                orders:orders
+                orders:orders,
+                bg
             });
         });
     });
