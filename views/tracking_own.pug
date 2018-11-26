@@ -15,10 +15,16 @@ block content
                             .dropdown
                                 #button_track
                                     a(href="/tracking/track/" + orders[i]._id + '/' + orders[i].username + '/' + i)#user= users.username + '00' + i
-                                .dropdown-content    
-                                    a(href="/") Hi1
-                                    a(href="/") Hi2
-                                    a(href="/") Hi3
+                                .dropdown-content 
+                                    - var count = 0 
+                                    each bottle, j in bottles
+                                        if bottle.orderid == orders[i]._id
+                                            each formula, k in formulas
+                                                if formula._id == bottle.formulaid
+                                                    if count < 3
+                                                        a(href="/")= formula.formulaname + ' (x' + bottle.amount + ')' + ' : ' + bottle.fruit1 + ' | ' + bottle.fruit2 + ' | ' + bottle.fruit3
+                                                        break
+                                            - count = count + 1
         table
             tr
                 th.bill_headbox
@@ -32,7 +38,13 @@ block content
                                 #button_track
                                     a(href="/tracking/track/" + orders[i]._id + '/' + orders[i].username + '/' + i)#user= users.username + '00' + i
                                 .dropdown-content    
-                                        a(href="/") Hi1
-                                        a(href="/") Hi2
-                                        a(href="/") Hi3
+                                    - var count = 0 
+                                    each bottle, j in bottles
+                                        if bottle.orderid == orders[i]._id
+                                            each formula, k in formulas
+                                                if formula._id == bottle.formulaid
+                                                    if count < 3
+                                                        a(href="/")= formula.formulaname + ' (x' + bottle.amount + ')' + ' : ' + bottle.fruit1 + ' | ' + bottle.fruit2 + ' | ' + bottle.fruit3
+                                                        break
+                                            - count = count + 1
                 
