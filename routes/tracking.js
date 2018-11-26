@@ -30,18 +30,24 @@ router.get('/track/:id/:user/:num',function(req,res){
 router.get('/:id', function(req,res){
     User.findById(req.params.id,function(err,users){
         Order.find({},function(err,orders){
-            if(err){
-                console.log(err);
-            }
-            else{
-                res.render('tracking_own', {
-                    title:'YOUR ORDER' ,
-                    orders: orders,
-                    users : users
+            Bottle.find({}, function(err,bottles){
+                Formula.find({},function(err,formulas){
+                    if(err){
+                        console.log(err);
+                    }
+                    else{
+                        res.render('tracking_own', {
+                            title:'YOUR ORDER' ,
+                            orders: orders,
+                            users : users,
+                            bottles:bottles,
+                            formulas:formulas
+                        });
+                    }
                 });
-            }
+            });
         });
     });
-});
+})
 
 module.exports = router;
