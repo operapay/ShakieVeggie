@@ -5,6 +5,7 @@ checkValidation = async (req, res, next) => {
         res.render('register',{
             errors:errors.array()
         });
+        return null;
     }
     next()
 }
