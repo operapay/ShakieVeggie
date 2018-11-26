@@ -58,10 +58,23 @@ block content
 		each formula, i in formulas
 			.box 
 				.menu
-					.for #{formula.formulaname}
+					if !user
+						form(method='POST',action='/users/pleaselogin')
+							button.for#not_user(type='submit',value='Submit')= formula.formulaname
+					else
+						a.for(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
 					img.bg_img(src=bg[i%8])
 				.overlay
-					.text yay
+					.text 
+						each nutrient, i in component
+							if nutrient._id == formula.component1
+								p.textover #{nutrient.name} -
+						each nutrient, j in component
+							if nutrient._id == formula.component2
+								p.textover #{nutrient.name} -
+						each nutrient, k in component
+							if nutrient._id == formula.component3
+								p.textover #{nutrient.name}
 	//.no-respon
 		.row.contain
 			.col-4

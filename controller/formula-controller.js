@@ -148,8 +148,7 @@ exports.formula = async (req, res, next) => {
         formula.component2 = component22;
         formula.component3 = component33;
         formula.save();
-        req.flash('success','successful');
-        res.redirect('/formula/add');
+        res.redirect('/admin/formula');
 
     }
     catch (e) {
