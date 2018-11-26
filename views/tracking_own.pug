@@ -22,7 +22,7 @@ block content
                                             each formula, k in formulas
                                                 if formula._id == bottle.formulaid
                                                     if count < 3
-                                                        a#white= formula.formulaname + ' (x' + bottle.amount + ')' + ' : ' + bottle.fruit1 + ' | ' + bottle.fruit2 + ' | ' + bottle.fruit3
+                                                        a#white= formula.formulaname + ' (x' + bottle.amount + ')'
                                                         break
                                             - count = count + 1
         table
@@ -44,7 +44,9 @@ block content
                                             each formula, k in formulas
                                                 if formula._id == bottle.formulaid
                                                     if count < 3
-                                                        a#white= formula.formulaname + ' (x' + bottle.amount + ')' + ' : ' + bottle.fruit1 + ' | ' + bottle.fruit2 + ' | ' + bottle.fruit3
+                                                        a#white= formula.formulaname + ' (x' + bottle.amount + ')' 
+                                                        //- a#white= formula.formulaname + ' (x' + bottle.amount + ')' + ' : ' + bottle.fruit1 + ' | ' + bottle.fruit2 + ' | ' + bottle.fruit3
                                                         break
                                             - count = count + 1
+
                 
