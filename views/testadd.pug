@@ -4,6 +4,6 @@ link(rel='stylesheet', type='text/css', href='/css/test.css')
         each formula, i in formulas
             .box 
                 .menu #{formula.formulaname}
-                img.bg_img(src="img/detox.jpg")
+                img.bg_img(src=bg[i%8])
             .overlay
                 .text yay
