@@ -2,10 +2,12 @@ extends layout_login
 
 block content
     .container
-        != messages('message',locals)
-        if errors
-            each error, i in errors
-                div(class="alert alert-danger") #{error.msg}
+        .alert-design-login
+            != messages('message',locals)
+            if errors
+                each error, i in errors
+                    div(class="alert alert-danger") #{error.msg}
+                    span(class="closebtn") &times;
 
         .row(style="top: 50%;left:50; transform: translate(0%, 0%);")
             .col-6.signin 
