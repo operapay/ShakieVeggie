@@ -9,7 +9,11 @@ let Formula = require('../models/formula')
 
 //payment form
 router.get('/',function(req,res){
-    res.render('test2');
+    Formula.find({},function(err,formulas){
+        res.render('testadd',{
+            formulas:formulas,
+        });
+    });
 });
 
 // router.get('/add',function(req,res){
