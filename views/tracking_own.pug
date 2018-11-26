@@ -21,7 +21,7 @@ block content
                                         if bottle.orderid == orders[i]._id
                                             each formula, k in formulas
                                                 if formula._id == bottle.formulaid
-                                                    if count < 3
+                                                    if count < 2
                                                         a#white= formula.formulaname + ' (x' + bottle.amount + ')'
                                                         break
                                             - count = count + 1
@@ -43,7 +43,7 @@ block content
                                         if bottle.orderid == orders[i]._id
                                             each formula, k in formulas
                                                 if formula._id == bottle.formulaid
-                                                    if count < 3
+                                                    if count < 2
                                                         a#white= formula.formulaname + ' (x' + bottle.amount + ')' 
                                                         //- a#white= formula.formulaname + ' (x' + bottle.amount + ')' + ' : ' + bottle.fruit1 + ' | ' + bottle.fruit2 + ' | ' + bottle.fruit3
                                                         break
