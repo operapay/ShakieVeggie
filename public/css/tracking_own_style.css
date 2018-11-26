@@ -29,13 +29,9 @@ table {
     text-align: center;
 }
 .bill_childtable {
-
-    padding: 5px;
-    /* font-size: 20px; */
+    padding: 5px; 
     position: relative;
-    /* text-align:center; */
     height:6vw;
-    margin-left:auto;
 }
 .bill_childbox{
     position: relative;
@@ -46,12 +42,8 @@ table {
 .bill_headbox{
     
     position: relative;
-    /* left: 15%; */
     width: 50%;
-    /* height: 40px; */
-    /* border: 2px solid pink; */
     padding: 5vw;
-    /* margin: 0% auto; */
 }
 
 .orderown_headbox{
@@ -87,7 +79,7 @@ table {
     position: absolute; 
     top:50%;
     left:50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%); 
     border:2.5px solid #FFFFFF;
     box-sizing: border-box;
     text-decoration:none;
@@ -113,3 +105,30 @@ table {
 #button_track:hover > #user{
     color:#8ED2C9;
 }
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    position: absolute;
+    left: -12.5vw;
+    top:2.4vw;
+    display: none;
+    background-color: #8ed2c9;
+    min-width: 25vw;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: white;
+    padding: 0.8vw 0.5vw;
+    text-decoration: none;
+    display: block;
+    font-size: 1.3vw;
+    font-weight: 500;
+}
+.dropdown:hover .dropdown-content {display: block;}

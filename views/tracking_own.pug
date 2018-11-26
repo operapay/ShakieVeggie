@@ -12,9 +12,13 @@ block content
                 if users._id == orders[i].username && orders[i].trackingnum == null
                     tr
                         td.bill_childtable
-                            #button_track
-                                a(href="/tracking/track/" + orders[i]._id + '/' + orders[i].username + '/' + i)#user= users.username + '00' + i
-                            
+                            .dropdown
+                                #button_track
+                                    a(href="/tracking/track/" + orders[i]._id + '/' + orders[i].username + '/' + i)#user= users.username + '00' + i
+                                .dropdown-content    
+                                    a(href="/") Hi1
+                                    a(href="/") Hi2
+                                    a(href="/") Hi3
         table
             tr
                 th.bill_headbox
@@ -24,6 +28,11 @@ block content
                 if users._id == orders[i].username && orders[i].trackingnum != null
                     tr
                         td.bill_childtable
-                            #button_track
-                                a(href="/tracking/track/" + orders[i]._id + '/' + orders[i].username + '/' + i)#user= users.username + '00' + i
+                            .dropdown
+                                #button_track
+                                    a(href="/tracking/track/" + orders[i]._id + '/' + orders[i].username + '/' + i)#user= users.username + '00' + i
+                                .dropdown-content    
+                                        a(href="/") Hi1
+                                        a(href="/") Hi2
+                                        a(href="/") Hi3
                 
