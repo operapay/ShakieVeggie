@@ -6,6 +6,7 @@ const db = require('../config/database');
 
 let Nutrient = require('../models/nutrient')
 let Formula = require('../models/formula')
+const formulaCtrl = require('../controller/formula-controller')
 
 //payment form
 router.get('/',function(req,res){
@@ -25,28 +26,7 @@ router.get('/add',function(req,res){
 });
 
 // Add Submit POST Route
-router.post('/add',function(req,res){
-    let formula = new Formula();
-    formula.formulaname = req.body.formulaname;
-    formula.component1 = req.body.component1;
-    formula.component2 = req.body.component2;
-    formula.component3 = req.body.component3;
-
-    if(req.body.component1 || req.body.component2 || req.body.component3 == ""){
-
-    }
-
-    formula.save(function(err){
-        if(err){
-            console.log(err);
-            return;
-        }
-        else{
-            //req.flash('success','Formula Added');
-            res.redirect('/formula/add');
-        }
-    });
-});
+router.post('/add',formulaCtrl.formula)
 
 // router.get('/nutrient',function(req,res){
 //     res.render('nu', {
