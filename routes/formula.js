@@ -18,31 +18,35 @@ router.get('/',function(req,res){
     });
 });
 
-// router.get('/add',function(req,res){
-//     res.render('add_formula', {
-//         title:'Add Formula'
-//     });
-// });
+router.get('/add',function(req,res){
+    res.render('add_formula', {
+        title:'Add Formula'
+    });
+});
 
-// // Add Submit POST Route
-// router.post('/add',function(req,res){
-//     let formula = new Formula();
-//     formula.formulaname = req.body.formulaname;
-//     formula.component1 = req.body.component1;
-//     formula.component2 = req.body.component2;
-//     formula.component3 = req.body.component3;
+// Add Submit POST Route
+router.post('/add',function(req,res){
+    let formula = new Formula();
+    formula.formulaname = req.body.formulaname;
+    formula.component1 = req.body.component1;
+    formula.component2 = req.body.component2;
+    formula.component3 = req.body.component3;
 
-//     formula.save(function(err){
-//         if(err){
-//             console.log(err);
-//             return;
-//         }
-//         else{
-//             //req.flash('success','Formula Added');
-//             res.redirect('/formula/add');
-//         }
-//     });
-// });
+    if(req.body.component1 || req.body.component2 || req.body.component3 == ""){
+
+    }
+
+    formula.save(function(err){
+        if(err){
+            console.log(err);
+            return;
+        }
+        else{
+            //req.flash('success','Formula Added');
+            res.redirect('/formula/add');
+        }
+    });
+});
 
 // router.get('/nutrient',function(req,res){
 //     res.render('nu', {
