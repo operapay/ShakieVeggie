@@ -15,35 +15,24 @@ html
         div(style="position:absolute; z-index:1;right:0;")
             button.login
                 if user
-                    a(href='/cart/' + orders._id)
-                        img.cart_pos(src='/img/cart.png')
-            button.login
-                if user
                     a(href='/users/logout')#white.text-uppercase logout
                     button.login
                         h9.text-uppercase #{user.username}
                 else
                     a(href='/users/login')#white.text-uppercase login
-            button.login
-                if user
-                    //a(href='/users/login')#white login
-                    a(href='/tracking/' + user._id)#login.text-uppercase tracking
         a(href='/')(style="position:absolute; z-index:1;left:2.75%;top:5.5%")
             img.logo-pos(src='/img/logo_circle.png')
         // ------------------------------------------
 
         .container
-            
         block content 
-        br
-        br
-        .f
-            #f1 developed by
-            #f2 JUBCHAI Organiser
-        script(src='/js/main.js')
-        script(src='https://code.jquery.com/jquery-3.3.1.min.js')
-        script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
-        script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')
-        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
-        script(src='/bower_components/sweetalert/lib/sweet-alert.min.js')
-        script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js')
+    footer
+        #f1 developed by
+        #f2 JUBCHAI Organiser
+    script(src='/js/main.js')
+    script(src='https://code.jquery.com/jquery-3.3.1.min.js')
+    script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
+    script(src='/bower_components/sweetalert/lib/sweet-alert.min.js')
+    script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js')

@@ -1,4 +1,4 @@
-extends layout_nocart
+extends layout_nocart2
 
 block content
 	link(rel='stylesheet', type='text/css', href='/css/formulastyle.css')
@@ -39,8 +39,8 @@ block content
 		each formula, i in formulas
 			.box
 				.menu
-					form(method='POST',action='/admin/delete/' + formula._id)
-						button.btn.btn-outline-danger(type='submit') DELETE
+					form#delete_pos(method='POST',action='/admin/delete/' + formula._id)
+						button#delete(type='submit') DELETE
 					button.for#not_user(type='button',value='Submit')= formula.formulaname
 					img.bg_img(src=bg[i%8])
 				.overlay
