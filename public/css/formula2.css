@@ -119,4 +119,19 @@
     color: white;
     font-weight: 500;
   }
+  #add{
+      position: absolute;
+      border:none;
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+      cursor: pointer;
+  }
+  #hov{
+      color:transparent;
+      text-transform: uppercase; 
+  }
+  #add:hover #hov{
+      color:white;
+  }
   
