@@ -1,4 +1,15 @@
 /* Add Zoom Animation */
+.btn:focus,.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+button:active {
+  outline: none;
+  border: none;
+  }
+  
+button:focus {outline:0;}
+
 .animate {
   -webkit-animation: animatezoom 0.6s;
   animation: animatezoom 0.6s
@@ -416,4 +427,26 @@ input[type="color"]:focus,
   .text{
     font-size:1vw;
   }
+}
+
+
+/*==================== add formula===============*/
+.white{
+  color:white; 
+}
+#add_sub{
+  width:200px;
+}
+.container_add{
+  padding-left:20%;
+  padding-right:20%;
+  padding-top:0.5%;
+}
+.f{
+  color:white;
+  width:100%;
+  text-align: center;
+}
+#f1{
+  font-size: 10px;
 }

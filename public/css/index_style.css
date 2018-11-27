@@ -1,5 +1,12 @@
 /* index */
 
+button:active {
+    outline: none;
+    border: none;
+    }
+    
+button:focus {outline:0;}
+
 @font-face {
     font-family: Lemonism;
     src: url(/font/LemonismDEMO.otf);

@@ -1,8 +1,9 @@
-extends layout1
+extends layout_nocart2
 
 block content
 	link(rel='stylesheet', type='text/css', href='/css/formulastyle.css')
 	link(rel='stylesheet', type='text/css', href='/css/formula2.css')
+    
 	div(style="position:absolute;z-index:2;width:80%;top:20%;left:50%;transform: translate(-50%, -50%);")
 		!= messages('message',locals)
 		if errors
@@ -13,39 +14,19 @@ block content
 			.carousel-item.active
 				each formula, i in formulas
 					if(formula.formulaname == "Detox")
-						if !user
-							img.d-block.w-100(src='/img/rcm_green.png', alt='Detox')
-							form(method='POST',action='/users/pleaselogin')
-								button#button_rec.viewf(type='submit',value='Submit') ORDER NOW
-						else
-							a(href="/recommend/" + orders._id + "/" + formula._id)
-								button#button_rec.viewf(type='submit',value='Submit') ORDER NOW
-							img.d-block.w-100(src='/img/rcm_green.png', alt='Detox')
+						button#button_rec.viewf(type='button',value='Submit') ORDER NOW
+						img.d-block.w-100(src='/img/rcm_green.png', alt='Detox')
 			.carousel-item
 				each formula, i in formulas
 					if(formula.formulaname == "Cholesterol Reducing")
-						if !user
-							form(method='POST',action='/users/pleaselogin')
-								button#button_rec.viewf(type='submit',value='Submit') ORDER NOW
-							img.d-block.w-100(src='/img/rcm_yellow.png', alt='')
-								
-						else
-							a(href="/recommend/" + orders._id + "/" + formula._id)
-								button#button_rec.viewf(type='submit',value='Submit') ORDER NOW
-							img.d-block.w-100(src='/img/rcm_yellow.png', alt='')
+						button#button_rec.viewf(type='button',value='Submit') ORDER NOW
+						img.d-block.w-100(src='/img/rcm_yellow.png', alt='Detox')
 								
 			.carousel-item
 				each formula, i in formulas
 					if(formula.formulaname == "Anti Aging")
-						if !user
-							form(method='POST',action='/users/pleaselogin')
-								button#button_rec.viewf(type='submit',value='Submit') ORDER NOW
-							img.d-block.w-100(src='/img/rcm_red.png', alt='')
-								
-						else
-							a(href="/recommend/" + orders._id + "/" + formula._id)
-								button#button_rec.viewf(type='submit',value='Submit') ORDER NOW
-							img.d-block.w-100(src='/img/rcm_red.png', alt='')
+						button#button_rec.viewf(type='button',value='Submit') ORDER NOW
+						img.d-block.w-100(src='/img/rcm_red.png', alt='Detox')
 			
 								
 			a.carousel-control-prev(href='#carouselExampleControls', role='button', data-slide='prev')
@@ -56,13 +37,11 @@ block content
 				span.sr-only Next
 	.gird_for
 		each formula, i in formulas
-			.box 
+			.box
 				.menu
-					if !user
-						form(method='POST',action='/users/pleaselogin')
-							button.for#not_user(type='submit',value='Submit')= formula.formulaname
-					else
-						a.for(href="/custom/" + orders._id + "/" + formula._id)= formula.formulaname
+					form#delete_pos(method='POST',action='/admin/delete/' + formula._id)
+						button#delete(type='submit') DELETE
+					button.for#not_user(type='button',value='Submit')= formula.formulaname
 					img.bg_img(src=bg[i%8])
 				.overlay
 					.text 
@@ -75,7 +54,11 @@ block content
 						each nutrient, k in component
 							if nutrient._id == formula.component3
 								p.textover #{nutrient.name}
-	.f_
-		#f1 developed by
-		#f2 JUBCHAI Organiser
+		.box 
+			.menu
+				a(href='/formula/add')
+					h1.for#white CLICK TO ADD
+					//img#add(src='/img/add.png')
+					
+				img.bg_img(src=bg[8])
 		
