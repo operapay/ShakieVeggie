@@ -105,7 +105,9 @@ block content
                         .modal-footer
                           .col.del
                             a.btn.btn-outline-danger(href='/formulas/' + orders.id)
-                              #add-text ORDER        
+                              #add-text ORDER    
+            a.button#button_checkout(href='/formulas/' + orders.id)
+              .cart-text CONTINUE SHOPPING       
           else  
             form(method='POST',action='/payment/' + orders.id + '/' + ((totalItems*75)+30))                
               button.button#button_checkout(type='submit')
