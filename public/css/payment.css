@@ -106,3 +106,8 @@ option{
     color: grey;
     cursor: pointer;
 }
+.f{
+    color:white;
+    width:100%;
+    text-align: center;
+}
