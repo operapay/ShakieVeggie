@@ -469,9 +469,11 @@ color:#ffcc1b;
   text-align: center;
   color:white;
 }
-
 .yellow-reg > h1{
-  margin-top:10px;
+  position:absolute;
+  top:25%;
+  left:50%;
+  transform: translate(-50%,-50%);
 }
 .track-card{
   width: 53%;
