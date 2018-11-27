@@ -58,7 +58,7 @@ block content
                               .modal-footer
                                 .col.del
                                   form(method='POST',action='/cart/' + orders._id + '/' + bottle._id)
-                                    button.btn.btn-outline-danger(type='submit') DELETE                    
+                                    button.delete_cart(type='submit') DELETE                    
     .summary_block
       .summary_bg
       .summary-inside
@@ -104,8 +104,9 @@ block content
                           p There is no order in the cart. Please add order to the cart before checkout
                         .modal-footer
                           .col.del
-                            a.btn.btn-outline-danger(href='/formulas/' + orders.id)
-                              #add-text ORDER        
+                            button.delete_cart
+                              a(href='/formulas/' + orders.id)
+                                #add-text ORDER        
           else  
             form(method='POST',action='/payment/' + orders.id + '/' + ((totalItems*75)+30))                
               button.button#button_checkout(type='submit')
