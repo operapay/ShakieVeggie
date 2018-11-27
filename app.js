@@ -30,10 +30,6 @@ db.on('error',function(err){
 //Init App
 const app = express();
 
-// app.task('travis',['build','testServerJS'],function(){
-// 	process.exit(0);
-// });
-
 // Load View Engine
 app.set('views', path.join(__dirname,'views'));
 app.set('view engine', 'pug');
