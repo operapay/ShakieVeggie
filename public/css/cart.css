@@ -215,7 +215,6 @@ button {
     margin: 0 !important;
 }
 #add-text{
-    padding-top: 5%;
     font-size:22px;
     font-weight: 500; 
 }
@@ -345,4 +344,17 @@ button {
 }
 #f1{
 font-size: 10px;
+}
+.delete_cart{
+    width:100%;
+    background-color: #f85727;
+    height:8vw;
+    font-weight:500;
+    font-size:1.75vw;
+}
+.delete_cart:focus{
+    background-color: #b8401c;
+}
+.delete_cart:hover{
+    background-color: #b8401c;
 }

@@ -1,4 +1,8 @@
 /* Add Zoom Animation */
+.btn:focus,.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
 .animate {
   -webkit-animation: animatezoom 0.6s;
   animation: animatezoom 0.6s

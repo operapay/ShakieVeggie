@@ -3,6 +3,10 @@
     src: url(/font/LemonismDEMO.otf);
 }
 
+.btn:focus,.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
 ::-webkit-scrollbar {
   display: none;
   }
