@@ -6,4 +6,5 @@ env:
         - NODE_ENV="production";SESSION_SECERT="la li"
 services:
         - mongodb
-script: app travis
+script: 
+        - npm test

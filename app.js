@@ -10,9 +10,10 @@ const config = require('./config/database');
 
 let Formula = require('./models/formula');
 
-app.task('travis',['build','testServerJS'],function(){
-	process.exit(0);
-});
+// app.task('travis',['build','testServerJS'],function(){
+// 	process.exit(0);
+// });
+
 mongoose.connect(config.database);
 let db = mongoose.connection;
 
@@ -28,6 +29,10 @@ db.on('error',function(err){
 
 //Init App
 const app = express();
+
+// app.task('travis',['build','testServerJS'],function(){
+// 	process.exit(0);
+// });
 
 // Load View Engine
 app.set('views', path.join(__dirname,'views'));
