@@ -2,10 +2,12 @@ extends layout_login
 
 block content
     .container
-        != messages('message',locals)
-        if errors
-            each error, i in errors
-                div(class="alert alert-danger") #{error.msg}
+        .alert-design-login
+            != messages('message',locals)
+            if errors
+                each error, i in errors
+                    div(class="alert alert-danger") #{error.msg}
+                    span(class="closebtn") &times;
 
         .row(style="top: 50%;left:50; transform: translate(0%, 0%);")
             .col-6.signin 
@@ -29,3 +31,7 @@ block content
                             button.text-uppercase.btn#login(type='submit',value='Submit') Login
                             button.text-uppercase.btn#regis(type='button')
                                 a#regis(href='/users/register') Register
+    .f
+        #f1 developed by
+        #f2 JUBCHAI Organiser
+                                

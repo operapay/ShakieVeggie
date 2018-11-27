@@ -1,4 +1,8 @@
 /* Add Zoom Animation */
+.btn:focus,.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
 .animate {
   -webkit-animation: animatezoom 0.6s;
   animation: animatezoom 0.6s
@@ -13,6 +17,21 @@
   from {transform: scale(0)} 
   to {transform: scale(1)}
 }
+.alert-design{
+  position:absolute;
+  z-index:2;
+  width:80%;
+  border-radius: 0px;
+  left:50%;
+  transform: translate(-50%, 0%);
+}
+.alert-design-login{
+  z-index:2;
+  width:90%;
+  border-radius: 0px;
+  margin-left:auto;
+  margin-right: auto;
+}
 
 .alert-error{
     color: #a94442;
@@ -25,12 +44,21 @@
     background-color: #dff0d8;
     border-color: #d6e9c6;
     position:absolute;
-    z-index:2;
-    width:60%;
-    top:0%;
-    left:50%;
-    transform: translate(-50%, -50%);
 }
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.closebtn:hover {
+  color: black;
+}
+
 a:link{
     text-decoration:none;
     color: white;
@@ -392,4 +420,26 @@ input[type="color"]:focus,
   .text{
     font-size:1vw;
   }
+}
+
+
+/*==================== add formula===============*/
+.white{
+  color:white; 
+}
+#add_sub{
+  width:200px;
+}
+.container_add{
+  padding-left:20%;
+  padding-right:20%;
+  padding-top:0.5%;
+}
+.f{
+  color:white;
+  width:100%;
+  text-align: center;
+}
+#f1{
+  font-size: 10px;
 }

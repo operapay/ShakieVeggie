@@ -12,9 +12,19 @@ block content
                 if users._id == orders[i].username && orders[i].trackingnum == null
                     tr
                         td.bill_childtable
-                            #button_track
-                                a(href="/tracking/track/" + orders[i]._id + '/' + orders[i].username + '/' + i)#user= users.username + '00' + i
-                            
+                            .dropdown
+                                #button_track
+                                    a(href="/tracking/track/" + orders[i]._id + '/' + orders[i].username + '/' + i)#user= users.username + '00' + i
+                                .dropdown-content 
+                                    - var count = 0 
+                                    each bottle, j in bottles
+                                        if bottle.orderid == orders[i]._id
+                                            each formula, k in formulas
+                                                if formula._id == bottle.formulaid
+                                                    if count < 2
+                                                        a#white= formula.formulaname + ' (x' + bottle.amount + ')'
+                                                        break
+                                            - count = count + 1
         table
             tr
                 th.bill_headbox
@@ -24,6 +34,22 @@ block content
                 if users._id == orders[i].username && orders[i].trackingnum != null
                     tr
                         td.bill_childtable
-                            #button_track
-                                a(href="/tracking/track/" + orders[i]._id + '/' + orders[i].username + '/' + i)#user= users.username + '00' + i
+                            .dropdown
+                                #button_track
+                                    a(href="/tracking/track/" + orders[i]._id + '/' + orders[i].username + '/' + i)#user= users.username + '00' + i
+                                .dropdown-content    
+                                    - var count = 0 
+                                    each bottle, j in bottles
+                                        if bottle.orderid == orders[i]._id
+                                            each formula, k in formulas
+                                                if formula._id == bottle.formulaid
+                                                    if count < 2
+                                                        a#white= formula.formulaname + ' (x' + bottle.amount + ')' 
+                                                        //- a#white= formula.formulaname + ' (x' + bottle.amount + ')' + ' : ' + bottle.fruit1 + ' | ' + bottle.fruit2 + ' | ' + bottle.fruit3
+                                                        break
+                                            - count = count + 1
+    .f_(style="")
+        #f1 developed by
+        #f2 JUBCHAI Organiser
+
                 

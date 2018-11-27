@@ -13,7 +13,7 @@ html
         nav#myTopnav.topnav
             div
                 button.login
-                    a(href='/cart/' + orders)
+                    a(href='/cart/' + orders._id)
                         img.cart_pos(src='/img/cart.png')
                 button.login
                     if user
@@ -35,12 +35,14 @@ html
                 each error, i in errors
                     div(class="alert alert-danger") #{error.msg}
             block content 
-
-        script(src='/js/main.js')
-        script(src='https://code.jquery.com/jquery-3.3.1.min.js')
-        script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
-        script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')
-        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
-        script(src='/bower_components/sweetalert/lib/sweet-alert.min.js')
-        script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js')
-        script(src='/js/amount.js')
+    //footer
+        #f1 developed by
+        #f2 JUBCHAI Organiser
+    script(src='/js/main.js')
+    script(src='https://code.jquery.com/jquery-3.3.1.min.js')
+    script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
+    script(src='/bower_components/sweetalert/lib/sweet-alert.min.js')
+    script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js')
+    script(src='/js/amount.js')

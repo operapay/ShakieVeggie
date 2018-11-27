@@ -1,5 +1,6 @@
 let Order = require('../models/order');
 let Bottle = require('../models/bottle');
+let Formula = require('../models/formula');
 const {HandingErorr} = require('./handingError')
 exports.notpaid = async (req, res, next) => {
     try {
@@ -173,6 +174,21 @@ exports.clearmixing = async (req, res, next) => {
                 }
             }
             res.redirect('/admin/mixing');
+        });
+    }
+    catch (e) {
+        HandingErorr(res, e)
+    }
+}
+exports.deleteformula = async (req, res, next) => {
+    try {
+        const query = {_id:req.params.id}
+
+        Formula.remove(query, function(err){
+            if(err){
+               console.log(err); 
+            }
+            res.redirect('/admin/formula');
         });
     }
     catch (e) {
