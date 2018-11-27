@@ -1,16 +1,19 @@
 /* index */
 
-.btn:focus,.btn:active {
-    outline: none !important;
-    box-shadow: none;
-  }
+button:active {
+    outline: none;
+    border: none;
+    }
+    
+button:focus {outline:0;}
+
 @font-face {
     font-family: Lemonism;
     src: url(/font/lemonismDEMO.otf);
 }
 @font-face {
     font-family: Hvs;
-    src: url(/font/HaventSleptInTwoDaysShadow.ttf);
+    src: url(/font/Havent.ttf);
 }
 span{
     height: 10px;
