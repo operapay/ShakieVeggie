@@ -3,6 +3,13 @@
   outline: none !important;
   box-shadow: none;
 }
+button:active {
+  outline: none;
+  border: none;
+  }
+  
+button:focus {outline:0;}
+
 .animate {
   -webkit-animation: animatezoom 0.6s;
   animation: animatezoom 0.6s
