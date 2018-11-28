@@ -1,28 +1,42 @@
-extends layout1
+extends layout_login
 
 block content
-    h1 Register
-    form(method='POST',action='/users/register')
-        #form-group
-            label Firstname:
-            input.form-control(name='firstname',type='text')
-        #form-group
-            label Lastname:
-            input.form-control(name='lastname',type='text')
-        #form-group
-            label Email:
-            input.form-control(name='email',type='text')
-        #form-group
-            label Phone:
-            input.form-control(name='phone',type='text')
-        #form-group
-            label Username:
-            input.form-control(name='username',type='text')
-        #form-group
-            label Password:
-            input.form-control(name='password',type='password')
-        #form-group
-            label Confirm Password:
-            input.form-control(name='password2',type='password')
-        br
-        input.btn.btn-primary(type='submit',value='Register')
+    .container
+        .alert-design
+            != messages('message',locals)
+            if errors
+                each error, i in errors
+                    div(class="alert alert-danger") #{error.msg}
+                        span(class="closebtn") &times;
+        .row.mt-5
+            .mx-auto
+                .card-signin#regis-card
+                .card#regis-card
+                    .yellow-reg
+                        h1 REGISTER
+                    .card-body
+                        form(method='POST',action='/users/register').form-signin
+                            .regis-grid.text-reg
+                                .form-label-group#regis-form
+                                    input#inputFirstName.form-control(name='firstname',type='text', placeholder='Firstname', required='', autofocus='')
+                                    label(for='inputFirstName') Firstname
+                                .form-label-group#regis-form
+                                    input#inputLastName.form-control(name='lastname',type='text', placeholder='Lastname', required='')
+                                    label(for='inputLastName') Lastname
+                                .form-label-group#regis-form
+                                    input#inputUsername.form-control(name='username',type='text', placeholder='Username', required='', autofocus='')
+                                    label(for='inputUsername') Username
+                                .form-label-group#regis-form
+                                    input#inputEmail.form-control(name='email',type='text', placeholder='Email', required='')
+                                    label(for='inputEmail') Email
+                                .form-label-group#regis-form
+                                    input#inputPassword.form-control(name='password',type='password', placeholder='Password', required='')
+                                    label(for='inputPassword') Password
+                                .form-label-group#regis-form
+                                    input#inputPassword2.form-control(name='password2',type='password', placeholder='Confirm Password', required='')
+                                    label(for='inputPassword2') Confirm Password
+                                .form-label-group#regis-form
+                                    input#inputPhone.form-control(name='phone',type='text', placeholder='Phone', required='')
+                                    label(for='inputPhone') Phone
+                            br
+                            button.btn.btn-lg.btn-defult.text-uppercase#regis-regis(type='submit',value='Submit') Register

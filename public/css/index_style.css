@@ -1,0 +1,240 @@
+/* index */
+
+button:active {
+    outline: none;
+    border: none;
+    }
+    
+button:focus {outline:0;}
+
+@font-face {
+    font-family: Lemonism;
+    src: url(/font/lemonismDEMO.otf);
+}
+@font-face {
+    font-family: Hvs;
+    src: url(/font/Havent2.ttf);
+}
+span{
+    height: 10px;
+}
+body{
+    display: block;
+    margin: 0px;
+}
+::-webkit-scrollbar {
+    display: none;
+    }
+.white_reg{
+    position: fixed;
+    height: 30%;
+    width: 100%;
+    bottom:0;
+    color:#8ED2C9;
+}
+.blue_reg{
+    position:fixed;
+    height: 70%;
+    width: 100%;
+    background-color: #8ED2C9;
+    
+}
+.head{
+    position:relative
+}
+.text_head{
+    position:absolute;
+    width:100%;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+.center1{
+    color: white;
+    font-family: Hvs;
+    font-size:5vw;
+    text-shadow:1px 1px 5px grey;
+}
+
+.center3{
+    position:fixed;
+    color: #8ED2C9;
+    font-family: Hvs;
+    font-size:53px;
+    text-shadow:1px 1px 5px grey;
+    top:85%;
+    left:30%;
+    transform: translate(-50%,-50%);
+    
+}
+.center2{
+    color: white;
+    font-family: Lemonism;
+    font-size: 4vw;
+    text-shadow:1px 1px 5px grey;
+}
+.pos_cen{
+    display:grid;
+    grid-template-columns: 60% 40%;
+    position: fixed;
+    height:70%;
+    top:0;
+    width: 100%;
+    text-align: center;
+    line-height: 1.25;
+    background-color: #8ED2C9;
+}
+.pos_cen2{
+    width: 65%;
+    top: 15%;
+    text-align: center;
+    line-height: 1.25;
+}
+
+.yugo{
+    font-weight: 500;
+}
+.aunt{
+    position:relative;
+}
+.auntie{
+    position:absolute;
+    height: auto;
+    width:70%;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#button1_index{
+    display:inline-block;
+    padding:12px 14px;
+    border:2.5px solid #FFFFFF;
+    box-sizing: border-box;
+    text-decoration:none;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.2s;
+    background-color:#8ED2C9;
+    font-weight: 700;
+    cursor:pointer;
+}
+#button1_index:hover{
+    color:#8ED2C9;
+    background-color:#FFFFFF;
+}
+.viewf{
+    font-size: 13px;
+}
+.readmore{
+    font-size:10px;
+}
+a#button2_index{
+    display:inline-block;
+    padding:8px 15px;
+    border:2.5px solid #8ED2C9;
+    box-sizing: border-box;
+    text-decoration:none;
+    color:#8ED2C9;
+    text-align:center;
+    transition: all 0.2s;
+}
+a#button2_index:hover{
+    color:#FFFFFF;
+    background-color:#8ED2C9;
+}
+.index_info{
+    font-size: 0.65vw;
+    padding-bottom: 3px;
+}
+.pos_col{
+    position: relative;
+    padding:6% 10%;
+    height: 100%;
+    /*width:25%;*/
+    text-align: center;  
+    /* margin-top:  auto;
+    margin-bottom: auto; */
+    /* border: 4px solid black; */
+    
+}
+.mid{
+    width: 100%;
+    /* border: 4px solid greenyellow; */
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.col3{
+    display: grid;
+    grid-template-columns: 30% 32.5% 35%;
+}
+.scope_col4{
+    width: 100%;
+    margin: 3% auto;
+}
+.col4{
+    grid-template-columns: auto auto auto;
+}
+.what{
+    padding: 0 12px;
+}
+.snsicon{
+    width: 20px;
+    height: auto;
+    transition: all 0.2s;
+}
+.snsicon:hover{
+    transform:scale(1.2);
+}
+
+#admin_button{
+    display:inline-block;
+    padding:12px 14px;
+    margin-left: auto;
+    margin-right:auto;
+    width:35%;
+    border:2.5px solid #FFFFFF;
+    box-sizing: border-box;
+    text-decoration:none;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.2s;
+    background-color:#8ED2C9;
+    cursor:pointer;
+    margin-top:15%;
+    font-weight: 500;
+}
+#admin_button:hover{
+    color:#8ED2C9;
+    background-color:#FFFFFF;
+}
+#admin_button2{
+    display:inline-block;
+    padding:12px 14px;
+    margin-left: auto;
+    margin-right:auto;
+    width:35%;
+    border:2.5px solid #FFFFFF;
+    box-sizing: border-box;
+    text-decoration:none;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.2s;
+    background-color:#8ED2C9;
+    cursor:pointer;
+    margin-top:3%;
+    font-weight: 500;
+}
+#admin_button2:hover{
+    color:#8ED2C9;
+    background-color:#FFFFFF;
+}
+.h_p{
+    font-size: 16px;
+    padding-bottom: 13px;
+}
+

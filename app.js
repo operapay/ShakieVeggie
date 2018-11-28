@@ -8,6 +8,12 @@ const session = require('express-session');
 const passport = require('passport');
 const config = require('./config/database');
 
+let Formula = require('./models/formula');
+
+// app.task('travis',['build','testServerJS'],function(){
+// 	process.exit(0);
+// });
+
 mongoose.connect(config.database);
 let db = mongoose.connection;
 
@@ -84,16 +90,49 @@ app.get('*',function(req,res,next){
 
 // Home Route
 app.get('/', function(req,res){
-    res.render('index', {
-        //title:'Medals Table' ,
-        //articles: articles
+    Formula.find({},function(err,formulas){
+        res.render('index',{
+            formulas:formulas
+        });
     });
 });
 
 let users = require('./routes/users');
 app.use('/users', users);
 
+let tracking = require('./routes/tracking');
+app.use('/tracking', tracking);
+
+let custom = require('./routes/custom');
+app.use('/custom', custom);
+
+let payment = require('./routes/payment');
+app.use('/payment', payment);
+
+let formula = require('./routes/formulas');
+app.use('/formulas', formula);
+
+let formulas = require('./routes/formula');
+app.use('/formula', formulas);
+
+let recommend = require('./routes/recommends');
+app.use('/recommend', recommend);
+
+let admin = require('./routes/admin');
+app.use('/admin', admin);
+
+let order = require('./routes/order');
+app.use('/order', order);
+
+let cart = require('./routes/cart');
+app.use('/cart', cart);
+
 // Start Server
-app.listen(3000, function(){
+
+const PORT = parseInt(process.env.PORT || 3000);
+app.listen(PORT, function(){
     console.log('Server started on port 3000...');
 });
+
+module.exports = app; // for testing
+

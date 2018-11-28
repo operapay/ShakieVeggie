@@ -1,0 +1,91 @@
+extends layout_aboutus
+
+block content
+    link(rel='stylesheet', type='text/css', href='/css/style.css')
+    style.
+        body{
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/img/tracking/bg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            width: 100%;
+        }
+    form(method = 'POST' action="/payment/tracking")
+        .set-layout-tracking
+            .track-card
+                .yellow-reg
+                    h1#text-shadow #{users.username}00#{num}
+                if order.paymentstatus != 0
+                    img.track_status#order-in-sys(src="/img/tracking/check-list-y.png")
+                    img.track_check#order-in-sys(src="/img/tracking/clock.png")
+                    .track_text.doing#order-in-sys order in system
+                    img.line#line1(src="/img/line-gray.png")
+                    
+                else if order.paymentstatus == 0
+                    img.track_status#order-in-sys(src="/img/tracking/check-list-b.png")
+                    img.track_check#order-in-sys(src="/img/tracking/verified.png")
+                    .track_text.done#order-in-sys order in system
+                    img.line#line1(src="/img/line-blue.png")
+
+                if order.paymentstatus != 0
+                    img.track_status#mixer(src="/img/tracking/mixer-w.png")
+                    img.track_check#mixer(src="/img/tracking/yet.png")
+                    .track_text.yet#mixer mixed
+                    img.line#line2(src="/img/line-gray.png")
+                else if order.paymentstatus == 0 && order.mixingstatus != 0
+                    img.track_status#mixer(src="/img/tracking/mixer-y.png")
+                    img.track_check#mixer(src="/img/tracking/clock.png")
+                    .track_text.doing#mixer mixed
+                    img.line#line2(src="/img/line-gray.png")
+                else if order.mixingstatus == 0
+                    img.track_status#mixer(src="/img/tracking/mixer-b.png")
+                    img.track_check#mixer(src="/img/tracking/verified.png")
+                    .track_text.done#mixer mixed
+                    img.line#line2(src="/img/line-blue.png")
+
+                if order.mixingstatus != 0
+                    img.track_status#packed(src="/img/tracking/order-w.png")
+                    img.track_check#packed(src="/img/tracking/yet.png")
+                    .track_text.yet#packed packed
+                    img.line#line3(src="/img/line-gray.png")
+                else if order.mixingstatus == 0 && order.trackingnum == null
+                    img.track_status#packed(src="/img/tracking/order-y.png")
+                    img.track_check#packed(src="/img/tracking/clock.png")
+                    .track_text.doing#packed packed
+                    img.line#line3(src="/img/line-gray.png")
+                else if order.trackingnum != null
+                    img.track_status#packed(src="/img/tracking/order-b.png")
+                    img.track_check#packed(src="/img/tracking/verified.png")
+                    .track_text.done#packed packed
+                    img.line#line3(src="/img/line-blue.png")
+
+                if order.trackingnum == null
+                    img.track_status#deliver(src="/img/tracking/truck-w.png")
+                    img.track_check#deliver(src="/img/tracking/yet.png")
+                    .track_text.yet#deliver delivered
+                else if order.trackingnum != null
+                    img.track_status#deliver(src="/img/tracking/truck-b.png")
+                    img.track_check#deliver(src="/img/tracking/verified.png")
+                    .track_text.done#deliver delivered
+
+                if order.trackingnum != null
+                    #track-num  TRACKING NO. #{order.trackingnum} 
+                else
+                    #track-num  TRACKING NO. _____________
+    
+    .set-order
+        center
+            h2 ORDER DETAILS
+            #{order._id}
+            br
+            br
+            br
+            each bottle, i in bottles
+                if bottle.orderid == order._id
+                    each formula, i in formulas
+                        if formula._id == bottle.formulaid
+                            p#track= formula.formulaname + ' (x' + bottle.amount + ')' + ' : ' + bottle.fruit1 + ' | ' + bottle.fruit2 + ' | ' + bottle.fruit3
+    .f_
+        #f1 developed by
+        #f2 JUBCHAI Organiser
+        

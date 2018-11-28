@@ -1,0 +1,452 @@
+/* Add Zoom Animation */
+.btn:focus,.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+button:active {
+  outline: none;
+  border: none;
+  }
+  
+button:focus {outline:0;}
+
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+.alert-design{
+  position:absolute;
+  z-index:2;
+  width:80%;
+  border-radius: 0px;
+  left:50%;
+  transform: translate(-50%, 0%);
+}
+.alert-design-login{
+  z-index:2;
+  width:90%;
+  border-radius: 0px;
+  margin-left:auto;
+  margin-right: auto;
+}
+
+.alert-error{
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.alert-success_msg{
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    position:absolute;
+}
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.closebtn:hover {
+  color: black;
+}
+
+a:link{
+    text-decoration:none;
+    color: white;
+}
+a:visited{
+    text-decoration:none;
+    color: white;
+}
+::-webkit-scrollbar {
+  display: none;
+  }
+body{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/img/login/login_bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+.btn{
+  display:inline-block;
+  padding:12px 14px;
+  box-sizing: border-box;
+  text-decoration:none;
+  color:#FFFFFF;
+  text-align:center;
+  background-color:#8ED2C9;
+  font-weight: 500;
+  cursor:pointer;
+  text-transform: uppercase;
+  -webkit-border-radius: 0px !important;
+  -moz-border-radius: 0px !important;
+  border-radius: 0px !important;
+  width:65%;
+  transition: transform .2s; 
+  position:fixed;
+}
+
+#login{
+  left:17.5%;
+  top:66%;
+}
+#regis{
+  color:#8ED2C9;
+  background-color: transparent;
+  left:17.5%;
+  top:77%;
+}
+
+#regis-regis{
+  left:17.5%;
+  top:82.5%;
+
+}
+
+.btn:hover , .login:hover {
+    transform: scale(1.1);  
+}
+
+:root {
+  --input-padding-x: 1.5rem;
+  --input-padding-y: .75rem;
+}
+
+.set-position-card{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position:fixed;
+}
+
+.yellow-reg{
+  width: 115%;
+  height: 90px;
+  background-color: #ffcc1b;
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color:white;
+}
+
+.yellow-reg > h1{
+  text-transform: uppercase;
+  position:fixed;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.signin{
+  height:550px;
+  position: relative;
+}
+
+.signin-text{
+  top:50%;
+  left: 50%;
+  margin-left:auto;
+  margin-right:auto;
+  text-transform: uppercase;
+  color:white;
+  text-align: center;
+  width:100%;
+  line-height: 1.5;
+  top:48%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  position:absolute;
+}
+#top{
+  font-size:8vw;
+  height:100%;
+  margin-bottom:-40px;
+}
+#bottom{
+  font-size:3vw;
+  height:100%;
+}
+
+.card-pos{
+  position:relative;
+}
+.regis-grid{
+  display:grid;
+  grid-template-columns: auto auto;
+  grid-row-gap: 15px;
+  width:80%;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#regis-card{
+  width:60%;
+}
+
+.card{
+  width: 390px;
+  height:525px;
+  border: none;
+  background-color: transparent;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position:absolute;
+}
+
+.card-signin {
+  width: 390px;
+  height:525px;
+  border: none;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  background-color: white;
+  opacity:0.9;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position:absolute;
+}
+
+.form-signin  {
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: 500;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+  width:78%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+
+#regis-form{
+  left:25%;
+}
+
+.form-label-group#username {
+  position: absolute;
+  width:65%;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form-label-group#pass {
+  position: absolute;
+  width:65%;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form-label-group input {
+  
+  border-bottom: 1px solid #8fd2c9!important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-radius: 0px !important;
+  background: transparent;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {   
+  border-color: none;
+  box-shadow: none;
+  background-color: transparent;
+  outline: 0 none;
+}
+
+.form-label-group>input,
+.form-label-group>label {
+  padding: var(--input-padding-y);
+}
+
+.form-label-group>label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  line-height: 1.5;
+  color: #8fd2c9;
+  transition: all .1s ease-in-out;
+}
+
+.form-label-group input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-moz-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::placeholder {
+  color: transparent;
+}
+
+.form-label-group input:not(:placeholder-shown) {
+  padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+  padding-bottom: calc(var(--input-padding-y) / 3);
+}
+
+.form-label-group input:not(:placeholder-shown)~label {
+  padding-top: calc(var(--input-padding-y) / 3);
+  padding-bottom: calc(var(--input-padding-y) / 3);
+  font-size: 12px;
+  color: #8fd2c9;
+  
+}
+
+
+.logo-pos{
+    margin-left:2.75%;
+    margin-top:2.5%;
+    width:60px;
+    height: 60px;
+}
+.cart_pos{
+  width:22px;
+  height: 22px;
+  margin-bottom:5%;
+}
+
+@media screen and (max-width: 992px){
+  .signin{
+    margin-left:auto;
+    margin-right:auto;
+    height:50%;
+  }
+  .row{
+    display:block;
+    position:relative;
+  }
+  .mem{
+    height:550px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:30px;
+    margin-bottom:50px;
+  }
+  .signin-text{
+    margin-left:auto;
+    margin-right:auto;
+    text-transform: uppercase;
+    color:white;
+    text-align: center;
+    width:100%;
+    line-height: 1.5;
+    top:0%;
+    left:0%;
+    transform: translate(0%,0%);
+    position:static;
+  }
+  #bottom{
+    display:none;
+  }
+  #top{
+    margin-bottom: 0px;
+  }
+  #regis-card{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -18.75%);
+  }
+
+  .regis-grid{
+    display:grid;
+    grid-template-columns: auto auto;
+    grid-row-gap: 10px;
+    width:100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .yellow-reg{
+    height: 60px;
+    font-size: 5px;
+  }
+  .yellow-reg >h1 {
+    font-size: 20px;
+  }
+  .text{
+    font-size:1vw;
+  }
+}
+
+
+/*==================== add formula===============*/
+.white{
+  color:white; 
+}
+#add_sub{
+  width:200px;
+}
+.container_add{
+  padding-left:20%;
+  padding-right:20%;
+  padding-top:0.5%;
+}
+.f{
+  color:white;
+  width:100%;
+  text-align: center;
+}
+#f1{
+  font-size: 10px;
+}

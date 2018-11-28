@@ -1,14 +1,37 @@
-extends layout1
+extends layout_login
 
 block content
-    h1 Login
-    form(method='POST',action='/users/login')
-        #form-group
-            label Username:
-            input.form-control(name='username',type='text')
-        #form-group
-            label Password:
-            input.form-control(name='password',type='password')
-        br
-        input.btn.btn-primary(type='submit',value='Submit')
-        a(href='/users/register') Register
+    .container
+        .alert-design-login
+            != messages('message',locals)
+            if errors
+                each error, i in errors
+                    div(class="alert alert-danger") #{error.msg}
+                    span(class="closebtn") &times;
+
+        .row(style="top: 50%;left:50; transform: translate(0%, 0%);")
+            .col-6.signin 
+                .signin-text 
+                    #top SIGN IN
+                    #bottom  shakieveggie
+                    
+            .col-6.mem
+                .card-signin
+                .card    
+                    .yellow-reg
+                        h1 member
+                    form(method='POST',action='/users/login').form-signin
+                        .form-label-group#username
+                            input#inputUsername.form-control(name='username',type='text', placeholder='Username', required='', autofocus='')
+                            label(for='inputUsername') Username
+                        .form-label-group#pass
+                            input#inputPassword.form-control(name='password',type='password', placeholder='Password', required='')
+                            label(for='inputPassword') Password
+                        .btn-pos
+                            button.text-uppercase.btn#login(type='submit',value='Submit') Login
+                            button.text-uppercase.btn#regis(type='button')
+                                a#regis(href='/users/register') Register
+    .f
+        #f1 developed by
+        #f2 JUBCHAI Organiser
+                                

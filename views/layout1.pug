@@ -2,28 +2,48 @@ doctype html
 html
     head
         title ShakieVeggie
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css')
+        link#bootstrap-css(href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', rel='stylesheet')
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+        link(rel='stylesheet', href='/vendor/bootstrap/css/bootstrap.min.css')
         link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
-        link(rel='stylesheet' href='/css/style.css')
-    body
-        .d-flex.flex-column.flex-md-row.align-items-center.p-3.px-md-4.mb-3.bg-white.border-bottom.shadow-sm
-            h5.my-0.mr-md-auto.font-weight-normal ShakieVeggie
-            nav.my-2.my-md-0.mr-md-3
-                a.p-2.text-dark(href='#') Features
-                a.p-2.text-dark(href='#') Enterprise
-                a.p-2.text-dark(href='#') Support
-                a.p-2.text-dark(href='#') Pricing
-            a.btn.btn-outline-primary(href='#') Sign up
+        link(rel='stylesheet', href='/bower_components/sweetalert/lib/sweet-alert.css')
+        
+        
+    body(onload="load()")
+        // ----------------Navbar-------------------
+        div(style="position:absolute; z-index:1;right:0;")
+            button.login
+                if user
+                    a(href='/cart/' + orders._id)
+                        img.cart_pos(src='/img/cart.png')
+            button.login
+                if user
+                    a(href='/users/logout')#white.text-uppercase logout
+                    button.login
+                        h9.text-uppercase #{user.username}
+                else
+                    a(href='/users/login')#white.text-uppercase login
+            button.login
+                if user
+                    //a(href='/users/login')#white login
+                    a(href='/tracking/' + user._id)#login.text-uppercase tracking
+        a(href='/')(style="position:absolute; z-index:1;left:2.75%;top:5.5%")
+            img.logo-pos(src='/img/logo_circle.png')
+        // ------------------------------------------
+
         .container
-            != messages('message',locals)
-            if errors
-                each error, i in errors
-                    div(class="alert alert-danger") #{error.msg}
-            block content
-            br
-            br
-            hr
-            footer
-                p Copyright © 2018    
-        script(src='./.js')
+            
+        block content 
+        br
+        br
+        //.f
+            #f1 developed by
+            #f2 JUBCHAI Organiser
+        script(src='/js/main.js')
         script(src='https://code.jquery.com/jquery-3.3.1.min.js')
         script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
+        script(src='/bower_components/sweetalert/lib/sweet-alert.min.js')
+        script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js')

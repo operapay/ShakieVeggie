@@ -1,0 +1,121 @@
+extends layout_cus
+block content
+  link(rel='stylesheet', type='text/css', href='/css/style.css')
+  link(rel='stylesheet', type='text/css', href='/css/cart.css') 
+  .headline
+    .cart-title SHOPPING CART
+    - var totalItems = 0
+    each bottle in bottles
+      if bottle.orderid == orders._id
+        - totalItems += bottle.amount
+    .cart-text='You currently have ' + totalItems + ' item(s) in your cart.'
+  .cart-container
+    .cart_block
+      .headofcart
+        .left Product
+        .left Amount
+        .div Unit price
+        .right Remove
+      each bottle, i in bottles
+          if bottle.orderid == orders._id
+            each formula, i in formulas
+                if formula._id == bottle.formulaid  
+                  .rowofcart
+                    .left
+                      #formula= formula.formulaname 
+                        .cart-text='INGREDIENT 1 : ' + bottle.fruit1
+                        .cart-text='INGREDIENT 2 : ' + bottle.fruit2 
+                        .cart-text='INGREDIENT 3 : '  + bottle.fruit3
+                    .div
+                      if bottle.edit != 0
+                        form(method='POST',action='/cart/edit/' + orders._id + '/' + bottle._id)
+                          .edit_amount
+                            textarea.cart-textarea(type='text', name='amount',id='edit_amount', cols="2", rows="1",disabled="") #{bottle.amount}
+                            button#button_cart(type='submit') EDIT
+                      else
+                        form(method='POST',action='/cart/confirm/' + orders._id + '/' + bottle._id)
+                          #form-group
+                            .edit_amount
+                              .row.left
+                                button.btn-number#operate(type='button', data-type='minus', data-field='amount') -
+                                input.form-control.input-number#amount(type='text', name='amount', value=bottle.amount, min='1', max='1000')
+                                button.btn-number#operate(type='button', data-type='plus', data-field='amount') +
+                              button#button_cart(type='submit') Submit
+                    .price ฿75.00
+                    .right
+                      button.cart-trash(type='button', data-toggle='modal', data-target='#deleteModal')
+                      // Modal
+                      #deleteModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+                        .modal-dialog.modal-confirm(role='document')
+                          .modal-content
+                              .modal-header
+                                .row.icon-block
+                                  .icon-box
+                                button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+                              .modal-body
+                                h4.modal-title Are you sure?
+                                p Do you really want to delete these products? This process cannot be undone.
+                              .modal-footer
+                                .col.del
+                                  form(method='POST',action='/cart/' + orders._id + '/' + bottle._id)
+                                    button.delete_cart(type='submit') DELETE                    
+    .summary_block
+      .summary_bg
+      .summary-inside
+        .summary-title Order summary        
+        .summary-text
+          .row
+            .left.col-8
+              h4 Order subtotal
+            .right.col-4
+              h4='฿' + totalItems*75 + '.00'
+          .row
+            .left.col-8
+              h4 Shipping fee
+              .cart-text= 'shipping by'
+              .cart-text= 'blablabla company'
+              .cart-text= 'for shipping information'
+              .cart-text= 'please check at tracking page'
+            .right.col-4
+              h4='฿30.00'
+          .row.last
+            .left.col-8
+              h4 Tax
+            .right.col-4
+              h4= '฿0.00'
+          .row
+            .left.col-8
+              h4 Total
+            .right.col-4
+              h4= '฿' + ((totalItems*75)+30) + '.00'
+        .summary-button  
+          if totalItems == 0
+            button.button#button_checkout(type='button', data-toggle='modal', data-target='#deleteModal') 
+              .cart-text PROCEED TO CHECKOUT
+            #deleteModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+                  .modal-dialog.modal-confirm(role='document')
+                    .modal-content
+                        .modal-header
+                          .row.icon-block
+                            .icon-box
+                          button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+                        .modal-body
+                          h4.modal-title add first !! 
+                          p There is no order in the cart. Please add order to the cart before checkout
+                        .modal-footer
+                          .col.del
+                            button.delete_cart
+                              a(href='/formulas/' + orders.id)
+                                #add-text ORDER       
+            a.button#button_checkout(href='/formulas/' + orders.id)
+              .cart-text CONTINUE SHOPPING    
+          else  
+            form(method='POST',action='/payment/' + orders.id + '/' + ((totalItems*75)+30))                
+              button.button#button_checkout(type='submit')
+                .cart-text PROCEED TO CHECKOUT    
+            a.button#button_checkout(href='/formulas/' + orders.id)
+              .cart-text CONTINUE SHOPPING           
+    
+  .f
+    #f1 developed by
+    #f2 JUBCHAI Organiser

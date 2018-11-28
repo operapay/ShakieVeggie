@@ -1,0 +1,37 @@
+extends layout_nocart
+
+block content
+    link(rel='stylesheet', type='text/css', href='/css/style.css')
+    link(rel='stylesheet', type='text/css', href='/css/admin.css')
+
+    .title-block
+        .title PAYMENT STATUS
+        .reg
+    table#table(style='width:100%').mt-5
+        thead
+            tr
+                th ORDER NO.
+                th PAYMENT STATUS
+        tbody
+            each order, i in orders
+                tr
+                    if order.clearpayment != 0
+                        td#b_l=order._id
+                                if order.paymentstatus == 1
+                                    .row
+                                    td#b_r 
+                                        form(action="/admin/payment/" + order._id, method="post")
+                                            input.status(onclick="change(this);track(this)" type="submit" value="NOT READY" )
+                                else
+                                    .row
+                                    td#b_r 
+                                        form(action="/admin/payment2/" + order._id, method="post")
+                                            input.status2(onclick="change(this);track(this)" type="submit" value="READY" )
+    form(method='POST',action='/admin/clearpayment')
+        button.btn.btn(type='submit',value='Submit',style='color:white;float:right') CLEAR
+    .f
+        #f1 developed by
+        #f2 JUBCHAI Organiser
+
+
+    

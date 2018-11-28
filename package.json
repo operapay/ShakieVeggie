@@ -4,11 +4,13 @@
   "description": "shakie\u001b[D\u001b[D\u001b[D\u001b[D\u001b[S\u001b[C\u001b[C\u001b[C\u001b[C\u001b[CVeggie Project",
   "main": "app.js",
   "scripts": {
-    "start": "node app"
+    "start": "node app",
+    "test": "mocha --timeout 10000ms --exit"
   },
   "author": "ChubChai",
   "license": "ISC",
   "dependencies": {
+    "async": "^2.6.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "connect-flash": "^0.1.1",
@@ -16,9 +18,17 @@
     "express-messages": "^1.0.1",
     "express-session": "^1.15.6",
     "express-validator": "^5.3.0",
+    "mongodb": "^3.1.10",
     "mongoose": "^5.3.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "chai-http": "^4.2.0",
+    "mocha": "^5.2.0",
+    "should": "^13.2.3"
   }
 }

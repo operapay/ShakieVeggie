@@ -1,0 +1,68 @@
+extends layout_login
+
+block content
+    .container_add
+        h1.white #{title}
+        form(method='POST',action='/formula/add')
+            #form-group
+                label.white name:
+                input.form-control(name='formulaname',type='text')
+            label.white Component 1:
+            select.custom-select(name='component1', required='')
+                option(value='')
+                option Collagen
+                option Fiber
+                option Antioxidant
+                option Vitamin A
+                option Vitamin B
+                option Vitamin C
+                option Vitamin E
+                option Vitamin K
+                option Fe
+                option L-Carnitine
+                option Folate
+                option Calcium
+                option Beta Carotene
+                .invalid-feedback
+                | Please select one.
+            br
+            label.white Component 2:
+            select.custom-select(name='component2', required='')
+                option(value='')
+                option Collagen
+                option Fiber
+                option Antioxidant
+                option Vitamin A
+                option Vitamin B
+                option Vitamin C
+                option Vitamin E
+                option Vitamin K
+                option Fe
+                option L-Carnitine
+                option Folate
+                option Calcium
+                option Beta Carotene
+                .invalid-feedback
+                | Please select one.
+            br
+            label.white Component 3:
+            select.custom-select(name='component3', required='')
+                option(value='')
+                option Collagen
+                option Fiber
+                option Antioxidant
+                option Vitamin A
+                option Vitamin B
+                option Vitamin C
+                option Vitamin E
+                option Vitamin K
+                option Fe
+                option L-Carnitine
+                option Folate
+                option Calcium
+                option Beta Carotene
+                .invalid-feedback
+                | Please select one.
+            br
+            br
+            input.btn#add_sub(type='submit',value='Submit')
