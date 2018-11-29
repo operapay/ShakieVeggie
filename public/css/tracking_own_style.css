@@ -16,7 +16,7 @@ body{
 .track_parting{
     display: grid;
     grid-template-columns: auto auto;
-    grid-gap: 5%;
+    grid-gap: 13%;
     position: relative;
     padding-left: 7vw;
     padding-right: 7vw;
