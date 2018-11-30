@@ -168,8 +168,8 @@ function msg() {
     alert("Do you really want to delete these formula? ");
 }
 
-function dis(input){
-    postdisease(input, '/custom/');
+function deletemsg(){
+    alert("Do you really want to delete these products? This process cannot be undone.");
 }
 
 function postdisease(input, path) {

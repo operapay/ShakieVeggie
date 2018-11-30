@@ -43,9 +43,11 @@ block content
                               button#button_cart(type='submit') Submit
                     .price ฿75.00
                     .right
-                      button.cart-trash(type='button', data-toggle='modal', data-target='#deleteModal')
+                      form(method='POST',action='/cart/' + orders._id + '/' + bottle._id)
+                        button.cart-trash(onclick="deletemsg()" type='submit')
+                      //button.cart-trash(type='button', data-toggle='modal', data-target='#deleteModal')
                       // Modal
-                      #deleteModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+                      //#deleteModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
                         .modal-dialog.modal-confirm(role='document')
                           .modal-content
                               .modal-header
