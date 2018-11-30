@@ -40,7 +40,7 @@ block content
 			.box
 				.menu
 					form#delete_pos(method='POST',action='/admin/delete/' + formula._id)
-						button#delete(type='submit') DELETE
+						button#delete(onclick="msg()" type='submit') DELETE
 					button.for#not_user(type='button',value='Submit')= formula.formulaname
 					img.bg_img(src=bg[i%8])
 				.overlay

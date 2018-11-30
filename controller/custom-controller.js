@@ -43,6 +43,7 @@ exports.disease = async (req, res, next) => {
                 res.redirect('/custom/'+  orders._id + "/" + formula._id + '/component');
             });
         });
+        //res.sendStatus(200)
     }
     catch (e) {
         HandingErorr(res, e)
