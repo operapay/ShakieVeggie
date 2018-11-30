@@ -23,7 +23,15 @@ li.pz{
     display: inline;
     margin-left:9px;
 }
+.cen{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:100%;
+}
 .chec-radio .radio-inline .clab {
+    position:relative;
     cursor: pointer;
     background: transparent;
     padding-top: 1.3vw;
@@ -88,6 +96,7 @@ h1{
     height:30px;
     border: 2.5px solid;
     cursor:pointer;
+    text-align: center;
 }
 .submit_but{
     color:white;
