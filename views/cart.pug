@@ -1,7 +1,8 @@
 extends layout_cus
 block content
   link(rel='stylesheet', type='text/css', href='/css/style.css')
-  link(rel='stylesheet', type='text/css', href='/css/cart.css') 
+  link(rel='stylesheet', type='text/css', href='/css/cart.css')
+  link(rel="stylesheet" href="/bower_components/sweetalert2/dist/sweetalert2.min.css")
   .headline
     .cart-title SHOPPING CART
     - var totalItems = 0
@@ -43,8 +44,9 @@ block content
                               button#button_cart(type='submit') Submit
                     .price ฿75.00
                     .right
-                      form(method='POST',action='/cart/' + orders._id + '/' + bottle._id)
-                        button.cart-trash(onclick="deletemsg()" type='submit')
+                      //form(method='POST',action='/cart/' + orders._id + '/' + bottle._id)
+                      button.cart-trash(onclick="deletemsg(this)" type='button',,num= orders._id, numid=bottle._id)
+                        //button.cart-trash(onclick="deletemsg()" type='submit')
                       //button.cart-trash(type='button', data-toggle='modal', data-target='#deleteModal')
                       // Modal
                       //#deleteModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
@@ -95,7 +97,7 @@ block content
             button.button#button_checkout(type='button', data-toggle='modal', data-target='#deleteModal') 
               .cart-text PROCEED TO CHECKOUT
             #deleteModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
-                  .modal-dialog.modal-confirm(role='document')
+                  .modal-dialog.modal-confirm#square(role='document')
                     .modal-content
                         .modal-header
                           .row.icon-block
@@ -121,3 +123,4 @@ block content
   .f
     #f1 developed by
     #f2 JUBCHAI Organiser
+  script(src='/bower_components/sweetalert2/dist/sweetalert2.all.min.js')

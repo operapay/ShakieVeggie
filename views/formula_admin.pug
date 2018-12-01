@@ -3,6 +3,7 @@ extends layout_nocart2
 block content
 	link(rel='stylesheet', type='text/css', href='/css/formulastyle.css')
 	link(rel='stylesheet', type='text/css', href='/css/formula2.css')
+	link(rel="stylesheet" href="/bower_components/sweetalert2/dist/sweetalert2.min.css")
     
 	div(style="position:absolute;z-index:2;width:80%;top:20%;left:50%;transform: translate(-50%, -50%);")
 		!= messages('message',locals)
@@ -39,8 +40,8 @@ block content
 		each formula, i in formulas
 			.box
 				.menu
-					form#delete_pos(method='POST',action='/admin/delete/' + formula._id)
-						button#delete(onclick="msg()" type='submit') DELETE
+					//form#delete_pos(method='POST',action='/admin/delete/' + formula._id)
+					button#delete(onclick="msg(this)" type='button' num=formula._id) DELETE
 					button.for#not_user(type='button',value='Submit')= formula.formulaname
 					img.bg_img(src=bg[i%8])
 				.overlay
@@ -61,4 +62,5 @@ block content
 					//img#add(src='/img/add.png')
 					
 				img.bg_img(src=bg[8])
+	script(src='/bower_components/sweetalert2/dist/sweetalert2.all.min.js')
 		

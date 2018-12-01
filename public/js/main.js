@@ -101,94 +101,160 @@ function getReadData(input, path) {
     })
 }
 
-// function getReadDataSend(input, path) {
-//     //console.log(input);
-//     //console.log('xhr: ', path + $(input).attr("num"));
-//     $.ajax({
-//         url: path + $(input).attr("num"),
-//         method: "POST",
-//         cache: false,
-//         success: function(data) { 
-//             if ($(input).val() == "READY") {
-//                 $(input).removeClass("status2");
-//                 $(input).addClass("status");
-//                 $(input).val("NOT READY");
-//                 const num = $(input).attr("num");
-//                 const appened = $(`td#b_r[num="${$(input).attr("num")}"]`);
-//                 const appenedinput = $('<input type="text", placeholder="Tracking No.", name="trackingnum" class="inputbox">');
-//                 const toAppend = $(`<input onclick='submitnum("${num}","/admin/tracking/")' type='submit' value='SUBMIT' class='status'>`)
-//                 const appenedtrack = $(`td#texttest[num="${$(input).attr("num")}"]`);
-//                 $(appened).removeClass("status");
-//                 $(appened).addClass("status2");
-//                 $(appenedtrack).addClass("inputbox");
-//                 // const appenedinput = $('<input type="text", placeholder="Tracking No.", name="trackingnum" class="inputbox" disabled="true">');
-//                 // const appenedtrack = $(`td#texttest[num="${$(input).attr("num")}"]`);
-//                 // $(appenedtrack).append(appenedinput);
-//             } else if ($(input).val() == "NOT READY") {
-//                 $(input).removeClass("status");
-//                 $(input).addClass("status2");
-//                 $(input).val("READY");
-//                 //alert( "Handler for .click() called." );
-
-//                 const num = $(input).attr("num");
-//                 const appened = $(`td#b_r[num="${$(input).attr("num")}"]`);
-//                 const appenedinput = $('<input type="text", placeholder="Tracking No.", name="trackingnum" class="inputbox">');
-//                 const toAppend = $(`<input onclick='submitnum("${num}","/admin/tracking/")' type='submit' value='SUBMIT' class='status'>`)
-//                 const appenedtrack = $(`td#texttest[num="${$(input).attr("num")}"]`);
-//                 //console.log(appened, toAppend);
-//                 $(appened).append(toAppend);
-//                 $(appened).removeClass("status2");
-//                 $(appened).addClass("status");
-//                 $(appenedtrack).append(appenedinput);
-//                 //track(input)
-//                 //const appenedinput = $(`td#b_r[num="${$(input).attr("num")}"]`);
-//                 // $( $(input).val()).click(function() {
-//                 //     alert( "Handler for .click() called." );
-//                 // });
-//             }
-//          },
-//         error: function(data) { console.error(data) }
-//     })
-// }
-
-// function submitnum(input, path) {
-//     //console.log(input);
-//     //console.log('xhr: ', path + $(input).attr("num"));
-//     $.ajax({
-//         url: path + input,
-//         method: "POST",
-//         cache: false,
-//         success: function(data) { 
-//             console.log("yah")
-//         }
-//     })
-// }
-
-function msg() {
-    alert("Do you really want to delete these formula? ");
-}
-
-function deletemsg(){
-    alert("Do you really want to delete these products? This process cannot be undone.");
-}
-
-function postdisease(input, path) {
+function getReadDataSend(input, path) {
+    //console.log(input);
+    //console.log('xhr: ', path + $(input).attr("num"));
     $.ajax({
-        url: path + $(input).attr("num") + '/' + $(input).attr("id") ,
+        url: path + $(input).attr("num"),
         method: "POST",
         cache: false,
         success: function(data) { 
-            console.log("yay")
-            //$("#modal .close").click()
-            // $(modal).remove();
-            // if (data.checksurgery==1 && (data.component1 == 'Tomato' || data.component1 == 'Ripe Mango' || data.component1 == 'Pumpkin' || data.component1 == 'Banana'))
-            //     console.log("true")
-            // else
-            //     console.log("false")
-            // //data-dismiss=="modal"
-            // //$('.modal').removeClass('show');
-            // //$(input).addClass("");
+            if ($(input).val() == "READY") {
+                $(input).removeClass("status2");
+                $(input).addClass("status");
+                $(input).val("NOT READY");
+                const num = $(input).attr("num");
+                const appened = $(`td#b_r[num="${$(input).attr("num")}"]`);
+                const appenedinput = $('<input type="text", placeholder="Tracking No.", name="trackingnum" class="inputbox">');
+                const toAppend = $(`<input onclick='submitnum("${num}","/admin/tracking/")' type='submit' value='SUBMIT' class='status'>`)
+                const appenedtrack = $(`td#texttest[num="${$(input).attr("num")}"]`);
+                $(appened).removeClass("status");
+                $(appened).addClass("status2");
+                $(appenedtrack).addClass("inputbox");
+                // const appenedinput = $('<input type="text", placeholder="Tracking No.", name="trackingnum" class="inputbox" disabled="true">');
+                // const appenedtrack = $(`td#texttest[num="${$(input).attr("num")}"]`);
+                // $(appenedtrack).append(appenedinput);
+            } else if ($(input).val() == "NOT READY") {
+                $(input).removeClass("status");
+                $(input).addClass("status2");
+                $(input).val("READY");
+                //alert( "Handler for .click() called." );
+
+                const num = $(input).attr("num");
+                const appened = $(`td#b_r[num="${$(input).attr("num")}"]`);
+                const appenedinput = $('<input type="text", placeholder="Tracking No.", name="trackingnum" class="inputbox">');
+                const toAppend = $(`<input onclick='submitnum("${num}","/admin/tracking/")' type='submit' value='SUBMIT' class='status'>`)
+                const appenedtrack = $(`td#texttest[num="${$(input).attr("num")}"]`);
+                //console.log(appened, toAppend);
+                $(appened).append(toAppend);
+                $(appened).removeClass("status2");
+                $(appened).addClass("status");
+                $(appenedtrack).append(appenedinput);
+                //track(input)
+                //const appenedinput = $(`td#b_r[num="${$(input).attr("num")}"]`);
+                // $( $(input).val()).click(function() {
+                //     alert( "Handler for .click() called." );
+                // });
+            }
          },
         error: function(data) { console.error(data) }
     })
 }
+
+function submitnum(input, path) {
+    //console.log(input);
+    //console.log('xhr: ', path + $(input).attr("num"));
+    $.ajax({
+        url: path + input,
+        method: "POST",
+        cache: false,
+        success: function(data) { 
+            console.log("yah")
+        }
+    })
+}
+
+function msg(input) {
+    swal({  title: "ARE YOU SURE?",
+    text: "Do you really want to delete this formula?",     
+    type: "warning",   
+    showCancelButton: true,   
+    confirmButtonColor: "#DD6B55",   
+    confirmButtonText: "Remove formula!",   
+    cancelButtonText: "Cancel",   
+    closeOnConfirm: false,   
+    closeOnCancel: false })
+    .then((result) => {
+    if (result.value) {
+        swal({
+        title: 'Deleted!',
+        title:'Formula has been deleted.',
+        type: 'success',
+        confirmButtonColor: "#DD6B55",   
+        confirmButtonText: "OK!",
+        })
+        .then((result) =>{
+            if(result.value){
+                //console.log("test")
+                $.post('/admin/delete/' + $(input).attr("num"))
+                location.reload();
+            }
+        })
+    }
+    })
+}
+
+    // var retVal = confirm("Do you really want to delete these formula? ");
+    // if( retVal == true ){
+    //     input.type = "submit"
+    //    //document.write ("User wants to continue!");
+    //    return true;
+    // }
+    // else{
+    //    //document.write ("User does not want to continue!");
+    //    return false;
+    // }
+    //alert("Do you really want to delete these formula? ");
+//}
+
+function deletemsg(input){
+    swal({  title: "ARE YOU SURE?",
+    text: "Do you really want to delete this order?",     
+    type: "warning",   
+    showCancelButton: true,   
+    confirmButtonColor: "#DD6B55",   
+    confirmButtonText: "Remove Order!",   
+    cancelButtonText: "Cancel",   
+    closeOnConfirm: false,   
+    closeOnCancel: false })
+    .then((result) => {
+    if (result.value) {
+        swal({
+        title: 'Deleted!',
+        title:'Order has been deleted.',
+        type: 'success',
+        confirmButtonColor: "#DD6B55",   
+        confirmButtonText: "OK!",
+        })
+        .then((result) =>{
+            if(result.value){
+                //console.log("test")
+                $.post('/cart/' + $(input).attr("num") + '/' + $(input).attr("numid"))
+                location.reload();
+            }
+        })
+    }
+    })
+}
+
+
+// function postdisease(input, path) {
+//     $.ajax({
+//         url: path + $(input).attr("num") + '/' + $(input).attr("id") ,
+//         method: "POST",
+//         cache: false,
+//         success: function(data) { 
+//             console.log("yay")
+//             //$("#modal .close").click()
+//             // $(modal).remove();
+//             // if (data.checksurgery==1 && (data.component1 == 'Tomato' || data.component1 == 'Ripe Mango' || data.component1 == 'Pumpkin' || data.component1 == 'Banana'))
+//             //     console.log("true")
+//             // else
+//             //     console.log("false")
+//             // //data-dismiss=="modal"
+//             // //$('.modal').removeClass('show');
+//             // //$(input).addClass("");
+//          },
+//         error: function(data) { console.error(data) }
+//     })
+// }

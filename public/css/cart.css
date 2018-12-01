@@ -276,6 +276,9 @@ button {
 .modal-confirm .btn-danger:hover, .modal-confirm .btn-danger:focus {
     background: #ce4a22;
 }
+#square{
+    border-radius: 5px !important;
+}
 /* responsive*/
 @media only screen and (max-width: 1200px) {
     .cart-container{
