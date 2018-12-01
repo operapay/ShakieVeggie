@@ -88,6 +88,7 @@ exports.confirmcart = async (req, res, next) => {
                 console.log(err);
                 return;
             }
+            //res.sendStatus(200)
             else{
                 res.redirect('/cart/' + req.params.id);
             }

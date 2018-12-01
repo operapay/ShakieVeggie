@@ -40,10 +40,11 @@ block content
 		each formula, i in formulas
 			.box
 				.menu
-					//form#delete_pos(method='POST',action='/admin/delete/' + formula._id)
-					button#delete(onclick="msg(this)" type='button' num=formula._id) DELETE
+					//button#delete(onclick="msg(this)" type='button' num=formula._id) DELETE
+					button#delete_pos.delete(onclick="msg(this)" type='submit' num=formula._id) DELETE
 					button.for#not_user(type='button',value='Submit')= formula.formulaname
 					img.bg_img(src=bg[i%8])
+					//button#delete(onclick="msg(this)" type='submit' num=formula._id) DELETE
 				.overlay
 					.text 
 						each nutrient, i in component

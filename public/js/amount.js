@@ -51,30 +51,16 @@ $('.input-number').change(function() {
         alert('Sorry, the maximum value was reached');
         $(this).val($(this).data('oldValue'));
     }
-    postamount(this,'/cart/confirm/',valueCurrent)
+    //postamount(this,'/cart/confirm/',valueCurrent)
 });
 
 function postamount(input, path, value) {
     $.ajax({
         url: path + $(input).attr("num") + '/' + $(input).attr("numid") ,
         method: "POST",
-        data:{
-            amount : value,
-        } ,
         cache: false,
         success: function() { 
-            
             console.log(value)
-            
-            //$("#modal .close").click()
-            // $(modal).remove();
-            // if (data.checksurgery==1 && (data.component1 == 'Tomato' || data.component1 == 'Ripe Mango' || data.component1 == 'Pumpkin' || data.component1 == 'Banana'))
-            //     console.log("true")
-            // else
-            //     console.log("false")
-            // //data-dismiss=="modal"
-            // //$('.modal').removeClass('show');
-            // //$(input).addClass("");
          },
         error: function(data) { console.error(data) }
     })

@@ -151,18 +151,18 @@ function getReadDataSend(input, path) {
     })
 }
 
-function submitnum(input, path) {
-    //console.log(input);
-    //console.log('xhr: ', path + $(input).attr("num"));
-    $.ajax({
-        url: path + input,
-        method: "POST",
-        cache: false,
-        success: function(data) { 
-            console.log("yah")
-        }
-    })
-}
+// function submitnum(input, path) {
+//     //console.log(input);
+//     //console.log('xhr: ', path + $(input).attr("num"));
+//     $.ajax({
+//         url: path + $(input).attr("num") + '/' + $(input).attr("numid"),
+//         method: "POST",
+//         cache: false,
+//         success: function(data) { 
+//             console.log("yah")
+//         }
+//     })
+// }
 
 function msg(input) {
     swal({  title: "ARE YOU SURE?",
@@ -194,18 +194,6 @@ function msg(input) {
     })
 }
 
-    // var retVal = confirm("Do you really want to delete these formula? ");
-    // if( retVal == true ){
-    //     input.type = "submit"
-    //    //document.write ("User wants to continue!");
-    //    return true;
-    // }
-    // else{
-    //    //document.write ("User does not want to continue!");
-    //    return false;
-    // }
-    //alert("Do you really want to delete these formula? ");
-//}
 
 function deletemsg(input){
     swal({  title: "ARE YOU SURE?",
