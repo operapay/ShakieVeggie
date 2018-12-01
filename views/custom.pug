@@ -2,6 +2,7 @@ extends layout_cus
 block content
     link(rel='stylesheet', type='text/css', href='/css/style.css')
     link(rel='stylesheet', type='text/css', href='/css/custom.css')
+    link(rel="stylesheet" href="/bower_components/sweetalert2/dist/sweetalert2.min.css")
     #myModal.modal
         // Modal content
         .modal-content
@@ -34,7 +35,7 @@ block content
                             input#surgery.form-check-input(type='checkbox', name='surgery')
                             label.form-check-label(for='surgery')
                             .c underwent surgery
-                        button.set-submit(type='submit',value='Submit') Submit
+                        button.set-submit(onclick="loading(this)",type='submit',value='Submit') Submit
     
     form(method='POST',action='/custom/'+  orders + "/" + formula._id + '/component')
         
@@ -173,3 +174,4 @@ block content
     .f
         #f1 developed by
         #f2 JUBCHAI Organiser
+    script(src='/bower_components/sweetalert2/dist/sweetalert2.all.min.js')

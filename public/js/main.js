@@ -225,6 +225,18 @@ function deletemsg(input){
     })
 }
 
+function loading(input){
+    $(modal).hide();
+    swal({
+    title: 'Loading...',
+    //imageUrl: '/img/custom_bg.jpg',
+    background: "#ccc",
+    confirmButtonColor: "#666",
+    onOpen: () => {
+        swal.showLoading()
+    }
+    })
+}
 
 // function postdisease(input, path) {
 //     $.ajax({
