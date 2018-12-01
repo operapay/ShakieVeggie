@@ -176,6 +176,7 @@ function msg(input) {
     closeOnCancel: false })
     .then((result) => {
     if (result.value) {
+        $.post('/admin/delete/' + $(input).attr("num"))
         swal({
         title: 'Deleted!',
         title:'Formula has been deleted.',
@@ -186,7 +187,6 @@ function msg(input) {
         .then((result) =>{
             if(result.value){
                 //console.log("test")
-                $.post('/admin/delete/' + $(input).attr("num"))
                 location.reload();
             }
         })
@@ -207,6 +207,7 @@ function deletemsg(input){
     closeOnCancel: false })
     .then((result) => {
     if (result.value) {
+        $.post('/cart/' + $(input).attr("num") + '/' + $(input).attr("numid"))
         swal({
         title: 'Deleted!',
         title:'Order has been deleted.',
@@ -216,8 +217,6 @@ function deletemsg(input){
         })
         .then((result) =>{
             if(result.value){
-                //console.log("test")
-                $.post('/cart/' + $(input).attr("num") + '/' + $(input).attr("numid"))
                 location.reload();
             }
         })
