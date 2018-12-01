@@ -215,11 +215,7 @@ function deletemsg(input){
         confirmButtonColor: "#DD6B55",   
         confirmButtonText: "OK!",
         })
-        .then((result) =>{
-            if(result.value){
-                location.reload();
-            }
-        })
+        location.reload();
     }
     })
 }
