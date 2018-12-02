@@ -144,6 +144,10 @@ exports.clearpayment = async (req, res, next) => {
                     let query = {_id:orders[i]._id}
                     Order.update(query, order, function(err){});
                 }
+                if(orders[i].checkout == 1){
+                    let query = {_id:orders[i]._id}
+                    Order.remove(query, function(err){});
+                }
             }
             res.redirect('/admin/payment');
         });
