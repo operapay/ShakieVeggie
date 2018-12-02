@@ -15,7 +15,7 @@ block content
         tbody
             each order, i in orders
                 tr
-                    if order.clearpayment != 0
+                    if order.clearpayment != 0 && order.checkout == 0
                         td#b_l=order._id
                                 if order.paymentstatus == 1
                                     .row
