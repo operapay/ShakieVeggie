@@ -52,6 +52,7 @@ exports.totalprice = async (req, res, next) => {
     try {
         const order = {};
         order.totalprice = req.params.total;
+        order.checkout = 0;
         const query = {_id:req.params.id}
     
         Order.update(query, order, function(err){

@@ -9,7 +9,7 @@ block content
                     .orderown_headbox
                         .orderown_headword IN SYSTEM ORDER(S)
             -for (var i = orders.length-1 ; i >= 0; i--) 
-                if users._id == orders[i].username && orders[i].trackingnum == null
+                if users._id == orders[i].username && orders[i].trackingnum == null && orders[i].checkout == 0
                     tr
                         td.bill_childtable
                             .dropdown
@@ -31,7 +31,7 @@ block content
                     .orderown_headbox
                         .orderown_headword SENT ORDER(S)
             -for (var i = orders.length-1 ; i >= 0; i--) 
-                if users._id == orders[i].username && orders[i].trackingnum != null
+                if users._id == orders[i].username && orders[i].trackingnum != null && orders[i].checkout == 0
                     tr
                         td.bill_childtable
                             .dropdown
