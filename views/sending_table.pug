@@ -27,7 +27,7 @@ block content
                     if order.mixingstatus == 0
                         td.relative
                             form(action="/admin/sending2/" + order._id, method="post")
-                                input.status2(onclick="change(this);track(this)" type="submit" value="READY" )
+                                input.status2(onclick="send(this)" type="submit" value="READY" num=order._id )
                         if order.trackingnum == null
                             form(method='POST',action="/admin/tracking/" + order._id)
                                 td
@@ -44,10 +44,10 @@ block content
                     else
                         td.relative
                             form(action="/admin/sending/" + order._id, method="post")
-                                input.status(onclick="change(this);track(this)" type="submit" value="NOT READY" )
-                        td
+                                input.status(onclick="send(this)" type="submit" value="NOT READY" num=order._id)
+                        td#texttest(num=order._id)
                                 input.inputbox(type='text', placeholder='Tracking No.', name='tracking',disabled="")
-                        td#b_r
+                        td#b_r(num=order._id)
                     tr        
                                 
     form(method='POST',action='/admin/clearsending')

@@ -87,3 +87,9 @@ body{
 ::-webkit-scrollbar {
     display: none;
     }
+.f_about{
+    bottom:0;
+    color:gray;
+    width:100%;
+    text-align: center;
+    }

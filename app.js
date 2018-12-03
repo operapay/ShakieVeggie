@@ -30,10 +30,6 @@ db.on('error',function(err){
 //Init App
 const app = express();
 
-// app.task('travis',['build','testServerJS'],function(){
-// 	process.exit(0);
-// });
-
 // Load View Engine
 app.set('views', path.join(__dirname,'views'));
 app.set('view engine', 'pug');
@@ -137,6 +133,6 @@ const PORT = parseInt(process.env.PORT || 3000);
 app.listen(PORT, function(){
     console.log('Server started on port 3000...');
 });
-
+ //test
 module.exports = app; // for testing
 

@@ -51,6 +51,17 @@ $('.input-number').change(function() {
         alert('Sorry, the maximum value was reached');
         $(this).val($(this).data('oldValue'));
     }
-    
-    
+    //postamount(this,'/cart/confirm/',valueCurrent)
 });
+
+function postamount(input, path, value) {
+    $.ajax({
+        url: path + $(input).attr("num") + '/' + $(input).attr("numid") ,
+        method: "POST",
+        cache: false,
+        success: function() { 
+            console.log(value)
+         },
+        error: function(data) { console.error(data) }
+    })
+}

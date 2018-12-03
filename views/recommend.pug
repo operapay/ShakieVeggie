@@ -2,6 +2,7 @@ extends layout_cus
 block content
     link(rel='stylesheet', type='text/css', href='/css/style.css')
     link(rel='stylesheet', type='text/css', href='/css/custom.css')
+    link(rel="stylesheet" href="/bower_components/sweetalert2/dist/sweetalert2.min.css")
     #myModal.modal
         // Modal content
         .modal-content
@@ -34,7 +35,7 @@ block content
                             input#surgery.form-check-input(type='checkbox', name='surgery')
                             label.form-check-label(for='surgery')
                             .c underwent surgery
-                        button.set-submit(type='submit',value='Submit') Submit
+                        button.set-submit(onclick="loading(this)",type='submit',value='Submit') Submit
     form(method='POST',action='/custom/' + formula._id + '/component')
         
         .margin-top-set
@@ -51,93 +52,114 @@ block content
                                 ul.chec-radio(id='component1')
                                     li.pz
                                         label.radio-inline
-                                            #type.clab #{component1.name}
+                                            #type.clab
+                                                .cen #{component1.name}
                                     li.pz
                                         label.radio-inline
                                             input#com1.pro-chx(type='radio',name='component1', value='vit1.1', checked='')
-                                            .clab(for='com1') #{component1.fruit1}
+                                            .clab(for='com1')
+                                                .cen #{component1.fruit1}
                                     li.pz
                                         label.radio-inline
                                             input#com2.pro-chx(type='radio', name='component1', value='vit1.2')
-                                            .clab(for='com2') #{component1.fruit2}
+                                            .clab(for='com2')
+                                                .cen #{component1.fruit2}
                                     li.pz
                                         label.radio-inline
                                             input#com3.pro-chx(type='radio', name='component1', value='vit1.3')
-                                            .clab(for='com3')  #{component1.fruit3}
+                                            .clab(for='com3') 
+                                                .cen #{component1.fruit3}
                                     li.pz
                                         label.radio-inline
                                             input#exampleRadios4.pro-chx(type='radio', name='component1', value='vit1.4')
-                                            .clab.line2(for='exampleRadios4') #{component1.fruit4}
+                                            .clab.line2(for='exampleRadios4')
+                                                .cen #{component1.fruit4}
                                     li.pz
                                         label.radio-inline
                                             input#exampleRadios3.pro-chx(type='radio', name='component1', value='vit1.5')
-                                            .clab(for='exampleRadios5') #{component1.fruit5}
+                                            .clab(for='exampleRadios5')
+                                                .cen #{component1.fruit5}
                                     li.pz   
                                         label.radio-inline
                                             input#exampleRadios3.pro-chx(type='radio', name='component1', value='vit1.6')
-                                            .clab(for='exampleRadios5') #{component1.fruit6}
+                                            .clab(for='exampleRadios5')
+                                                .cen #{component1.fruit6}
 
 
                                 //---------------------------TYPE2---------------------------------------------------
                                 ul.chec-radio(id='component2')
                                     li.pz
                                         label.radio-inline
-                                            #type.clab #{component2.name}
+                                            #type.clab
+                                                .cen #{component2.name}
                                     li.pz
                                         label.radio-inline
                                             input#com1.pro-chx(type='radio',name='component2', value='vit2.1', checked='')
-                                            .clab(for='com1') #{component2.fruit1}
+                                            .clab(for='com1')
+                                                .cen #{component2.fruit1}
                                     li.pz
                                         label.radio-inline
                                             input#com2.pro-chx(type='radio', name='component2', value='vit2.2')
-                                            .clab(for='com2') #{component2.fruit2}
+                                            .clab(for='com2')
+                                                .cen #{component2.fruit2}
                                     li.pz
                                         label.radio-inline
                                             input#com3.pro-chx(type='radio', name='component2', value='vit2.3')
-                                            .clab(for='com3')  #{component2.fruit3}
+                                            .clab(for='com3')
+                                                .cen  #{component2.fruit3}
                                     li.pz
                                         label.radio-inline
                                             input#exampleRadios4.pro-chx(type='radio', name='component2', value='vit2.4')
-                                            .clab(for='exampleRadios4') #{component2.fruit4}
+                                            .clab(for='exampleRadios4')
+                                                .cen #{component2.fruit4}
                                     li.pz
                                         label.radio-inline
                                             input#exampleRadios3.pro-chx(type='radio', name='component2', value='vit2.5')
-                                            .clab(for='exampleRadios5') #{component2.fruit5}
+                                            .clab(for='exampleRadios5')
+                                                .cen #{component2.fruit5}
                                     li.pz    
                                         label.radio-inline
                                             input#exampleRadios3.pro-chx(type='radio', name='component2', value='vit2.6')
-                                            .clab(for='exampleRadios5') #{component2.fruit6}
+                                            .clab(for='exampleRadios5')
+                                                .cen #{component2.fruit6}
 
 
                                 //---------------------------TYPE3---------------------------------------------------
                                 ul.chec-radio(id='component3')
                                     li.pz
                                         label.radio-inline
-                                            #type.clab #{component3.name}
+                                            #type.clab
+                                                .cen #{component3.name}
                                     li.pz
                                         label.radio-inline
                                             input#com1.pro-chx(type='radio',name='component3', value='vit3.1', checked='')
-                                            .clab(for='com1') #{component3.fruit1}
+                                            .clab(for='com1')
+                                                .cen #{component3.fruit1}
                                     li.pz
                                         label.radio-inline
                                             input#com2.pro-chx(type='radio', name='component3', value='vit3.2')
-                                            .clab(for='com2') #{component3.fruit2}
+                                            .clab(for='com2')
+                                                .cen #{component3.fruit2}
                                     li.pz
                                         label.radio-inline
                                             input#com3.pro-chx(type='radio', name='component3', value='vit3.3')
-                                            .clab(for='com3')  #{component3.fruit3}
+                                            .clab(for='com3')
+                                                .cen  #{component3.fruit3}
                                     li.pz
                                         label.radio-inline
                                             input#exampleRadios4.pro-chx(type='radio', name='component3', value='vit3.4')
-                                            .clab(for='exampleRadios4') #{component3.fruit4}
+                                            .clab(for='exampleRadios4')
+                                                .cen #{component3.fruit4}
                                     li.pz
                                         label.radio-inline
                                             input#exampleRadios3.pro-chx(type='radio', name='component3', value='vit3.5')
-                                            .clab(for='exampleRadios5') #{component3.fruit5}
+                                            .clab(for='exampleRadios5')
+                                                .cen #{component3.fruit5}
                                     li.pz       
                                         label.radio-inline
                                             input#exampleRadios3.pro-chx(type='radio', name='component3', value='vit3.6')
-                                            .clab(for='exampleRadios5') #{component3.fruit6}
+                                            .clab(for='exampleRadios5')
+                                                .cen #{component3.fruit6}
                         .mt-5
                             .row(style="width:80%;margin-left:auto;margin-right:auto;")
                                 .col-6
@@ -151,3 +173,4 @@ block content
     .f
         #f1 developed by
         #f2 JUBCHAI Organiser
+    script(src='/bower_components/sweetalert2/dist/sweetalert2.all.min.js')

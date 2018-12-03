@@ -98,14 +98,14 @@
 
   #delete_pos{
       position:absolute;
-      top:7%;
+      top:9%;
       left:50%;
       transform: translate(-50%,-50%);
       z-index:5;
       cursor: pointer;
   }
-  #delete{
-      width:29vw;
+  .delete{
+      width:29.5vw;
       height:3.5vw;
       font-weight: 600;
       color:darkred;
@@ -114,7 +114,7 @@
       border:1.5px solid  darkred;
       cursor: pointer;
   }
-  #delete:hover{
+  .delete:hover{
     background-color:darkred;
     color: white;
     font-weight: 500;
