@@ -16,28 +16,34 @@ block content
                             ul.chec-radio
                                 li.pz
                                     label.radio-inline
-                                        #type.clab #{component1.name}
+                                        #type.clab 
+                                            .cen #{component1.name}
                                 li.pz
                                     label.radio-inline
                                         input#com1.pro-chx(type='radio',name='component1', value=component1.fruit1, checked='')
-                                        .clab(for='com1') #{component1.fruit1}
+                                        .clab(for='com1')
+                                            .cen #{component1.fruit1}
                                 li.pz
                                     label.radio-inline
                                         input#com2.pro-chx(type='radio', name='component1', value=component1.fruit2)
-                                        .clab(for='com2') #{component1.fruit2}
+                                        .clab(for='com2')
+                                            .cen  #{component1.fruit2}
                                 li.pz
                                     label.radio-inline
                                         input#com3.pro-chx(type='radio', name='component1', value=component1.fruit3)
-                                        .clab(for='com3')  #{component1.fruit3}
+                                        .clab(for='com3')
+                                            .cen #{component1.fruit3}
                                 li.pz
                                     if checksurgery==1 && (component1.fruit4 == 'Tomato' || component1.fruit4 == 'Ripe Mango' || component1.fruit4 == 'Pumpkin' || component1.fruit4 == 'Banana')
                                         label.radio-inline
                                             input#exampleRadios4.pro-chx(type='radio', name='component1', value=component1.fruit4,disabled='')
-                                            .clab(for='exampleRadios4')#gray #{component1.fruit4}
+                                            .clab(for='exampleRadios4')#gray
+                                                .cen  #{component1.fruit4}
                                     else if checkliver==1 && (component1.fruit4 == 'Ripe Mango')
                                         label.radio-inline
                                             input#exampleRadios4.pro-chx(type='radio', name='component1', value=component1.fruit4,disabled='')
-                                            .clab(for='exampleRadios4')#gray #{component1.fruit4}
+                                            .clab(for='exampleRadios4')#gray 
+                                                .cen #{component1.fruit4}
                                     else if checkhypertension==1 && (component1.fruit4 == 'Kale' || component1.fruit4 == 'Carrot' || component1.fruit4 == 'Tomato')
                                         label.radio-inline
                                             input#exampleRadios4.pro-chx(type='radio', name='component1', value=component1.fruit4,disabled='')
@@ -45,7 +51,8 @@ block content
                                     else if checkdiabetes==1 && (component1.fruit4 == 'Mixed berry' || component1.fruit4 == 'Kiwi' || component1.fruit4 == 'Avocado')
                                         label.radio-inline
                                             input#exampleRadios4.pro-chx(type='radio', name='component1', value=component1.fruit4,disabled='')
-                                            .clab(for='exampleRadios4')#gray #{component1.fruit4}
+                                            .clab(for='exampleRadios4')#gray 
+                                                .cen #{component1.fruit4}
                                     else if checkpregnant==1 && (component1.fruit4 == 'Carrot' || component1.fruit4 == 'Kale' || component1.fruit4 == 'Pumpkin' || component1.fruit4 == 'Apricot')
                                         label.radio-inline
                                             input#exampleRadios4.pro-chx(type='radio', name='component1', value=component1.fruit4,disabled='')

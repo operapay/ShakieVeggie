@@ -18,8 +18,8 @@ body{
     grid-template-columns: auto auto;
     grid-gap: 5%;
     position: relative;
-    padding-left: 7vw;
-    padding-right: 7vw;
+    padding-left: 9vw;
+    padding-right: 9vw;
     top: 10%;
 }
 table {
@@ -41,14 +41,13 @@ table {
     margin: 0% auto;
 }
 .bill_headbox{
-    
     position: relative;
     width: 50%;
     padding: 5vw;
 }
 
 .orderown_headbox{
-    width: 90%;
+    width: 80%;
     height: 30%;
     background-color: #ffcc1c;
     position:absolute;

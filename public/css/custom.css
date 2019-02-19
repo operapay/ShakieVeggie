@@ -5,14 +5,7 @@ body{
     background-attachment: fixed;
     width: 100%;
 }
-.f{
-    color:white;
-    width:100%;
-    text-align: center;
-  }
-  #f1{
-    font-size: 10px;
-  }
+
 ul.chec-radio {
     margin: 8px;
 }
@@ -42,6 +35,15 @@ li.pz{
     border: 2.5px solid white;
     font-size: 11px;
     font-weight: 400;
+    position:relative;
+}
+.cen{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:100%;
+
 }
 .line1{
     padding: 11px;
