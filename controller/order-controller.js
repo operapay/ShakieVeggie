@@ -15,6 +15,7 @@ exports.genorder = async (req, res, next) => {
         order.zip = 1;
         order.totalprice = 1;
         order.paymentstatus = 1;
+        order.checkout = 1;
         order.save();
         res.redirect('/formulas/' + order._id);
     }
@@ -88,6 +89,7 @@ exports.confirmcart = async (req, res, next) => {
                 console.log(err);
                 return;
             }
+            //res.sendStatus(200)
             else{
                 res.redirect('/cart/' + req.params.id);
             }

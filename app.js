@@ -10,6 +10,10 @@ const config = require('./config/database');
 
 let Formula = require('./models/formula');
 
+// app.task('travis',['build','testServerJS'],function(){
+// 	process.exit(0);
+// });
+
 mongoose.connect(config.database);
 let db = mongoose.connection;
 
@@ -124,9 +128,11 @@ let cart = require('./routes/cart');
 app.use('/cart', cart);
 
 // Start Server
-app.listen(3000, function(){
-    console.log('Server started on port 80...');
-});
 
+const PORT = parseInt(process.env.PORT || 3000);
+app.listen(PORT, function(){
+    console.log('Server started on port 3000...');
+});
+ //test
 module.exports = app; // for testing
 

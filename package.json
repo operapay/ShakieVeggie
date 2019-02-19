@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app",
-    "test": "mocha --timeout 10000"
+    "test": "mocha --timeout 10000ms --exit"
   },
   "author": "ChubChai",
   "license": "ISC",

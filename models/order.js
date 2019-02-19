@@ -50,7 +50,10 @@ let OrderSchema = mongoose.Schema({
     }, 
     clearsending:{
         type: String
-    }      
+    },
+    checkout:{
+        type: String
+    }
 });
 
 

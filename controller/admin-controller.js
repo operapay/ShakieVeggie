@@ -13,10 +13,13 @@ exports.notpaid = async (req, res, next) => {
                 console.log(err);
                 return;
             }
-            else{
-                res.redirect('/admin/payment');
-            }
+            console.log(order.paymentstatus);
+            // else{
+            //     res.redirect('/admin/payment');
+            // }
         });
+
+        res.sendStatus(200);
     }
     catch (e) {
         HandingErorr(res, e)
@@ -33,10 +36,13 @@ exports.paid = async (req, res, next) => {
                 console.log(err);
                 return;
             }
-            else{
-                res.redirect('/admin/payment');
-            }
+            console.log(order.paymentstatus);
+            // else{
+            //     res.redirect('/admin/payment');
+            // }
         });
+
+        res.sendStatus(200);
     }
     catch (e) {
         HandingErorr(res, e)
@@ -56,6 +62,7 @@ exports.mixing = async (req, res, next) => {
             else{
                 res.redirect('/admin/sending');
             }
+            //res.sendStatus(200);
         });
     }
     catch (e) {
@@ -76,6 +83,7 @@ exports.mixed = async (req, res, next) => {
             else{
                 res.redirect('/admin/sending');
             }
+            //res.sendStatus(200);
         });
     }
     catch (e) {
@@ -135,6 +143,10 @@ exports.clearpayment = async (req, res, next) => {
                     order.clearpayment = 0;
                     let query = {_id:orders[i]._id}
                     Order.update(query, order, function(err){});
+                }
+                if(orders[i].checkout == 1){
+                    let query = {_id:orders[i]._id}
+                    Order.remove(query, function(err){});
                 }
             }
             res.redirect('/admin/payment');

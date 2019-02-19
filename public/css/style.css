@@ -28,7 +28,11 @@ button:focus {outline:0;}
 }
 .f{
   position: fixed;
+<<<<<<< HEAD
   bottom:10px;
+=======
+  bottom:5px;
+>>>>>>> origin/master
   left:0;
   right:0;
   color:white;
